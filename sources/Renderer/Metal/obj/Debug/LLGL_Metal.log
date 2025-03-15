@@ -1,0 +1,773 @@
+﻿  MTBuffer.mm
+  MTBufferArray.mm
+  MTIntermediateBuffer.mm
+  MTStagingBuffer.mm
+  MTStagingBufferPool.mm
+  MTCommandBuffer.mm
+  MTCommandContext.mm
+  MTCommandExecutor.mm
+  MTCommandQueue.mm
+  MTDirectCommandBuffer.mm
+  MTMultiSubmitCommandBuffer.mm
+  MTCore.mm
+  MTDevice.mm
+  MTFeatureSet.mm
+  MTModuleInterface.mm
+  MTRenderSystem.mm
+  MTSwapChain.mm
+  MTTypes.mm
+  MTBuiltinPSOFactory.mm
+  MTComputePSO.mm
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Command\MTCommandQueue.h(12,1): error C2813: #import is not supported with /MP
+  MTConstantsCache.mm
+  MTConstantsCacheLayout.mm
+  (compiling source file 'Command/MTCommandQueue.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Command\MTCommandQueue.h(14,10): error C1083: Cannot open include file: 'LLGL/CommandQueue.h': No such file or directory
+  (compiling source file 'Command/MTCommandQueue.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Command\MTCommandExecutor.mm(8,1): error C2813: #import is not supported with /MP
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTBuffer.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'Buffer/MTBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTBuffer.h(14,10): error C1083: Cannot open include file: 'LLGL/Platform/Platform.h': No such file or directory
+  (compiling source file 'Buffer/MTBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Command\MTCommandContext.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTBufferArray.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'Buffer/MTBufferArray.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Command\MTCommandBuffer.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'Command/MTDirectCommandBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Command\MTCommandBuffer.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'Command/MTMultiSubmitCommandBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Command\MTCommandContext.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Command\MTCommandBuffer.h(14,10): error C1083: Cannot open include file: 'LLGL/CommandBuffer.h': No such file or directory
+  (compiling source file 'Command/MTMultiSubmitCommandBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTBufferArray.h(14,10): error C1083: Cannot open include file: 'LLGL/BufferArray.h': No such file or directory
+  (compiling source file 'Buffer/MTBufferArray.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Command\MTCommandBuffer.h(14,10): error C1083: Cannot open include file: 'LLGL/CommandBuffer.h': No such file or directory
+  (compiling source file 'Command/MTDirectCommandBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\Exception.h(12,10): error C1083: Cannot open include file: 'LLGL/Export.h': No such file or directory
+  (compiling source file 'MTCore.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(26,13): error C2061: syntax error: identifier 'id'
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(34,21): error C2061: syntax error: identifier 'NSUInteger'
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(26,13): error C2061: syntax error: identifier 'id'
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(37,19): error C2061: syntax error: identifier 'NSUInteger'
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(34,21): error C2061: syntax error: identifier 'NSUInteger'
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(40,18): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(37,19): error C2061: syntax error: identifier 'NSUInteger'
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(40,18): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(40,16): error C7524: 'inline' specifier cannot appear on a block-scope declaration or non-static data member
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(40,16): error C7524: 'inline' specifier cannot appear on a block-scope declaration or non-static data member
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(40,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(40,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(41,9): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(41,9): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(59,11): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(59,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(59,11): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(59,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(59,46): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(59,46): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(60,11): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(60,11): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(60,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(60,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(60,46): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(60,46): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(61,29): error C3646: 'options_': unknown override specifier
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(61,29): error C3646: 'options_': unknown override specifier
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(61,41): error C2059: syntax error: '='
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(61,41): error C2059: syntax error: '='
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(61,72): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(61,72): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(62,29): error C3646: 'alignment_': unknown override specifier
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(62,29): error C3646: 'alignment_': unknown override specifier
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(62,41): error C2059: syntax error: '='
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(62,41): error C2059: syntax error: '='
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(62,45): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(62,45): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(48,29): error C2146: syntax error: missing ']' before identifier 'contents'
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(48,29): error C2146: syntax error: missing ']' before identifier 'contents'
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(48,21): error C3481: 'native_': lambda capture variable not found
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(48,21): error C3481: 'native_': lambda capture variable not found
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(48,29): error C3260: 'identifier': skipping unexpected token(s) before lambda body
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(48,29): error C3260: 'identifier': skipping unexpected token(s) before lambda body
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(54,21): error C3481: 'native_': lambda capture variable not found
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(54,21): error C3481: 'native_': lambda capture variable not found
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTDescriptorCache.h(14,10): error C1083: Cannot open include file: 'LLGL/PipelineLayoutFlags.h': No such file or directory
+  (compiling source file 'Command/MTCommandContext.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTDescriptorCache.h(14,10): error C1083: Cannot open include file: 'LLGL/PipelineLayoutFlags.h': No such file or directory
+  (compiling source file 'Command/MTCommandExecutor.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(26,25): error C2061: syntax error: identifier 'id'
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(39,23): error C2061: syntax error: identifier 'NSUInteger'
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(42,38): error C2061: syntax error: identifier 'NSUInteger'
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(45,18): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(45,16): error C7524: 'inline' specifier cannot appear on a block-scope declaration or non-static data member
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(26,25): error C2061: syntax error: identifier 'id'
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(45,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Command\MTCommandBuffer.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'Command/MTCommandBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(46,9): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(26,13): error C2061: syntax error: identifier 'id'
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(39,23): error C2061: syntax error: identifier 'NSUInteger'
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(51,27): error C3646: 'GetSize': unknown override specifier
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(34,21): error C2061: syntax error: identifier 'NSUInteger'
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Command\MTCommandBuffer.h(14,10): error C1083: Cannot open include file: 'LLGL/CommandBuffer.h': No such file or directory
+  (compiling source file 'Command/MTCommandBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(51,35): error C2059: syntax error: ')'
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(37,19): error C2061: syntax error: identifier 'NSUInteger'
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(52,9): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(42,38): error C2061: syntax error: identifier 'NSUInteger'
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(40,18): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(57,27): error C3646: 'GetOffset': unknown override specifier
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(40,16): error C7524: 'inline' specifier cannot appear on a block-scope declaration or non-static data member
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(57,37): error C2059: syntax error: ')'
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(45,18): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(40,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(58,9): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(45,16): error C7524: 'inline' specifier cannot appear on a block-scope declaration or non-static data member
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(41,9): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(64,11): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(45,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(64,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(59,11): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(64,38): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(46,9): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(59,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(51,27): error C3646: 'GetSize': unknown override specifier
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(65,25): error C3646: 'size_': unknown override specifier
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(59,46): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(60,11): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(51,35): error C2059: syntax error: ')'
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(65,33): error C2059: syntax error: '='
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(60,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(65,36): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(60,46): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(52,9): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(66,25): error C3646: 'offset_': unknown override specifier
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(61,29): error C3646: 'options_': unknown override specifier
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(57,27): error C3646: 'GetOffset': unknown override specifier
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(66,33): error C2059: syntax error: '='
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(61,41): error C2059: syntax error: '='
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(66,36): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(61,72): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(57,37): error C2059: syntax error: ')'
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(62,29): error C3646: 'alignment_': unknown override specifier
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(58,9): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(62,41): error C2059: syntax error: '='
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(62,45): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(64,11): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(48,29): error C2146: syntax error: missing ']' before identifier 'contents'
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(64,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(48,21): error C3481: 'native_': lambda capture variable not found
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(64,38): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(65,25): error C3646: 'size_': unknown override specifier
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(48,29): error C3260: 'identifier': skipping unexpected token(s) before lambda body
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(65,33): error C2059: syntax error: '='
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(65,36): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h(54,21): error C3481: 'native_': lambda capture variable not found
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(66,25): error C3646: 'offset_': unknown override specifier
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(66,33): error C2059: syntax error: '='
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(66,36): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Buffer/MTStagingBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Platform\Debug.h(12,10): error C1083: Cannot open include file: 'LLGL/Export.h': No such file or directory
+  (compiling source file 'Buffer/MTIntermediateBuffer.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(16,34): error C2065: 'id': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(16,37): error C2065: 'MTLDevice': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(16,48): error C2065: 'device': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(16,56): error C2065: 'NSUInteger': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(16,67): error C2146: syntax error: missing ')' before identifier 'size'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(17,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(17,13): error C2065: 'size': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(18,1): error C2059: syntax error: '{'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(18,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(18,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(24,9): error C2065: 'native_': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(24,20): error C2065: 'nil': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(25,25): warning C4467: usage of ATL attributes is deprecated
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(25,25): error C2337: 'native_': attribute not found
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(25,18): error C2146: syntax error: missing ']' before identifier 'release'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(25,18): error C2059: syntax error: '<default int type>'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(29,19): error C2039: 'native_': is not a member of 'LLGL::MTStagingBuffer'
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(21,7):
+      see declaration of 'LLGL::MTStagingBuffer'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(30,19): error C2039: 'size_': is not a member of 'LLGL::MTStagingBuffer'
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(21,7):
+      see declaration of 'LLGL::MTStagingBuffer'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(31,19): error C2039: 'offset_': is not a member of 'LLGL::MTStagingBuffer'
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(21,7):
+      see declaration of 'LLGL::MTStagingBuffer'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(29,5): error C2614: 'LLGL::MTStagingBuffer': illegal member initialization: 'native_' is not a base or member
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(30,5): error C2614: 'LLGL::MTStagingBuffer': illegal member initialization: 'size_' is not a base or member
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(31,5): error C2614: 'LLGL::MTStagingBuffer': illegal member initialization: 'offset_' is not a base or member
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(33,9): error C2039: 'native_': is not a member of 'LLGL::MTStagingBuffer'
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(21,7):
+      see declaration of 'LLGL::MTStagingBuffer'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(33,19): error C2065: 'nil': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(41,13): error C2065: 'native_': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(41,24): error C2065: 'nil': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(42,29): error C2337: 'native_': attribute not found
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(42,22): error C2146: syntax error: missing ']' before identifier 'release'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(42,22): error C2059: syntax error: '<default int type>'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(45,9): error C2065: 'native_': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTFeatureSet.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'MTFeatureSet.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(45,23): error C2039: 'native_': is not a member of 'LLGL::MTStagingBuffer'
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(21,7):
+      see declaration of 'LLGL::MTStagingBuffer'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(46,23): error C2039: 'size_': is not a member of 'LLGL::MTStagingBuffer'
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(21,7):
+      see declaration of 'LLGL::MTStagingBuffer'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(47,9): error C2065: 'offset_': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(47,23): error C2039: 'offset_': is not a member of 'LLGL::MTStagingBuffer'
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(21,7):
+      see declaration of 'LLGL::MTStagingBuffer'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTFeatureSet.h(14,10): error C1083: Cannot open include file: 'LLGL/RenderSystemFlags.h': No such file or directory
+  (compiling source file 'MTFeatureSet.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(50,13): error C2039: 'native_': is not a member of 'LLGL::MTStagingBuffer'
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(21,7):
+      see declaration of 'LLGL::MTStagingBuffer'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(50,23): error C2065: 'nil': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(57,5): error C2065: 'offset_': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(60,32): error C2065: 'NSUInteger': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(60,43): error C2146: syntax error: missing ')' before identifier 'dataSize'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(61,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(61,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(65,47): error C2061: syntax error: identifier 'NSUInteger'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(68,70): error C2146: syntax error: missing ']' before identifier 'contents'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(68,62): error C3481: 'native_': lambda capture variable not found
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(68,70): error C3260: 'identifier': skipping unexpected token(s) before lambda body
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.mm(79,1): error C1903: unable to recover from previous error(s); stopping compilation
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTTypes.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'MTTypes.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTRenderSystem.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'MTRenderSystem.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTRenderSystem.h(14,10): error C1083: Cannot open include file: 'LLGL/RenderSystem.h': No such file or directory
+  (compiling source file 'MTRenderSystem.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTTypes.h(14,10): error C1083: Cannot open include file: 'LLGL/Types.h': No such file or directory
+  (compiling source file 'MTTypes.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTSwapChain.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'MTSwapChain.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTSwapChain.h(14,10): error C1083: Cannot open include file: 'LLGL/Window.h': No such file or directory
+  (compiling source file 'MTSwapChain.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\DynamicModuleInterface.h(13,10): error C1083: Cannot open include file: 'LLGL/Export.h': No such file or directory
+  (compiling source file 'MTModuleInterface.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTBuiltinPSOFactory.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'RenderState/MTBuiltinPSOFactory.mm')
+  
+  MTDescriptorCache.mm
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Shader\MTShader.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'RenderState/MTBuiltinPSOFactory.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Shader\MTShader.h(14,10): error C1083: Cannot open include file: 'LLGL/Shader.h': No such file or directory
+  (compiling source file 'RenderState/MTBuiltinPSOFactory.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTPipelineState.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'RenderState/MTComputePSO.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTPipelineState.h(14,10): error C1083: Cannot open include file: 'LLGL/PipelineState.h': No such file or directory
+  (compiling source file 'RenderState/MTComputePSO.mm')
+  
+  MTFence.mm
+  MTGraphicsPSO.mm
+  MTPipelineLayout.mm
+  MTPipelineState.mm
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'MTDevice.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.h(26,27): error C3646: 'FindSuitableSampleCount': unknown override specifier
+  (compiling source file 'MTDevice.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.h(26,51): error C2065: 'id': undeclared identifier
+  (compiling source file 'MTDevice.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.h(26,54): error C2065: 'MTLDevice': undeclared identifier
+  (compiling source file 'MTDevice.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.h(26,65): error C2065: 'device': undeclared identifier
+  (compiling source file 'MTDevice.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.h(26,73): error C2065: 'NSUInteger': undeclared identifier
+  (compiling source file 'MTDevice.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.h(26,84): error C2146: syntax error: missing ')' before identifier 'samples'
+  (compiling source file 'MTDevice.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.h(26,92): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'MTDevice.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.h(32,27): error C3646: 'FindSuitableSampleCountOr1': unknown override specifier
+  (compiling source file 'MTDevice.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.h(32,54): error C2065: 'id': undeclared identifier
+  (compiling source file 'MTDevice.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.h(32,57): error C2065: 'MTLDevice': undeclared identifier
+  (compiling source file 'MTDevice.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.h(32,68): error C2065: 'device': undeclared identifier
+  (compiling source file 'MTDevice.mm')
+  
+  MTQueryHeap.mm
+  MTRenderPass.mm
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.h(32,76): error C2065: 'NSUInteger': undeclared identifier
+  (compiling source file 'MTDevice.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.h(32,87): error C2146: syntax error: missing ')' before identifier 'samples'
+  (compiling source file 'MTDevice.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.h(32,95): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'MTDevice.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.mm(15,22): error C2039: 'FindSuitableSampleCount': is not a member of 'LLGL::MTDevice'
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.h(20,7):
+      see declaration of 'LLGL::MTDevice'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.mm(15,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.mm(15,22): error C2146: syntax error: missing ';' before identifier 'FindSuitableSampleCount'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.mm(16,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.mm(16,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.mm(26,22): error C2039: 'FindSuitableSampleCountOr1': is not a member of 'LLGL::MTDevice'
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.h(20,7):
+      see declaration of 'LLGL::MTDevice'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.mm(26,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.mm(26,1): error C2086: 'int LLGL::NSUInteger': redefinition
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.mm(15,1):
+      see declaration of 'LLGL::NSUInteger'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.mm(26,22): error C2146: syntax error: missing ';' before identifier 'FindSuitableSampleCountOr1'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.mm(27,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\MTDevice.mm(27,1): error C2447: '{': missing function header (old-style formal list?)
+  MTResourceHeap.mm
+  MTBuiltin.mm
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTConstantsCacheLayout.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'RenderState/MTConstantsCacheLayout.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTDescriptorCache.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'RenderState/MTDescriptorCache.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTDescriptorCache.h(14,10): error C1083: Cannot open include file: 'LLGL/PipelineLayoutFlags.h': No such file or directory
+  (compiling source file 'RenderState/MTDescriptorCache.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTConstantsCache.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'RenderState/MTConstantsCache.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTConstantsCacheLayout.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'RenderState/MTConstantsCache.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTFence.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'RenderState/MTFence.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTFence.h(14,10): error C1083: Cannot open include file: 'LLGL/Fence.h': No such file or directory
+  (compiling source file 'RenderState/MTFence.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTPipelineLayout.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'RenderState/MTPipelineLayout.mm')
+  
+  MTShader.mm
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTPipelineState.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'RenderState/MTGraphicsPSO.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTQueryHeap.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'RenderState/MTQueryHeap.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTQueryHeap.h(14,10): error C1083: Cannot open include file: 'LLGL/QueryHeap.h': No such file or directory
+  (compiling source file 'RenderState/MTQueryHeap.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTPipelineState.h(14,10): error C1083: Cannot open include file: 'LLGL/PipelineState.h': No such file or directory
+  (compiling source file 'RenderState/MTGraphicsPSO.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTPipelineState.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'RenderState/MTPipelineState.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTPipelineState.h(14,10): error C1083: Cannot open include file: 'LLGL/PipelineState.h': No such file or directory
+  (compiling source file 'RenderState/MTPipelineState.mm')
+  
+  MTRenderTarget.mm
+  MTSampler.mm
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTResourceHeap.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'RenderState/MTResourceHeap.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTResourceHeap.h(14,10): error C1083: Cannot open include file: 'LLGL/ResourceHeap.h': No such file or directory
+  (compiling source file 'RenderState/MTResourceHeap.mm')
+  
+  MTTexture.mm
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTConstantsCacheLayout.h(15,10): error C1083: Cannot open include file: 'LLGL/PipelineLayoutFlags.h': No such file or directory
+  (compiling source file 'RenderState/MTConstantsCacheLayout.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTConstantsCacheLayout.h(15,10): error C1083: Cannot open include file: 'LLGL/PipelineLayoutFlags.h': No such file or directory
+  (compiling source file 'RenderState/MTConstantsCache.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTDescriptorCache.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'RenderState/MTPipelineLayout.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTRenderPass.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'RenderState/MTRenderPass.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTDescriptorCache.h(14,10): error C1083: Cannot open include file: 'LLGL/PipelineLayoutFlags.h': No such file or directory
+  (compiling source file 'RenderState/MTPipelineLayout.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\RenderState\MTRenderPass.h(14,10): error C1083: Cannot open include file: 'LLGL/RenderPass.h': No such file or directory
+  (compiling source file 'RenderState/MTRenderPass.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Shader\Builtin\MTBuiltin.mm(9,10): error C1083: Cannot open include file: 'TargetConditionals.h': No such file or directory
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Texture\MTRenderTarget.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'Texture/MTRenderTarget.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Texture\MTRenderTarget.h(14,10): error C1083: Cannot open include file: 'LLGL/RenderTarget.h': No such file or directory
+  (compiling source file 'Texture/MTRenderTarget.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Texture\MTTexture.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'Texture/MTTexture.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Texture\MTTexture.h(14,10): error C1083: Cannot open include file: 'LLGL/Texture.h': No such file or directory
+  (compiling source file 'Texture/MTTexture.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Shader\MTShader.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'Shader/MTShader.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Texture\MTSampler.h(12,1): error C2813: #import is not supported with /MP
+  (compiling source file 'Texture/MTSampler.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Shader\MTShader.h(14,10): error C1083: Cannot open include file: 'LLGL/Shader.h': No such file or directory
+  (compiling source file 'Shader/MTShader.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Texture\MTSampler.h(14,10): error C1083: Cannot open include file: 'LLGL/Sampler.h': No such file or directory
+  (compiling source file 'Texture/MTSampler.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.h(27,29): error C2061: syntax error: identifier 'id'
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.h(33,13): error C2061: syntax error: identifier 'NSUInteger'
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.h(40,25): error C2061: syntax error: identifier 'NSUInteger'
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.h(44,11): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.h(44,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.h(44,58): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.h(47,41): error C3646: 'chunkSize_': unknown override specifier
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.h(47,53): error C2059: syntax error: '='
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.h(47,56): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Buffer/MTStagingBufferPool.mm')
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(16,42): error C2065: 'id': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(16,45): error C2065: 'MTLDevice': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(16,56): error C2065: 'device': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(16,64): error C2065: 'NSUInteger': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(16,75): error C2146: syntax error: missing ')' before identifier 'chunkSize'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(17,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(17,18): error C2065: 'device': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(18,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(18,18): error C2065: 'chunkSize': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(19,1): error C2059: syntax error: '{'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(19,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(19,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(31,5): error C2061: syntax error: identifier 'NSUInteger'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(37,20): error C2065: 'dataSize': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(38,43): error C2065: 'dataSize': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(42,24): error C2065: 'dataSize': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(47,5): error C2065: 'srcOffset': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(47,23): error C2039: 'GetOffset': is not a member of 'LLGL::MTStagingBuffer'
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(21,7):
+      see declaration of 'LLGL::MTStagingBuffer'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(48,5): error C2065: 'srcBuffer': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(48,23): error C2039: 'GetNative': is not a member of 'LLGL::MTStagingBuffer'
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBuffer.h(21,7):
+      see declaration of 'LLGL::MTStagingBuffer'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(49,23): error C2065: 'dataSize': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(57,38): error C2065: 'NSUInteger': undeclared identifier
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(57,49): error C2146: syntax error: missing ')' before identifier 'minChunkSize'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(58,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Metal\Buffer\MTStagingBufferPool.mm(58,1): error C2447: '{': missing function header (old-style formal list?)

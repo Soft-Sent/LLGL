@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7A128965-EA8E-30CA-BC9C-9729317CFEAD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>LLGL_Null</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">LLGL_Null.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">LLGL_NullD</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">LLGL_Null.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">LLGL_Null</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">LLGL_Null.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">LLGL_Null</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">LLGL_Null.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">LLGL_Null</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4251;4290;4103</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;NOMINMAX;_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR;LLGL_DEBUG;LLGL_ENABLE_CHECKED_CAST;LLGL_ENABLE_DEBUG_LAYER;CMAKE_INTDIR="Debug";LLGL_Null_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;NOMINMAX;_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR;LLGL_DEBUG;LLGL_ENABLE_CHECKED_CAST;LLGL_ENABLE_DEBUG_LAYER;CMAKE_INTDIR=\"Debug\";LLGL_Null_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\..\build\Debug\LLGLD.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/build/Debug/LLGL_NullD.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/build/Debug/LLGL_NullD.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DisableSpecificWarnings>4250;4251;4290;4103</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;NOMINMAX;_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR;LLGL_ENABLE_DEBUG_LAYER;CMAKE_INTDIR="Release";LLGL_Null_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;NOMINMAX;_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR;LLGL_ENABLE_DEBUG_LAYER;CMAKE_INTDIR=\"Release\";LLGL_Null_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\..\build\Release\LLGL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/build/Release/LLGL_Null.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/build/Release/LLGL_Null.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DisableSpecificWarnings>4250;4251;4290;4103</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;NOMINMAX;_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR;LLGL_ENABLE_DEBUG_LAYER;CMAKE_INTDIR="MinSizeRel";LLGL_Null_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;NOMINMAX;_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR;LLGL_ENABLE_DEBUG_LAYER;CMAKE_INTDIR=\"MinSizeRel\";LLGL_Null_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\..\build\MinSizeRel\LLGL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/build/MinSizeRel/LLGL_Null.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/build/MinSizeRel/LLGL_Null.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4251;4290;4103</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;NOMINMAX;_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR;LLGL_ENABLE_DEBUG_LAYER;CMAKE_INTDIR="RelWithDebInfo";LLGL_Null_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;NOMINMAX;_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR;LLGL_ENABLE_DEBUG_LAYER;CMAKE_INTDIR=\"RelWithDebInfo\";LLGL_Null_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\..\build\RelWithDebInfo\LLGL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/build/RelWithDebInfo/LLGL_Null.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/build/RelWithDebInfo/LLGL_Null.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/sources/Renderer/Null/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL -BC:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL --check-stamp-file C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/sources/Renderer/Null/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/sources/Renderer/Null/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL -BC:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL --check-stamp-file C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/sources/Renderer/Null/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/sources/Renderer/Null/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL -BC:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL --check-stamp-file C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/sources/Renderer/Null/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/sources/Renderer/Null/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL -BC:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL --check-stamp-file C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/sources/Renderer/Null/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\NullModuleInterface.cpp" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\NullRenderSystem.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\NullRenderSystem.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\NullSwapChain.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\NullSwapChain.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Buffer\NullBuffer.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Buffer\NullBuffer.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Buffer\NullBufferArray.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Buffer\NullBufferArray.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Command\NullCommand.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Command\NullCommandBuffer.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Command\NullCommandBuffer.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Command\NullCommandExecutor.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Command\NullCommandExecutor.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Command\NullCommandOpcode.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Command\NullCommandQueue.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Command\NullCommandQueue.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullFence.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullFence.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullPipelineLayout.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullPipelineLayout.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullPipelineState.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullPipelineState.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullQueryHeap.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullQueryHeap.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullRenderPass.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullRenderPass.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullResourceHeap.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullResourceHeap.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Shader\NullShader.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Shader\NullShader.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Texture\NullRenderTarget.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Texture\NullRenderTarget.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Texture\NullSampler.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Texture\NullSampler.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Texture\NullTexture.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Texture\NullTexture.h" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\ZERO_CHECK.vcxproj">
+      <Project>{7504F76C-1E98-30B1-BE05-31FC9A88B1DD}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\LLGL.vcxproj">
+      <Project>{645801DB-0642-38BB-BE32-7480BF391408}</Project>
+      <Name>LLGL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

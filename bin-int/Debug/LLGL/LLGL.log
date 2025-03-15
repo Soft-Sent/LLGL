@@ -1,0 +1,126 @@
+﻿  BCDecompressor.cpp
+  Barrier.cpp
+  Blob.cpp
+  Exception.cpp
+  Float16Compressor.cpp
+  Image.cpp
+  ImageFlags.cpp
+  ImageUtils.cpp
+  Input.cpp
+  Interface.cpp
+  Log.cpp
+  Parse.cpp
+  Report.cpp
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\Barrier.h(44,33): warning C4251: 'LLGL::Barrier::mutex_': 'std::mutex' needs to have dll-interface to be used by clients of 'LLGL::Barrier'
+  (compiling source file 'sources/Core/Barrier.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\mutex(98,19):
+      see declaration of 'std::mutex'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\Barrier.h(45,33): warning C4251: 'LLGL::Barrier::var_': 'std::condition_variable' needs to have dll-interface to be used by clients of 'LLGL::Barrier'
+  (compiling source file 'sources/Core/Barrier.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\mutex(532,19):
+      see declaration of 'std::condition_variable'
+  
+  StringUtils.cpp
+  Threading.cpp
+  TypeNames.cpp
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\ColorRGBA.h(234,11): warning C4251: 'LLGL::Color<LLGL::Variant,4>::r': 'LLGL::Variant' needs to have dll-interface to be used by clients of 'LLGL::Color<LLGL::Variant,4>'
+  (compiling source file 'sources/Core/ImageFlags.cpp')
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\ImageFlags.cpp(34,7):
+      see declaration of 'LLGL::Variant'
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\ColorRGBA.h(234,11):
+      the template instantiation context (the oldest one first) is
+          C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\ImageFlags.cpp(440,5):
+          see reference to class template instantiation 'LLGL::Color<LLGL::Variant,4>' being compiled
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\ColorRGBA.h(234,14): warning C4251: 'LLGL::Color<LLGL::Variant,4>::g': 'LLGL::Variant' needs to have dll-interface to be used by clients of 'LLGL::Color<LLGL::Variant,4>'
+  (compiling source file 'sources/Core/ImageFlags.cpp')
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\ImageFlags.cpp(34,7):
+      see declaration of 'LLGL::Variant'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\ColorRGBA.h(234,17): warning C4251: 'LLGL::Color<LLGL::Variant,4>::b': 'LLGL::Variant' needs to have dll-interface to be used by clients of 'LLGL::Color<LLGL::Variant,4>'
+  (compiling source file 'sources/Core/ImageFlags.cpp')
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\ImageFlags.cpp(34,7):
+      see declaration of 'LLGL::Variant'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\ColorRGBA.h(234,20): warning C4251: 'LLGL::Color<LLGL::Variant,4>::a': 'LLGL::Variant' needs to have dll-interface to be used by clients of 'LLGL::Color<LLGL::Variant,4>'
+  (compiling source file 'sources/Core/ImageFlags.cpp')
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\ImageFlags.cpp(34,7):
+      see declaration of 'LLGL::Variant'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\Color.h(258,11): warning C4251: 'LLGL::Color<T,3>::v_': 'LLGL::Variant' needs to have dll-interface to be used by clients of 'LLGL::Color<T,3>'
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\Color.h(258,11): warning C4251:         with
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\Color.h(258,11): warning C4251:         [
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\Color.h(258,11): warning C4251:             T=LLGL::Variant
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\Color.h(258,11): warning C4251:         ]
+  (compiling source file 'sources/Core/ImageFlags.cpp')
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\ImageFlags.cpp(34,7):
+      see declaration of 'LLGL::Variant'
+      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\Color.h(258,11):
+      the template instantiation context (the oldest one first) is
+          C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\ImageFlags.cpp(564,49):
+          see reference to class template instantiation 'LLGL::Color<T,3>' being compiled
+          with
+          [
+              T=LLGL::Variant
+          ]
+  
+  Types.cpp
+  UTF8String.cpp
+  Utility.cpp
+  Vendor.cpp
+  Version.cpp
+  BindingIterator.cpp
+  Buffer.cpp
+  BufferArray.cpp
+  BufferFlags.cpp
+  BufferUtils.cpp
+  DbgBuffer.cpp
+  DbgBufferArray.cpp
+  DbgCommandBuffer.cpp
+  DbgCommandQueue.cpp
+  DbgQueryTimerPool.cpp
+  DbgRenderSystem.cpp
+  DbgSwapChain.cpp
+  DbgPipelineLayout.cpp
+  DbgPipelineState.cpp
+  DbgQueryHeap.cpp
+  DbgRenderPass.cpp
+  DbgResourceHeap.cpp
+  DbgShader.cpp
+  DbgRenderTarget.cpp
+  DbgTexture.cpp
+  Format.cpp
+  PipelineStateFlags.cpp
+  PipelineStateUtils.cpp
+  ProxyPipelineCache.cpp
+  QueryHeap.cpp
+  RenderPassUtils.cpp
+  RenderSystem.cpp
+  RenderSystemFlags.cpp
+  RenderSystemModule.cpp
+  RenderSystemRegistry.cpp
+  RenderTarget.cpp
+  RenderTargetUtils.cpp
+  RenderingDebugger.cpp
+  ResourceUtils.cpp
+  SpirvInstruction.cpp
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\ProxyPipelineCache.h(48,26): warning C4251: 'LLGL::ProxyPipelineCache::refCount_': 'std::atomic<unsigned int>' needs to have dll-interface to be used by clients of 'LLGL::ProxyPipelineCache'
+  (compiling source file '../LLGL/sources/Renderer/ProxyPipelineCache.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\atomic(2112,8):
+      see declaration of 'std::atomic<unsigned int>'
+  
+  SpirvInstructionInfo.cpp
+  SpirvModule.cpp
+  SpirvReflect.cpp
+  Sampler.cpp
+  Shader.cpp
+  ShaderFlags.cpp
+  StaticAssertions.cpp
+  StaticModuleInterface.cpp
+  SwapChain.cpp
+  Texture.cpp
+  TextureFlags.cpp
+  TextureUtils.cpp
+  VertexAttribute.cpp
+  LLGL.vcxproj -> C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\bin\Debug\LLGL\LLGL.lib

@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Metal">
+      <UniqueIdentifier>{98BBA90D-04D0-D1BE-CD51-751E3925CEEF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Buffer\MTBuffer.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer\MTBufferArray.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer\MTIntermediateBuffer.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer\MTStagingBuffer.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer\MTStagingBufferPool.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\MTCommand.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\MTCommandBuffer.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\MTCommandContext.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\MTCommandExecutor.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\MTCommandOpcode.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\MTCommandQueue.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\MTDirectCommandBuffer.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\MTMultiSubmitCommandBuffer.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="MTCore.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="MTDevice.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="MTFeatureSet.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="MTRenderSystem.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="MTSwapChain.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="MTTypes.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="OSXAvailability.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\MTBuiltinPSOFactory.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\MTComputePSO.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\MTConstantsCache.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\MTConstantsCacheLayout.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\MTDescriptorCache.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\MTFence.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\MTGraphicsPSO.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\MTPipelineLayout.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\MTPipelineState.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\MTQueryHeap.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\MTRenderPass.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\MTResourceHeap.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\Builtin\MTBuiltin.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\MTShader.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\MTShaderStage.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\MTRenderTarget.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\MTSampler.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\MTTexture.h">
+      <Filter>Metal</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Buffer\MTBuffer.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer\MTBufferArray.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer\MTIntermediateBuffer.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer\MTStagingBuffer.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer\MTStagingBufferPool.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\MTCommandBuffer.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\MTCommandContext.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\MTCommandExecutor.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\MTCommandQueue.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\MTDirectCommandBuffer.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\MTMultiSubmitCommandBuffer.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="MTCore.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="MTDevice.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="MTFeatureSet.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="MTModuleInterface.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="MTRenderSystem.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="MTSwapChain.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="MTTypes.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\MTBuiltinPSOFactory.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\MTComputePSO.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\MTConstantsCache.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\MTConstantsCacheLayout.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\MTDescriptorCache.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\MTFence.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\MTGraphicsPSO.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\MTPipelineLayout.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\MTPipelineState.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\MTQueryHeap.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\MTRenderPass.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\MTResourceHeap.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\Builtin\MTBuiltin.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\MTShader.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\MTRenderTarget.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\MTSampler.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\MTTexture.mm">
+      <Filter>Metal</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

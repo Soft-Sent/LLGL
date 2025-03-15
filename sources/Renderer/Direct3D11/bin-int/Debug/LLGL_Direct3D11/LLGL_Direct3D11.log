@@ -1,0 +1,66 @@
+﻿  D3D11Buffer.cpp
+  D3D11BufferArray.cpp
+  D3D11BufferWithRV.cpp
+  D3D11StagingBuffer.cpp
+  D3D11StagingBufferPool.cpp
+  D3D11CommandBuffer.cpp
+  D3D11CommandContext.cpp
+  D3D11CommandExecutor.cpp
+  D3D11CommandQueue.cpp
+  D3D11PrimaryCommandBuffer.cpp
+  D3D11SecondaryCommandBuffer.cpp
+  D3D11ModuleInterface.cpp
+  D3D11ObjectUtils.cpp
+  D3D11RenderSystem.cpp
+  D3D11ResourceFlags.cpp
+  D3D11StaticAssertions.cpp
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\ProxyPipelineCache.h(48,26): warning C4251: 'LLGL::ProxyPipelineCache::refCount_': 'std::atomic<unsigned int>' needs to have dll-interface to be used by clients of 'LLGL::ProxyPipelineCache'
+  (compiling source file '../Direct3D11/D3D11ModuleInterface.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\atomic(2112,8):
+      see declaration of 'std::atomic<unsigned int>'
+  
+  D3D11SwapChain.cpp
+  D3D11Types.cpp
+  D3D11BindingLocator.cpp
+  D3D11BindingTable.cpp
+  D3D11ComputePSO.cpp
+  D3D11ConstantsCache.cpp
+  D3D11Fence.cpp
+  D3D11GraphicsPSO.cpp
+  D3D11GraphicsPSO1.cpp
+  D3D11GraphicsPSO3.cpp
+  D3D11GraphicsPSOBase.cpp
+  D3D11PipelineLayout.cpp
+  D3D11PipelineState.cpp
+  D3D11QueryHeap.cpp
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\ProxyPipelineCache.h(48,26): warning C4251: 'LLGL::ProxyPipelineCache::refCount_': 'std::atomic<unsigned int>' needs to have dll-interface to be used by clients of 'LLGL::ProxyPipelineCache'
+  (compiling source file '../LLGL/sources/Renderer/Direct3D11/D3D11RenderSystem.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\atomic(2112,8):
+      see declaration of 'std::atomic<unsigned int>'
+  
+  D3D11RenderPass.cpp
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\ProxyPipelineCache.h(48,26): warning C4251: 'LLGL::ProxyPipelineCache::refCount_': 'std::atomic<unsigned int>' needs to have dll-interface to be used by clients of 'LLGL::ProxyPipelineCache'
+  (compiling source file '../LLGL/sources/Renderer/Direct3D11/D3D11SwapChain.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\atomic(2112,8):
+      see declaration of 'std::atomic<unsigned int>'
+  
+  D3D11ResourceHeap.cpp
+  D3D11StateManager.cpp
+  D3D11BuiltinShaderFactory.cpp
+  D3D11CommonShader.cpp
+  D3D11DomainShader.cpp
+  D3D11Shader.cpp
+  D3D11VertexShader.cpp
+  D3D11MipGenerator.cpp
+  D3D11RenderTarget.cpp
+  D3D11RenderTargetHandles.cpp
+  D3D11Sampler.cpp
+  D3D11Texture.cpp
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\ProxyPipelineCache.h(48,26): warning C4251: 'LLGL::ProxyPipelineCache::refCount_': 'std::atomic<unsigned int>' needs to have dll-interface to be used by clients of 'LLGL::ProxyPipelineCache'
+  (compiling source file '../LLGL/sources/Renderer/Direct3D11/Texture/D3D11RenderTarget.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\atomic(2112,8):
+      see declaration of 'std::atomic<unsigned int>'
+  
+dxgi.lib(dxgi.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in d3d11.lib(d3d11.dll); second definition ignored
+D3DCompiler.lib(D3DCOMPILER_47.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in d3d11.lib(d3d11.dll); second definition ignored
+  LLGL_Direct3D11.vcxproj -> C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\bin\Debug\LLGL_Direct3D11\LLGL_Direct3D11.lib

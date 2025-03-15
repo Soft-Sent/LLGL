@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distribution|x64">
+      <Configuration>Distribution</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1009887C-FC3F-890D-A52C-6F109142050F}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>LLGL</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>bin\Debug\LLGL\</OutDir>
+    <IntDir>bin-int\Debug\LLGL\</IntDir>
+    <TargetName>LLGL</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>bin\Release\LLGL\</OutDir>
+    <IntDir>bin-int\Release\LLGL\</IntDir>
+    <TargetName>LLGL</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
+    <OutDir>bin\Distribution\LLGL\</OutDir>
+    <IntDir>bin-int\Distribution\LLGL\</IntDir>
+    <TargetName>LLGL</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>LLGL_PLATFORM_WINDOWS;LLGL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>LLGL_PLATFORM_WINDOWS;LLGL_RELEASE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>LLGL_PLATFORM_WINDOWS;LLGL_DISTRIBUTION;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\LLGL-C\Buffer.h" />
+    <ClInclude Include="include\LLGL-C\BufferArray.h" />
+    <ClInclude Include="include\LLGL-C\Canvas.h" />
+    <ClInclude Include="include\LLGL-C\CommandBuffer.h" />
+    <ClInclude Include="include\LLGL-C\CommandQueue.h" />
+    <ClInclude Include="include\LLGL-C\Display.h" />
+    <ClInclude Include="include\LLGL-C\Export.h" />
+    <ClInclude Include="include\LLGL-C\FlagsAndDescriptors.h" />
+    <ClInclude Include="include\LLGL-C\LLGL.h" />
+    <ClInclude Include="include\LLGL-C\LLGLWrapper.h" />
+    <ClInclude Include="include\LLGL-C\Log.h" />
+    <ClInclude Include="include\LLGL-C\PipelineCache.h" />
+    <ClInclude Include="include\LLGL-C\PipelineLayout.h" />
+    <ClInclude Include="include\LLGL-C\PipelineState.h" />
+    <ClInclude Include="include\LLGL-C\QueryHeap.h" />
+    <ClInclude Include="include\LLGL-C\RenderSystem.h" />
+    <ClInclude Include="include\LLGL-C\RenderSystemChild.h" />
+    <ClInclude Include="include\LLGL-C\RenderTarget.h" />
+    <ClInclude Include="include\LLGL-C\RenderingDebugger.h" />
+    <ClInclude Include="include\LLGL-C\Report.h" />
+    <ClInclude Include="include\LLGL-C\Resource.h" />
+    <ClInclude Include="include\LLGL-C\ResourceHeap.h" />
+    <ClInclude Include="include\LLGL-C\Shader.h" />
+    <ClInclude Include="include\LLGL-C\Surface.h" />
+    <ClInclude Include="include\LLGL-C\SwapChain.h" />
+    <ClInclude Include="include\LLGL-C\Texture.h" />
+    <ClInclude Include="include\LLGL-C\Timer.h" />
+    <ClInclude Include="include\LLGL-C\TypeNames.h" />
+    <ClInclude Include="include\LLGL-C\Types.h" />
+    <ClInclude Include="include\LLGL-C\Window.h" />
+    <ClInclude Include="include\LLGL\Backend\Direct3D11\NativeHandle.h" />
+    <ClInclude Include="include\LLGL\Backend\Direct3D12\NativeHandle.h" />
+    <ClInclude Include="include\LLGL\Backend\Metal\NativeCommand.h" />
+    <ClInclude Include="include\LLGL\Backend\Metal\NativeHandle.h" />
+    <ClInclude Include="include\LLGL\Backend\OpenGL\Android\AndroidNativeHandle.h" />
+    <ClInclude Include="include\LLGL\Backend\OpenGL\IOS\IOSNativeHandle.h" />
+    <ClInclude Include="include\LLGL\Backend\OpenGL\Linux\LinuxNativeHandle.h" />
+    <ClInclude Include="include\LLGL\Backend\OpenGL\MacOS\MacOSNativeHandle.h" />
+    <ClInclude Include="include\LLGL\Backend\OpenGL\NativeCommand.h" />
+    <ClInclude Include="include\LLGL\Backend\OpenGL\NativeHandle.h" />
+    <ClInclude Include="include\LLGL\Backend\OpenGL\Wasm\WasmNativeHandle.h" />
+    <ClInclude Include="include\LLGL\Backend\OpenGL\Win32\Win32NativeHandle.h" />
+    <ClInclude Include="include\LLGL\Backend\Vulkan\NativeHandle.h" />
+    <ClInclude Include="include\LLGL\Blob.h" />
+    <ClInclude Include="include\LLGL\Buffer.h" />
+    <ClInclude Include="include\LLGL\BufferArray.h" />
+    <ClInclude Include="include\LLGL\BufferFlags.h" />
+    <ClInclude Include="include\LLGL\Canvas.h" />
+    <ClInclude Include="include\LLGL\CanvasFlags.h" />
+    <ClInclude Include="include\LLGL\CommandBuffer.h" />
+    <ClInclude Include="include\LLGL\CommandBufferFlags.h" />
+    <ClInclude Include="include\LLGL\CommandQueue.h" />
+    <ClInclude Include="include\LLGL\Constants.h" />
+    <ClInclude Include="include\LLGL\Container\AlignedArray.h" />
+    <ClInclude Include="include\LLGL\Container\ArrayView.h" />
+    <ClInclude Include="include\LLGL\Container\DynamicArray.h" />
+    <ClInclude Include="include\LLGL\Container\DynamicVector.h" />
+    <ClInclude Include="include\LLGL\Container\Memory.h" />
+    <ClInclude Include="include\LLGL\Container\SmallVector.h" />
+    <ClInclude Include="include\LLGL\Container\StringLiteral.h" />
+    <ClInclude Include="include\LLGL\Container\StringView.h" />
+    <ClInclude Include="include\LLGL\Container\Strings.h" />
+    <ClInclude Include="include\LLGL\Container\UTF8String.h" />
+    <ClInclude Include="include\LLGL\Deprecated.h" />
+    <ClInclude Include="include\LLGL\Display.h" />
+    <ClInclude Include="include\LLGL\DisplayFlags.h" />
+    <ClInclude Include="include\LLGL\Export.h" />
+    <ClInclude Include="include\LLGL\Fence.h" />
+    <ClInclude Include="include\LLGL\Format.h" />
+    <ClInclude Include="include\LLGL\ForwardDecls.h" />
+    <ClInclude Include="include\LLGL\FragmentAttribute.h" />
+    <ClInclude Include="include\LLGL\ImageFlags.h" />
+    <ClInclude Include="include\LLGL\IndirectArguments.h" />
+    <ClInclude Include="include\LLGL\Interface.h" />
+    <ClInclude Include="include\LLGL\InterfaceID.h" />
+    <ClInclude Include="include\LLGL\Key.h" />
+    <ClInclude Include="include\LLGL\LLGL.h" />
+    <ClInclude Include="include\LLGL\Log.h" />
+    <ClInclude Include="include\LLGL\NonCopyable.h" />
+    <ClInclude Include="include\LLGL\PipelineCache.h" />
+    <ClInclude Include="include\LLGL\PipelineLayout.h" />
+    <ClInclude Include="include\LLGL\PipelineLayoutFlags.h" />
+    <ClInclude Include="include\LLGL\PipelineState.h" />
+    <ClInclude Include="include\LLGL\PipelineStateFlags.h" />
+    <ClInclude Include="include\LLGL\Platform\Android\AndroidNativeHandle.h" />
+    <ClInclude Include="include\LLGL\Platform\IOS\IOSNativeHandle.h" />
+    <ClInclude Include="include\LLGL\Platform\Linux\LinuxNativeHandle.h" />
+    <ClInclude Include="include\LLGL\Platform\MacOS\MacOSNativeHandle.h" />
+    <ClInclude Include="include\LLGL\Platform\NativeHandle.h" />
+    <ClInclude Include="include\LLGL\Platform\Platform.h" />
+    <ClInclude Include="include\LLGL\Platform\UWP\UWPNativeHandle.h" />
+    <ClInclude Include="include\LLGL\Platform\Wasm\WasmNativeHandle.h" />
+    <ClInclude Include="include\LLGL\Platform\Win32\Win32NativeHandle.h" />
+    <ClInclude Include="include\LLGL\QueryHeap.h" />
+    <ClInclude Include="include\LLGL\QueryHeapFlags.h" />
+    <ClInclude Include="include\LLGL\RenderPass.h" />
+    <ClInclude Include="include\LLGL\RenderPassFlags.h" />
+    <ClInclude Include="include\LLGL\RenderSystem.h" />
+    <ClInclude Include="include\LLGL\RenderSystemChild.h" />
+    <ClInclude Include="include\LLGL\RenderSystemFlags.h" />
+    <ClInclude Include="include\LLGL\RenderTarget.h" />
+    <ClInclude Include="include\LLGL\RenderTargetFlags.h" />
+    <ClInclude Include="include\LLGL\RendererConfiguration.h" />
+    <ClInclude Include="include\LLGL\RenderingDebugger.h" />
+    <ClInclude Include="include\LLGL\RenderingDebuggerFlags.h" />
+    <ClInclude Include="include\LLGL\RenderingProfiler.h" />
+    <ClInclude Include="include\LLGL\Report.h" />
+    <ClInclude Include="include\LLGL\Resource.h" />
+    <ClInclude Include="include\LLGL\ResourceFlags.h" />
+    <ClInclude Include="include\LLGL\ResourceHeap.h" />
+    <ClInclude Include="include\LLGL\ResourceHeapFlags.h" />
+    <ClInclude Include="include\LLGL\Sampler.h" />
+    <ClInclude Include="include\LLGL\SamplerFlags.h" />
+    <ClInclude Include="include\LLGL\Shader.h" />
+    <ClInclude Include="include\LLGL\ShaderFlags.h" />
+    <ClInclude Include="include\LLGL\ShaderReflection.h" />
+    <ClInclude Include="include\LLGL\StaticLimits.h" />
+    <ClInclude Include="include\LLGL\Surface.h" />
+    <ClInclude Include="include\LLGL\SwapChain.h" />
+    <ClInclude Include="include\LLGL\SwapChainFlags.h" />
+    <ClInclude Include="include\LLGL\SystemValue.h" />
+    <ClInclude Include="include\LLGL\Tags.h" />
+    <ClInclude Include="include\LLGL\Texture.h" />
+    <ClInclude Include="include\LLGL\TextureFlags.h" />
+    <ClInclude Include="include\LLGL\Timer.h" />
+    <ClInclude Include="include\LLGL\Trap.h" />
+    <ClInclude Include="include\LLGL\TypeInfo.h" />
+    <ClInclude Include="include\LLGL\Types.h" />
+    <ClInclude Include="include\LLGL\Utils\Color.h" />
+    <ClInclude Include="include\LLGL\Utils\ColorRGB.h" />
+    <ClInclude Include="include\LLGL\Utils\ColorRGBA.h" />
+    <ClInclude Include="include\LLGL\Utils\ForRange.h" />
+    <ClInclude Include="include\LLGL\Utils\Image.h" />
+    <ClInclude Include="include\LLGL\Utils\Input.h" />
+    <ClInclude Include="include\LLGL\Utils\Parse.h" />
+    <ClInclude Include="include\LLGL\Utils\TypeNames.h" />
+    <ClInclude Include="include\LLGL\Utils\Utility.h" />
+    <ClInclude Include="include\LLGL\Utils\VertexFormat.h" />
+    <ClInclude Include="include\LLGL\Version.h" />
+    <ClInclude Include="include\LLGL\VertexAttribute.h" />
+    <ClInclude Include="include\LLGL\VideoAdapter.h" />
+    <ClInclude Include="include\LLGL\Window.h" />
+    <ClInclude Include="include\LLGL\WindowFlags.h" />
+    <ClInclude Include="sources\Core\Assertion.h" />
+    <ClInclude Include="sources\Core\BCDecompressor.h" />
+    <ClInclude Include="sources\Core\Barrier.h" />
+    <ClInclude Include="sources\Core\ByteBufferIterator.h" />
+    <ClInclude Include="sources\Core\CompilerExtensions.h" />
+    <ClInclude Include="sources\Core\CoreUtils.h" />
+    <ClInclude Include="sources\Core\Exception.h" />
+    <ClInclude Include="sources\Core\FieldIterator.h" />
+    <ClInclude Include="sources\Core\Float16Compressor.h" />
+    <ClInclude Include="sources\Core\ImageUtils.h" />
+    <ClInclude Include="sources\Core\LinearStringContainer.h" />
+    <ClInclude Include="sources\Core\MacroUtils.h" />
+    <ClInclude Include="sources\Core\PackedPermutation.h" />
+    <ClInclude Include="sources\Core\PrintfUtils.h" />
+    <ClInclude Include="sources\Core\ReportUtils.h" />
+    <ClInclude Include="sources\Core\SparseForwardIterator.h" />
+    <ClInclude Include="sources\Core\StringUtils.h" />
+    <ClInclude Include="sources\Core\Threading.h" />
+    <ClInclude Include="sources\Core\Vendor.h" />
+    <ClInclude Include="sources\Core\VersionMacros.h" />
+    <ClInclude Include="sources\Renderer\BindingIterator.h" />
+    <ClInclude Include="sources\Renderer\BufferUtils.h" />
+    <ClInclude Include="sources\Renderer\BuildID.h" />
+    <ClInclude Include="sources\Renderer\CheckedCast.h" />
+    <ClInclude Include="sources\Renderer\ContainerTypes.h" />
+    <ClInclude Include="sources\Renderer\DebugLayer\Buffer\DbgBuffer.h" />
+    <ClInclude Include="sources\Renderer\DebugLayer\Buffer\DbgBufferArray.h" />
+    <ClInclude Include="sources\Renderer\DebugLayer\DbgCommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\DebugLayer\DbgCommandQueue.h" />
+    <ClInclude Include="sources\Renderer\DebugLayer\DbgCore.h" />
+    <ClInclude Include="sources\Renderer\DebugLayer\DbgQueryTimerPool.h" />
+    <ClInclude Include="sources\Renderer\DebugLayer\DbgRenderSystem.h" />
+    <ClInclude Include="sources\Renderer\DebugLayer\DbgReportUtils.h" />
+    <ClInclude Include="sources\Renderer\DebugLayer\DbgSwapChain.h" />
+    <ClInclude Include="sources\Renderer\DebugLayer\RenderState\DbgPipelineLayout.h" />
+    <ClInclude Include="sources\Renderer\DebugLayer\RenderState\DbgPipelineState.h" />
+    <ClInclude Include="sources\Renderer\DebugLayer\RenderState\DbgQueryHeap.h" />
+    <ClInclude Include="sources\Renderer\DebugLayer\RenderState\DbgRenderPass.h" />
+    <ClInclude Include="sources\Renderer\DebugLayer\RenderState\DbgResourceHeap.h" />
+    <ClInclude Include="sources\Renderer\DebugLayer\Shader\DbgShader.h" />
+    <ClInclude Include="sources\Renderer\DebugLayer\Texture\DbgRenderTarget.h" />
+    <ClInclude Include="sources\Renderer\DebugLayer\Texture\DbgTexture.h" />
+    <ClInclude Include="sources\Renderer\DynamicModuleInterface.h" />
+    <ClInclude Include="sources\Renderer\ModuleInterface.h" />
+    <ClInclude Include="sources\Renderer\PipelineStateUtils.h" />
+    <ClInclude Include="sources\Renderer\ProxyPipelineCache.h" />
+    <ClInclude Include="sources\Renderer\RenderPassUtils.h" />
+    <ClInclude Include="sources\Renderer\RenderSystemModule.h" />
+    <ClInclude Include="sources\Renderer\RenderSystemRegistry.h" />
+    <ClInclude Include="sources\Renderer\RenderSystemUtils.h" />
+    <ClInclude Include="sources\Renderer\RenderTargetUtils.h" />
+    <ClInclude Include="sources\Renderer\ResourceUtils.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\SpirvInstruction.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\SpirvInstructionInfo.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\SpirvIterator.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\SpirvModule.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\SpirvReflect.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.0\GLSL.std.450.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.0\OpenCL.std.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.0\spirv.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.0\spirv.hpp" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.1\GLSL.std.450.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.1\OpenCL.std.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.1\spirv.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.1\spirv.hpp" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.2\GLSL.std.450.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.2\OpenCL.std.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.2\spirv.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.2\spirv.hpp" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\AMD_gcn_shader.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\AMD_shader_ballot.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\AMD_shader_explicit_vertex_parameter.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\AMD_shader_trinary_minmax.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\DebugInfo.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\GLSL.std.450.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\NonSemanticClspvReflection.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\NonSemanticDebugBreak.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\NonSemanticDebugPrintf.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\NonSemanticShaderDebugInfo100.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\NonSemanticVkspReflection.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\OpenCL.std.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\OpenCLDebugInfo100.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\spirv.h" />
+    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\spirv.hpp" />
+    <ClInclude Include="sources\Renderer\SegmentedBuffer.h" />
+    <ClInclude Include="sources\Renderer\StaticAssertions.h" />
+    <ClInclude Include="sources\Renderer\StaticModuleInterface.h" />
+    <ClInclude Include="sources\Renderer\TextureUtils.h" />
+    <ClInclude Include="sources\Renderer\VideoAdapter.h" />
+    <ClInclude Include="sources\Renderer\VirtualCommandBuffer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sources\Core\BCDecompressor.cpp" />
+    <ClCompile Include="sources\Core\Barrier.cpp" />
+    <ClCompile Include="sources\Core\Blob.cpp" />
+    <ClCompile Include="sources\Core\Exception.cpp" />
+    <ClCompile Include="sources\Core\Float16Compressor.cpp" />
+    <ClCompile Include="sources\Core\Image.cpp" />
+    <ClCompile Include="sources\Core\ImageFlags.cpp" />
+    <ClCompile Include="sources\Core\ImageUtils.cpp" />
+    <ClCompile Include="sources\Core\Input.cpp" />
+    <ClCompile Include="sources\Core\Interface.cpp" />
+    <ClCompile Include="sources\Core\Log.cpp" />
+    <ClCompile Include="sources\Core\Parse.cpp" />
+    <ClCompile Include="sources\Core\Report.cpp" />
+    <ClCompile Include="sources\Core\StringUtils.cpp" />
+    <ClCompile Include="sources\Core\Threading.cpp" />
+    <ClCompile Include="sources\Core\TypeNames.cpp" />
+    <ClCompile Include="sources\Core\Types.cpp" />
+    <ClCompile Include="sources\Core\UTF8String.cpp" />
+    <ClCompile Include="sources\Core\Utility.cpp" />
+    <ClCompile Include="sources\Core\Vendor.cpp" />
+    <ClCompile Include="sources\Core\Version.cpp" />
+    <ClCompile Include="sources\Renderer\BindingIterator.cpp" />
+    <ClCompile Include="sources\Renderer\Buffer.cpp" />
+    <ClCompile Include="sources\Renderer\BufferArray.cpp" />
+    <ClCompile Include="sources\Renderer\BufferFlags.cpp" />
+    <ClCompile Include="sources\Renderer\BufferUtils.cpp" />
+    <ClCompile Include="sources\Renderer\DebugLayer\Buffer\DbgBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\DebugLayer\Buffer\DbgBufferArray.cpp" />
+    <ClCompile Include="sources\Renderer\DebugLayer\DbgCommandBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\DebugLayer\DbgCommandQueue.cpp" />
+    <ClCompile Include="sources\Renderer\DebugLayer\DbgQueryTimerPool.cpp" />
+    <ClCompile Include="sources\Renderer\DebugLayer\DbgRenderSystem.cpp" />
+    <ClCompile Include="sources\Renderer\DebugLayer\DbgSwapChain.cpp" />
+    <ClCompile Include="sources\Renderer\DebugLayer\RenderState\DbgPipelineLayout.cpp" />
+    <ClCompile Include="sources\Renderer\DebugLayer\RenderState\DbgPipelineState.cpp" />
+    <ClCompile Include="sources\Renderer\DebugLayer\RenderState\DbgQueryHeap.cpp" />
+    <ClCompile Include="sources\Renderer\DebugLayer\RenderState\DbgRenderPass.cpp" />
+    <ClCompile Include="sources\Renderer\DebugLayer\RenderState\DbgResourceHeap.cpp" />
+    <ClCompile Include="sources\Renderer\DebugLayer\Shader\DbgShader.cpp" />
+    <ClCompile Include="sources\Renderer\DebugLayer\Texture\DbgRenderTarget.cpp" />
+    <ClCompile Include="sources\Renderer\DebugLayer\Texture\DbgTexture.cpp" />
+    <ClCompile Include="sources\Renderer\Format.cpp" />
+    <ClCompile Include="sources\Renderer\PipelineStateFlags.cpp" />
+    <ClCompile Include="sources\Renderer\PipelineStateUtils.cpp" />
+    <ClCompile Include="sources\Renderer\ProxyPipelineCache.cpp" />
+    <ClCompile Include="sources\Renderer\QueryHeap.cpp" />
+    <ClCompile Include="sources\Renderer\RenderPassUtils.cpp" />
+    <ClCompile Include="sources\Renderer\RenderSystem.cpp" />
+    <ClCompile Include="sources\Renderer\RenderSystemFlags.cpp" />
+    <ClCompile Include="sources\Renderer\RenderSystemModule.cpp" />
+    <ClCompile Include="sources\Renderer\RenderSystemRegistry.cpp" />
+    <ClCompile Include="sources\Renderer\RenderTarget.cpp" />
+    <ClCompile Include="sources\Renderer\RenderTargetUtils.cpp" />
+    <ClCompile Include="sources\Renderer\RenderingDebugger.cpp" />
+    <ClCompile Include="sources\Renderer\ResourceUtils.cpp" />
+    <ClCompile Include="sources\Renderer\SPIRV\SpirvInstruction.cpp" />
+    <ClCompile Include="sources\Renderer\SPIRV\SpirvInstructionInfo.cpp" />
+    <ClCompile Include="sources\Renderer\SPIRV\SpirvModule.cpp" />
+    <ClCompile Include="sources\Renderer\SPIRV\SpirvReflect.cpp" />
+    <ClCompile Include="sources\Renderer\Sampler.cpp" />
+    <ClCompile Include="sources\Renderer\Shader.cpp" />
+    <ClCompile Include="sources\Renderer\ShaderFlags.cpp" />
+    <ClCompile Include="sources\Renderer\StaticAssertions.cpp" />
+    <ClCompile Include="sources\Renderer\StaticModuleInterface.cpp" />
+    <ClCompile Include="sources\Renderer\SwapChain.cpp" />
+    <ClCompile Include="sources\Renderer\Texture.cpp" />
+    <ClCompile Include="sources\Renderer\TextureFlags.cpp" />
+    <ClCompile Include="sources\Renderer\TextureUtils.cpp" />
+    <ClCompile Include="sources\Renderer\VertexAttribute.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

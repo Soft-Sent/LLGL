@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\NullModuleInterface.cpp">
+      <Filter>Null</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\NullRenderSystem.cpp">
+      <Filter>Null</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\NullSwapChain.cpp">
+      <Filter>Null</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Buffer\NullBuffer.cpp">
+      <Filter>Null\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Buffer\NullBufferArray.cpp">
+      <Filter>Null\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Command\NullCommandBuffer.cpp">
+      <Filter>Null\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Command\NullCommandExecutor.cpp">
+      <Filter>Null\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Command\NullCommandQueue.cpp">
+      <Filter>Null\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullFence.cpp">
+      <Filter>Null\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullPipelineLayout.cpp">
+      <Filter>Null\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullPipelineState.cpp">
+      <Filter>Null\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullQueryHeap.cpp">
+      <Filter>Null\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullRenderPass.cpp">
+      <Filter>Null\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullResourceHeap.cpp">
+      <Filter>Null\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Shader\NullShader.cpp">
+      <Filter>Null\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Texture\NullRenderTarget.cpp">
+      <Filter>Null\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Texture\NullSampler.cpp">
+      <Filter>Null\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Texture\NullTexture.cpp">
+      <Filter>Null\Texture</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\NullRenderSystem.h">
+      <Filter>Null</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\NullSwapChain.h">
+      <Filter>Null</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Buffer\NullBuffer.h">
+      <Filter>Null\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Buffer\NullBufferArray.h">
+      <Filter>Null\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Command\NullCommand.h">
+      <Filter>Null\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Command\NullCommandBuffer.h">
+      <Filter>Null\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Command\NullCommandExecutor.h">
+      <Filter>Null\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Command\NullCommandOpcode.h">
+      <Filter>Null\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Command\NullCommandQueue.h">
+      <Filter>Null\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullFence.h">
+      <Filter>Null\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullPipelineLayout.h">
+      <Filter>Null\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullPipelineState.h">
+      <Filter>Null\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullQueryHeap.h">
+      <Filter>Null\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullRenderPass.h">
+      <Filter>Null\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\RenderState\NullResourceHeap.h">
+      <Filter>Null\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Shader\NullShader.h">
+      <Filter>Null\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Texture\NullRenderTarget.h">
+      <Filter>Null\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Texture\NullSampler.h">
+      <Filter>Null\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\Texture\NullTexture.h">
+      <Filter>Null\Texture</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Null\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Null">
+      <UniqueIdentifier>{B098D590-0268-3E11-9E31-E9D5E85A8D51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Null\Buffer">
+      <UniqueIdentifier>{94471FED-37A6-3C20-B3EF-C0F3BEACDEAC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Null\Command">
+      <UniqueIdentifier>{ED657CB8-8EEB-3453-9DF8-103808B5F735}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Null\RenderState">
+      <UniqueIdentifier>{97C059EE-614C-3EE5-88EC-5DD309CD54B5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Null\Shader">
+      <UniqueIdentifier>{D7318E50-9383-3CDE-B429-57E161AC2E44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Null\Texture">
+      <UniqueIdentifier>{422AF464-F471-38DD-9B7C-696C8D3E2BC1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

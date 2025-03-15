@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distribution|x64">
+      <Configuration>Distribution</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{831C900F-EFA7-FDD3-F8B8-80C864C359D4}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>LLGL_Direct3D11</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>bin\Debug\LLGL_Direct3D11\</OutDir>
+    <IntDir>bin-int\Debug\LLGL_Direct3D11\</IntDir>
+    <TargetName>LLGL_Direct3D11</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>bin\Release\LLGL_Direct3D11\</OutDir>
+    <IntDir>bin-int\Release\LLGL_Direct3D11\</IntDir>
+    <TargetName>LLGL_Direct3D11</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
+    <OutDir>bin\Distribution\LLGL_Direct3D11\</OutDir>
+    <IntDir>bin-int\Distribution\LLGL_Direct3D11\</IntDir>
+    <TargetName>LLGL_Direct3D11</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>LLGL_D3D11_ENABLE_FEATURELEVEL=0;NOMINMAX;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\include;..\DXCommon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;D3DCompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>LLGL_D3D11_ENABLE_FEATURELEVEL=0;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\include;..\DXCommon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;D3DCompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>LLGL_D3D11_ENABLE_FEATURELEVEL=0;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\include;..\DXCommon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;D3DCompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Buffer\D3D11Buffer.h" />
+    <ClInclude Include="Buffer\D3D11BufferArray.h" />
+    <ClInclude Include="Buffer\D3D11BufferWithRV.h" />
+    <ClInclude Include="Buffer\D3D11StagingBuffer.h" />
+    <ClInclude Include="Buffer\D3D11StagingBufferPool.h" />
+    <ClInclude Include="Command\D3D11Command.h" />
+    <ClInclude Include="Command\D3D11CommandBuffer.h" />
+    <ClInclude Include="Command\D3D11CommandContext.h" />
+    <ClInclude Include="Command\D3D11CommandExecutor.h" />
+    <ClInclude Include="Command\D3D11CommandOpcode.h" />
+    <ClInclude Include="Command\D3D11CommandQueue.h" />
+    <ClInclude Include="Command\D3D11PrimaryCommandBuffer.h" />
+    <ClInclude Include="Command\D3D11SecondaryCommandBuffer.h" />
+    <ClInclude Include="D3D11ObjectUtils.h" />
+    <ClInclude Include="D3D11RenderSystem.h" />
+    <ClInclude Include="D3D11ResourceFlags.h" />
+    <ClInclude Include="D3D11SwapChain.h" />
+    <ClInclude Include="D3D11Types.h" />
+    <ClInclude Include="Direct3D11.h" />
+    <ClInclude Include="RenderState\D3D11BindingLocator.h" />
+    <ClInclude Include="RenderState\D3D11BindingTable.h" />
+    <ClInclude Include="RenderState\D3D11ComputePSO.h" />
+    <ClInclude Include="RenderState\D3D11ConstantsCache.h" />
+    <ClInclude Include="RenderState\D3D11Fence.h" />
+    <ClInclude Include="RenderState\D3D11GraphicsPSO.h" />
+    <ClInclude Include="RenderState\D3D11GraphicsPSO1.h" />
+    <ClInclude Include="RenderState\D3D11GraphicsPSO3.h" />
+    <ClInclude Include="RenderState\D3D11GraphicsPSOBase.h" />
+    <ClInclude Include="RenderState\D3D11PipelineLayout.h" />
+    <ClInclude Include="RenderState\D3D11PipelineState.h" />
+    <ClInclude Include="RenderState\D3D11QueryHeap.h" />
+    <ClInclude Include="RenderState\D3D11RenderPass.h" />
+    <ClInclude Include="RenderState\D3D11ResourceHeap.h" />
+    <ClInclude Include="RenderState\D3D11ResourceType.h" />
+    <ClInclude Include="RenderState\D3D11StateManager.h" />
+    <ClInclude Include="Shader\Builtin\D3D11Builtin.h" />
+    <ClInclude Include="Shader\D3D11BuiltinShaderFactory.h" />
+    <ClInclude Include="Shader\D3D11CommonShader.h" />
+    <ClInclude Include="Shader\D3D11DomainShader.h" />
+    <ClInclude Include="Shader\D3D11Shader.h" />
+    <ClInclude Include="Shader\D3D11VertexShader.h" />
+    <ClInclude Include="Texture\D3D11MipGenerator.h" />
+    <ClInclude Include="Texture\D3D11RenderTarget.h" />
+    <ClInclude Include="Texture\D3D11RenderTargetHandles.h" />
+    <ClInclude Include="Texture\D3D11Sampler.h" />
+    <ClInclude Include="Texture\D3D11Texture.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Buffer\D3D11Buffer.cpp" />
+    <ClCompile Include="Buffer\D3D11BufferArray.cpp" />
+    <ClCompile Include="Buffer\D3D11BufferWithRV.cpp" />
+    <ClCompile Include="Buffer\D3D11StagingBuffer.cpp" />
+    <ClCompile Include="Buffer\D3D11StagingBufferPool.cpp" />
+    <ClCompile Include="Command\D3D11CommandBuffer.cpp" />
+    <ClCompile Include="Command\D3D11CommandContext.cpp" />
+    <ClCompile Include="Command\D3D11CommandExecutor.cpp" />
+    <ClCompile Include="Command\D3D11CommandQueue.cpp" />
+    <ClCompile Include="Command\D3D11PrimaryCommandBuffer.cpp" />
+    <ClCompile Include="Command\D3D11SecondaryCommandBuffer.cpp" />
+    <ClCompile Include="D3D11ModuleInterface.cpp" />
+    <ClCompile Include="D3D11ObjectUtils.cpp" />
+    <ClCompile Include="D3D11RenderSystem.cpp" />
+    <ClCompile Include="D3D11ResourceFlags.cpp" />
+    <ClCompile Include="D3D11StaticAssertions.cpp" />
+    <ClCompile Include="D3D11SwapChain.cpp" />
+    <ClCompile Include="D3D11Types.cpp" />
+    <ClCompile Include="RenderState\D3D11BindingLocator.cpp" />
+    <ClCompile Include="RenderState\D3D11BindingTable.cpp" />
+    <ClCompile Include="RenderState\D3D11ComputePSO.cpp" />
+    <ClCompile Include="RenderState\D3D11ConstantsCache.cpp" />
+    <ClCompile Include="RenderState\D3D11Fence.cpp" />
+    <ClCompile Include="RenderState\D3D11GraphicsPSO.cpp" />
+    <ClCompile Include="RenderState\D3D11GraphicsPSO1.cpp" />
+    <ClCompile Include="RenderState\D3D11GraphicsPSO3.cpp" />
+    <ClCompile Include="RenderState\D3D11GraphicsPSOBase.cpp" />
+    <ClCompile Include="RenderState\D3D11PipelineLayout.cpp" />
+    <ClCompile Include="RenderState\D3D11PipelineState.cpp" />
+    <ClCompile Include="RenderState\D3D11QueryHeap.cpp" />
+    <ClCompile Include="RenderState\D3D11RenderPass.cpp" />
+    <ClCompile Include="RenderState\D3D11ResourceHeap.cpp" />
+    <ClCompile Include="RenderState\D3D11StateManager.cpp" />
+    <ClCompile Include="Shader\D3D11BuiltinShaderFactory.cpp" />
+    <ClCompile Include="Shader\D3D11CommonShader.cpp" />
+    <ClCompile Include="Shader\D3D11DomainShader.cpp" />
+    <ClCompile Include="Shader\D3D11Shader.cpp" />
+    <ClCompile Include="Shader\D3D11VertexShader.cpp" />
+    <ClCompile Include="Texture\D3D11MipGenerator.cpp" />
+    <ClCompile Include="Texture\D3D11RenderTarget.cpp" />
+    <ClCompile Include="Texture\D3D11RenderTargetHandles.cpp" />
+    <ClCompile Include="Texture\D3D11Sampler.cpp" />
+    <ClCompile Include="Texture\D3D11Texture.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="DXC">
+      <UniqueIdentifier>{C4DF870B-30E9-877C-B964-9E7C256D937C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ComPtr.h" />
+    <ClInclude Include="DXC\DXCInstance.h">
+      <Filter>DXC</Filter>
+    </ClInclude>
+    <ClInclude Include="DXCore.h" />
+    <ClInclude Include="DXManagedComPtrArray.h" />
+    <ClInclude Include="DXShaderReflection.h" />
+    <ClInclude Include="DXTypes.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DXC\DXCInstance.cpp">
+      <Filter>DXC</Filter>
+    </ClCompile>
+    <ClCompile Include="DXCore.cpp" />
+    <ClCompile Include="DXShaderReflection.cpp" />
+    <ClCompile Include="DXTypes.cpp" />
+  </ItemGroup>
+</Project>

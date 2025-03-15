@@ -1,0 +1,42 @@
+﻿  D3D12Buffer.cpp
+  D3D12BufferArray.cpp
+  D3D12BufferConstantsPool.cpp
+  D3D12CPUAccessBuffer.cpp
+  D3D12IntermediateBufferPool.cpp
+  D3D12StagingBuffer.cpp
+  D3D12StagingBufferPool.cpp
+  D3D12CommandBuffer.cpp
+  D3D12CommandContext.cpp
+  D3D12CommandQueue.cpp
+  D3D12SignatureFactory.cpp
+  D3D12Device.cpp
+  D3D12ModuleInterface.cpp
+  D3D12ObjectUtils.cpp
+  D3D12RenderSystem.cpp
+  D3D12SubresourceContext.cpp
+  D3D12SwapChain.cpp
+  D3D12Types.cpp
+  D3D12ComputePSO.cpp
+  D3D12DescriptorCache.cpp
+  D3D12DescriptorHeap.cpp
+  D3D12Fence.cpp
+  D3D12GraphicsPSO.cpp
+  D3D12PipelineCache.cpp
+  D3D12PipelineLayout.cpp
+  D3D12PipelineState.cpp
+  D3D12QueryHeap.cpp
+  D3D12RenderPass.cpp
+  D3D12ResourceHeap.cpp
+  D3D12StagingDescriptorHeap.cpp
+  D3D12StagingDescriptorHeapPool.cpp
+  D3D12BuiltinShaderFactory.cpp
+  D3D12RootParameter.cpp
+  D3D12RootSignature.cpp
+  D3D12Shader.cpp
+  D3D12MipGenerator.cpp
+  D3D12RenderTarget.cpp
+  D3D12Sampler.cpp
+  D3D12Texture.cpp
+dxgi.lib(dxgi.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in d3d12.lib(d3d12.dll); second definition ignored
+D3DCompiler.lib(D3DCOMPILER_47.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in d3d12.lib(d3d12.dll); second definition ignored
+  LLGL_Direct3D12.vcxproj -> C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\bin\Debug\LLGL_Direct3D12\LLGL_Direct3D12.lib

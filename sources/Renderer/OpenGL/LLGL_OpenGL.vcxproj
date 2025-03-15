@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5DCA8E55-C248-3BA2-ACCF-B7306B75A9FD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>LLGL_OpenGL</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">LLGL_OpenGL.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">LLGL_OpenGLD</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">LLGL_OpenGL.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">LLGL_OpenGL</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">LLGL_OpenGL.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">LLGL_OpenGL</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">LLGL_OpenGL.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">LLGL_OpenGL</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4251;4290;4103</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;LLGL_OPENGL;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;NOMINMAX;_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR;LLGL_DEBUG;LLGL_ENABLE_CHECKED_CAST;LLGL_ENABLE_DEBUG_LAYER;LLGL_GL_ENABLE_VENDOR_EXT;LLGL_GL_ENABLE_DSA_EXT;CMAKE_INTDIR="Debug";LLGL_OpenGL_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;LLGL_OPENGL;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;NOMINMAX;_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR;LLGL_DEBUG;LLGL_ENABLE_CHECKED_CAST;LLGL_ENABLE_DEBUG_LAYER;LLGL_GL_ENABLE_VENDOR_EXT;LLGL_GL_ENABLE_DSA_EXT;CMAKE_INTDIR=\"Debug\";LLGL_OpenGL_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\..\build\Debug\LLGLD.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/build/Debug/LLGL_OpenGLD.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/build/Debug/LLGL_OpenGLD.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DisableSpecificWarnings>4250;4251;4290;4103</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LLGL_OPENGL;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;NOMINMAX;_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR;LLGL_ENABLE_DEBUG_LAYER;LLGL_GL_ENABLE_VENDOR_EXT;LLGL_GL_ENABLE_DSA_EXT;CMAKE_INTDIR="Release";LLGL_OpenGL_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LLGL_OPENGL;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;NOMINMAX;_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR;LLGL_ENABLE_DEBUG_LAYER;LLGL_GL_ENABLE_VENDOR_EXT;LLGL_GL_ENABLE_DSA_EXT;CMAKE_INTDIR=\"Release\";LLGL_OpenGL_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\..\build\Release\LLGL.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/build/Release/LLGL_OpenGL.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/build/Release/LLGL_OpenGL.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DisableSpecificWarnings>4250;4251;4290;4103</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LLGL_OPENGL;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;NOMINMAX;_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR;LLGL_ENABLE_DEBUG_LAYER;LLGL_GL_ENABLE_VENDOR_EXT;LLGL_GL_ENABLE_DSA_EXT;CMAKE_INTDIR="MinSizeRel";LLGL_OpenGL_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LLGL_OPENGL;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;NOMINMAX;_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR;LLGL_ENABLE_DEBUG_LAYER;LLGL_GL_ENABLE_VENDOR_EXT;LLGL_GL_ENABLE_DSA_EXT;CMAKE_INTDIR=\"MinSizeRel\";LLGL_OpenGL_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\..\build\MinSizeRel\LLGL.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/build/MinSizeRel/LLGL_OpenGL.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/build/MinSizeRel/LLGL_OpenGL.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4251;4290;4103</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LLGL_OPENGL;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;NOMINMAX;_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR;LLGL_ENABLE_DEBUG_LAYER;LLGL_GL_ENABLE_VENDOR_EXT;LLGL_GL_ENABLE_DSA_EXT;CMAKE_INTDIR="RelWithDebInfo";LLGL_OpenGL_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LLGL_OPENGL;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;UNICODE;NOMINMAX;_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR;LLGL_ENABLE_DEBUG_LAYER;LLGL_GL_ENABLE_VENDOR_EXT;LLGL_GL_ENABLE_DSA_EXT;CMAKE_INTDIR=\"RelWithDebInfo\";LLGL_OpenGL_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include;C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\..\build\RelWithDebInfo\LLGL.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/build/RelWithDebInfo/LLGL_OpenGL.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/build/RelWithDebInfo/LLGL_OpenGL.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/sources/Renderer/OpenGL/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL -BC:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL --check-stamp-file C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/sources/Renderer/OpenGL/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.31\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindPackageMessage.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/sources/Renderer/OpenGL/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL -BC:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL --check-stamp-file C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/sources/Renderer/OpenGL/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.31\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindPackageMessage.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/sources/Renderer/OpenGL/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL -BC:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL --check-stamp-file C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/sources/Renderer/OpenGL/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.31\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindPackageMessage.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/sources/Renderer/OpenGL/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL -BC:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL --check-stamp-file C:/Users/Michael/Development/CristalEngine/CristalEngine/vendor/LLGL/sources/Renderer/OpenGL/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.31\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindPackageMessage.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLCore.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLCore.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLModuleInterface.cpp" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLObjectUtils.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLObjectUtils.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLRenderSystem.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLRenderSystem.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLRenderingCaps.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLStaticAssertions.cpp" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLSwapChain.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLSwapChain.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLTypes.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLTypes.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\OpenGL.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GL3PlusSharedContextVertexArray.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GL3PlusSharedContextVertexArray.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBuffer.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBuffer.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBufferArray.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBufferArray.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBufferArrayWithVAO.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBufferArrayWithVAO.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBufferWithVAO.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBufferWithVAO.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBufferWithXFB.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBufferWithXFB.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLSharedContextVertexArray.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLVertexArrayObject.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLVertexArrayObject.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLVertexAttribute.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLVertexAttribute.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommand.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommandBuffer.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommandBuffer.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommandBuffer.inl" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommandExecutor.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommandExecutor.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommandOpcode.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommandQueue.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommandQueue.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLDeferredCommandBuffer.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLDeferredCommandBuffer.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLImmediateCommandBuffer.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLImmediateCommandBuffer.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Ext\GLExtensionLoader.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Ext\GLExtensionRegistry.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Ext\GLExtensionRegistry.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Ext\GLExtensions.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\Win32\Win32GLContext.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\Win32\Win32GLContext.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\Win32\Win32GLSwapChainContext.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\Win32\Win32GLSwapChainContext.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\GLContext.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\GLContext.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\GLContextManager.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\GLContextManager.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\GLSwapChainContext.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\GLSwapChainContext.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLBlendState.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLBlendState.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLComputePSO.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLComputePSO.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLContextState.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLContextState.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLDepthStencilState.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLDepthStencilState.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLFence.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLFence.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLGraphicsPSO.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLGraphicsPSO.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLPipelineCache.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLPipelineCache.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLPipelineLayout.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLPipelineLayout.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLPipelineState.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLPipelineState.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLQueryHeap.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLQueryHeap.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLRasterizerState.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLRasterizerState.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLRenderPass.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLRenderPass.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLResourceHeap.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLResourceHeap.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLResourceType.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLState.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLStateManager.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLStateManager.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLStatePool.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLStatePool.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLLegacyShader.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLLegacyShader.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLPipelineSignature.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLPipelineSignature.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLProgramPipeline.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLProgramPipeline.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLSeparableShader.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLSeparableShader.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShader.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShader.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderBindingLayout.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderBindingLayout.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderBufferInterfaceMap.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderBufferInterfaceMap.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderPipeline.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderPipeline.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderProgram.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderProgram.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderSourcePatcher.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderSourcePatcher.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderUniform.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderUniform.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLEmulatedSampler.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLEmulatedSampler.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLFramebuffer.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLFramebuffer.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLFramebufferCapture.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLFramebufferCapture.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLMipGenerator.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLMipGenerator.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLRenderTarget.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLRenderTarget.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLRenderbuffer.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLRenderbuffer.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLSampler.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLSampler.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTexImage.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTexImage.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTexSubImage.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTexSubImage.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTexture.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTexture.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTextureSubImage.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTextureSubImage.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTextureViewPool.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTextureViewPool.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLProfile.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Backend\OpenGL\NativeCommand.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Backend\OpenGL\NativeHandle.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Backend\OpenGL\Win32\Win32NativeHandle.h" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLCore\GLCoreExtensionLoader.cpp" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLCore\GLCoreExtensions.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLCore\GLCoreExtensions.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLCore\GLCoreExtensionsDecl.inl" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLCore\GLCoreProfile.cpp" />
+    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLCore\GLCoreProfileCaps.cpp" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLCore\GLCoreProfileTypes.h" />
+    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLCore\OpenGLCore.h" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\ZERO_CHECK.vcxproj">
+      <Project>{7504F76C-1E98-30B1-BE05-31FC9A88B1DD}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\LLGL.vcxproj">
+      <Project>{645801DB-0642-38BB-BE32-7480BF391408}</Project>
+      <Name>LLGL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

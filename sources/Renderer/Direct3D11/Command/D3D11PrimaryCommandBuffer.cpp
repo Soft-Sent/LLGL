@@ -22,6 +22,8 @@
 #include "../../../Core/Assertion.h"
 #include "../../TextureUtils.h"
 #include <algorithm>
+#undef max
+#undef min
 
 #include "../RenderState/D3D11StateManager.h"
 #include "../RenderState/D3D11PipelineState.h"

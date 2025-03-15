@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distribution|x64">
+      <Configuration>Distribution</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{841C900F-F0A7-FDD3-F9B8-80C865C359D4}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>LLGL_Direct3D12</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>bin\Debug\LLGL_Direct3D12\</OutDir>
+    <IntDir>bin-int\Debug\LLGL_Direct3D12\</IntDir>
+    <TargetName>LLGL_Direct3D12</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>bin\Release\LLGL_Direct3D12\</OutDir>
+    <IntDir>bin-int\Release\LLGL_Direct3D12\</IntDir>
+    <TargetName>LLGL_Direct3D12</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
+    <OutDir>bin\Distribution\LLGL_Direct3D12\</OutDir>
+    <IntDir>bin-int\Distribution\LLGL_Direct3D12\</IntDir>
+    <TargetName>LLGL_Direct3D12</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>LLGL_D3D12_ENABLE_FEATURELEVEL=0;NOMINMAX;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\include;..\DXCommon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>d3d12.lib;dxgi.lib;D3DCompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>LLGL_D3D12_ENABLE_FEATURELEVEL=0;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\include;..\DXCommon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>d3d12.lib;dxgi.lib;D3DCompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>LLGL_D3D12_ENABLE_FEATURELEVEL=0;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\include;..\DXCommon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>d3d12.lib;dxgi.lib;D3DCompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Buffer\D3D12Buffer.h" />
+    <ClInclude Include="Buffer\D3D12BufferArray.h" />
+    <ClInclude Include="Buffer\D3D12BufferConstantsPool.h" />
+    <ClInclude Include="Buffer\D3D12CPUAccessBuffer.h" />
+    <ClInclude Include="Buffer\D3D12IntermediateBufferPool.h" />
+    <ClInclude Include="Buffer\D3D12StagingBuffer.h" />
+    <ClInclude Include="Buffer\D3D12StagingBufferPool.h" />
+    <ClInclude Include="Command\D3D12CommandBuffer.h" />
+    <ClInclude Include="Command\D3D12CommandContext.h" />
+    <ClInclude Include="Command\D3D12CommandQueue.h" />
+    <ClInclude Include="Command\D3D12SignatureFactory.h" />
+    <ClInclude Include="D3D12Device.h" />
+    <ClInclude Include="D3D12ObjectUtils.h" />
+    <ClInclude Include="D3D12RenderSystem.h" />
+    <ClInclude Include="D3D12Resource.h" />
+    <ClInclude Include="D3D12SubresourceContext.h" />
+    <ClInclude Include="D3D12SwapChain.h" />
+    <ClInclude Include="D3D12Types.h" />
+    <ClInclude Include="D3DX12\d3dx12.h" />
+    <ClInclude Include="RenderState\D3D12ComputePSO.h" />
+    <ClInclude Include="RenderState\D3D12DescriptorCache.h" />
+    <ClInclude Include="RenderState\D3D12DescriptorHeap.h" />
+    <ClInclude Include="RenderState\D3D12Fence.h" />
+    <ClInclude Include="RenderState\D3D12GraphicsPSO.h" />
+    <ClInclude Include="RenderState\D3D12PipelineCache.h" />
+    <ClInclude Include="RenderState\D3D12PipelineLayout.h" />
+    <ClInclude Include="RenderState\D3D12PipelineState.h" />
+    <ClInclude Include="RenderState\D3D12QueryHeap.h" />
+    <ClInclude Include="RenderState\D3D12RenderPass.h" />
+    <ClInclude Include="RenderState\D3D12ResourceHeap.h" />
+    <ClInclude Include="RenderState\D3D12StagingDescriptorHeap.h" />
+    <ClInclude Include="RenderState\D3D12StagingDescriptorHeapPool.h" />
+    <ClInclude Include="Shader\Builtin\D3D12Builtin.h" />
+    <ClInclude Include="Shader\D3D12BuiltinShaderFactory.h" />
+    <ClInclude Include="Shader\D3D12RootParameter.h" />
+    <ClInclude Include="Shader\D3D12RootSignature.h" />
+    <ClInclude Include="Shader\D3D12Shader.h" />
+    <ClInclude Include="Texture\D3D12MipGenerator.h" />
+    <ClInclude Include="Texture\D3D12RenderTarget.h" />
+    <ClInclude Include="Texture\D3D12Sampler.h" />
+    <ClInclude Include="Texture\D3D12Texture.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Buffer\D3D12Buffer.cpp" />
+    <ClCompile Include="Buffer\D3D12BufferArray.cpp" />
+    <ClCompile Include="Buffer\D3D12BufferConstantsPool.cpp" />
+    <ClCompile Include="Buffer\D3D12CPUAccessBuffer.cpp" />
+    <ClCompile Include="Buffer\D3D12IntermediateBufferPool.cpp" />
+    <ClCompile Include="Buffer\D3D12StagingBuffer.cpp" />
+    <ClCompile Include="Buffer\D3D12StagingBufferPool.cpp" />
+    <ClCompile Include="Command\D3D12CommandBuffer.cpp" />
+    <ClCompile Include="Command\D3D12CommandContext.cpp" />
+    <ClCompile Include="Command\D3D12CommandQueue.cpp" />
+    <ClCompile Include="Command\D3D12SignatureFactory.cpp" />
+    <ClCompile Include="D3D12Device.cpp" />
+    <ClCompile Include="D3D12ModuleInterface.cpp" />
+    <ClCompile Include="D3D12ObjectUtils.cpp" />
+    <ClCompile Include="D3D12RenderSystem.cpp" />
+    <ClCompile Include="D3D12SubresourceContext.cpp" />
+    <ClCompile Include="D3D12SwapChain.cpp" />
+    <ClCompile Include="D3D12Types.cpp" />
+    <ClCompile Include="RenderState\D3D12ComputePSO.cpp" />
+    <ClCompile Include="RenderState\D3D12DescriptorCache.cpp" />
+    <ClCompile Include="RenderState\D3D12DescriptorHeap.cpp" />
+    <ClCompile Include="RenderState\D3D12Fence.cpp" />
+    <ClCompile Include="RenderState\D3D12GraphicsPSO.cpp" />
+    <ClCompile Include="RenderState\D3D12PipelineCache.cpp" />
+    <ClCompile Include="RenderState\D3D12PipelineLayout.cpp" />
+    <ClCompile Include="RenderState\D3D12PipelineState.cpp" />
+    <ClCompile Include="RenderState\D3D12QueryHeap.cpp" />
+    <ClCompile Include="RenderState\D3D12RenderPass.cpp" />
+    <ClCompile Include="RenderState\D3D12ResourceHeap.cpp" />
+    <ClCompile Include="RenderState\D3D12StagingDescriptorHeap.cpp" />
+    <ClCompile Include="RenderState\D3D12StagingDescriptorHeapPool.cpp" />
+    <ClCompile Include="Shader\D3D12BuiltinShaderFactory.cpp" />
+    <ClCompile Include="Shader\D3D12RootParameter.cpp" />
+    <ClCompile Include="Shader\D3D12RootSignature.cpp" />
+    <ClCompile Include="Shader\D3D12Shader.cpp" />
+    <ClCompile Include="Texture\D3D12MipGenerator.cpp" />
+    <ClCompile Include="Texture\D3D12RenderTarget.cpp" />
+    <ClCompile Include="Texture\D3D12Sampler.cpp" />
+    <ClCompile Include="Texture\D3D12Texture.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
