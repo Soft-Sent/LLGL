@@ -1,95 +1,109 @@
+-- premake5.lua for building LLGL as a static lib with Premake
+-- Works with the current repo layout: include/, sources/Core, sources/Renderer/*, sources/Platform/<OS>
+
 project "LLGL"
     kind "StaticLib"
     language "C++"
-    cppdialect "C++11"
+    cppdialect "C++14"
     staticruntime "on"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+    objdir    ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    -- Core headers + sources
     files {
-        "include/**.h",
-        "sources/Core/**.h",
-        "sources/Core/**.cpp",
+        "include/**.h", "include/**.hpp",
 
-        "sources/Renderer/DebugLayer/**.h",
-        "sources/Renderer/DebugLayer/**.cpp",
-        "sources/Renderer/SPIRV/**.h",
-        "sources/Renderer/SPIRV/**.hpp",
-        "sources/Renderer/SPIRV/**.cpp",
+        "sources/Core/**.h",   "sources/Core/**.hpp",   "sources/Core/**.cpp",
 
-        "sources/Renderer/BindingIterator.cpp",
-        "sources/Renderer/BindingIterator.h",
-        "sources/Renderer/Buffer.cpp",
-        "sources/Renderer/BufferArray.cpp",
-        "sources/Renderer/BufferFlags.cpp",
-        "sources/Renderer/BufferUtils.h",
-        "sources/Renderer/BufferUtils.cpp",
-        "sources/Renderer/BuildID.h",
-        "sources/Renderer/CheckedCast.h",
-        "sources/Renderer/ContainerTypes.h",
-        "sources/Renderer/DynamicModuleInterface.h",
-        "sources/Renderer/Format.cpp",
-        "sources/Renderer/ModuleInterface.h",
-        "sources/Renderer/PipelineStateFlags.cpp",
-        "sources/Renderer/PipelineStateUtils.h",
-        "sources/Renderer/PipelineStateUtils.cpp",
-        "sources/Renderer/ProxyPipelineCache.h",
-        "sources/Renderer/ProxyPipelineCache.cpp",
-        "sources/Renderer/QueryHeap.cpp",
-        "sources/Renderer/RenderingDebugger.cpp",
-        "sources/Renderer/RenderPassUtils.h",
-        "sources/Renderer/RenderPassUtils.cpp",
-        "sources/Renderer/RenderSystem.cpp",
-        "sources/Renderer/RenderSystemFlags.cpp",
-        "sources/Renderer/RenderSystemModule.h",
-        "sources/Renderer/RenderSystemModule.cpp",
-        "sources/Renderer/RenderSystemRegistry.h",
-        "sources/Renderer/RenderSystemRegistry.cpp",
-        "sources/Renderer/RenderSystemUtils.h",
-        "sources/Renderer/RenderTarget.cpp",
-        "sources/Renderer/RenderTargetUtils.h",
-        "sources/Renderer/RenderTargetUtils.cpp",
-        "sources/Renderer/ResourceUtils.h",
-        "sources/Renderer/ResourceUtils.cpp",
-        "sources/Renderer/Sampler.cpp",
-        "sources/Renderer/SegmentedBuffer.h",
-        "sources/Renderer/Shader.cpp",
-        "sources/Renderer/ShaderFlags.cpp",
+        -- Common renderer code (NOT backend-specific only)
+        "sources/Renderer/**.h", "sources/Renderer/**.hpp", "sources/Renderer/**.cpp",
 
-        "sources/Renderer/StaticAssertions.h",
-        "sources/Renderer/StaticAssertions.cpp",
-        "sources/Renderer/StaticModuleInterface.h",
-        "sources/Renderer/StaticModuleInterface.cpp",
-        "sources/Renderer/SwapChain.cpp",
-        "sources/Renderer/Texture.cpp",
-        "sources/Renderer/TextureFlags.cpp",
-        "sources/Renderer/TextureUtils.h",
-        "sources/Renderer/TextureUtils.cpp",
-        "sources/Renderer/VertexAttribute.cpp",
-        "sources/Renderer/VideoAdapter.h",
-        "sources/Renderer/VirtualCommandBuffer.h",
+        -- Common platform code (these contain Surface/Window pieces referenced by all backends)
+        "sources/Platform/Canvas.cpp",
+        "sources/Platform/ConsoleManip.h",
+        "sources/Platform/ConsoleManip.cpp",
+        "sources/Platform/Debug.cpp",
+        "sources/Platform/Debug.h",
+        "sources/Platform/Display.cpp",
+        "sources/Platform/DisplayFlags.cpp",
+        "sources/Platform/Module.h",
+        "sources/Platform/Path.cpp",
+        "sources/Platform/Path.h",
+        "sources/Platform/Window.cpp",
     }
 
+    -- Some folders (Renderer/SPIRV) include headers used across backends
     includedirs {
         "include",
         "sources/Renderer/SPIRV",
+        "external/OpenGL/include",
     }
 
+    defines { "LLGL_BUILD_STATIC_LIB", "LLGL_OPENGL"  }
+
+    -- ===== Windows =====
     filter "system:windows"
         systemversion "latest"
         defines { "LLGL_PLATFORM_WINDOWS" }
 
+        -- Compile Windows backends and platform layer
+        files {
+            "sources/Renderer/Direct3D11/**.h", "sources/Renderer/Direct3D11/**.hpp", "sources/Renderer/Direct3D11/**.cpp",
+            "sources/Renderer/Direct3D12/**.h", "sources/Renderer/Direct3D12/**.hpp", "sources/Renderer/Direct3D12/**.cpp",
+            "sources/Renderer/DXCommon/**.h",   "sources/Renderer/DXCommon/**.hpp",   "sources/Renderer/DXCommon/**.cpp",
+            "sources/Renderer/OpenGL/**.h",     "sources/Renderer/OpenGL/**.hpp",     "sources/Renderer/OpenGL/**.cpp",
+            "sources/Renderer/Vulkan/**.h",     "sources/Renderer/Vulkan/**.hpp",     "sources/Renderer/Vulkan/**.cpp",
+
+            "sources/Platform/Windows/**.h",    "sources/Platform/Windows/**.hpp",    "sources/Platform/Windows/**.cpp"
+        }
+
+        -- Enable desired backends (toggle off if you don’t need them)
+        defines {
+            "LLGL_BUILD_RENDERER_DIRECT3D11",
+            "LLGL_BUILD_RENDERER_DIRECT3D12",
+            "LLGL_BUILD_RENDERER_OPENGL",
+            "LLGL_BUILD_RENDERER_VULKAN"
+        }
+
+        -- System libs for Windows backends
+        links {
+            "user32", "gdi32", "shell32", "ole32", "oleaut32", "advapi32",
+            "dxgi", "d3d11", "d3d12", "dxguid", "d3dcompiler",
+            "opengl32",
+            "vulkan-1"
+        }
+
+    -- ===== Linux =====
     filter "system:linux"
         pic "On"
         systemversion "latest"
-        defines { "LLGL_PLATFORM_LINUX" }
+        defines { "LLGL_PLATFORM_LINUX", "LLGL_BUILD_RENDERER_OPENGL", "LLGL_BUILD_RENDERER_VULKAN" }
 
+        files {
+            "sources/Renderer/OpenGL/**.h", "sources/Renderer/OpenGL/**.hpp", "sources/Renderer/OpenGL/**.cpp",
+            "sources/Renderer/Vulkan/**.h", "sources/Renderer/Vulkan/**.hpp", "sources/Renderer/Vulkan/**.cpp",
+            "sources/Platform/Linux/**.h",  "sources/Platform/Linux/**.hpp",  "sources/Platform/Linux/**.cpp"
+        }
+
+        links { "X11", "Xrandr", "dl", "pthread", "GL", "vulkan" }
+
+    -- ===== macOS =====
     filter "system:macosx"
         pic "On"
         systemversion "latest"
-        defines { "LLGL_PLATFORM_MACOS" }
+        defines { "LLGL_PLATFORM_MACOS", "LLGL_BUILD_RENDERER_METAL", "LLGL_BUILD_RENDERER_OPENGL" }
 
+        files {
+            "sources/Renderer/Metal/**.h", "sources/Renderer/Metal/**.mm", "sources/Renderer/Metal/**.cpp",
+            "sources/Renderer/OpenGL/**.h", "sources/Renderer/OpenGL/**.hpp", "sources/Renderer/OpenGL/**.cpp",
+            "sources/Platform/MacOS/**.h",  "sources/Platform/MacOS/**.mm",  "sources/Platform/MacOS/**.cpp"
+        }
+
+        -- macOS frameworks
+        links { "Cocoa.framework", "QuartzCore.framework", "Metal.framework", "OpenGL.framework" }
+
+    -- ===== Configs =====
     filter "configurations:Debug"
         runtime "Debug"
         symbols "On"
@@ -101,20 +115,9 @@ project "LLGL"
         defines { "LLGL_RELEASE", "NDEBUG" }
 
     filter "configurations:Distribution"
-        optimize "Full"
         runtime "Release"
+        optimize "Full"
         symbols "Off"
         defines { "LLGL_DISTRIBUTION", "NDEBUG" }
-    filter()
 
-    if os.istarget("windows") then
-        include "sources/Renderer/Direct3D11/"
-        include "sources/Renderer/Direct3D12/"
-        include "sources/Renderer/DXCommon/"
-        --include "sources/Renderer/Null/"
-        --include "sources/Renderer/OpenGL/"
-        --include "sources/Renderer/Vulkan/"
-    end
-    if os.istarget("macosx") then
-        include "sources/Renderer/Metal"
-    end
+    filter {}

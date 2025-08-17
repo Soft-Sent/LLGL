@@ -4,22 +4,28 @@
     <Filter Include="Direct3D11">
       <UniqueIdentifier>{9979D092-8531-12E0-EE38-EB3BDA0FADD0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Direct3D11\Buffer">
+      <UniqueIdentifier>{62152B5E-CE2B-29F4-17A3-B41583F8F97B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Direct3D11\Shader">
+      <UniqueIdentifier>{1FC3E484-8BD9-E21A-D450-6E3C40A6B3A2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buffer\D3D11Buffer.h">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Buffer\D3D11BufferArray.h">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Buffer\D3D11BufferWithRV.h">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Buffer\D3D11StagingBuffer.h">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Buffer\D3D11StagingBufferPool.h">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Command\D3D11Command.h">
       <Filter>Direct3D11</Filter>
@@ -112,22 +118,22 @@
       <Filter>Direct3D11</Filter>
     </ClInclude>
     <ClInclude Include="Shader\Builtin\D3D11Builtin.h">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Shader\D3D11BuiltinShaderFactory.h">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Shader\D3D11CommonShader.h">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Shader\D3D11DomainShader.h">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Shader\D3D11Shader.h">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Shader\D3D11VertexShader.h">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Texture\D3D11MipGenerator.h">
       <Filter>Direct3D11</Filter>
@@ -147,19 +153,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buffer\D3D11Buffer.cpp">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Buffer</Filter>
     </ClCompile>
     <ClCompile Include="Buffer\D3D11BufferArray.cpp">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Buffer</Filter>
     </ClCompile>
     <ClCompile Include="Buffer\D3D11BufferWithRV.cpp">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Buffer</Filter>
     </ClCompile>
     <ClCompile Include="Buffer\D3D11StagingBuffer.cpp">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Buffer</Filter>
     </ClCompile>
     <ClCompile Include="Buffer\D3D11StagingBufferPool.cpp">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Buffer</Filter>
     </ClCompile>
     <ClCompile Include="Command\D3D11CommandBuffer.cpp">
       <Filter>Direct3D11</Filter>
@@ -246,19 +252,19 @@
       <Filter>Direct3D11</Filter>
     </ClCompile>
     <ClCompile Include="Shader\D3D11BuiltinShaderFactory.cpp">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Shader\D3D11CommonShader.cpp">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Shader\D3D11DomainShader.cpp">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Shader\D3D11Shader.cpp">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Shader\D3D11VertexShader.cpp">
-      <Filter>Direct3D11</Filter>
+      <Filter>Direct3D11\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Texture\D3D11MipGenerator.cpp">
       <Filter>Direct3D11</Filter>

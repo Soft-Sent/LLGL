@@ -11,70 +11,30 @@
   Log.cpp
   Parse.cpp
   Report.cpp
-C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\Barrier.h(44,33): warning C4251: 'LLGL::Barrier::mutex_': 'std::mutex' needs to have dll-interface to be used by clients of 'LLGL::Barrier'
-  (compiling source file 'sources/Core/Barrier.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\mutex(98,19):
-      see declaration of 'std::mutex'
-  
-C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\Barrier.h(45,33): warning C4251: 'LLGL::Barrier::var_': 'std::condition_variable' needs to have dll-interface to be used by clients of 'LLGL::Barrier'
-  (compiling source file 'sources/Core/Barrier.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\mutex(532,19):
-      see declaration of 'std::condition_variable'
-  
   StringUtils.cpp
   Threading.cpp
   TypeNames.cpp
-C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\ColorRGBA.h(234,11): warning C4251: 'LLGL::Color<LLGL::Variant,4>::r': 'LLGL::Variant' needs to have dll-interface to be used by clients of 'LLGL::Color<LLGL::Variant,4>'
-  (compiling source file 'sources/Core/ImageFlags.cpp')
-      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\ImageFlags.cpp(34,7):
-      see declaration of 'LLGL::Variant'
-      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\ColorRGBA.h(234,11):
-      the template instantiation context (the oldest one first) is
-          C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\ImageFlags.cpp(440,5):
-          see reference to class template instantiation 'LLGL::Color<LLGL::Variant,4>' being compiled
-  
-C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\ColorRGBA.h(234,14): warning C4251: 'LLGL::Color<LLGL::Variant,4>::g': 'LLGL::Variant' needs to have dll-interface to be used by clients of 'LLGL::Color<LLGL::Variant,4>'
-  (compiling source file 'sources/Core/ImageFlags.cpp')
-      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\ImageFlags.cpp(34,7):
-      see declaration of 'LLGL::Variant'
-  
-C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\ColorRGBA.h(234,17): warning C4251: 'LLGL::Color<LLGL::Variant,4>::b': 'LLGL::Variant' needs to have dll-interface to be used by clients of 'LLGL::Color<LLGL::Variant,4>'
-  (compiling source file 'sources/Core/ImageFlags.cpp')
-      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\ImageFlags.cpp(34,7):
-      see declaration of 'LLGL::Variant'
-  
-C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\ColorRGBA.h(234,20): warning C4251: 'LLGL::Color<LLGL::Variant,4>::a': 'LLGL::Variant' needs to have dll-interface to be used by clients of 'LLGL::Color<LLGL::Variant,4>'
-  (compiling source file 'sources/Core/ImageFlags.cpp')
-      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\ImageFlags.cpp(34,7):
-      see declaration of 'LLGL::Variant'
-  
-C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\Color.h(258,11): warning C4251: 'LLGL::Color<T,3>::v_': 'LLGL::Variant' needs to have dll-interface to be used by clients of 'LLGL::Color<T,3>'
-C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\Color.h(258,11): warning C4251:         with
-C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\Color.h(258,11): warning C4251:         [
-C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\Color.h(258,11): warning C4251:             T=LLGL::Variant
-C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\Color.h(258,11): warning C4251:         ]
-  (compiling source file 'sources/Core/ImageFlags.cpp')
-      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\ImageFlags.cpp(34,7):
-      see declaration of 'LLGL::Variant'
-      C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Utils\Color.h(258,11):
-      the template instantiation context (the oldest one first) is
-          C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Core\ImageFlags.cpp(564,49):
-          see reference to class template instantiation 'LLGL::Color<T,3>' being compiled
-          with
-          [
-              T=LLGL::Variant
-          ]
-  
   Types.cpp
   UTF8String.cpp
   Utility.cpp
   Vendor.cpp
   Version.cpp
+  Canvas.cpp
+  ConsoleManip.cpp
+  Debug.cpp
+  Display.cpp
+  DisplayFlags.cpp
+  Path.cpp
+  Window.cpp
   BindingIterator.cpp
   Buffer.cpp
   BufferArray.cpp
   BufferFlags.cpp
   BufferUtils.cpp
+  DXCInstance.cpp
+  DXCore.cpp
+  DXShaderReflection.cpp
+  DXTypes.cpp
   DbgBuffer.cpp
   DbgBufferArray.cpp
   DbgCommandBuffer.cpp
@@ -90,7 +50,485 @@ C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLG
   DbgShader.cpp
   DbgRenderTarget.cpp
   DbgTexture.cpp
+  D3D11Buffer.cpp
+  D3D11BufferArray.cpp
+  D3D11BufferWithRV.cpp
+  D3D11StagingBuffer.cpp
+  D3D11StagingBufferPool.cpp
+  D3D11CommandBuffer.cpp
+  D3D11CommandContext.cpp
+  D3D11CommandExecutor.cpp
+  D3D11CommandQueue.cpp
+  D3D11PrimaryCommandBuffer.cpp
+  D3D11SecondaryCommandBuffer.cpp
+  D3D11ModuleInterface.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Buffer\D3D11StagingBuffer.cpp(117,21): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Buffer\D3D11StagingBuffer.cpp(117,21): error C2059: syntax error: ')'
+  D3D11ObjectUtils.cpp
+  D3D11RenderSystem.cpp
+  D3D11ResourceFlags.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Buffer\D3D11StagingBufferPool.cpp(89,40): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Buffer\D3D11StagingBufferPool.cpp(89,106): error C2059: syntax error: ')'
+  D3D11StaticAssertions.cpp
+  D3D11SwapChain.cpp
+  D3D11Types.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\VirtualCommandBuffer.h(420,97): warning C4003: not enough arguments for function-like macro invocation 'max'
+  (compiling source file 'sources/Renderer/Direct3D11/Command/D3D11CommandExecutor.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\VirtualCommandBuffer.h(420,97): warning C4003: not enough arguments for function-like macro invocation 'max'
+  (compiling source file 'sources/Renderer/Direct3D11/Command/D3D11PrimaryCommandBuffer.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\VirtualCommandBuffer.h(420,97): warning C4003: not enough arguments for function-like macro invocation 'max'
+  (compiling source file 'sources/Renderer/Direct3D11/Command/D3D11SecondaryCommandBuffer.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Command\D3D11CommandContext.cpp(464,27): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Command\D3D11CommandContext.cpp(464,27): error C2059: syntax error: ')'
+  D3D11BindingLocator.cpp
+  D3D11BindingTable.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\VirtualCommandBuffer.h(156,37): error C2589: '(': illegal token on right side of '::'
+  (compiling source file 'sources/Renderer/Direct3D11/Command/D3D11SecondaryCommandBuffer.cpp')
+      D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\VirtualCommandBuffer.h(156,37):
+      the template instantiation context (the oldest one first) is
+          D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Command\D3D11SecondaryCommandBuffer.h(51,35):
+          see reference to class template instantiation 'LLGL::VirtualCommandBuffer<LLGL::D3D11Opcode,LLGL::DefaultBufferGrowPolicy>' being compiled
+          D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\VirtualCommandBuffer.h(155,9):
+          while compiling class template member function 'LLGL::VirtualCommandBuffer<LLGL::D3D11Opcode,LLGL::DefaultBufferGrowPolicy>::VirtualCommandBuffer(size_t)'
+              D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Command\D3D11SecondaryCommandBuffer.cpp(29,24):
+              see the first reference to 'LLGL::VirtualCommandBuffer<LLGL::D3D11Opcode,LLGL::DefaultBufferGrowPolicy>::VirtualCommandBuffer' in 'LLGL::D3D11SecondaryCommandBuffer::D3D11SecondaryCommandBuffer'
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\VirtualCommandBuffer.h(156,37): error C3329: syntax error: expected '}' not ')'
+  (compiling source file 'sources/Renderer/Direct3D11/Command/D3D11SecondaryCommandBuffer.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\VirtualCommandBuffer.h(156,91): error C2612: trailing '}' illegal in base/member initializer list
+  (compiling source file 'sources/Renderer/Direct3D11/Command/D3D11SecondaryCommandBuffer.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\VirtualCommandBuffer.h(157,9): error C2447: '{': missing function header (old-style formal list?)
+  (compiling source file 'sources/Renderer/Direct3D11/Command/D3D11SecondaryCommandBuffer.cpp')
+  
+  D3D11ComputePSO.cpp
+  D3D11ConstantsCache.cpp
+  D3D11Fence.cpp
+  D3D11GraphicsPSO.cpp
+  D3D11GraphicsPSO1.cpp
+  D3D11GraphicsPSO3.cpp
+  D3D11GraphicsPSOBase.cpp
+  D3D11PipelineLayout.cpp
+  D3D11PipelineState.cpp
+  D3D11QueryHeap.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\VirtualCommandBuffer.h(420,97): warning C4003: not enough arguments for function-like macro invocation 'max'
+  (compiling source file 'sources/Renderer/Direct3D11/D3D11RenderSystem.cpp')
+  
+  D3D11RenderPass.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\D3D11SwapChain.cpp(375,24): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\D3D11SwapChain.cpp(375,24): error C2059: syntax error: ')'
+  D3D11ResourceHeap.cpp
+  D3D11StateManager.cpp
+  D3D11BuiltinShaderFactory.cpp
+  D3D11CommonShader.cpp
+  D3D11DomainShader.cpp
+  D3D11Shader.cpp
+  D3D11VertexShader.cpp
+  D3D11MipGenerator.cpp
+  D3D11RenderTarget.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\RenderState\D3D11StateManager.cpp(76,25): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\RenderState\D3D11StateManager.cpp(76,25): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\RenderState\D3D11StateManager.cpp(108,24): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\RenderState\D3D11StateManager.cpp(108,24): error C2059: syntax error: ')'
+  D3D11RenderTargetHandles.cpp
+  D3D11Sampler.cpp
+  D3D11Texture.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\DXCommon\DXManagedComPtrArray.h(76,36): error C2589: '(': illegal token on right side of '::'
+  (compiling source file 'sources/Renderer/Direct3D11/RenderState/D3D11ResourceHeap.cpp')
+      D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\DXCommon\DXManagedComPtrArray.h(76,36):
+      the template instantiation context (the oldest one first) is
+          D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\RenderState\D3D11ResourceHeap.h(300,57):
+          see reference to class template instantiation 'LLGL::DXManagedComPtrArray<ID3D11UnorderedAccessView>' being compiled
+          D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\DXCommon\DXManagedComPtrArray.h(72,14):
+          while compiling class template member function 'void LLGL::DXManagedComPtrArray<ID3D11UnorderedAccessView>::Remove(size_t)'
+              D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\RenderState\D3D11ResourceHeap.cpp(1163,32):
+              see the first reference to 'LLGL::DXManagedComPtrArray<ID3D11UnorderedAccessView>::Remove' in 'LLGL::D3D11ResourceHeap::GarbageCollectSubresource'
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\DXCommon\DXManagedComPtrArray.h(76,36): error C2059: syntax error: ')'
+  (compiling source file 'sources/Renderer/Direct3D11/RenderState/D3D11ResourceHeap.cpp')
+  
+  D3D12Buffer.cpp
+  D3D12BufferArray.cpp
+  D3D12BufferConstantsPool.cpp
+  D3D12CPUAccessBuffer.cpp
+  D3D12IntermediateBufferPool.cpp
+  D3D12StagingBuffer.cpp
+  D3D12StagingBufferPool.cpp
+  D3D12CommandBuffer.cpp
+  D3D12CommandContext.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Texture\D3D11Texture.cpp(97,40): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Texture\D3D11Texture.cpp(97,40): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Texture\D3D11Texture.cpp(115,40): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Texture\D3D11Texture.cpp(115,40): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Texture\D3D11Texture.cpp(116,40): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Texture\D3D11Texture.cpp(116,40): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Texture\D3D11Texture.cpp(133,40): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Texture\D3D11Texture.cpp(133,40): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Texture\D3D11Texture.cpp(134,40): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Texture\D3D11Texture.cpp(134,40): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Texture\D3D11Texture.cpp(135,40): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Texture\D3D11Texture.cpp(135,40): error C2059: syntax error: ')'
+  D3D12CommandQueue.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Texture\D3D11Texture.cpp(982,79): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Texture\D3D11Texture.cpp(982,79): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D11\Texture\D3D11Texture.cpp(982,105): error C2059: syntax error: ')'
+  D3D12SignatureFactory.cpp
+  D3D12Device.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Buffer\D3D12Buffer.cpp(112,32): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Buffer\D3D12Buffer.cpp(108,5): error C2660: 'LLGL::D3D12Buffer::CreateConstantBufferViewPrimary': function does not take 3 arguments
+      D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Buffer\D3D12Buffer.h(167,14):
+      see declaration of 'LLGL::D3D12Buffer::CreateConstantBufferViewPrimary'
+      D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Buffer\D3D12Buffer.cpp(108,5):
+      while trying to match the argument list '(ID3D12Device *, D3D12_CPU_DESCRIPTOR_HANDLE, const uint64_t)'
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Buffer\D3D12Buffer.cpp(113,5): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Buffer\D3D12Buffer.cpp(140,62): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Buffer\D3D12Buffer.cpp(140,112): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Buffer\D3D12Buffer.cpp(140,21): error C2737: 'numElements': const object must be initialized
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Buffer\D3D12Buffer.cpp(176,62): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Buffer\D3D12Buffer.cpp(176,112): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Buffer\D3D12Buffer.cpp(176,21): error C2737: 'numElements': const object must be initialized
+  D3D12ModuleInterface.cpp
+  D3D12ObjectUtils.cpp
+  D3D12RenderSystem.cpp
+  D3D12SubresourceContext.cpp
+  D3D12SwapChain.cpp
+  D3D12Types.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Buffer\D3D12StagingBufferPool.cpp(171,40): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Buffer\D3D12StagingBufferPool.cpp(171,69): error C2059: syntax error: ')'
+  D3D12ComputePSO.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.cpp(442,25): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.cpp(442,25): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.cpp(453,24): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.cpp(453,24): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.cpp(892,26): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.cpp(892,26): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.cpp(1258,28): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.cpp(1258,28): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.cpp(1318,52): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.cpp(1318,52): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.cpp(1318,25): error C2737: 'numColorClearValues': const object must be initialized
+  D3D12DescriptorCache.cpp
+  D3D12DescriptorHeap.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Command\D3D12CommandContext.cpp(73,36): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Command\D3D12CommandContext.cpp(73,36): error C2059: syntax error: ')'
+  D3D12Fence.cpp
+  D3D12GraphicsPSO.cpp
+  D3D12PipelineCache.cpp
+  D3D12PipelineLayout.cpp
+  D3D12PipelineState.cpp
+  D3D12QueryHeap.cpp
+  D3D12RenderPass.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\D3D12SwapChain.cpp(180,21): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\D3D12SwapChain.cpp(180,21): error C2059: syntax error: ')'
+  D3D12ResourceHeap.cpp
+  D3D12StagingDescriptorHeap.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12DescriptorCache.cpp(39,102): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12DescriptorCache.cpp(39,42): error C2660: 'LLGL::D3D12DescriptorHeap::Create': function does not take 2 arguments
+      D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12DescriptorHeap.h(50,14):
+      see declaration of 'LLGL::D3D12DescriptorHeap::Create'
+      D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12DescriptorCache.cpp(39,42):
+      while trying to match the argument list '(ID3D12Device *, D3D12_DESCRIPTOR_HEAP_TYPE)'
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12DescriptorCache.cpp(39,165): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12DescriptorCache.cpp(40,102): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12DescriptorCache.cpp(40,42): error C2660: 'LLGL::D3D12DescriptorHeap::Create': function does not take 2 arguments
+      D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12DescriptorHeap.h(50,14):
+      see declaration of 'LLGL::D3D12DescriptorHeap::Create'
+      D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12DescriptorCache.cpp(40,42):
+      while trying to match the argument list '(ID3D12Device *, D3D12_DESCRIPTOR_HEAP_TYPE)'
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12DescriptorCache.cpp(40,165): error C2059: syntax error: ')'
+  D3D12StagingDescriptorHeapPool.cpp
+  D3D12BuiltinShaderFactory.cpp
+  D3D12RootParameter.cpp
+  D3D12RootSignature.cpp
+  D3D12Shader.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12GraphicsPSO.cpp(120,17): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12GraphicsPSO.cpp(120,17): error C2059: syntax error: ')'
+  D3D12MipGenerator.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12QueryHeap.cpp(197,27): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12QueryHeap.cpp(197,27): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12QueryHeap.cpp(198,27): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12QueryHeap.cpp(198,27): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12PipelineLayout.cpp(221,44): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12PipelineLayout.cpp(221,44): error C2059: syntax error: ')'
+  D3D12RenderTarget.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12PipelineLayout.cpp(434,17): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12PipelineLayout.cpp(434,17): error C2059: syntax error: ')'
+  D3D12Sampler.cpp
+  D3D12Texture.cpp
   Format.cpp
+  NullBuffer.cpp
+  NullBufferArray.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeapPool.cpp(131,23): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeapPool.cpp(131,23): error C2059: syntax error: ')'
+  NullCommandBuffer.cpp
+  NullCommandExecutor.cpp
+  NullCommandQueue.cpp
+  NullModuleInterface.cpp
+  NullRenderSystem.cpp
+  NullSwapChain.cpp
+  NullFence.cpp
+  NullPipelineLayout.cpp
+  NullPipelineState.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Shader\D3D12Shader.cpp(189,24): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Shader\D3D12Shader.cpp(189,24): error C2059: syntax error: ')'
+  NullQueryHeap.cpp
+  NullRenderPass.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.cpp(265,30): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.cpp(265,30): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.cpp(341,32): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.cpp(341,32): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.cpp(342,32): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.cpp(342,32): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.cpp(422,32): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.cpp(422,32): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.cpp(423,32): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.cpp(423,32): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.cpp(424,32): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.cpp(424,32): error C2059: syntax error: ')'
+  NullResourceHeap.cpp
+  NullShader.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(33,28): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(33,28): error C3329: syntax error: expected '}' not ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(33,58): error C2612: trailing '}' illegal in base/member initializer list
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(33,59): error C2059: syntax error: ','
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(34,21): error C2143: syntax error: missing ';' before '{'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(34,21): error C2447: '{': missing function header (old-style formal list?)
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(35,1): error C2447: '{': missing function header (old-style formal list?)
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(75,36): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(75,36): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(86,36): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(86,36): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(87,36): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(87,36): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(97,36): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(97,36): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(98,36): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(98,36): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(99,36): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(99,36): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(213,48): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(213,48): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(222,48): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(222,48): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(251,28): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(251,28): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(252,28): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(252,28): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(626,52): error C2589: '(': illegal token on right side of '::'
+  NullRenderTarget.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(626,12): error C2665: 'LLGL::D3D12Texture::CalcSubresource': no overloaded function could convert all the argument types
+      D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(623,20):
+      could be 'UINT LLGL::D3D12Texture::CalcSubresource(const LLGL::TextureLocation &) const'
+          D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(626,12):
+          'UINT LLGL::D3D12Texture::CalcSubresource(const LLGL::TextureLocation &) const': cannot convert argument 1 from 'const uint32_t' to 'const LLGL::TextureLocation &'
+              D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(626,36):
+              Reason: cannot convert from 'const uint32_t' to 'const LLGL::TextureLocation'
+              D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(626,36):
+              'LLGL::TextureLocation::TextureLocation': no overloaded function could convert all the argument types
+                  D:\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\TextureFlags.h(179,5):
+                  could be 'LLGL::TextureLocation::TextureLocation(const LLGL::TextureLocation &)'
+                      D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(626,36):
+                      'LLGL::TextureLocation::TextureLocation(const LLGL::TextureLocation &)': cannot convert argument 1 from 'const uint32_t' to 'const LLGL::TextureLocation &'
+                          D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(626,36):
+                          Reason: cannot convert from 'const uint32_t' to 'const LLGL::TextureLocation'
+                          D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(626,36):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\TextureFlags.h(182,5):
+                  or       'LLGL::TextureLocation::TextureLocation(const LLGL::Offset3D &,uint32_t,uint32_t)'
+                      D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(626,36):
+                      'LLGL::TextureLocation::TextureLocation(const LLGL::Offset3D &,uint32_t,uint32_t)': cannot convert argument 1 from 'const uint32_t' to 'const LLGL::Offset3D &'
+                          D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(626,36):
+                          Reason: cannot convert from 'const uint32_t' to 'const LLGL::Offset3D'
+                          D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(626,36):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(626,36):
+                  while trying to match the argument list '(const uint32_t)'
+      D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(626,12):
+      while trying to match the argument list '(const uint32_t)'
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(626,97): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(737,70): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(737,70): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(737,95): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(888,45): error C2589: '(': illegal token on right side of '::'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(888,45): error C3329: syntax error: expected '}' not ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(888,35): error C2440: '<function-style-cast>': cannot convert from 'initializer list' to 'LLGL::TextureSubresource'
+      D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(888,35):
+      'LLGL::TextureSubresource::TextureSubresource': no overloaded function could convert all the argument types
+          D:\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\TextureFlags.h(123,5):
+          could be 'LLGL::TextureSubresource::TextureSubresource(const LLGL::TextureSubresource &)'
+              D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(888,35):
+              'LLGL::TextureSubresource::TextureSubresource(const LLGL::TextureSubresource &)': cannot convert argument 1 from 'int' to 'const LLGL::TextureSubresource &'
+                  D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(888,37):
+                  Reason: cannot convert from 'int' to 'const LLGL::TextureSubresource'
+          D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(888,35):
+          while trying to match the argument list '(int)'
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(888,128): error C2143: syntax error: missing ')' before '}'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(884,13): error C2664: 'void LLGL::D3D12Texture::CreateUnorderedAccessViewPrimary(ID3D12Device *,D3D12_UAV_DIMENSION,DXGI_FORMAT,const LLGL::TextureSubresource &,D3D12_CPU_DESCRIPTOR_HANDLE)': cannot convert argument 4 from 'unsigned int' to 'const LLGL::TextureSubresource &'
+      D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(888,116):
+      Reason: cannot convert from 'unsigned int' to 'const LLGL::TextureSubresource'
+      D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(888,116):
+      'LLGL::TextureSubresource::TextureSubresource': no overloaded function could convert all the argument types
+          D:\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\TextureFlags.h(123,5):
+          could be 'LLGL::TextureSubresource::TextureSubresource(const LLGL::TextureSubresource &)'
+              D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(888,116):
+              'LLGL::TextureSubresource::TextureSubresource(const LLGL::TextureSubresource &)': cannot convert argument 1 from 'unsigned int' to 'const LLGL::TextureSubresource &'
+                  D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(888,116):
+                  Reason: cannot convert from 'unsigned int' to 'const LLGL::TextureSubresource'
+                  D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(888,116):
+                  Conversion requires a second user-defined-conversion operator or constructor
+          D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(888,116):
+          while trying to match the argument list '(unsigned int)'
+      D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(569,20):
+      see declaration of 'LLGL::D3D12Texture::CreateUnorderedAccessViewPrimary'
+      D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(884,13):
+      while trying to match the argument list '(ID3D12Device *, D3D12_UAV_DIMENSION, DXGI_FORMAT, unsigned int, int)'
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(888,128): error C2143: syntax error: missing ';' before '}'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(888,129): error C2059: syntax error: ','
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(890,13): error C2059: syntax error: ')'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(893,9): error C2181: illegal else without matching if
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(899,61): error C2065: 'mipLevel': undeclared identifier
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(908,1): error C2059: syntax error: '}'
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp(908,1): error C2143: syntax error: missing ';' before '}'
+  NullSampler.cpp
+  NullTexture.cpp
+  GL2XSharedContextVertexArray.cpp
+  GL3PlusSharedContextVertexArray.cpp
+  GLBuffer.cpp
+  GLBufferArray.cpp
+  GLBufferArrayWithVAO.cpp
+  GLBufferWithVAO.cpp
+  GLBufferWithXFB.cpp
+  GLVertexArrayObject.cpp
+  GLVertexAttribute.cpp
+  GLCommandBuffer.cpp
+  GLCommandExecutor.cpp
+  GLCommandQueue.cpp
+  GLDeferredCommandBuffer.cpp
+  GLImmediateCommandBuffer.cpp
+  GLExtensionRegistry.cpp
+  GLCore.cpp
+  GLModuleInterface.cpp
+  GLObjectUtils.cpp
+  GLRenderSystem.cpp
+  GLStaticAssertions.cpp
+  GLSwapChain.cpp
+  GLTypes.cpp
+  AndroidGLContext.cpp
+  AndroidGLCore.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\Android\AndroidGLCore.h(12,10): error C1083: Cannot open include file: 'EGL/egl.h': No such file or directory
+  (compiling source file 'sources/Renderer/OpenGL/Platform/Android/AndroidGLCore.cpp')
+  
+  AndroidGLSwapChainContext.cpp
+  AndroidSharedEGLSurface.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\Android\AndroidSharedEGLSurface.h(12,10): error C1083: Cannot open include file: 'EGL/egl.h': No such file or directory
+  (compiling source file 'sources/Renderer/OpenGL/Platform/Android/AndroidSharedEGLSurface.cpp')
+  
+  GLContext.cpp
+  GLContextManager.cpp
+  GLSwapChainContext.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\Android\AndroidSharedEGLSurface.h(12,10): error C1083: Cannot open include file: 'EGL/egl.h': No such file or directory
+  (compiling source file 'sources/Renderer/OpenGL/Platform/Android/AndroidGLSwapChainContext.cpp')
+  
+  LinuxGLContext.cpp
+  LinuxGLSwapChain.cpp
+  LinuxGLSwapChainContext.cpp
+  WasmGLContext.cpp
+  WasmGLSwapChainContext.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\Android\AndroidSharedEGLSurface.h(12,10): error C1083: Cannot open include file: 'EGL/egl.h': No such file or directory
+  (compiling source file 'sources/Renderer/OpenGL/Platform/Android/AndroidGLContext.cpp')
+  
+  Win32GLContext.cpp
+  Win32GLSwapChainContext.cpp
+  GLCompatExtensionLoader.cpp
+  GLCompatExtensions.cpp
+  GLCompatProfile.cpp
+  GLCompatProfileCaps.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\Linux\LinuxGLContext.h(16,10): error C1083: Cannot open include file: 'X11/Xlib.h': No such file or directory
+  (compiling source file 'sources/Renderer/OpenGL/Platform/Linux/LinuxGLContext.cpp')
+  
+  GLCoreExtensionLoader.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\Linux\LinuxGLSwapChainContext.h(14,10): error C1083: Cannot open include file: 'X11/Xlib.h': No such file or directory
+  (compiling source file 'sources/Renderer/OpenGL/Platform/Linux/LinuxGLSwapChainContext.cpp')
+  
+  GLCoreExtensions.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\Linux\LinuxGLContext.h(16,10): error C1083: Cannot open include file: 'X11/Xlib.h': No such file or directory
+  (compiling source file 'sources/Renderer/OpenGL/Platform/Linux/LinuxGLSwapChain.cpp')
+  
+  GLCoreProfile.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\Wasm\WasmGLContext.h(14,10): error C1083: Cannot open include file: 'emscripten.h': No such file or directory
+  (compiling source file 'sources/Renderer/OpenGL/Platform/Wasm/WasmGLContext.cpp')
+  
+  GLCoreProfileCaps.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\Wasm\WasmGLContext.h(14,10): error C1083: Cannot open include file: 'emscripten.h': No such file or directory
+  (compiling source file 'sources/Renderer/OpenGL/Platform/Wasm/WasmGLSwapChainContext.cpp')
+  
+  GLESExtensionLoader.cpp
+  GLESExtensions.cpp
+  GLESProfile.cpp
+  GLESProfileCaps.cpp
+  WebGLExtensionLoader.cpp
+  WebGLProfile.cpp
+  WebGLProfileCaps.cpp
+  GLBlendState.cpp
+  GLComputePSO.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLES\OpenGLES.h(32,1): error C1189: #error:  Unsupported platform for OpenGLES 3
+  (compiling source file 'sources/Renderer/OpenGL/Profile/GLES/GLESExtensionLoader.cpp')
+  
+  GLContextState.cpp
+  GLDepthStencilState.cpp
+  GLFence.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\WebGL\WebGL.h(19,1): error C1189: #error:  Unsupported platform for WebGL
+  (compiling source file 'sources/Renderer/OpenGL/Profile/WebGL/WebGLExtensionLoader.cpp')
+  
+  GLGraphicsPSO.cpp
+  GLPipelineCache.cpp
+  GLPipelineLayout.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLES\GLESProfile.cpp(59,28): warning C4244: 'argument': conversion from 'LLGL::GLclamp_t' to 'GLfloat', possible loss of data
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLES\GLESProfile.cpp(59,19): warning C4244: 'argument': conversion from 'LLGL::GLclamp_t' to 'GLfloat', possible loss of data
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLES\GLESProfile.cpp(64,19): warning C4244: 'argument': conversion from 'LLGL::GLclamp_t' to 'GLfloat', possible loss of data
+  GLPipelineState.cpp
+  GLQueryHeap.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\WebGL\WebGLProfile.cpp(61,28): warning C4244: 'argument': conversion from 'LLGL::GLclamp_t' to 'GLfloat', possible loss of data
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\WebGL\WebGLProfile.cpp(61,19): warning C4244: 'argument': conversion from 'LLGL::GLclamp_t' to 'GLfloat', possible loss of data
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\WebGL\WebGLProfile.cpp(66,19): warning C4244: 'argument': conversion from 'LLGL::GLclamp_t' to 'GLfloat', possible loss of data
+  GLRasterizerState.cpp
+  GLRenderPass.cpp
+  GLResourceHeap.cpp
+  GLStateManager.cpp
+  GLStatePool.cpp
+  GLLegacyShader.cpp
+  GLPipelineSignature.cpp
+  GLProgramPipeline.cpp
+  GLSeparableShader.cpp
+  GLShader.cpp
+  GLShaderBindingLayout.cpp
+  GLShaderBufferInterfaceMap.cpp
+  GLShaderPipeline.cpp
+  GLShaderProgram.cpp
+  GLShaderSourcePatcher.cpp
+  GLShaderUniform.cpp
+  GLEmulatedSampler.cpp
+  GLFramebuffer.cpp
+  GLFramebufferCapture.cpp
+  GLMipGenerator.cpp
+  GLRenderTarget.cpp
+  GLRenderbuffer.cpp
+  GLSampler.cpp
+  GLTexImage.cpp
+  GLTexSubImage.cpp
+  GLTexture.cpp
+  GLTextureSubImage.cpp
+  GLTextureViewPool.cpp
   PipelineStateFlags.cpp
   PipelineStateUtils.cpp
   ProxyPipelineCache.cpp
@@ -105,11 +543,6 @@ C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLG
   RenderingDebugger.cpp
   ResourceUtils.cpp
   SpirvInstruction.cpp
-C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\ProxyPipelineCache.h(48,26): warning C4251: 'LLGL::ProxyPipelineCache::refCount_': 'std::atomic<unsigned int>' needs to have dll-interface to be used by clients of 'LLGL::ProxyPipelineCache'
-  (compiling source file '../LLGL/sources/Renderer/ProxyPipelineCache.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\atomic(2112,8):
-      see declaration of 'std::atomic<unsigned int>'
-  
   SpirvInstructionInfo.cpp
   SpirvModule.cpp
   SpirvReflect.cpp
@@ -123,4 +556,188 @@ C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Ren
   TextureFlags.cpp
   TextureUtils.cpp
   VertexAttribute.cpp
-  LLGL.vcxproj -> C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\bin\Debug\LLGL\LLGL.lib
+  VKBuffer.cpp
+  VKBufferArray.cpp
+  VKDeviceBuffer.cpp
+  VKCommandBuffer.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Buffer/VKDeviceBuffer.cpp')
+  
+  VKCommandContext.cpp
+  VKCommandQueue.cpp
+  VKExtensionLoader.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Command/VKCommandQueue.cpp')
+  
+  VKExtensionRegistry.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Ext/VKExtensionLoader.cpp')
+  
+  VKExtensions.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Ext/VKExtensionRegistry.cpp')
+  
+  VKDeviceMemory.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Ext/VKExtensions.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Memory\VKDeviceMemoryRegion.h(12,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Memory/VKDeviceMemory.cpp')
+  
+  VKDeviceMemoryManager.cpp
+  VKDeviceMemoryRegion.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\VKPtr.h(13,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Command/VKCommandContext.cpp')
+  
+  VKComputePSO.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Memory\VKDeviceMemoryManager.h(13,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Memory/VKDeviceMemoryManager.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Memory\VKDeviceMemoryRegion.h(12,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Memory/VKDeviceMemoryRegion.cpp')
+  
+  VKDescriptorCache.cpp
+  VKDescriptorSetWriter.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/RenderState/VKDescriptorCache.cpp')
+  
+  VKFence.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\RenderState\VKDescriptorSetWriter.h(12,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/RenderState/VKDescriptorSetWriter.cpp')
+  
+  VKGraphicsPSO.cpp
+  VKPipelineBarrier.cpp
+  VKPipelineCache.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/RenderState/VKFence.cpp')
+  
+  VKPipelineLayout.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\RenderState\VKPipelineCache.h(12,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/RenderState/VKPipelineCache.cpp')
+  
+  VKPipelineState.cpp
+  VKPoolSizeAccumulator.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Buffer/VKBuffer.cpp')
+  
+  VKPredicateQueryHeap.cpp
+  VKQueryHeap.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Buffer/VKBufferArray.cpp')
+  
+  VKRenderPass.cpp
+  VKResourceHeap.cpp
+  VKStagingDescriptorPool.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\RenderState\VKPoolSizeAccumulator.h(12,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/RenderState/VKPoolSizeAccumulator.cpp')
+  
+  VKStagingDescriptorSetPool.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/RenderState/VKQueryHeap.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/RenderState/VKPredicateQueryHeap.cpp')
+  
+  VKShader.cpp
+  VKShaderBindingLayout.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\RenderState\VKRenderPass.h(13,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/RenderState/VKRenderPass.cpp')
+  
+  VKShaderModulePool.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/RenderState/VKStagingDescriptorPool.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Command/VKCommandBuffer.cpp')
+  
+  VKColorBuffer.cpp
+  VKDepthStencilBuffer.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/RenderState/VKStagingDescriptorSetPool.cpp')
+  
+  VKDeviceImage.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Shader/VKShaderModulePool.cpp')
+  
+  VKImageUtils.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Texture\VKDeviceImage.h(13,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Texture/VKColorBuffer.cpp')
+  
+  VKRenderBuffer.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Texture\VKImageUtils.h(13,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Texture/VKImageUtils.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Texture\VKDeviceImage.h(13,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Texture/VKDeviceImage.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Texture\VKDeviceImage.h(13,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Texture/VKDepthStencilBuffer.cpp')
+  
+  VKRenderTarget.cpp
+  VKSampler.cpp
+  VKTexture.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Texture\VKDeviceImage.h(13,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Texture/VKRenderBuffer.cpp')
+  
+  VKCore.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/VKCore.cpp')
+  
+  VKDevice.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Texture\VKDeviceImage.h(13,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Texture/VKTexture.cpp')
+  
+  VKInitializers.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\VKInitializers.h(12,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/VKInitializers.cpp')
+  
+  VKModuleInterface.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/VKDevice.cpp')
+  
+  VKPhysicalDevice.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/VKPhysicalDevice.cpp')
+  
+  VKRenderSystem.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\RenderState\VKPipelineState.h(14,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/RenderState/VKComputePSO.cpp')
+  
+  VKSwapChain.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\VKPtr.h(13,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/RenderState/VKPipelineBarrier.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\RenderState\VKPipelineState.h(14,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/RenderState/VKGraphicsPSO.cpp')
+  
+  VKTypes.cpp
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\VKTypes.h(12,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/VKTypes.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\RenderState\VKPipelineState.h(14,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/RenderState/VKPipelineState.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\VKPtr.h(13,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/RenderState/VKResourceHeap.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Texture\VKRenderTarget.h(13,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Texture/VKRenderTarget.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Texture\VKSampler.h(13,10): error C1083: Cannot open include file: 'vulkan/vulkan.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Texture/VKSampler.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/RenderState/VKPipelineLayout.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/Shader/VKShader.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/VKModuleInterface.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/VKSwapChain.cpp')
+  
+D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\Vulkan\Vulkan.h(24,10): error C1083: Cannot open include file: 'vulkan/vk_platform.h': No such file or directory
+  (compiling source file 'sources/Renderer/Vulkan/VKRenderSystem.cpp')
+  

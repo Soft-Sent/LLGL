@@ -4,6 +4,8 @@
 # Intermediate build system files
 Makefile
 CMakeFiles
+bin/
+bin-int/
 build*/
 *.aps
 *.cache

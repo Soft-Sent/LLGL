@@ -1,5 +1,3 @@
-﻿  DXCInstance.cpp
-  DXCore.cpp
-  DXShaderReflection.cpp
+﻿  DXShaderReflection.cpp
   DXTypes.cpp
-  LLGL_DXCommon.vcxproj -> C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\DXCommon\bin\Debug\LLGL_DXCommon\LLGL_DXCommon.lib
+  LLGL_DXCommon.vcxproj -> D:\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\DXCommon\bin\Debug\LLGL_DXCommon\LLGL_DXCommon.lib

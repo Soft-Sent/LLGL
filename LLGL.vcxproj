@@ -75,26 +75,30 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>LLGL_PLATFORM_WINDOWS;LLGL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_OPENGL;LLGL_PLATFORM_WINDOWS;LLGL_BUILD_RENDERER_DIRECT3D11;LLGL_BUILD_RENDERER_DIRECT3D12;LLGL_BUILD_RENDERER_OPENGL;LLGL_BUILD_RENDERER_VULKAN;LLGL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp14</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;dxgi.lib;d3d11.lib;d3d12.lib;dxguid.lib;d3dcompiler.lib;opengl32.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>LLGL_PLATFORM_WINDOWS;LLGL_RELEASE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_OPENGL;LLGL_PLATFORM_WINDOWS;LLGL_BUILD_RENDERER_DIRECT3D11;LLGL_BUILD_RENDERER_DIRECT3D12;LLGL_BUILD_RENDERER_OPENGL;LLGL_BUILD_RENDERER_VULKAN;LLGL_RELEASE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -102,6 +106,7 @@
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp14</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
@@ -109,13 +114,16 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;dxgi.lib;d3d11.lib;d3d12.lib;dxguid.lib;d3dcompiler.lib;opengl32.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>LLGL_PLATFORM_WINDOWS;LLGL_DISTRIBUTION;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_OPENGL;LLGL_PLATFORM_WINDOWS;LLGL_BUILD_RENDERER_DIRECT3D11;LLGL_BUILD_RENDERER_DIRECT3D12;LLGL_BUILD_RENDERER_OPENGL;LLGL_BUILD_RENDERER_VULKAN;LLGL_DISTRIBUTION;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -124,6 +132,7 @@
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp14</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
@@ -132,6 +141,9 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;dxgi.lib;d3d11.lib;d3d12.lib;dxguid.lib;d3dcompiler.lib;opengl32.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\LLGL-C\Buffer.h" />
@@ -297,11 +309,21 @@
     <ClInclude Include="sources\Core\Threading.h" />
     <ClInclude Include="sources\Core\Vendor.h" />
     <ClInclude Include="sources\Core\VersionMacros.h" />
+    <ClInclude Include="sources\Platform\ConsoleManip.h" />
+    <ClInclude Include="sources\Platform\Debug.h" />
+    <ClInclude Include="sources\Platform\Module.h" />
+    <ClInclude Include="sources\Platform\Path.h" />
     <ClInclude Include="sources\Renderer\BindingIterator.h" />
     <ClInclude Include="sources\Renderer\BufferUtils.h" />
     <ClInclude Include="sources\Renderer\BuildID.h" />
     <ClInclude Include="sources\Renderer\CheckedCast.h" />
     <ClInclude Include="sources\Renderer\ContainerTypes.h" />
+    <ClInclude Include="sources\Renderer\DXCommon\ComPtr.h" />
+    <ClInclude Include="sources\Renderer\DXCommon\DXC\DXCInstance.h" />
+    <ClInclude Include="sources\Renderer\DXCommon\DXCore.h" />
+    <ClInclude Include="sources\Renderer\DXCommon\DXManagedComPtrArray.h" />
+    <ClInclude Include="sources\Renderer\DXCommon\DXShaderReflection.h" />
+    <ClInclude Include="sources\Renderer\DXCommon\DXTypes.h" />
     <ClInclude Include="sources\Renderer\DebugLayer\Buffer\DbgBuffer.h" />
     <ClInclude Include="sources\Renderer\DebugLayer\Buffer\DbgBufferArray.h" />
     <ClInclude Include="sources\Renderer\DebugLayer\DbgCommandBuffer.h" />
@@ -319,8 +341,250 @@
     <ClInclude Include="sources\Renderer\DebugLayer\Shader\DbgShader.h" />
     <ClInclude Include="sources\Renderer\DebugLayer\Texture\DbgRenderTarget.h" />
     <ClInclude Include="sources\Renderer\DebugLayer\Texture\DbgTexture.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Buffer\D3D11Buffer.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Buffer\D3D11BufferArray.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Buffer\D3D11BufferWithRV.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Buffer\D3D11StagingBuffer.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Buffer\D3D11StagingBufferPool.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Command\D3D11Command.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Command\D3D11CommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Command\D3D11CommandContext.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Command\D3D11CommandExecutor.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Command\D3D11CommandOpcode.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Command\D3D11CommandQueue.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Command\D3D11PrimaryCommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Command\D3D11SecondaryCommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\D3D11ObjectUtils.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\D3D11RenderSystem.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\D3D11ResourceFlags.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\D3D11SwapChain.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\D3D11Types.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Direct3D11.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11BindingLocator.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11BindingTable.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11ComputePSO.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11ConstantsCache.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11Fence.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11GraphicsPSO.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11GraphicsPSO1.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11GraphicsPSO3.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11GraphicsPSOBase.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11PipelineLayout.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11PipelineState.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11QueryHeap.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11RenderPass.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11ResourceHeap.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11ResourceType.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11StateManager.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Shader\Builtin\D3D11Builtin.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Shader\D3D11BuiltinShaderFactory.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Shader\D3D11CommonShader.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Shader\D3D11DomainShader.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Shader\D3D11Shader.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Shader\D3D11VertexShader.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Texture\D3D11MipGenerator.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Texture\D3D11RenderTarget.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Texture\D3D11RenderTargetHandles.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Texture\D3D11Sampler.h" />
+    <ClInclude Include="sources\Renderer\Direct3D11\Texture\D3D11Texture.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12Buffer.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12BufferArray.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12BufferConstantsPool.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12CPUAccessBuffer.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12IntermediateBufferPool.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12StagingBuffer.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12StagingBufferPool.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Command\D3D12CommandContext.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Command\D3D12CommandQueue.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Command\D3D12SignatureFactory.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12Device.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12ObjectUtils.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12RenderSystem.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12Resource.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12SubresourceContext.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12SwapChain.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12Types.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\D3DX12\d3dx12.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12ComputePSO.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12DescriptorCache.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12DescriptorHeap.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12Fence.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12GraphicsPSO.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineCache.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineLayout.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineState.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12QueryHeap.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12RenderPass.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12ResourceHeap.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeap.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeapPool.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\Builtin\D3D12Builtin.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\D3D12BuiltinShaderFactory.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\D3D12RootParameter.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\D3D12RootSignature.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\D3D12Shader.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Texture\D3D12RenderTarget.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Texture\D3D12Sampler.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Texture\D3D12Texture.h" />
     <ClInclude Include="sources\Renderer\DynamicModuleInterface.h" />
+    <ClInclude Include="sources\Renderer\Metal\Buffer\MTBuffer.h" />
+    <ClInclude Include="sources\Renderer\Metal\Buffer\MTBufferArray.h" />
+    <ClInclude Include="sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h" />
+    <ClInclude Include="sources\Renderer\Metal\Buffer\MTStagingBuffer.h" />
+    <ClInclude Include="sources\Renderer\Metal\Buffer\MTStagingBufferPool.h" />
+    <ClInclude Include="sources\Renderer\Metal\Command\MTCommand.h" />
+    <ClInclude Include="sources\Renderer\Metal\Command\MTCommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\Metal\Command\MTCommandContext.h" />
+    <ClInclude Include="sources\Renderer\Metal\Command\MTCommandExecutor.h" />
+    <ClInclude Include="sources\Renderer\Metal\Command\MTCommandOpcode.h" />
+    <ClInclude Include="sources\Renderer\Metal\Command\MTCommandQueue.h" />
+    <ClInclude Include="sources\Renderer\Metal\Command\MTDirectCommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\Metal\Command\MTMultiSubmitCommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\Metal\MTCore.h" />
+    <ClInclude Include="sources\Renderer\Metal\MTDevice.h" />
+    <ClInclude Include="sources\Renderer\Metal\MTFeatureSet.h" />
+    <ClInclude Include="sources\Renderer\Metal\MTRenderSystem.h" />
+    <ClInclude Include="sources\Renderer\Metal\MTSwapChain.h" />
+    <ClInclude Include="sources\Renderer\Metal\MTTypes.h" />
+    <ClInclude Include="sources\Renderer\Metal\OSXAvailability.h" />
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTBuiltinPSOFactory.h" />
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTComputePSO.h" />
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTConstantsCache.h" />
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTConstantsCacheLayout.h" />
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTDescriptorCache.h" />
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTFence.h" />
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTGraphicsPSO.h" />
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTPipelineLayout.h" />
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTPipelineState.h" />
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTQueryHeap.h" />
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTRenderPass.h" />
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTResourceHeap.h" />
+    <ClInclude Include="sources\Renderer\Metal\Shader\Builtin\MTBuiltin.h" />
+    <ClInclude Include="sources\Renderer\Metal\Shader\MTShader.h" />
+    <ClInclude Include="sources\Renderer\Metal\Shader\MTShaderStage.h" />
+    <ClInclude Include="sources\Renderer\Metal\Texture\MTRenderTarget.h" />
+    <ClInclude Include="sources\Renderer\Metal\Texture\MTSampler.h" />
+    <ClInclude Include="sources\Renderer\Metal\Texture\MTTexture.h" />
     <ClInclude Include="sources\Renderer\ModuleInterface.h" />
+    <ClInclude Include="sources\Renderer\Null\Buffer\NullBuffer.h" />
+    <ClInclude Include="sources\Renderer\Null\Buffer\NullBufferArray.h" />
+    <ClInclude Include="sources\Renderer\Null\Command\NullCommand.h" />
+    <ClInclude Include="sources\Renderer\Null\Command\NullCommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\Null\Command\NullCommandExecutor.h" />
+    <ClInclude Include="sources\Renderer\Null\Command\NullCommandOpcode.h" />
+    <ClInclude Include="sources\Renderer\Null\Command\NullCommandQueue.h" />
+    <ClInclude Include="sources\Renderer\Null\NullRenderSystem.h" />
+    <ClInclude Include="sources\Renderer\Null\NullSwapChain.h" />
+    <ClInclude Include="sources\Renderer\Null\RenderState\NullFence.h" />
+    <ClInclude Include="sources\Renderer\Null\RenderState\NullPipelineLayout.h" />
+    <ClInclude Include="sources\Renderer\Null\RenderState\NullPipelineState.h" />
+    <ClInclude Include="sources\Renderer\Null\RenderState\NullQueryHeap.h" />
+    <ClInclude Include="sources\Renderer\Null\RenderState\NullRenderPass.h" />
+    <ClInclude Include="sources\Renderer\Null\RenderState\NullResourceHeap.h" />
+    <ClInclude Include="sources\Renderer\Null\Shader\NullShader.h" />
+    <ClInclude Include="sources\Renderer\Null\Texture\NullRenderTarget.h" />
+    <ClInclude Include="sources\Renderer\Null\Texture\NullSampler.h" />
+    <ClInclude Include="sources\Renderer\Null\Texture\NullTexture.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GL2XSharedContextVertexArray.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GL3PlusSharedContextVertexArray.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLBuffer.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLBufferArray.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLBufferArrayWithVAO.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLBufferWithVAO.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLBufferWithXFB.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLSharedContextVertexArray.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLVertexArrayObject.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLVertexAttribute.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLCommand.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLCommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLCommandExecutor.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLCommandOpcode.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLCommandQueue.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLDeferredCommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLImmediateCommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Ext\GLExtensionLoader.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Ext\GLExtensionRegistry.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Ext\GLExtensions.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\GLCore.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\GLObjectUtils.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\GLRenderSystem.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\GLRenderingCaps.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\GLSwapChain.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\GLTypes.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\OpenGL.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Android\AndroidGLContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Android\AndroidGLCore.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Android\AndroidGLSwapChainContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Android\AndroidSharedEGLSurface.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\GLContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\GLContextManager.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\GLSwapChainContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\IOS\IOSGLContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\IOS\IOSGLSwapChainContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Linux\LinuxGLContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Linux\LinuxGLSwapChainContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\MacOS\MacOSGLContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\MacOS\MacOSGLExt.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\MacOS\MacOSGLSwapChainContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Wasm\WasmGLContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Wasm\WasmGLSwapChainContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Win32\Win32GLContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Win32\Win32GLSwapChainContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatExtensionMapping.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatExtensions.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatProfileTypes.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCompat\OpenGLCompat.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreExtensions.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreProfileTypes.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCore\OpenGLCore.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLES\GLESExtensions.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLES\GLESProfileTypes.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLES\OpenGLES.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLProfile.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\WebGL\WebGL.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\WebGL\WebGLProfileTypes.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLBlendState.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLComputePSO.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLContextState.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLDepthStencilState.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLFence.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLGraphicsPSO.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLPipelineCache.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLPipelineLayout.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLPipelineState.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLQueryHeap.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLRasterizerState.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLRenderPass.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLResourceHeap.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLResourceType.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLState.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLStateManager.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLStatePool.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLLegacyShader.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLPipelineSignature.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLProgramPipeline.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLSeparableShader.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShader.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderBindingLayout.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderBufferInterfaceMap.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderPipeline.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderProgram.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderSourcePatcher.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderUniform.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLEmulatedSampler.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLFramebuffer.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLFramebufferCapture.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLMipGenerator.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLRenderTarget.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLRenderbuffer.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLSampler.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLTexImage.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLTexSubImage.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLTexture.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLTextureSubImage.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLTextureViewPool.h" />
     <ClInclude Include="sources\Renderer\PipelineStateUtils.h" />
     <ClInclude Include="sources\Renderer\ProxyPipelineCache.h" />
     <ClInclude Include="sources\Renderer\RenderPassUtils.h" />
@@ -367,6 +631,55 @@
     <ClInclude Include="sources\Renderer\TextureUtils.h" />
     <ClInclude Include="sources\Renderer\VideoAdapter.h" />
     <ClInclude Include="sources\Renderer\VirtualCommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Buffer\VKBuffer.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Buffer\VKBufferArray.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Buffer\VKDeviceBuffer.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Command\VKCommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Command\VKCommandContext.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Command\VKCommandQueue.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Ext\VKExtensionLoader.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Ext\VKExtensionRegistry.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Ext\VKExtensions.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Memory\VKDeviceMemory.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Memory\VKDeviceMemoryManager.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Memory\VKDeviceMemoryRegion.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKComputePSO.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKDescriptorCache.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKDescriptorSetWriter.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKFence.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKGraphicsPSO.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineBarrier.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineCache.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineLayout.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineState.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPoolSizeAccumulator.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPredicateQueryHeap.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKQueryHeap.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKRenderPass.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKResourceHeap.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKStagingDescriptorPool.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKStagingDescriptorSetPool.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Shader\VKShader.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Shader\VKShaderBindingLayout.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Shader\VKShaderModulePool.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKColorBuffer.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKDepthStencilBuffer.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKDeviceImage.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKImageUtils.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKRenderBuffer.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKRenderTarget.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKSampler.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKTexture.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKCore.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKDevice.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKInitializers.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKPhysicalDevice.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKPtr.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKRenderSystem.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKStaticLimits.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKSwapChain.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKTypes.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Vulkan.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sources\Core\BCDecompressor.cpp" />
@@ -390,11 +703,22 @@
     <ClCompile Include="sources\Core\Utility.cpp" />
     <ClCompile Include="sources\Core\Vendor.cpp" />
     <ClCompile Include="sources\Core\Version.cpp" />
+    <ClCompile Include="sources\Platform\Canvas.cpp" />
+    <ClCompile Include="sources\Platform\ConsoleManip.cpp" />
+    <ClCompile Include="sources\Platform\Debug.cpp" />
+    <ClCompile Include="sources\Platform\Display.cpp" />
+    <ClCompile Include="sources\Platform\DisplayFlags.cpp" />
+    <ClCompile Include="sources\Platform\Path.cpp" />
+    <ClCompile Include="sources\Platform\Window.cpp" />
     <ClCompile Include="sources\Renderer\BindingIterator.cpp" />
     <ClCompile Include="sources\Renderer\Buffer.cpp" />
     <ClCompile Include="sources\Renderer\BufferArray.cpp" />
     <ClCompile Include="sources\Renderer\BufferFlags.cpp" />
     <ClCompile Include="sources\Renderer\BufferUtils.cpp" />
+    <ClCompile Include="sources\Renderer\DXCommon\DXC\DXCInstance.cpp" />
+    <ClCompile Include="sources\Renderer\DXCommon\DXCore.cpp" />
+    <ClCompile Include="sources\Renderer\DXCommon\DXShaderReflection.cpp" />
+    <ClCompile Include="sources\Renderer\DXCommon\DXTypes.cpp" />
     <ClCompile Include="sources\Renderer\DebugLayer\Buffer\DbgBuffer.cpp" />
     <ClCompile Include="sources\Renderer\DebugLayer\Buffer\DbgBufferArray.cpp" />
     <ClCompile Include="sources\Renderer\DebugLayer\DbgCommandBuffer.cpp" />
@@ -410,7 +734,196 @@
     <ClCompile Include="sources\Renderer\DebugLayer\Shader\DbgShader.cpp" />
     <ClCompile Include="sources\Renderer\DebugLayer\Texture\DbgRenderTarget.cpp" />
     <ClCompile Include="sources\Renderer\DebugLayer\Texture\DbgTexture.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Buffer\D3D11Buffer.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Buffer\D3D11BufferArray.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Buffer\D3D11BufferWithRV.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Buffer\D3D11StagingBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Buffer\D3D11StagingBufferPool.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Command\D3D11CommandBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Command\D3D11CommandContext.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Command\D3D11CommandExecutor.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Command\D3D11CommandQueue.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Command\D3D11PrimaryCommandBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Command\D3D11SecondaryCommandBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\D3D11ModuleInterface.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\D3D11ObjectUtils.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\D3D11RenderSystem.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\D3D11ResourceFlags.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\D3D11StaticAssertions.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\D3D11SwapChain.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\D3D11Types.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11BindingLocator.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11BindingTable.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11ComputePSO.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11ConstantsCache.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11Fence.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11GraphicsPSO.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11GraphicsPSO1.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11GraphicsPSO3.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11GraphicsPSOBase.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11PipelineLayout.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11PipelineState.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11QueryHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11RenderPass.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11ResourceHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11StateManager.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Shader\D3D11BuiltinShaderFactory.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Shader\D3D11CommonShader.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Shader\D3D11DomainShader.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Shader\D3D11Shader.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Shader\D3D11VertexShader.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Texture\D3D11MipGenerator.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Texture\D3D11RenderTarget.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Texture\D3D11RenderTargetHandles.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Texture\D3D11Sampler.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D11\Texture\D3D11Texture.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12Buffer.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12BufferArray.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12BufferConstantsPool.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12CPUAccessBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12IntermediateBufferPool.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12StagingBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12StagingBufferPool.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Command\D3D12CommandContext.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Command\D3D12CommandQueue.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Command\D3D12SignatureFactory.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12Device.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12ModuleInterface.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12ObjectUtils.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12RenderSystem.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12SubresourceContext.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12SwapChain.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12Types.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12ComputePSO.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12DescriptorCache.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12DescriptorHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12Fence.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12GraphicsPSO.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineCache.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineLayout.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineState.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12QueryHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12RenderPass.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12ResourceHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeapPool.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Shader\D3D12BuiltinShaderFactory.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Shader\D3D12RootParameter.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Shader\D3D12RootSignature.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Shader\D3D12Shader.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Texture\D3D12RenderTarget.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Texture\D3D12Sampler.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp" />
     <ClCompile Include="sources\Renderer\Format.cpp" />
+    <ClCompile Include="sources\Renderer\Null\Buffer\NullBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Null\Buffer\NullBufferArray.cpp" />
+    <ClCompile Include="sources\Renderer\Null\Command\NullCommandBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Null\Command\NullCommandExecutor.cpp" />
+    <ClCompile Include="sources\Renderer\Null\Command\NullCommandQueue.cpp" />
+    <ClCompile Include="sources\Renderer\Null\NullModuleInterface.cpp" />
+    <ClCompile Include="sources\Renderer\Null\NullRenderSystem.cpp" />
+    <ClCompile Include="sources\Renderer\Null\NullSwapChain.cpp" />
+    <ClCompile Include="sources\Renderer\Null\RenderState\NullFence.cpp" />
+    <ClCompile Include="sources\Renderer\Null\RenderState\NullPipelineLayout.cpp" />
+    <ClCompile Include="sources\Renderer\Null\RenderState\NullPipelineState.cpp" />
+    <ClCompile Include="sources\Renderer\Null\RenderState\NullQueryHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Null\RenderState\NullRenderPass.cpp" />
+    <ClCompile Include="sources\Renderer\Null\RenderState\NullResourceHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Null\Shader\NullShader.cpp" />
+    <ClCompile Include="sources\Renderer\Null\Texture\NullRenderTarget.cpp" />
+    <ClCompile Include="sources\Renderer\Null\Texture\NullSampler.cpp" />
+    <ClCompile Include="sources\Renderer\Null\Texture\NullTexture.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GL2XSharedContextVertexArray.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GL3PlusSharedContextVertexArray.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLBufferArray.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLBufferArrayWithVAO.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLBufferWithVAO.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLBufferWithXFB.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLVertexArrayObject.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLVertexAttribute.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Command\GLCommandBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Command\GLCommandExecutor.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Command\GLCommandQueue.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Command\GLDeferredCommandBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Command\GLImmediateCommandBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Ext\GLExtensionRegistry.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\GLCore.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\GLModuleInterface.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\GLObjectUtils.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\GLRenderSystem.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\GLStaticAssertions.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\GLSwapChain.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\GLTypes.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Android\AndroidGLContext.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Android\AndroidGLCore.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Android\AndroidGLSwapChainContext.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Android\AndroidSharedEGLSurface.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\GLContext.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\GLContextManager.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\GLSwapChainContext.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Linux\LinuxGLContext.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Linux\LinuxGLSwapChain.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Linux\LinuxGLSwapChainContext.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Wasm\WasmGLContext.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Wasm\WasmGLSwapChainContext.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Win32\Win32GLContext.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Win32\Win32GLSwapChainContext.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatExtensionLoader.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatExtensions.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatProfile.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatProfileCaps.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreExtensionLoader.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreExtensions.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreProfile.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreProfileCaps.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLES\GLESExtensionLoader.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLES\GLESExtensions.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLES\GLESProfile.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLES\GLESProfileCaps.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\WebGL\WebGLExtensionLoader.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\WebGL\WebGLProfile.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\WebGL\WebGLProfileCaps.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLBlendState.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLComputePSO.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLContextState.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLDepthStencilState.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLFence.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLGraphicsPSO.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLPipelineCache.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLPipelineLayout.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLPipelineState.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLQueryHeap.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLRasterizerState.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLRenderPass.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLResourceHeap.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLStateManager.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLStatePool.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLLegacyShader.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLPipelineSignature.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLProgramPipeline.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLSeparableShader.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShader.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderBindingLayout.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderBufferInterfaceMap.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderPipeline.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderProgram.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderSourcePatcher.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderUniform.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLEmulatedSampler.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLFramebuffer.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLFramebufferCapture.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLMipGenerator.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLRenderTarget.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLRenderbuffer.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLSampler.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLTexImage.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLTexSubImage.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLTexture.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLTextureSubImage.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLTextureViewPool.cpp" />
     <ClCompile Include="sources\Renderer\PipelineStateFlags.cpp" />
     <ClCompile Include="sources\Renderer\PipelineStateUtils.cpp" />
     <ClCompile Include="sources\Renderer\ProxyPipelineCache.cpp" />
@@ -438,6 +951,53 @@
     <ClCompile Include="sources\Renderer\TextureFlags.cpp" />
     <ClCompile Include="sources\Renderer\TextureUtils.cpp" />
     <ClCompile Include="sources\Renderer\VertexAttribute.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Buffer\VKBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Buffer\VKBufferArray.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Buffer\VKDeviceBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Command\VKCommandBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Command\VKCommandContext.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Command\VKCommandQueue.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Ext\VKExtensionLoader.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Ext\VKExtensionRegistry.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Ext\VKExtensions.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Memory\VKDeviceMemory.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Memory\VKDeviceMemoryManager.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Memory\VKDeviceMemoryRegion.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKComputePSO.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKDescriptorCache.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKDescriptorSetWriter.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKFence.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKGraphicsPSO.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineBarrier.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineCache.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineLayout.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineState.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPoolSizeAccumulator.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPredicateQueryHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKQueryHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKRenderPass.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKResourceHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKStagingDescriptorPool.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKStagingDescriptorSetPool.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Shader\VKShader.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Shader\VKShaderBindingLayout.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Shader\VKShaderModulePool.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKColorBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKDepthStencilBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKDeviceImage.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKImageUtils.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKRenderBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKRenderTarget.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKSampler.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKTexture.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\VKCore.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\VKDevice.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\VKInitializers.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\VKModuleInterface.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\VKPhysicalDevice.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\VKRenderSystem.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\VKSwapChain.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\VKTypes.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

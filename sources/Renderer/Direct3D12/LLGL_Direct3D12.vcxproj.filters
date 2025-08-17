@@ -115,16 +115,16 @@
       <Filter>Direct3D12\Shader\Builtin</Filter>
     </ClInclude>
     <ClInclude Include="Shader\D3D12BuiltinShaderFactory.h">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Shader\D3D12RootParameter.h">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Shader\D3D12RootSignature.h">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Shader\D3D12Shader.h">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Texture\D3D12MipGenerator.h">
       <Filter>Direct3D12</Filter>
@@ -234,16 +234,16 @@
       <Filter>Direct3D12</Filter>
     </ClCompile>
     <ClCompile Include="Shader\D3D12BuiltinShaderFactory.cpp">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Shader\D3D12RootParameter.cpp">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Shader\D3D12RootSignature.cpp">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Shader\D3D12Shader.cpp">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Texture\D3D12MipGenerator.cpp">
       <Filter>Direct3D12</Filter>

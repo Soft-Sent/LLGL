@@ -82,8 +82,17 @@
     <Filter Include="sources\Core">
       <UniqueIdentifier>{A1A450AD-8D07-E051-368D-180822CFABD4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sources\Platform">
+      <UniqueIdentifier>{1DB96E6A-09B2-8DBC-32E4-72411E3C6DC8}</UniqueIdentifier>
+    </Filter>
     <Filter Include="sources\Renderer">
       <UniqueIdentifier>{6FC04B45-5BB9-6A97-84EB-4F1C70434AA3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\DXCommon">
+      <UniqueIdentifier>{63C0D255-CF82-06E0-1833-956C8434DFBD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\DXCommon\DXC">
+      <UniqueIdentifier>{912C4D88-FD44-34B2-C6F1-C34B32C9C84B}</UniqueIdentifier>
     </Filter>
     <Filter Include="sources\Renderer\DebugLayer">
       <UniqueIdentifier>{82C85059-EED5-7E3F-77BC-7A2AE3C84AF6}</UniqueIdentifier>
@@ -99,6 +108,147 @@
     </Filter>
     <Filter Include="sources\Renderer\DebugLayer\Texture">
       <UniqueIdentifier>{E24F529F-4E09-BD49-D768-D723432173B9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D11">
+      <UniqueIdentifier>{521E2119-BE2B-4FFF-4712-4BEAB31E1BB6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D11\Buffer">
+      <UniqueIdentifier>{FB0F6E92-E74B-71FC-505E-89F33CB91917}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D11\Command">
+      <UniqueIdentifier>{60C9AD1F-CC82-18CA-55E2-32A4C19ACE39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D11\RenderState">
+      <UniqueIdentifier>{E29EAF74-4E2E-715F-572A-5277C338AC6B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D11\Shader">
+      <UniqueIdentifier>{B8BD27B9-A4F9-2A23-0D0C-431AF966D33D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D11\Shader\Builtin">
+      <UniqueIdentifier>{9E8734DA-8AEF-FAA7-F35A-0FBEDFE11194}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D11\Texture">
+      <UniqueIdentifier>{B275C325-1E2F-2ED0-A78E-48AA1347E43F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D12">
+      <UniqueIdentifier>{531E2119-BF2B-4FFF-4812-4BEAB41E1BB6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D12\Buffer">
+      <UniqueIdentifier>{DCE4AF7E-C820-B3E8-3133-CBDF1D8E5B03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D12\Command">
+      <UniqueIdentifier>{613A2A94-CDF3-943E-5653-AF18C20B4BAE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D12\D3DX12">
+      <UniqueIdentifier>{78FD9C7E-6439-A0E8-CD4B-B8DFB9A64803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D12\RenderState">
+      <UniqueIdentifier>{63A80EC4-CF37-D0AE-D833-B1C644420BBB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D12\Shader">
+      <UniqueIdentifier>{999269A5-85CE-6C0F-EEE0-8406DA3B152A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D12\Shader\Builtin">
+      <UniqueIdentifier>{7FAD69E6-6B15-30B4-D480-44CAC00747A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D12\Texture">
+      <UniqueIdentifier>{B3E63F9A-1FA0-AA44-A8FF-C41E14B860B4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Metal">
+      <UniqueIdentifier>{B148E952-9D42-12A5-86AF-A8B572487811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Metal\Buffer">
+      <UniqueIdentifier>{7AF99074-E611-789E-AFBE-07381B960C38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Metal\Command">
+      <UniqueIdentifier>{BFE22D46-AB08-F8AC-944E-7D7880131D79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Metal\RenderState">
+      <UniqueIdentifier>{C14F4BA6-AD8B-4E10-169E-660702F9F62A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Metal\Shader">
+      <UniqueIdentifier>{37A74A9B-A3BF-31C5-6C6C-C15ED843C65E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Metal\Shader\Builtin">
+      <UniqueIdentifier>{1D80ECCA-8944-EBBA-52AA-1B85BE2D87F0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Metal\Texture">
+      <UniqueIdentifier>{118F434C-FDB4-0DB3-E6FA-927ED2BF327F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Null">
+      <UniqueIdentifier>{19A30F31-850F-CB2B-4E03-6389BA2EED93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Null\Buffer">
+      <UniqueIdentifier>{E28E8C4B-CE49-7CF7-7701-F541639BC687}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Null\Command">
+      <UniqueIdentifier>{27259CFC-933D-8326-5CEA-12C0C8C117C0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Null\RenderState">
+      <UniqueIdentifier>{29866495-95F4-B914-DEDD-74144A8BAFB0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Null\Shader">
+      <UniqueIdentifier>{9F3C4672-8BF7-351E-34AF-AE68204980AE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Null\Texture">
+      <UniqueIdentifier>{79D1B102-E5E9-982C-AE96-28C61A6E2DC6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL">
+      <UniqueIdentifier>{C3B67BB5-2FEE-C34C-38F8-2770A4AEEA45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\Buffer">
+      <UniqueIdentifier>{4C9FFCE4-38C5-C64B-210B-4C170DD0EB17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\Command">
+      <UniqueIdentifier>{D1420EC4-3D26-1D04-4629-4B40B28BE354}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\Ext">
+      <UniqueIdentifier>{835B4AE6-EF68-78CC-784F-74B7E45B4483}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\Platform">
+      <UniqueIdentifier>{773EC342-638F-AE84-8CF3-9C4678A341EE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\Platform\Android">
+      <UniqueIdentifier>{A7B88292-9335-76D5-BCB2-76E9A88E1269}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\Platform\IOS">
+      <UniqueIdentifier>{D1A8B656-BD8F-784E-66E0-DE6B52A6F1B4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\Platform\Linux">
+      <UniqueIdentifier>{D62E49DF-C280-20CF-AB9F-5DDF979039B8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\Platform\MacOS">
+      <UniqueIdentifier>{79B056DF-6502-2ECF-4E21-6BDF3A1247B8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\Platform\Wasm">
+      <UniqueIdentifier>{5EC1932D-CA85-921D-93EB-C2E7FF6E2E53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\Platform\Win32">
+      <UniqueIdentifier>{993310E0-8585-E7CF-6EA4-24E05A9500B9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\Profile">
+      <UniqueIdentifier>{A34EE3B3-0F32-F2F3-1835-20308497B844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\Profile\GLCompat">
+      <UniqueIdentifier>{A939FAF5-95B6-ED38-BE33-EE4CAA0F8ACC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\Profile\GLCore">
+      <UniqueIdentifier>{4E705F60-3AC2-3650-23E1-73600FD24F39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\Profile\GLES">
+      <UniqueIdentifier>{9DA7D70B-898E-9903-32DF-FF201EA5126A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\Profile\WebGL">
+      <UniqueIdentifier>{E352FC87-4F17-FB77-187D-2B42840097AD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\RenderState">
+      <UniqueIdentifier>{D368A1DE-3F22-0C89-C881-2663343AC2F8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\Shader">
+      <UniqueIdentifier>{094DB60B-F572-8072-DEB8-053ECA7DA53E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\OpenGL\Texture">
+      <UniqueIdentifier>{23EF23CA-8FD2-320A-98D5-60460438F95A}</UniqueIdentifier>
     </Filter>
     <Filter Include="sources\Renderer\SPIRV">
       <UniqueIdentifier>{D29E4953-BE98-72A5-A705-09B6939ED811}</UniqueIdentifier>
@@ -117,6 +267,30 @@
     </Filter>
     <Filter Include="sources\Renderer\SPIRV\spirv\unified1">
       <UniqueIdentifier>{99EC7AA3-05B1-7993-CE16-AA5D3A9A15C9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Vulkan">
+      <UniqueIdentifier>{0F1B2EC6-7B52-765D-845C-DA80F0129D56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Vulkan\Buffer">
+      <UniqueIdentifier>{18B621D4-04DC-EB3A-ED21-7106D9E61007}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Vulkan\Command">
+      <UniqueIdentifier>{1D33D697-8916-E5D7-9219-1314FE7BAB28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Vulkan\Ext">
+      <UniqueIdentifier>{CF05EE16-3B13-1CFD-C4F9-17E83006E8B3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Vulkan\Memory">
+      <UniqueIdentifier>{97EBACEC-8311-7753-6C57-FC1E581C9C1F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Vulkan\RenderState">
+      <UniqueIdentifier>{1F9F403A-8B58-ABE4-14B8-C5BE80706154}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Vulkan\Shader">
+      <UniqueIdentifier>{D563DBFA-C189-A561-AACF-2A2D9694CA2D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Vulkan\Texture">
+      <UniqueIdentifier>{6FDFEB9D-DBC2-FADD-E4C5-281A5028C12E}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -609,6 +783,18 @@
     <ClInclude Include="sources\Core\VersionMacros.h">
       <Filter>sources\Core</Filter>
     </ClInclude>
+    <ClInclude Include="sources\Platform\ConsoleManip.h">
+      <Filter>sources\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Platform\Debug.h">
+      <Filter>sources\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Platform\Module.h">
+      <Filter>sources\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Platform\Path.h">
+      <Filter>sources\Platform</Filter>
+    </ClInclude>
     <ClInclude Include="sources\Renderer\BindingIterator.h">
       <Filter>sources\Renderer</Filter>
     </ClInclude>
@@ -623,6 +809,24 @@
     </ClInclude>
     <ClInclude Include="sources\Renderer\ContainerTypes.h">
       <Filter>sources\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\DXCommon\ComPtr.h">
+      <Filter>sources\Renderer\DXCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\DXCommon\DXC\DXCInstance.h">
+      <Filter>sources\Renderer\DXCommon\DXC</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\DXCommon\DXCore.h">
+      <Filter>sources\Renderer\DXCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\DXCommon\DXManagedComPtrArray.h">
+      <Filter>sources\Renderer\DXCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\DXCommon\DXShaderReflection.h">
+      <Filter>sources\Renderer\DXCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\DXCommon\DXTypes.h">
+      <Filter>sources\Renderer\DXCommon</Filter>
     </ClInclude>
     <ClInclude Include="sources\Renderer\DebugLayer\Buffer\DbgBuffer.h">
       <Filter>sources\Renderer\DebugLayer\Buffer</Filter>
@@ -675,11 +879,737 @@
     <ClInclude Include="sources\Renderer\DebugLayer\Texture\DbgTexture.h">
       <Filter>sources\Renderer\DebugLayer\Texture</Filter>
     </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Buffer\D3D11Buffer.h">
+      <Filter>sources\Renderer\Direct3D11\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Buffer\D3D11BufferArray.h">
+      <Filter>sources\Renderer\Direct3D11\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Buffer\D3D11BufferWithRV.h">
+      <Filter>sources\Renderer\Direct3D11\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Buffer\D3D11StagingBuffer.h">
+      <Filter>sources\Renderer\Direct3D11\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Buffer\D3D11StagingBufferPool.h">
+      <Filter>sources\Renderer\Direct3D11\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Command\D3D11Command.h">
+      <Filter>sources\Renderer\Direct3D11\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Command\D3D11CommandBuffer.h">
+      <Filter>sources\Renderer\Direct3D11\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Command\D3D11CommandContext.h">
+      <Filter>sources\Renderer\Direct3D11\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Command\D3D11CommandExecutor.h">
+      <Filter>sources\Renderer\Direct3D11\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Command\D3D11CommandOpcode.h">
+      <Filter>sources\Renderer\Direct3D11\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Command\D3D11CommandQueue.h">
+      <Filter>sources\Renderer\Direct3D11\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Command\D3D11PrimaryCommandBuffer.h">
+      <Filter>sources\Renderer\Direct3D11\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Command\D3D11SecondaryCommandBuffer.h">
+      <Filter>sources\Renderer\Direct3D11\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\D3D11ObjectUtils.h">
+      <Filter>sources\Renderer\Direct3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\D3D11RenderSystem.h">
+      <Filter>sources\Renderer\Direct3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\D3D11ResourceFlags.h">
+      <Filter>sources\Renderer\Direct3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\D3D11SwapChain.h">
+      <Filter>sources\Renderer\Direct3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\D3D11Types.h">
+      <Filter>sources\Renderer\Direct3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Direct3D11.h">
+      <Filter>sources\Renderer\Direct3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11BindingLocator.h">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11BindingTable.h">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11ComputePSO.h">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11ConstantsCache.h">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11Fence.h">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11GraphicsPSO.h">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11GraphicsPSO1.h">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11GraphicsPSO3.h">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11GraphicsPSOBase.h">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11PipelineLayout.h">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11PipelineState.h">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11QueryHeap.h">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11RenderPass.h">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11ResourceHeap.h">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11ResourceType.h">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\RenderState\D3D11StateManager.h">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Shader\Builtin\D3D11Builtin.h">
+      <Filter>sources\Renderer\Direct3D11\Shader\Builtin</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Shader\D3D11BuiltinShaderFactory.h">
+      <Filter>sources\Renderer\Direct3D11\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Shader\D3D11CommonShader.h">
+      <Filter>sources\Renderer\Direct3D11\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Shader\D3D11DomainShader.h">
+      <Filter>sources\Renderer\Direct3D11\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Shader\D3D11Shader.h">
+      <Filter>sources\Renderer\Direct3D11\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Shader\D3D11VertexShader.h">
+      <Filter>sources\Renderer\Direct3D11\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Texture\D3D11MipGenerator.h">
+      <Filter>sources\Renderer\Direct3D11\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Texture\D3D11RenderTarget.h">
+      <Filter>sources\Renderer\Direct3D11\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Texture\D3D11RenderTargetHandles.h">
+      <Filter>sources\Renderer\Direct3D11\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Texture\D3D11Sampler.h">
+      <Filter>sources\Renderer\Direct3D11\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D11\Texture\D3D11Texture.h">
+      <Filter>sources\Renderer\Direct3D11\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12Buffer.h">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12BufferArray.h">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12BufferConstantsPool.h">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12CPUAccessBuffer.h">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12IntermediateBufferPool.h">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12StagingBuffer.h">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12StagingBufferPool.h">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.h">
+      <Filter>sources\Renderer\Direct3D12\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Command\D3D12CommandContext.h">
+      <Filter>sources\Renderer\Direct3D12\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Command\D3D12CommandQueue.h">
+      <Filter>sources\Renderer\Direct3D12\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Command\D3D12SignatureFactory.h">
+      <Filter>sources\Renderer\Direct3D12\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12Device.h">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12ObjectUtils.h">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12RenderSystem.h">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12Resource.h">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12SubresourceContext.h">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12SwapChain.h">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12Types.h">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\D3DX12\d3dx12.h">
+      <Filter>sources\Renderer\Direct3D12\D3DX12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12ComputePSO.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12DescriptorCache.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12DescriptorHeap.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12Fence.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12GraphicsPSO.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineCache.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineLayout.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineState.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12QueryHeap.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12RenderPass.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12ResourceHeap.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeap.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeapPool.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\Builtin\D3D12Builtin.h">
+      <Filter>sources\Renderer\Direct3D12\Shader\Builtin</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\D3D12BuiltinShaderFactory.h">
+      <Filter>sources\Renderer\Direct3D12\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\D3D12RootParameter.h">
+      <Filter>sources\Renderer\Direct3D12\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\D3D12RootSignature.h">
+      <Filter>sources\Renderer\Direct3D12\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\D3D12Shader.h">
+      <Filter>sources\Renderer\Direct3D12\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.h">
+      <Filter>sources\Renderer\Direct3D12\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Texture\D3D12RenderTarget.h">
+      <Filter>sources\Renderer\Direct3D12\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Texture\D3D12Sampler.h">
+      <Filter>sources\Renderer\Direct3D12\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Texture\D3D12Texture.h">
+      <Filter>sources\Renderer\Direct3D12\Texture</Filter>
+    </ClInclude>
     <ClInclude Include="sources\Renderer\DynamicModuleInterface.h">
       <Filter>sources\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Buffer\MTBuffer.h">
+      <Filter>sources\Renderer\Metal\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Buffer\MTBufferArray.h">
+      <Filter>sources\Renderer\Metal\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Buffer\MTIntermediateBuffer.h">
+      <Filter>sources\Renderer\Metal\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Buffer\MTStagingBuffer.h">
+      <Filter>sources\Renderer\Metal\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Buffer\MTStagingBufferPool.h">
+      <Filter>sources\Renderer\Metal\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Command\MTCommand.h">
+      <Filter>sources\Renderer\Metal\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Command\MTCommandBuffer.h">
+      <Filter>sources\Renderer\Metal\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Command\MTCommandContext.h">
+      <Filter>sources\Renderer\Metal\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Command\MTCommandExecutor.h">
+      <Filter>sources\Renderer\Metal\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Command\MTCommandOpcode.h">
+      <Filter>sources\Renderer\Metal\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Command\MTCommandQueue.h">
+      <Filter>sources\Renderer\Metal\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Command\MTDirectCommandBuffer.h">
+      <Filter>sources\Renderer\Metal\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Command\MTMultiSubmitCommandBuffer.h">
+      <Filter>sources\Renderer\Metal\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\MTCore.h">
+      <Filter>sources\Renderer\Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\MTDevice.h">
+      <Filter>sources\Renderer\Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\MTFeatureSet.h">
+      <Filter>sources\Renderer\Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\MTRenderSystem.h">
+      <Filter>sources\Renderer\Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\MTSwapChain.h">
+      <Filter>sources\Renderer\Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\MTTypes.h">
+      <Filter>sources\Renderer\Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\OSXAvailability.h">
+      <Filter>sources\Renderer\Metal</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTBuiltinPSOFactory.h">
+      <Filter>sources\Renderer\Metal\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTComputePSO.h">
+      <Filter>sources\Renderer\Metal\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTConstantsCache.h">
+      <Filter>sources\Renderer\Metal\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTConstantsCacheLayout.h">
+      <Filter>sources\Renderer\Metal\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTDescriptorCache.h">
+      <Filter>sources\Renderer\Metal\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTFence.h">
+      <Filter>sources\Renderer\Metal\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTGraphicsPSO.h">
+      <Filter>sources\Renderer\Metal\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTPipelineLayout.h">
+      <Filter>sources\Renderer\Metal\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTPipelineState.h">
+      <Filter>sources\Renderer\Metal\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTQueryHeap.h">
+      <Filter>sources\Renderer\Metal\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTRenderPass.h">
+      <Filter>sources\Renderer\Metal\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\RenderState\MTResourceHeap.h">
+      <Filter>sources\Renderer\Metal\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Shader\Builtin\MTBuiltin.h">
+      <Filter>sources\Renderer\Metal\Shader\Builtin</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Shader\MTShader.h">
+      <Filter>sources\Renderer\Metal\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Shader\MTShaderStage.h">
+      <Filter>sources\Renderer\Metal\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Texture\MTRenderTarget.h">
+      <Filter>sources\Renderer\Metal\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Texture\MTSampler.h">
+      <Filter>sources\Renderer\Metal\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Metal\Texture\MTTexture.h">
+      <Filter>sources\Renderer\Metal\Texture</Filter>
+    </ClInclude>
     <ClInclude Include="sources\Renderer\ModuleInterface.h">
       <Filter>sources\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\Buffer\NullBuffer.h">
+      <Filter>sources\Renderer\Null\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\Buffer\NullBufferArray.h">
+      <Filter>sources\Renderer\Null\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\Command\NullCommand.h">
+      <Filter>sources\Renderer\Null\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\Command\NullCommandBuffer.h">
+      <Filter>sources\Renderer\Null\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\Command\NullCommandExecutor.h">
+      <Filter>sources\Renderer\Null\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\Command\NullCommandOpcode.h">
+      <Filter>sources\Renderer\Null\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\Command\NullCommandQueue.h">
+      <Filter>sources\Renderer\Null\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\NullRenderSystem.h">
+      <Filter>sources\Renderer\Null</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\NullSwapChain.h">
+      <Filter>sources\Renderer\Null</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\RenderState\NullFence.h">
+      <Filter>sources\Renderer\Null\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\RenderState\NullPipelineLayout.h">
+      <Filter>sources\Renderer\Null\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\RenderState\NullPipelineState.h">
+      <Filter>sources\Renderer\Null\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\RenderState\NullQueryHeap.h">
+      <Filter>sources\Renderer\Null\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\RenderState\NullRenderPass.h">
+      <Filter>sources\Renderer\Null\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\RenderState\NullResourceHeap.h">
+      <Filter>sources\Renderer\Null\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\Shader\NullShader.h">
+      <Filter>sources\Renderer\Null\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\Texture\NullRenderTarget.h">
+      <Filter>sources\Renderer\Null\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\Texture\NullSampler.h">
+      <Filter>sources\Renderer\Null\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Null\Texture\NullTexture.h">
+      <Filter>sources\Renderer\Null\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GL2XSharedContextVertexArray.h">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GL3PlusSharedContextVertexArray.h">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLBuffer.h">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLBufferArray.h">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLBufferArrayWithVAO.h">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLBufferWithVAO.h">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLBufferWithXFB.h">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLSharedContextVertexArray.h">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLVertexArrayObject.h">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLVertexAttribute.h">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLCommand.h">
+      <Filter>sources\Renderer\OpenGL\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLCommandBuffer.h">
+      <Filter>sources\Renderer\OpenGL\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLCommandExecutor.h">
+      <Filter>sources\Renderer\OpenGL\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLCommandOpcode.h">
+      <Filter>sources\Renderer\OpenGL\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLCommandQueue.h">
+      <Filter>sources\Renderer\OpenGL\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLDeferredCommandBuffer.h">
+      <Filter>sources\Renderer\OpenGL\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLImmediateCommandBuffer.h">
+      <Filter>sources\Renderer\OpenGL\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Ext\GLExtensionLoader.h">
+      <Filter>sources\Renderer\OpenGL\Ext</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Ext\GLExtensionRegistry.h">
+      <Filter>sources\Renderer\OpenGL\Ext</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Ext\GLExtensions.h">
+      <Filter>sources\Renderer\OpenGL\Ext</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\GLCore.h">
+      <Filter>sources\Renderer\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\GLObjectUtils.h">
+      <Filter>sources\Renderer\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\GLRenderSystem.h">
+      <Filter>sources\Renderer\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\GLRenderingCaps.h">
+      <Filter>sources\Renderer\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\GLSwapChain.h">
+      <Filter>sources\Renderer\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\GLTypes.h">
+      <Filter>sources\Renderer\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\OpenGL.h">
+      <Filter>sources\Renderer\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Android\AndroidGLContext.h">
+      <Filter>sources\Renderer\OpenGL\Platform\Android</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Android\AndroidGLCore.h">
+      <Filter>sources\Renderer\OpenGL\Platform\Android</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Android\AndroidGLSwapChainContext.h">
+      <Filter>sources\Renderer\OpenGL\Platform\Android</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Android\AndroidSharedEGLSurface.h">
+      <Filter>sources\Renderer\OpenGL\Platform\Android</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\GLContext.h">
+      <Filter>sources\Renderer\OpenGL\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\GLContextManager.h">
+      <Filter>sources\Renderer\OpenGL\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\GLSwapChainContext.h">
+      <Filter>sources\Renderer\OpenGL\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\IOS\IOSGLContext.h">
+      <Filter>sources\Renderer\OpenGL\Platform\IOS</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\IOS\IOSGLSwapChainContext.h">
+      <Filter>sources\Renderer\OpenGL\Platform\IOS</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Linux\LinuxGLContext.h">
+      <Filter>sources\Renderer\OpenGL\Platform\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Linux\LinuxGLSwapChainContext.h">
+      <Filter>sources\Renderer\OpenGL\Platform\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\MacOS\MacOSGLContext.h">
+      <Filter>sources\Renderer\OpenGL\Platform\MacOS</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\MacOS\MacOSGLExt.h">
+      <Filter>sources\Renderer\OpenGL\Platform\MacOS</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\MacOS\MacOSGLSwapChainContext.h">
+      <Filter>sources\Renderer\OpenGL\Platform\MacOS</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Wasm\WasmGLContext.h">
+      <Filter>sources\Renderer\OpenGL\Platform\Wasm</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Wasm\WasmGLSwapChainContext.h">
+      <Filter>sources\Renderer\OpenGL\Platform\Wasm</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Win32\Win32GLContext.h">
+      <Filter>sources\Renderer\OpenGL\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Win32\Win32GLSwapChainContext.h">
+      <Filter>sources\Renderer\OpenGL\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatExtensionMapping.h">
+      <Filter>sources\Renderer\OpenGL\Profile\GLCompat</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatExtensions.h">
+      <Filter>sources\Renderer\OpenGL\Profile\GLCompat</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatProfileTypes.h">
+      <Filter>sources\Renderer\OpenGL\Profile\GLCompat</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCompat\OpenGLCompat.h">
+      <Filter>sources\Renderer\OpenGL\Profile\GLCompat</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreExtensions.h">
+      <Filter>sources\Renderer\OpenGL\Profile\GLCore</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreProfileTypes.h">
+      <Filter>sources\Renderer\OpenGL\Profile\GLCore</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCore\OpenGLCore.h">
+      <Filter>sources\Renderer\OpenGL\Profile\GLCore</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLES\GLESExtensions.h">
+      <Filter>sources\Renderer\OpenGL\Profile\GLES</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLES\GLESProfileTypes.h">
+      <Filter>sources\Renderer\OpenGL\Profile\GLES</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLES\OpenGLES.h">
+      <Filter>sources\Renderer\OpenGL\Profile\GLES</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLProfile.h">
+      <Filter>sources\Renderer\OpenGL\Profile</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\WebGL\WebGL.h">
+      <Filter>sources\Renderer\OpenGL\Profile\WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\WebGL\WebGLProfileTypes.h">
+      <Filter>sources\Renderer\OpenGL\Profile\WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLBlendState.h">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLComputePSO.h">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLContextState.h">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLDepthStencilState.h">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLFence.h">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLGraphicsPSO.h">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLPipelineCache.h">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLPipelineLayout.h">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLPipelineState.h">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLQueryHeap.h">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLRasterizerState.h">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLRenderPass.h">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLResourceHeap.h">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLResourceType.h">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLState.h">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLStateManager.h">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLStatePool.h">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLLegacyShader.h">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLPipelineSignature.h">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLProgramPipeline.h">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLSeparableShader.h">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShader.h">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderBindingLayout.h">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderBufferInterfaceMap.h">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderPipeline.h">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderProgram.h">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderSourcePatcher.h">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderUniform.h">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLEmulatedSampler.h">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLFramebuffer.h">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLFramebufferCapture.h">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLMipGenerator.h">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLRenderTarget.h">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLRenderbuffer.h">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLSampler.h">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLTexImage.h">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLTexSubImage.h">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLTexture.h">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLTextureSubImage.h">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLTextureViewPool.h">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
     </ClInclude>
     <ClInclude Include="sources\Renderer\PipelineStateUtils.h">
       <Filter>sources\Renderer</Filter>
@@ -819,6 +1749,153 @@
     <ClInclude Include="sources\Renderer\VirtualCommandBuffer.h">
       <Filter>sources\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Buffer\VKBuffer.h">
+      <Filter>sources\Renderer\Vulkan\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Buffer\VKBufferArray.h">
+      <Filter>sources\Renderer\Vulkan\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Buffer\VKDeviceBuffer.h">
+      <Filter>sources\Renderer\Vulkan\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Command\VKCommandBuffer.h">
+      <Filter>sources\Renderer\Vulkan\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Command\VKCommandContext.h">
+      <Filter>sources\Renderer\Vulkan\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Command\VKCommandQueue.h">
+      <Filter>sources\Renderer\Vulkan\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Ext\VKExtensionLoader.h">
+      <Filter>sources\Renderer\Vulkan\Ext</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Ext\VKExtensionRegistry.h">
+      <Filter>sources\Renderer\Vulkan\Ext</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Ext\VKExtensions.h">
+      <Filter>sources\Renderer\Vulkan\Ext</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Memory\VKDeviceMemory.h">
+      <Filter>sources\Renderer\Vulkan\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Memory\VKDeviceMemoryManager.h">
+      <Filter>sources\Renderer\Vulkan\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Memory\VKDeviceMemoryRegion.h">
+      <Filter>sources\Renderer\Vulkan\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKComputePSO.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKDescriptorCache.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKDescriptorSetWriter.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKFence.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKGraphicsPSO.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineBarrier.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineCache.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineLayout.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineState.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPoolSizeAccumulator.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPredicateQueryHeap.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKQueryHeap.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKRenderPass.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKResourceHeap.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKStagingDescriptorPool.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKStagingDescriptorSetPool.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Shader\VKShader.h">
+      <Filter>sources\Renderer\Vulkan\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Shader\VKShaderBindingLayout.h">
+      <Filter>sources\Renderer\Vulkan\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Shader\VKShaderModulePool.h">
+      <Filter>sources\Renderer\Vulkan\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKColorBuffer.h">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKDepthStencilBuffer.h">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKDeviceImage.h">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKImageUtils.h">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKRenderBuffer.h">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKRenderTarget.h">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKSampler.h">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKTexture.h">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKCore.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKDevice.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKInitializers.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKPhysicalDevice.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKPtr.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKRenderSystem.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKStaticLimits.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKSwapChain.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKTypes.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Vulkan.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sources\Core\BCDecompressor.cpp">
@@ -884,6 +1961,27 @@
     <ClCompile Include="sources\Core\Version.cpp">
       <Filter>sources\Core</Filter>
     </ClCompile>
+    <ClCompile Include="sources\Platform\Canvas.cpp">
+      <Filter>sources\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\ConsoleManip.cpp">
+      <Filter>sources\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Debug.cpp">
+      <Filter>sources\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Display.cpp">
+      <Filter>sources\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\DisplayFlags.cpp">
+      <Filter>sources\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Path.cpp">
+      <Filter>sources\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Window.cpp">
+      <Filter>sources\Platform</Filter>
+    </ClCompile>
     <ClCompile Include="sources\Renderer\BindingIterator.cpp">
       <Filter>sources\Renderer</Filter>
     </ClCompile>
@@ -898,6 +1996,18 @@
     </ClCompile>
     <ClCompile Include="sources\Renderer\BufferUtils.cpp">
       <Filter>sources\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\DXCommon\DXC\DXCInstance.cpp">
+      <Filter>sources\Renderer\DXCommon\DXC</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\DXCommon\DXCore.cpp">
+      <Filter>sources\Renderer\DXCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\DXCommon\DXShaderReflection.cpp">
+      <Filter>sources\Renderer\DXCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\DXCommon\DXTypes.cpp">
+      <Filter>sources\Renderer\DXCommon</Filter>
     </ClCompile>
     <ClCompile Include="sources\Renderer\DebugLayer\Buffer\DbgBuffer.cpp">
       <Filter>sources\Renderer\DebugLayer\Buffer</Filter>
@@ -944,8 +2054,575 @@
     <ClCompile Include="sources\Renderer\DebugLayer\Texture\DbgTexture.cpp">
       <Filter>sources\Renderer\DebugLayer\Texture</Filter>
     </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Buffer\D3D11Buffer.cpp">
+      <Filter>sources\Renderer\Direct3D11\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Buffer\D3D11BufferArray.cpp">
+      <Filter>sources\Renderer\Direct3D11\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Buffer\D3D11BufferWithRV.cpp">
+      <Filter>sources\Renderer\Direct3D11\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Buffer\D3D11StagingBuffer.cpp">
+      <Filter>sources\Renderer\Direct3D11\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Buffer\D3D11StagingBufferPool.cpp">
+      <Filter>sources\Renderer\Direct3D11\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Command\D3D11CommandBuffer.cpp">
+      <Filter>sources\Renderer\Direct3D11\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Command\D3D11CommandContext.cpp">
+      <Filter>sources\Renderer\Direct3D11\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Command\D3D11CommandExecutor.cpp">
+      <Filter>sources\Renderer\Direct3D11\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Command\D3D11CommandQueue.cpp">
+      <Filter>sources\Renderer\Direct3D11\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Command\D3D11PrimaryCommandBuffer.cpp">
+      <Filter>sources\Renderer\Direct3D11\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Command\D3D11SecondaryCommandBuffer.cpp">
+      <Filter>sources\Renderer\Direct3D11\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\D3D11ModuleInterface.cpp">
+      <Filter>sources\Renderer\Direct3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\D3D11ObjectUtils.cpp">
+      <Filter>sources\Renderer\Direct3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\D3D11RenderSystem.cpp">
+      <Filter>sources\Renderer\Direct3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\D3D11ResourceFlags.cpp">
+      <Filter>sources\Renderer\Direct3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\D3D11StaticAssertions.cpp">
+      <Filter>sources\Renderer\Direct3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\D3D11SwapChain.cpp">
+      <Filter>sources\Renderer\Direct3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\D3D11Types.cpp">
+      <Filter>sources\Renderer\Direct3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11BindingLocator.cpp">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11BindingTable.cpp">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11ComputePSO.cpp">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11ConstantsCache.cpp">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11Fence.cpp">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11GraphicsPSO.cpp">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11GraphicsPSO1.cpp">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11GraphicsPSO3.cpp">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11GraphicsPSOBase.cpp">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11PipelineLayout.cpp">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11PipelineState.cpp">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11QueryHeap.cpp">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11RenderPass.cpp">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11ResourceHeap.cpp">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\RenderState\D3D11StateManager.cpp">
+      <Filter>sources\Renderer\Direct3D11\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Shader\D3D11BuiltinShaderFactory.cpp">
+      <Filter>sources\Renderer\Direct3D11\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Shader\D3D11CommonShader.cpp">
+      <Filter>sources\Renderer\Direct3D11\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Shader\D3D11DomainShader.cpp">
+      <Filter>sources\Renderer\Direct3D11\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Shader\D3D11Shader.cpp">
+      <Filter>sources\Renderer\Direct3D11\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Shader\D3D11VertexShader.cpp">
+      <Filter>sources\Renderer\Direct3D11\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Texture\D3D11MipGenerator.cpp">
+      <Filter>sources\Renderer\Direct3D11\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Texture\D3D11RenderTarget.cpp">
+      <Filter>sources\Renderer\Direct3D11\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Texture\D3D11RenderTargetHandles.cpp">
+      <Filter>sources\Renderer\Direct3D11\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Texture\D3D11Sampler.cpp">
+      <Filter>sources\Renderer\Direct3D11\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D11\Texture\D3D11Texture.cpp">
+      <Filter>sources\Renderer\Direct3D11\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12Buffer.cpp">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12BufferArray.cpp">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12BufferConstantsPool.cpp">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12CPUAccessBuffer.cpp">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12IntermediateBufferPool.cpp">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12StagingBuffer.cpp">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12StagingBufferPool.cpp">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.cpp">
+      <Filter>sources\Renderer\Direct3D12\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Command\D3D12CommandContext.cpp">
+      <Filter>sources\Renderer\Direct3D12\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Command\D3D12CommandQueue.cpp">
+      <Filter>sources\Renderer\Direct3D12\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Command\D3D12SignatureFactory.cpp">
+      <Filter>sources\Renderer\Direct3D12\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12Device.cpp">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12ModuleInterface.cpp">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12ObjectUtils.cpp">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12RenderSystem.cpp">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12SubresourceContext.cpp">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12SwapChain.cpp">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12Types.cpp">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12ComputePSO.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12DescriptorCache.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12DescriptorHeap.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12Fence.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12GraphicsPSO.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineCache.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineLayout.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineState.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12QueryHeap.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12RenderPass.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12ResourceHeap.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeap.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeapPool.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Shader\D3D12BuiltinShaderFactory.cpp">
+      <Filter>sources\Renderer\Direct3D12\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Shader\D3D12RootParameter.cpp">
+      <Filter>sources\Renderer\Direct3D12\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Shader\D3D12RootSignature.cpp">
+      <Filter>sources\Renderer\Direct3D12\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Shader\D3D12Shader.cpp">
+      <Filter>sources\Renderer\Direct3D12\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.cpp">
+      <Filter>sources\Renderer\Direct3D12\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Texture\D3D12RenderTarget.cpp">
+      <Filter>sources\Renderer\Direct3D12\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Texture\D3D12Sampler.cpp">
+      <Filter>sources\Renderer\Direct3D12\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp">
+      <Filter>sources\Renderer\Direct3D12\Texture</Filter>
+    </ClCompile>
     <ClCompile Include="sources\Renderer\Format.cpp">
       <Filter>sources\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\Buffer\NullBuffer.cpp">
+      <Filter>sources\Renderer\Null\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\Buffer\NullBufferArray.cpp">
+      <Filter>sources\Renderer\Null\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\Command\NullCommandBuffer.cpp">
+      <Filter>sources\Renderer\Null\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\Command\NullCommandExecutor.cpp">
+      <Filter>sources\Renderer\Null\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\Command\NullCommandQueue.cpp">
+      <Filter>sources\Renderer\Null\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\NullModuleInterface.cpp">
+      <Filter>sources\Renderer\Null</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\NullRenderSystem.cpp">
+      <Filter>sources\Renderer\Null</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\NullSwapChain.cpp">
+      <Filter>sources\Renderer\Null</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\RenderState\NullFence.cpp">
+      <Filter>sources\Renderer\Null\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\RenderState\NullPipelineLayout.cpp">
+      <Filter>sources\Renderer\Null\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\RenderState\NullPipelineState.cpp">
+      <Filter>sources\Renderer\Null\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\RenderState\NullQueryHeap.cpp">
+      <Filter>sources\Renderer\Null\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\RenderState\NullRenderPass.cpp">
+      <Filter>sources\Renderer\Null\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\RenderState\NullResourceHeap.cpp">
+      <Filter>sources\Renderer\Null\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\Shader\NullShader.cpp">
+      <Filter>sources\Renderer\Null\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\Texture\NullRenderTarget.cpp">
+      <Filter>sources\Renderer\Null\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\Texture\NullSampler.cpp">
+      <Filter>sources\Renderer\Null\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Null\Texture\NullTexture.cpp">
+      <Filter>sources\Renderer\Null\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GL2XSharedContextVertexArray.cpp">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GL3PlusSharedContextVertexArray.cpp">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLBuffer.cpp">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLBufferArray.cpp">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLBufferArrayWithVAO.cpp">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLBufferWithVAO.cpp">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLBufferWithXFB.cpp">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLVertexArrayObject.cpp">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLVertexAttribute.cpp">
+      <Filter>sources\Renderer\OpenGL\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Command\GLCommandBuffer.cpp">
+      <Filter>sources\Renderer\OpenGL\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Command\GLCommandExecutor.cpp">
+      <Filter>sources\Renderer\OpenGL\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Command\GLCommandQueue.cpp">
+      <Filter>sources\Renderer\OpenGL\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Command\GLDeferredCommandBuffer.cpp">
+      <Filter>sources\Renderer\OpenGL\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Command\GLImmediateCommandBuffer.cpp">
+      <Filter>sources\Renderer\OpenGL\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Ext\GLExtensionRegistry.cpp">
+      <Filter>sources\Renderer\OpenGL\Ext</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\GLCore.cpp">
+      <Filter>sources\Renderer\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\GLModuleInterface.cpp">
+      <Filter>sources\Renderer\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\GLObjectUtils.cpp">
+      <Filter>sources\Renderer\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\GLRenderSystem.cpp">
+      <Filter>sources\Renderer\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\GLStaticAssertions.cpp">
+      <Filter>sources\Renderer\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\GLSwapChain.cpp">
+      <Filter>sources\Renderer\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\GLTypes.cpp">
+      <Filter>sources\Renderer\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Android\AndroidGLContext.cpp">
+      <Filter>sources\Renderer\OpenGL\Platform\Android</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Android\AndroidGLCore.cpp">
+      <Filter>sources\Renderer\OpenGL\Platform\Android</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Android\AndroidGLSwapChainContext.cpp">
+      <Filter>sources\Renderer\OpenGL\Platform\Android</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Android\AndroidSharedEGLSurface.cpp">
+      <Filter>sources\Renderer\OpenGL\Platform\Android</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\GLContext.cpp">
+      <Filter>sources\Renderer\OpenGL\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\GLContextManager.cpp">
+      <Filter>sources\Renderer\OpenGL\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\GLSwapChainContext.cpp">
+      <Filter>sources\Renderer\OpenGL\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Linux\LinuxGLContext.cpp">
+      <Filter>sources\Renderer\OpenGL\Platform\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Linux\LinuxGLSwapChain.cpp">
+      <Filter>sources\Renderer\OpenGL\Platform\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Linux\LinuxGLSwapChainContext.cpp">
+      <Filter>sources\Renderer\OpenGL\Platform\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Wasm\WasmGLContext.cpp">
+      <Filter>sources\Renderer\OpenGL\Platform\Wasm</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Wasm\WasmGLSwapChainContext.cpp">
+      <Filter>sources\Renderer\OpenGL\Platform\Wasm</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Win32\Win32GLContext.cpp">
+      <Filter>sources\Renderer\OpenGL\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Win32\Win32GLSwapChainContext.cpp">
+      <Filter>sources\Renderer\OpenGL\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatExtensionLoader.cpp">
+      <Filter>sources\Renderer\OpenGL\Profile\GLCompat</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatExtensions.cpp">
+      <Filter>sources\Renderer\OpenGL\Profile\GLCompat</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatProfile.cpp">
+      <Filter>sources\Renderer\OpenGL\Profile\GLCompat</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatProfileCaps.cpp">
+      <Filter>sources\Renderer\OpenGL\Profile\GLCompat</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreExtensionLoader.cpp">
+      <Filter>sources\Renderer\OpenGL\Profile\GLCore</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreExtensions.cpp">
+      <Filter>sources\Renderer\OpenGL\Profile\GLCore</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreProfile.cpp">
+      <Filter>sources\Renderer\OpenGL\Profile\GLCore</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreProfileCaps.cpp">
+      <Filter>sources\Renderer\OpenGL\Profile\GLCore</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLES\GLESExtensionLoader.cpp">
+      <Filter>sources\Renderer\OpenGL\Profile\GLES</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLES\GLESExtensions.cpp">
+      <Filter>sources\Renderer\OpenGL\Profile\GLES</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLES\GLESProfile.cpp">
+      <Filter>sources\Renderer\OpenGL\Profile\GLES</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLES\GLESProfileCaps.cpp">
+      <Filter>sources\Renderer\OpenGL\Profile\GLES</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\WebGL\WebGLExtensionLoader.cpp">
+      <Filter>sources\Renderer\OpenGL\Profile\WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\WebGL\WebGLProfile.cpp">
+      <Filter>sources\Renderer\OpenGL\Profile\WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\WebGL\WebGLProfileCaps.cpp">
+      <Filter>sources\Renderer\OpenGL\Profile\WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLBlendState.cpp">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLComputePSO.cpp">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLContextState.cpp">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLDepthStencilState.cpp">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLFence.cpp">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLGraphicsPSO.cpp">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLPipelineCache.cpp">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLPipelineLayout.cpp">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLPipelineState.cpp">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLQueryHeap.cpp">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLRasterizerState.cpp">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLRenderPass.cpp">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLResourceHeap.cpp">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLStateManager.cpp">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLStatePool.cpp">
+      <Filter>sources\Renderer\OpenGL\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLLegacyShader.cpp">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLPipelineSignature.cpp">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLProgramPipeline.cpp">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLSeparableShader.cpp">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShader.cpp">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderBindingLayout.cpp">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderBufferInterfaceMap.cpp">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderPipeline.cpp">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderProgram.cpp">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderSourcePatcher.cpp">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderUniform.cpp">
+      <Filter>sources\Renderer\OpenGL\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLEmulatedSampler.cpp">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLFramebuffer.cpp">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLFramebufferCapture.cpp">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLMipGenerator.cpp">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLRenderTarget.cpp">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLRenderbuffer.cpp">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLSampler.cpp">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLTexImage.cpp">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLTexSubImage.cpp">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLTexture.cpp">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLTextureSubImage.cpp">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLTextureViewPool.cpp">
+      <Filter>sources\Renderer\OpenGL\Texture</Filter>
     </ClCompile>
     <ClCompile Include="sources\Renderer\PipelineStateFlags.cpp">
       <Filter>sources\Renderer</Filter>
@@ -1027,6 +2704,147 @@
     </ClCompile>
     <ClCompile Include="sources\Renderer\VertexAttribute.cpp">
       <Filter>sources\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Buffer\VKBuffer.cpp">
+      <Filter>sources\Renderer\Vulkan\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Buffer\VKBufferArray.cpp">
+      <Filter>sources\Renderer\Vulkan\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Buffer\VKDeviceBuffer.cpp">
+      <Filter>sources\Renderer\Vulkan\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Command\VKCommandBuffer.cpp">
+      <Filter>sources\Renderer\Vulkan\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Command\VKCommandContext.cpp">
+      <Filter>sources\Renderer\Vulkan\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Command\VKCommandQueue.cpp">
+      <Filter>sources\Renderer\Vulkan\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Ext\VKExtensionLoader.cpp">
+      <Filter>sources\Renderer\Vulkan\Ext</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Ext\VKExtensionRegistry.cpp">
+      <Filter>sources\Renderer\Vulkan\Ext</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Ext\VKExtensions.cpp">
+      <Filter>sources\Renderer\Vulkan\Ext</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Memory\VKDeviceMemory.cpp">
+      <Filter>sources\Renderer\Vulkan\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Memory\VKDeviceMemoryManager.cpp">
+      <Filter>sources\Renderer\Vulkan\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Memory\VKDeviceMemoryRegion.cpp">
+      <Filter>sources\Renderer\Vulkan\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKComputePSO.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKDescriptorCache.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKDescriptorSetWriter.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKFence.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKGraphicsPSO.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineBarrier.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineCache.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineLayout.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineState.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPoolSizeAccumulator.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPredicateQueryHeap.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKQueryHeap.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKRenderPass.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKResourceHeap.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKStagingDescriptorPool.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKStagingDescriptorSetPool.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Shader\VKShader.cpp">
+      <Filter>sources\Renderer\Vulkan\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Shader\VKShaderBindingLayout.cpp">
+      <Filter>sources\Renderer\Vulkan\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Shader\VKShaderModulePool.cpp">
+      <Filter>sources\Renderer\Vulkan\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKColorBuffer.cpp">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKDepthStencilBuffer.cpp">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKDeviceImage.cpp">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKImageUtils.cpp">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKRenderBuffer.cpp">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKRenderTarget.cpp">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKSampler.cpp">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKTexture.cpp">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\VKCore.cpp">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\VKDevice.cpp">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\VKInitializers.cpp">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\VKModuleInterface.cpp">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\VKPhysicalDevice.cpp">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\VKRenderSystem.cpp">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\VKSwapChain.cpp">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\VKTypes.cpp">
+      <Filter>sources\Renderer\Vulkan</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
