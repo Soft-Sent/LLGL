@@ -32,6 +32,7 @@
 
 #include "RenderState/D3D12GraphicsPSO.h"
 #include "RenderState/D3D12ComputePSO.h"
+#include "RenderState/D3D12MeshPSO.h"
 
 #include <LLGL/Backend/Direct3D12/NativeHandle.h>
 
@@ -49,7 +50,7 @@ D3D12RenderSystem::D3D12RenderSystem(const RenderSystemDescriptor& renderSystemD
     if (auto* customNativeHandle = GetRendererNativeHandle<Direct3D12::RenderSystemNativeHandle>(renderSystemDesc))
     {
         /* Query all DXGI interfaces from native handle */
-        HRESULT hr = QueryDXInterfacesFromNativeHandle(*customNativeHandle);
+        HRESULT hr = QueryDXInterfacesFromNativeHandle(*customNativeHandle, renderSystemDesc.flags);
         DXThrowIfFailed(hr, "failed to query D3D12 device from custom native handle");
     }
     else
@@ -60,12 +61,12 @@ D3D12RenderSystem::D3D12RenderSystem(const RenderSystemDescriptor& renderSystemD
         ComPtr<IDXGIAdapter> preferredAdatper;
         QueryVideoAdapters(renderSystemDesc.flags, preferredAdatper);
 
-        HRESULT hr = CreateDevice(preferredAdatper.Get(), isDebugDevice);
+        HRESULT hr = CreateDevice(preferredAdatper.Get(), renderSystemDesc.flags);
         DXThrowIfFailed(hr, "failed to create D3D12 device");
     }
 
     /* Query and cache DXGI factory feature support */
-    tearingSupported_ = CheckFactoryFeatureSupport(DXGI_FEATURE_PRESENT_ALLOW_TEARING);
+    deviceCaps_.isTearingSupported = CheckFactoryFeatureSupport(DXGI_FEATURE_PRESENT_ALLOW_TEARING);
 
     /* Create command queue interface */
     commandQueue_   = MakeUnique<D3D12CommandQueue>(device_);
@@ -198,7 +199,7 @@ Texture* D3D12RenderSystem::CreateTexture(const TextureDescriptor& textureDesc, 
 {
     auto* textureD3D = textures_.emplace<D3D12Texture>(device_.GetNative(), textureDesc);
 
-    if (initialImage != nullptr)
+    if (initialImage != nullptr && !IsMultiSampleTexture(textureDesc.type))
     {
         /* Update base MIP-map */
         TextureRegion region;
@@ -255,14 +256,13 @@ void D3D12RenderSystem::ReadTexture(Texture& texture, const TextureRegion& textu
     const Format            format              = textureD3D.GetFormat();
     const FormatAttributes& formatAttribs       = GetFormatAttribs(format);
     const Extent3D          extent              = CalcTextureExtent(textureD3D.GetType(), textureRegion.extent);
-    const std::uint32_t     numTexelsPerLayer   = extent.width * extent.height * extent.depth;
 
     void* mappedData = nullptr;
     HRESULT hr = readbackBuffer->Map(0, nullptr, &mappedData);
     DXThrowIfFailed(hr, "failed to map D3D12 texture copy resource");
 
     const char* srcData = static_cast<const char*>(mappedData);
-    ImageView intermediateSrcView{ formatAttribs.format, formatAttribs.dataType, srcData, layerStride };
+    ImageView intermediateSrcView{ formatAttribs.format, formatAttribs.dataType, srcData, layerStride, rowStride };
 
     if (isStencilOnlyFormat)
     {
@@ -278,7 +278,7 @@ void D3D12RenderSystem::ReadTexture(Texture& texture, const TextureRegion& textu
     for_range(arrayLayer, textureRegion.subresource.numArrayLayers)
     {
         /* Copy CPU accessible buffer to output data */
-        RenderSystem::CopyTextureImageData(intermediateDstView, intermediateSrcView, numTexelsPerLayer, extent.width, rowStride);
+        ConvertImageBuffer(intermediateSrcView, intermediateDstView, extent, LLGL_MAX_THREAD_COUNT, true);
 
         /* Move destination image pointer to next layer */
         intermediateDstView.data = static_cast<char*>(intermediateDstView.data) + layerSize;
@@ -399,6 +399,20 @@ PipelineState* D3D12RenderSystem::CreatePipelineState(const ComputePipelineDescr
     return pipelineStates_.emplace<D3D12ComputePSO>(device_.GetNative(), defaultPipelineLayout_, pipelineStateDesc, pipelineCache);
 }
 
+PipelineState* D3D12RenderSystem::CreatePipelineState(const MeshPipelineDescriptor& pipelineStateDesc, PipelineCache* pipelineCache)
+{
+    #if LLGL_D3D12_ENABLE_FEATURELEVEL >= 1
+    if (deviceCaps_.meshShaderTier == D3D12_MESH_SHADER_TIER_NOT_SUPPORTED)
+        return nullptr;
+    ComPtr<ID3D12Device2> device2;
+    if (FAILED(device_.GetNative()->QueryInterface(IID_PPV_ARGS(&device2))))
+        return nullptr;
+    return pipelineStates_.emplace<D3D12MeshPSO>(device2.Get(), defaultPipelineLayout_, pipelineStateDesc, GetDefaultRenderPass(), pipelineCache);
+    #else
+    return nullptr; // not supported
+    #endif
+}
+
 void D3D12RenderSystem::Release(PipelineState& pipelineState)
 {
     SyncGPU();
@@ -442,6 +456,8 @@ bool D3D12RenderSystem::GetNativeHandle(void* nativeHandle, std::size_t nativeHa
         nativeHandleD3D->factory->AddRef();
         nativeHandleD3D->device = device_.GetNative();
         nativeHandleD3D->device->AddRef();
+        nativeHandleD3D->commandQueue = commandQueue_->GetNative();
+        nativeHandleD3D->commandQueue->AddRef();
         return true;
     }
     return false;
@@ -520,7 +536,7 @@ void D3D12RenderSystem::QueryVideoAdapters(long flags, ComPtr<IDXGIAdapter>& out
     videoAdatperInfo_ = DXGetVideoAdapterInfo(factory_.Get(), flags, outPreferredAdatper.ReleaseAndGetAddressOf());
 }
 
-HRESULT D3D12RenderSystem::CreateDevice(IDXGIAdapter* preferredAdapter, bool isDebugLayerEnabled)
+HRESULT D3D12RenderSystem::CreateDevice(IDXGIAdapter* preferredAdapter, long flags)
 {
     const D3D_FEATURE_LEVEL featureLevels[] =
     {
@@ -544,13 +560,13 @@ HRESULT D3D12RenderSystem::CreateDevice(IDXGIAdapter* preferredAdapter, bool isD
     if (preferredAdapter != nullptr)
     {
         /* Try to create device with perferred adatper */
-        hr = device_.CreateDXDevice(featureLevels, isDebugLayerEnabled, preferredAdapter);
+        hr = device_.CreateDXDevice(featureLevels, flags, preferredAdapter);
         if (SUCCEEDED(hr))
             return hr;
     }
 
     /* Try to create device with default adapter */
-    hr = device_.CreateDXDevice(featureLevels, isDebugLayerEnabled);
+    hr = device_.CreateDXDevice(featureLevels, flags);
     if (SUCCEEDED(hr))
     {
         /* Update video adapter info with default adapter */
@@ -561,10 +577,10 @@ HRESULT D3D12RenderSystem::CreateDevice(IDXGIAdapter* preferredAdapter, bool isD
     /* Use software adapter as fallback */
     ComPtr<IDXGIAdapter> adapter;
     factory_->EnumWarpAdapter(IID_PPV_ARGS(adapter.ReleaseAndGetAddressOf()));
-    return device_.CreateDXDevice(featureLevels, isDebugLayerEnabled, adapter.Get());
+    return device_.CreateDXDevice(featureLevels, flags, adapter.Get());
 }
 
-HRESULT D3D12RenderSystem::QueryDXInterfacesFromNativeHandle(const Direct3D12::RenderSystemNativeHandle& nativeHandle)
+HRESULT D3D12RenderSystem::QueryDXInterfacesFromNativeHandle(const Direct3D12::RenderSystemNativeHandle& nativeHandle, long flags)
 {
     LLGL_ASSERT_PTR(nativeHandle.factory);
     LLGL_ASSERT_PTR(nativeHandle.device);
@@ -582,7 +598,7 @@ HRESULT D3D12RenderSystem::QueryDXInterfacesFromNativeHandle(const Direct3D12::R
 
     DXConvertVideoAdapterInfo(dxgiAdapter.Get(), dxgiAdapterDesc, videoAdatperInfo_);
 
-    return device_.ShareDXDevice(nativeHandle.device);
+    return device_.ShareDXDevice(nativeHandle.device, flags);
 }
 
 static D3D_SHADER_MODEL FindHighestShaderModel(ID3D12Device* device)
@@ -746,6 +762,12 @@ void D3D12RenderSystem::QueryRenderingCaps(RenderingCapabilities& caps)
 
     const std::uint32_t maxThreadGroups = 65535u;
 
+    #if LLGL_D3D12_ENABLE_FEATURELEVEL >= 1
+    D3D12_FEATURE_DATA_D3D12_OPTIONS7 options7 = {};
+    device_.GetNative()->CheckFeatureSupport(D3D12_FEATURE_D3D12_OPTIONS7, &options7, sizeof(options7));
+    deviceCaps_.meshShaderTier = options7.MeshShaderTier;
+    #endif
+
     /* Query common attributes */
     caps.screenOrigin                               = ScreenOrigin::UpperLeft;
     caps.clippingRange                              = ClippingRange::ZeroToOne;
@@ -768,6 +790,11 @@ void D3D12RenderSystem::QueryRenderingCaps(RenderingCapabilities& caps)
     caps.features.hasTessellationShaders            = (featureLevel >= D3D_FEATURE_LEVEL_11_0);
     caps.features.hasTessellatorStage               = (featureLevel >= D3D_FEATURE_LEVEL_11_0);
     caps.features.hasComputeShaders                 = (featureLevel >= D3D_FEATURE_LEVEL_10_0);
+    #if LLGL_D3D12_ENABLE_FEATURELEVEL >= 1
+    caps.features.hasMeshShaders                    = (deviceCaps_.meshShaderTier != D3D12_MESH_SHADER_TIER_NOT_SUPPORTED);
+    #else
+    caps.features.hasMeshShaders                    = false;
+    #endif
     caps.features.hasInstancing                     = (featureLevel >= D3D_FEATURE_LEVEL_9_3);
     caps.features.hasOffsetInstancing               = (featureLevel >= D3D_FEATURE_LEVEL_9_3);
     caps.features.hasIndirectDrawing                = (featureLevel >= D3D_FEATURE_LEVEL_10_0);//???

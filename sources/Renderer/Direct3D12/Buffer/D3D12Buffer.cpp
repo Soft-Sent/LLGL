@@ -14,6 +14,7 @@
 #include "../Command/D3D12CommandQueue.h"
 #include "../../DXCommon/DXCore.h"
 #include "../../BufferUtils.h"
+#include "../../ResourceUtils.h"
 #include "../../../Core/Assertion.h"
 #include "../../../Core/CoreUtils.h"
 #include <LLGL/Backend/Direct3D12/NativeHandle.h>
@@ -178,6 +179,11 @@ void D3D12Buffer::CreateUnorderedAccessView(ID3D12Device* device, D3D12_CPU_DESC
     CreateUnorderedAccessViewPrimary(device, cpuDescHandle, firstElement, numElements, stride, DXTypes::ToDXGIFormat(bufferViewDesc.format));
 }
 
+void D3D12Buffer::UpdateVertexBufferStride(UINT stride)
+{
+    vertexBufferView_.StrideInBytes = stride;
+}
+
 //private
 //TODO: support counter resource
 void D3D12Buffer::CreateUnorderedAccessViewPrimary(
@@ -285,16 +291,6 @@ void D3D12Buffer::ClearSubresourceUInt(
 
     /* Reset previous staging descriptor heaps */
     commandContext.SetStagingDescriptorHeaps(oldLayout, oldRootParamIndices);
-}
-
-static bool HasReadAccess(const CPUAccess access)
-{
-    return (access == CPUAccess::ReadOnly || access == CPUAccess::ReadWrite);
-}
-
-static bool HasWriteAccess(const CPUAccess access)
-{
-    return (access >= CPUAccess::WriteOnly && access <= CPUAccess::ReadWrite);
 }
 
 HRESULT D3D12Buffer::Map(

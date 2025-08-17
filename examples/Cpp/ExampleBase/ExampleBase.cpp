@@ -48,8 +48,8 @@ static std::string GetRendererModuleFromUserSelection(int argc, char* argv[])
 
     if (modules.empty())
     {
-        /* No modules available -> throw error */
-        throw std::runtime_error("no renderer modules available on target platform");
+        /* No modules available */
+        LLGL_THROW_RUNTIME_ERROR("no renderer modules available on target platform");
     }
     else if (modules.size() == 1)
     {
@@ -143,11 +143,11 @@ static void GetSelectedRendererModuleOrDefault(std::string& rendererModule, int 
     LLGL::Log::Printf("selected renderer: %s\n", rendererModule.c_str());
 }
 
-static bool IsModuleAvailable(const char* name)
+/*static bool IsModuleAvailable(const char* name)
 {
     auto modules = LLGL::RenderSystem::FindModules();
     return (std::find(modules.begin(), modules.end(), name) != modules.end());
-}
+}*/
 
 static const char* GetDefaultRendererModule()
 {
@@ -156,7 +156,7 @@ static const char* GetDefaultRendererModule()
     #elif defined LLGL_OS_WIN32
     return "Direct3D11";
     #elif defined LLGL_OS_MACOS
-    return (IsModuleAvailable("Metal") ? "Metal" : "OpenGL");
+    return "Metal";
     #elif defined LLGL_OS_IOS
     return "Metal";
     #elif defined LLGL_OS_ANDROID
@@ -168,11 +168,17 @@ static const char* GetDefaultRendererModule()
     #endif
 }
 
+static std::string GetPreferredRendererModule()
+{
+    auto modules = LLGL::RenderSystem::FindModules();
+    return (modules.empty() ? "Null" : modules.front());
+}
+
 std::string GetSelectedRendererModule(int argc, char* argv[])
 {
     // Set report callback to standard output
     LLGL::Log::RegisterCallbackStd();
-    std::string rendererModule = GetDefaultRendererModule();
+    std::string rendererModule = GetPreferredRendererModule();
     GetSelectedRendererModuleOrDefault(rendererModule, argc, argv);
     return rendererModule;
 }
@@ -276,24 +282,14 @@ ExampleBase::WindowEventHandler::WindowEventHandler(ExampleBase& app, LLGL::Swap
 
 void ExampleBase::WindowEventHandler::OnResize(LLGL::Window& sender, const LLGL::Extent2D& clientAreaSize)
 {
-    if (clientAreaSize.width >= 4 && clientAreaSize.height >= 4)
-    {
-        const auto& resolution = clientAreaSize;
+    const auto& resolution = clientAreaSize;
 
-        // Update swap buffers
-        swapChain_->ResizeBuffers(resolution);
+    // Update projection matrix
+    auto aspectRatio = static_cast<float>(resolution.width) / static_cast<float>(resolution.height);
+    projection_ = app_.PerspectiveProjection(aspectRatio, 0.1f, 100.0f, Gs::Deg2Rad(45.0f));
 
-        // Update projection matrix
-        auto aspectRatio = static_cast<float>(resolution.width) / static_cast<float>(resolution.height);
-        projection_ = app_.PerspectiveProjection(aspectRatio, 0.1f, 100.0f, Gs::Deg2Rad(45.0f));
-
-        // Notify application about resize event
-        app_.OnResize(resolution);
-
-        // Re-draw frame
-        if (app_.IsLoadingDone())
-            app_.DrawFrame();
-    }
+    // Notify application about resize event
+    app_.Resize(resolution);
 }
 
 void ExampleBase::WindowEventHandler::OnUpdate(LLGL::Window& sender)
@@ -323,15 +319,12 @@ void ExampleBase::CanvasEventHandler::OnDraw(LLGL::Canvas& /*sender*/)
 
 void ExampleBase::CanvasEventHandler::OnResize(LLGL::Canvas& /*sender*/, const LLGL::Extent2D& clientAreaSize)
 {
-    // Update swap buffers
-    swapChain_->ResizeBuffers(clientAreaSize);
-
     // Update projection matrix
     auto aspectRatio = static_cast<float>(clientAreaSize.width) / static_cast<float>(clientAreaSize.height);
     projection_ = app_.PerspectiveProjection(aspectRatio, 0.1f, 100.0f, Gs::Deg2Rad(45.0f));
 
     // Notify application about resize event
-    app_.OnResize(clientAreaSize);
+    app_.Resize(clientAreaSize);
 }
 
 
@@ -367,12 +360,14 @@ void ExampleBase::ParseProgramArgs(int argc, char* argv[])
         g_Config.debugger = true;
     if (HasArgument("-i", argc, argv) || HasArgument("--icontext", argc, argv))
         g_Config.immediateSubmit = true;
-    if (HasArgument("-nvidia", argc, argv))
+    if (HasArgument("--nvidia", argc, argv))
         g_Config.flags |= LLGL::RenderSystemFlags::PreferNVIDIA;
-    if (HasArgument("-amd", argc, argv))
+    if (HasArgument("--amd", argc, argv))
         g_Config.flags |= LLGL::RenderSystemFlags::PreferAMD;
-    if (HasArgument("-intel", argc, argv))
+    if (HasArgument("--intel", argc, argv))
         g_Config.flags |= LLGL::RenderSystemFlags::PreferIntel;
+    if (HasArgument("--ref", argc, argv))
+        g_Config.flags |= LLGL::RenderSystemFlags::SoftwareDevice;
 }
 
 #if defined LLGL_OS_ANDROID
@@ -438,13 +433,36 @@ void ExampleBase::Run()
 
 void ExampleBase::DrawFrame()
 {
-    // Draw frame in respective example project
-    OnDrawFrame();
+    if (IsDrawable())
+    {
+        // Draw frame in respective example project
+        OnDrawFrame();
 
-    #ifndef LLGL_OS_IOS
-    // Present the result on the screen - cannot be explicitly invoked on mobile platforms
-    swapChain->Present();
-    #endif
+        #ifndef LLGL_OS_IOS
+        // Present the result on the screen - cannot be explicitly invoked on mobile platforms
+        swapChain->Present();
+        #endif
+    }
+}
+
+void ExampleBase::Resize(const LLGL::Extent2D& clientAreaSize)
+{
+    drawableSize_ = clientAreaSize;
+
+    if (IsDrawable())
+    {
+        // Update swap buffers
+        swapChain->ResizeBuffers(drawableSize_);
+
+        // Re-draw frame
+        if (IsLoadingDone())
+            DrawFrame();
+    }
+}
+
+bool ExampleBase::IsDrawable() const
+{
+    return (drawableSize_.width >= 4 && drawableSize_.height >= 4);
 }
 
 static LLGL::Extent2D ScaleResolution(const LLGL::Extent2D& res, float scale)
@@ -481,7 +499,7 @@ ExampleBase::ExampleBase(const LLGL::UTF8String& title)
     if (android_app* app = ExampleBase::androidApp_)
         rendererDesc.androidApp = app;
     else
-        throw std::invalid_argument("'android_app' state was not specified");
+        LLGL_THROW_INVALID_ARGUMENT("'android_app' state was not specified");
 
     if (rendererDesc.moduleName == "OpenGLES3")
     {
@@ -529,12 +547,14 @@ ExampleBase::ExampleBase(const LLGL::UTF8String& title)
         #else
         swapChainDesc.samples       = std::min<std::uint32_t>(g_Config.samples, renderer->GetRenderingCaps().limits.maxColorBufferSamples);
         #endif
+        swapChainDesc.resizable     = true;
     }
     swapChain = renderer->CreateSwapChain(swapChainDesc);
 
     swapChain->SetVsyncInterval(g_Config.vsync ? 1 : 0);
 
-    samples_ = swapChain->GetSamples();
+    samples_        = swapChain->GetSamples();
+    drawableSize_   = swapChain->GetResolution();
 
     // Create command buffer
     LLGL::CommandBufferDescriptor cmdBufferDesc;
@@ -602,11 +622,6 @@ ExampleBase::ExampleBase(const LLGL::UTF8String& title)
     auto rendererName = renderer->GetName();
     window.SetTitle(title + " ( " + rendererName + " )");
 
-    // Change window descriptor to allow resizing
-    LLGL::WindowDescriptor wndDesc = window.GetDesc();
-    wndDesc.flags |= LLGL::WindowFlags::Resizable | LLGL::WindowFlags::DisableClearOnResize;
-    window.SetDesc(wndDesc);
-
     // Add window resize listener
     window.AddEventListener(std::make_shared<WindowEventHandler>(*this, swapChain, projection));
 
@@ -645,7 +660,6 @@ void ExampleBase::MainLoop()
                 "FRAME TIME RECORDS:\n"
                 "-------------------\n"
             );
-            const double invTicksFreqMS = 1000.0 / LLGL::Timer::Frequency();
             for (const LLGL::ProfileTimeRecord& rec : frameProfile.timeRecords)
                 LLGL::Log::Printf("%s: GPU time: %" PRIu64 " ns\n", rec.annotation.c_str(), rec.elapsedTime);
 

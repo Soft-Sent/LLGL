@@ -58,6 +58,14 @@ class D3D12SubresourceContext;
 class D3D12RenderSystem final : public RenderSystem
 {
 
+        struct D3DDeviceCaps
+        {
+            #if LLGL_D3D12_ENABLE_FEATURELEVEL >= 1
+            D3D12_MESH_SHADER_TIER  meshShaderTier      = D3D12_MESH_SHADER_TIER_NOT_SUPPORTED;
+            #endif
+            bool                    isTearingSupported  = false;
+        };
+
     public:
 
         #include <LLGL/Backend/RenderSystem.inl>
@@ -116,7 +124,7 @@ class D3D12RenderSystem final : public RenderSystem
         // Returns whether the D3D12 device supports tearing (DXGI_FEATURE_PRESENT_ALLOW_TEARING).
         inline bool IsTearingSupported() const
         {
-            return tearingSupported_;
+            return deviceCaps_.isTearingSupported;
         }
 
     private:
@@ -130,8 +138,8 @@ class D3D12RenderSystem final : public RenderSystem
         void CreateFactory(bool debugDevice = false);
         void QueryVideoAdapters(long flags, ComPtr<IDXGIAdapter>& outPreferredAdatper);
 
-        HRESULT CreateDevice(IDXGIAdapter* preferredAdapter, bool isDebugLayerEnabled);
-        HRESULT QueryDXInterfacesFromNativeHandle(const Direct3D12::RenderSystemNativeHandle& nativeHandle);
+        HRESULT CreateDevice(IDXGIAdapter* preferredAdapter, long flags);
+        HRESULT QueryDXInterfacesFromNativeHandle(const Direct3D12::RenderSystemNativeHandle& nativeHandle, long flags);
 
         // Returns the minor version of Direct3D 12.X.
         int GetMinorVersion() const;
@@ -175,7 +183,7 @@ class D3D12RenderSystem final : public RenderSystem
         D3D12PipelineLayout                     defaultPipelineLayout_;
         D3D12SignatureFactory                   cmdSignatureFactory_;
         D3D12StagingBufferPool                  stagingBufferPool_;
-        bool                                    tearingSupported_       = false;
+        D3DDeviceCaps                           deviceCaps_;
 
         /* ----- Hardware object containers ----- */
 

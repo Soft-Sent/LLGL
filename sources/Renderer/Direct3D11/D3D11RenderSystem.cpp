@@ -5,6 +5,7 @@
  * Licensed under the terms of the BSD 3-Clause license (see LICENSE.txt).
  */
 
+#include <initguid.h> // Comes first to define GUIDs
 #include "D3D11RenderSystem.h"
 #include "D3D11Types.h"
 #include "D3D11ResourceFlags.h"
@@ -47,8 +48,8 @@ namespace LLGL
 
 D3D11RenderSystem::D3D11RenderSystem(const RenderSystemDescriptor& renderSystemDesc)
 {
-    const bool debugDevice      = ((renderSystemDesc.flags & RenderSystemFlags::DebugDevice   ) != 0);
-    const bool softwareDevice   = ((renderSystemDesc.flags & RenderSystemFlags::SoftwareDevice) != 0);
+    const bool isDebugDevice    = ((renderSystemDesc.flags & RenderSystemFlags::DebugDevice   ) != 0);
+    const bool isSoftwareDevice = ((renderSystemDesc.flags & RenderSystemFlags::SoftwareDevice) != 0);
 
     if (auto* customNativeHandle = GetRendererNativeHandle<Direct3D11::RenderSystemNativeHandle>(renderSystemDesc))
     {
@@ -64,13 +65,13 @@ D3D11RenderSystem::D3D11RenderSystem(const RenderSystemDescriptor& renderSystemD
         ComPtr<IDXGIAdapter> preferredAdatper;
         QueryVideoAdapters(renderSystemDesc.flags, preferredAdatper);
 
-        HRESULT hr = CreateDevice(preferredAdatper.Get(), debugDevice, softwareDevice);
+        HRESULT hr = CreateDevice(preferredAdatper.Get(), isDebugDevice, isSoftwareDevice);
         DXThrowIfFailed(hr, "failed to create D3D11 device");
         QueryDXDeviceVersion();
     }
 
     #if LLGL_DEBUG
-    if (debugDevice)
+    if (isDebugDevice)
         liveObjectReporter_ = std::unique_ptr<LiveObjectReporter>(new LiveObjectReporter());
     #endif
 
@@ -233,7 +234,8 @@ Texture* D3D11RenderSystem::CreateTexture(const TextureDescriptor& textureDesc, 
     auto* textureD3D = textures_.emplace<D3D11Texture>(device_.Get(), textureDesc);
 
     /* Initialize texture data with or without initial image data */
-    InitializeGpuTexture(*textureD3D, textureDesc, initialImage);
+    if (!IsMultiSampleTexture(textureDesc.type))
+        InitializeGpuTexture(*textureD3D, textureDesc, initialImage);
 
     /* Generate MIP-maps if enabled */
     if (initialImage != nullptr && MustGenerateMipsOnCreate(textureDesc))
@@ -349,8 +351,15 @@ void D3D11RenderSystem::ReadTexture(Texture& texture, const TextureRegion& textu
         D3D11ThrowIfFailed(hr, "failed to map D3D11 texture copy resource", textureD3D.GetNative());
 
         /* Copy host visible resource to CPU accessible resource */
-        const ImageView intermediateSrcView{ formatAttribs.format, formatAttribs.dataType, mappedSubresource.pData, mappedSubresource.DepthPitch };
-        const std::size_t bytesWritten = RenderSystem::CopyTextureImageData(intermediateDstView, intermediateSrcView, numTexelsPerLayer, extent.width, mappedSubresource.RowPitch);
+        const ImageView intermediateSrcView
+        {
+            formatAttribs.format,
+            formatAttribs.dataType,
+            mappedSubresource.pData,
+            mappedSubresource.DepthPitch * extent.depth,
+            mappedSubresource.RowPitch
+        };
+        const std::size_t bytesWritten = ConvertImageBuffer(intermediateSrcView, intermediateDstView, extent, LLGL_MAX_THREAD_COUNT, true);
 
         /* Unmap resource */
         context_->Unmap(texCopy.Get(), subresource);
@@ -501,6 +510,11 @@ PipelineState* D3D11RenderSystem::CreatePipelineState(const ComputePipelineDescr
     return pipelineStates_.emplace<D3D11ComputePSO>(pipelineStateDesc);
 }
 
+PipelineState* D3D11RenderSystem::CreatePipelineState(const MeshPipelineDescriptor& /*pipelineStateDesc*/, PipelineCache* /*pipelineCache*/)
+{
+    return nullptr; // not supported
+}
+
 void D3D11RenderSystem::Release(PipelineState& pipelineState)
 {
     pipelineStates_.erase(&pipelineState);
@@ -644,7 +658,7 @@ void D3D11RenderSystem::QueryVideoAdapters(long flags, ComPtr<IDXGIAdapter>& out
     videoAdatperInfo_ = DXGetVideoAdapterInfo(factory_.Get(), flags, outPreferredAdatper.ReleaseAndGetAddressOf());
 }
 
-HRESULT D3D11RenderSystem::CreateDevice(IDXGIAdapter* adapter, bool debugDevice, bool softwareDevice)
+HRESULT D3D11RenderSystem::CreateDevice(IDXGIAdapter* adapter, bool isDebugDevice, bool isSoftwareDevice)
 {
     /* Find list of feature levels to select from, and statically determine maximal feature level */
     const D3D_FEATURE_LEVEL featureLevels[] =
@@ -662,16 +676,16 @@ HRESULT D3D11RenderSystem::CreateDevice(IDXGIAdapter* adapter, bool debugDevice,
 
     HRESULT hr = S_OK;
 
-    if (debugDevice)
+    if (isDebugDevice)
     {
         /* Try to create device with debug layer (only supported if Windows 8.1 SDK is installed) */
-        hr = CreateDeviceWithFlags(adapter, featureLevels, softwareDevice, D3D11_CREATE_DEVICE_DEBUG);
+        hr = CreateDeviceWithFlags(adapter, featureLevels, isSoftwareDevice, D3D11_CREATE_DEVICE_DEBUG);
         if (SUCCEEDED(hr))
             return hr;
     }
 
     /* Create device without debug layer */
-    hr = CreateDeviceWithFlags(adapter, featureLevels, softwareDevice);
+    hr = CreateDeviceWithFlags(adapter, featureLevels, isSoftwareDevice);
     if (SUCCEEDED(hr))
         return hr;
 
@@ -680,20 +694,20 @@ HRESULT D3D11RenderSystem::CreateDevice(IDXGIAdapter* adapter, bool debugDevice,
     {
         /* Update video adapter info with default adapter */
         videoAdatperInfo_ = DXGetVideoAdapterInfo(factory_.Get());
-        hr = CreateDeviceWithFlags(nullptr, featureLevels, softwareDevice);
+        hr = CreateDeviceWithFlags(nullptr, featureLevels, isSoftwareDevice);
         if (SUCCEEDED(hr))
             return hr;
 
-        if (softwareDevice)
+        if (isSoftwareDevice)
             hr = CreateDeviceWithFlags(nullptr, featureLevels);
     }
 
     return hr;
 }
 
-HRESULT D3D11RenderSystem::CreateDeviceWithFlags(IDXGIAdapter* adapter, const ArrayView<D3D_FEATURE_LEVEL>& featureLevels, bool softwareDevice, UINT flags)
+HRESULT D3D11RenderSystem::CreateDeviceWithFlags(IDXGIAdapter* adapter, const ArrayView<D3D_FEATURE_LEVEL>& featureLevels, bool isSoftwareDevice, UINT flags)
 {
-    if (softwareDevice)
+    if (isSoftwareDevice)
     {
         /* If a software device is explicitly requested, don't attempt to create other devices */
         HRESULT hr = CreateDeviceWithFlagsAndDriverType(adapter, D3D_DRIVER_TYPE_REFERENCE, featureLevels, flags);
@@ -1195,8 +1209,10 @@ D3D11RenderSystem::LiveObjectReporter::LiveObjectReporter() :
 
 D3D11RenderSystem::LiveObjectReporter::~LiveObjectReporter()
 {
+    #if !LLGL_UNITY_BUILD
     if (debugDevice)
         debugDevice->ReportLiveObjects(DXGI_DEBUG_D3D11, DXGI_DEBUG_RLO_ALL);
+    #endif
 }
 
 #endif // /LLGL_DEBUG

@@ -7,6 +7,7 @@
 
 #include <ExampleBase.h>
 #include <LLGL/Utils/ForRange.h>
+#include <LLGL/Trap.h>
 #include "FileUtils.h"
 #include <algorithm>
 #include <limits.h>
@@ -648,8 +649,7 @@ class Example_HelloGame : public ExampleBase
 
         void Write(LLGL::RenderSystem& renderer, std::uint64_t offset, const void* data, std::uint64_t dataSize)
         {
-            const char* byteAlignedData     = reinterpret_cast<const char*>(data);
-            const char* byteAlignedDataEnd  = byteAlignedData + dataSize;
+            const char* byteAlignedData = reinterpret_cast<const char*>(data);
 
             while (dataSize > 0)
             {
@@ -664,15 +664,14 @@ class Example_HelloGame : public ExampleBase
             }
         }
 
-        void Update(LLGL::CommandBuffer& cmdBuffer, std::uint64_t offset, const void* data, std::uint16_t dataSize)
+        void Update(LLGL::CommandBuffer& cmdBuffer, std::uint64_t offset, const void* data, std::uint64_t dataSize)
         {
-            const char* byteAlignedData     = reinterpret_cast<const char*>(data);
-            const char* byteAlignedDataEnd  = byteAlignedData + dataSize;
+            const char* byteAlignedData = reinterpret_cast<const char*>(data);
 
             while (dataSize > 0)
             {
                 const std::uint64_t offsetEnd = ((offset + sizePerSegment) / sizePerSegment) * sizePerSegment;
-                const std::uint16_t batchDataSize = static_cast<std::uint16_t>(std::min<std::uint64_t>(dataSize, offsetEnd - offset));
+                const std::uint64_t batchDataSize = std::min<std::uint64_t>(dataSize, offsetEnd - offset);
 
                 cmdBuffer.UpdateBuffer(*segments[static_cast<std::size_t>(offset / sizePerSegment)], offset % sizePerSegment, byteAlignedData, batchDataSize);
 
@@ -691,7 +690,6 @@ class Example_HelloGame : public ExampleBase
             const std::uint32_t numInstancePerSegment = static_cast<std::uint32_t>(sizePerSegment/sizeof(Instance));
             std::uint32_t instanceIndex = firstInstance;
             const std::uint32_t endInstanceIndex = firstInstance + numInstances;
-            const std::uint32_t zeroIndex = 0;
 
             while (instanceIndex < endInstanceIndex)
             {
@@ -920,7 +918,7 @@ private:
         }
         else
         {
-            throw std::runtime_error("No shaders provided for this backend");
+            LLGL_THROW_RUNTIME_ERROR("No shaders provided for this backend");
         }
     }
 

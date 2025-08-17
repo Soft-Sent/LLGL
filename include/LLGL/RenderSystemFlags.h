@@ -14,7 +14,6 @@
 #include <LLGL/TextureFlags.h>
 #include <LLGL/Constants.h>
 #include <LLGL/RendererConfiguration.h>
-#include <LLGL/Deprecated.h>
 #include <LLGL/Container/UTF8String.h>
 #include <LLGL/Container/StringLiteral.h>
 #include <LLGL/Container/DynamicVector.h>
@@ -208,28 +207,44 @@ struct RenderSystemFlags
           See https://www.khronos.org/opengl/wiki/Debug_Output
         - Metal: Not supported.
         */
-        DebugDevice     = (1 << 0),
+        DebugDevice         = (1 << 0),
 
         /**
         \brief Hints the render system to prefer a video adapter from NVIDIA.
         \remarks This can be used on multi-GPU systems to select a specific video adapter when more than one is available.
         If multiple preferred device vendors are specified, the order of preference is undefined.
-        \remarks This is merely a hint to the render system bebacause not all rendering APIs support selecting a specific video adapter (such as OpenGL).
+        \remarks This is merely a hint to the render system because not all rendering APIs support selecting a specific video adapter (such as OpenGL).
         \note Only supported with: Direct3D 11, Direct3D 12, Vulkan.
         */
-        PreferNVIDIA    = (1 << 1),
+        PreferNVIDIA        = (1 << 1),
 
-        //! \see PreferNVIDIA
-        PreferAMD       = (1 << 2),
+        /**
+        \brief Hints the render system to prefer a video adapter from AMD.
+        \see PreferNVIDIA
+        */
+        PreferAMD           = (1 << 2),
 
-        //! \see PreferNVIDIA
-        PreferIntel     = (1 << 3),
+        /**
+        \brief Hints the render system to prefer a video adapter from Intel.
+        \see PreferNVIDIA
+        */
+        PreferIntel         = (1 << 3),
 
         /**
         \brief Specifies that a software device is requested such as "Microsoft Basic Render Driver" as a reference device for Direct3D.
         \remarks This can be used for debugging or if the hardware does not support the respective API.
+        \note Only supported with: Direct3D 11.
         */
-        SoftwareDevice  = (1 << 4),
+        SoftwareDevice      = (1 << 4),
+
+        /**
+        \brief Specifies that the debugger should break when an error in the debug validation was detected.
+        \remarks This helps to identify wrong parameters with a full callstack right where it occurs.
+        This applies to both the native debug layer from the rendering API as well as LLGL's own debug layer.
+        \note Only supported with: Direct3D 12, Vulkan, OpenGL.
+        \see DebugDevice
+        */
+        DebugBreakOnError   = (1 << 5),
     };
 };
 
@@ -239,7 +254,7 @@ struct RenderSystemFlags
 /**
 \brief Renderer identification number enumeration.
 \remarks There are several IDs for reserved future renderers, which are currently not supported (and maybe never supported).
-You can use an ID greater than 'RendererID::Reserved' (which has a value of 0x000000ff) for your own renderer.
+You can use an ID greater than \c RendererID::Reserved (which has a value of 0x000000FF) for your own renderer.
 Or use one of the pre-defined IDs if you want to implement your own OpenGL/ Direct3D or whatever renderer.
 \see RendererInfo::rendererID
 */
@@ -258,16 +273,6 @@ struct RendererID
     static constexpr int Direct3D12 = 0x00000009; //!< ID number for a Direct3D 12 renderer.
     static constexpr int Vulkan     = 0x0000000A; //!< ID number for a Vulkan renderer.
     static constexpr int Metal      = 0x0000000B; //!< ID number for a Metal renderer.
-
-    LLGL_DEPRECATED("LLGL::RendererID::OpenGLES1 is deprecated since 0.04b; Use LLGL::RendererID::OpenGLES instead!", "OpenGLES")
-    static constexpr int OpenGLES1  = RendererID::OpenGLES;
-
-    LLGL_DEPRECATED("LLGL::RendererID::OpenGLES2 is deprecated since 0.04b; Use LLGL::RendererID::OpenGLES instead!", "OpenGLES")
-    static constexpr int OpenGLES2  = RendererID::OpenGLES;
-
-    LLGL_DEPRECATED("LLGL::RendererID::OpenGLES3 is deprecated since 0.04b; Use LLGL::RendererID::OpenGLES instead!", "OpenGLES")
-    static constexpr int OpenGLES3  = RendererID::OpenGLES;
-
     static constexpr int Reserved   = 0x000000FF; //!< Highest ID number for reserved future renderers. Value is 0x000000ff.
 };
 
@@ -311,8 +316,6 @@ struct RendererInfo
 struct RenderSystemDescriptor
 {
     RenderSystemDescriptor() = default;
-    RenderSystemDescriptor(const RenderSystemDescriptor&) = default;
-    RenderSystemDescriptor& operator = (const RenderSystemDescriptor&) = default;
 
     //! Constructor to initialize the descriptor with the module name from an std::string.
     inline RenderSystemDescriptor(const std::string& moduleName) :
@@ -463,8 +466,6 @@ struct RenderSystemDescriptor
     #endif // /LLGL_OS_ANDROID
 };
 
-LLGL_DEPRECATED_IGNORE_PUSH()
-
 /**
 \brief Contains the attributes for all supported rendering features.
 \see RenderingCapabilities::features
@@ -549,10 +550,6 @@ struct RenderingFeatures
     */
     bool hasBufferViews                 = false;
 
-    //! \deprecated Since 0.04b; Can be substituted with \c true.
-    LLGL_DEPRECATED("LLGL::RenderingFeatures::hasSamplers is deprecated since 0.04b; All backends must support sampler states either natively or emulated.", "true")
-    bool hasSamplers                    = true;
-
     /**
     \brief Specifies whether constant buffers (also "uniform buffer objects") are supported.
     \see BindFlags::ConstantBuffer
@@ -565,10 +562,6 @@ struct RenderingFeatures
     \see BindFlags::Storage
     */
     bool hasStorageBuffers              = false;
-
-    //! \deprecated Since 0.04b; Can be substituted with \c true.
-    LLGL_DEPRECATED("LLGL::RenderingFeatures::hasUniforms is deprecated since 0.04b; All backends must support uniforms either natively or emulated.", "true")
-    bool hasUniforms                    = true;
 
     /**
     \brief Specifies whether geometry shaders are supported.
@@ -601,6 +594,16 @@ struct RenderingFeatures
     \see CommandBuffer::DispatchIndirect
     */
     bool hasComputeShaders              = false;
+
+    /**
+    \brief Specifies whether mesh and amplification shaders are supported.
+    \remarks Mesh and amplification shaders belong to the same mesh pipeline but amplification shaders are optional to use in such a pipeline,
+    so amplification shader support is implied if mesh shaders are supported.
+    \see ShaderType::Amplification
+    \see ShaderType::Mesh
+    \see RenderSystem::CreatePipelineState(const MeshPipelineDescriptor&)
+    */
+    bool hasMeshShaders                 = false;
 
     /**
     \brief Specifies whether hardware instancing is supported.
@@ -674,8 +677,6 @@ struct RenderingFeatures
     */
     bool hasRenderCondition             = false;
 };
-
-LLGL_DEPRECATED_IGNORE_POP()
 
 /**
 \brief Contains all rendering limitations such as maximum buffer size, maximum texture resolution etc.

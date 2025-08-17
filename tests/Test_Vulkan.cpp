@@ -8,6 +8,7 @@
 #include <LLGL/LLGL.h>
 #include <LLGL/Utils/Utility.h>
 #include <LLGL/Utils/VertexFormat.h>
+#include <LLGL/Trap.h>
 #include <Gauss/Gauss.h>
 #include <chrono>
 
@@ -28,7 +29,7 @@
             VkResult result = (EXPR);                                                       \
             if (result != VK_SUCCESS)                                                       \
             {                                                                               \
-                throw std::runtime_error(                                                   \
+                LLGL_THROW_RUNTIME_ERROR(                                                   \
                     #EXPR " failed; VkResult = " + std::to_string(static_cast<int>(result)) \
                 );                                                                          \
             }                                                                               \
@@ -59,12 +60,12 @@ int main()
         std::uint32_t numPhysicalDevices = 0;
         VALIDATE_VKRESULT(vkEnumeratePhysicalDevices(vulkanInstance, &numPhysicalDevices, nullptr));
         if (numPhysicalDevices == 0)
-            throw std::runtime_error("failed to find physical device with Vulkan support");
+            LLGL_THROW_RUNTIME_ERROR("failed to find physical device with Vulkan support");
 
         std::vector<VkPhysicalDevice> physicalDeviceList(numPhysicalDevices, VK_NULL_HANDLE);
         VALIDATE_VKRESULT(vkEnumeratePhysicalDevices(vulkanInstance, &numPhysicalDevices, physicalDeviceList.data()));
         if (physicalDeviceList.empty() || physicalDeviceList.front() == VK_NULL_HANDLE)
-            throw std::runtime_error("failed to find physical device with Vulkan support");
+            LLGL_THROW_RUNTIME_ERROR("failed to find physical device with Vulkan support");
 
         VkPhysicalDevice physicalDevice = physicalDeviceList.front();
 
@@ -123,7 +124,6 @@ int main()
 
         // Print renderer information
         const auto& info = renderer->GetRendererInfo();
-        const auto& caps = renderer->GetRenderingCaps();
 
         LLGL::Log::Printf("Renderer:         %s\n", info.rendererName.c_str());
         LLGL::Log::Printf("Device:           %s\n", info.deviceName.c_str());
@@ -252,12 +252,12 @@ int main()
         auto sampler = renderer->CreateSampler(samplerDesc);
 
         // Create texture
-        std::string texFilename = "../examples/Media/Textures/Logo_Vulkan.png";
+        std::string texFilename = "../examples/Shared/Assets/Textures/Logo_Vulkan.png";
         int texWidth = 0, texHeight = 0, texComponents = 0;
 
         auto imageBuffer = stbi_load(texFilename.c_str(), &texWidth, &texHeight, &texComponents, 4);
         if (!imageBuffer)
-            throw std::runtime_error("failed to load texture from file: \"" + texFilename + "\"");
+            LLGL_THROW_RUNTIME_ERROR("failed to load texture from file: \"%s\"", texFilename.c_str());
 
         LLGL::ImageView imageView;
         {

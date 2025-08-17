@@ -9,7 +9,7 @@
 #define LLGL_DBG_COMMAND_BUFFER_H
 
 
-#include <LLGL/CommandBuffer.h>
+#include <LLGL/CommandBufferTier1.h>
 #include <LLGL/RenderingDebugger.h>
 #include <LLGL/Constants.h>
 #include <LLGL/Container/ArrayView.h>
@@ -32,12 +32,12 @@ class DbgPipelineState;
 class DbgPipelineLayout;
 class DbgShader;
 
-class DbgCommandBuffer final : public CommandBuffer
+class DbgCommandBuffer final : public CommandBufferTier1
 {
 
     public:
 
-        #include <LLGL/Backend/CommandBuffer.inl>
+        #include <LLGL/Backend/CommandBufferTier1.inl>
 
     public:
 
@@ -155,6 +155,7 @@ class DbgCommandBuffer final : public CommandBuffer
         void ValidateBindBufferFlags(DbgBuffer& bufferDbg, long bindFlags);
         void ValidateBindTextureFlags(DbgTexture& textureDbg, long bindFlags);
         void ValidateTextureRegion(DbgTexture& textureDbg, const TextureRegion& region);
+        void ValidateTextureRegionForFramebuffer(const TextureRegion& region, const Offset2D& offset);
         void ValidateIndexType(const Format format);
         void ValidateTextureBufferCopyStrides(DbgTexture& textureDbg, std::uint32_t rowStride, std::uint32_t layerStride, const Extent3D& extent);
         void ValidateMemoryBarrierResourceFlags(ResourceType resourceType, long bindFlags, const std::string& label, std::uint32_t resourceIndex);
@@ -214,6 +215,8 @@ class DbgCommandBuffer final : public CommandBuffer
         bool IsSecondaryCmdBuffer() const;
 
         void SetAndValidateScissorRects(std::uint32_t numScissors, const Scissor* scissors);
+
+        void BindVertexBuffer(DbgBuffer& bufferDbg);
 
     private:
 

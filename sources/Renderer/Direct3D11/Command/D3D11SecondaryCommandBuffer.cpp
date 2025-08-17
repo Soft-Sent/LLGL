@@ -53,7 +53,7 @@ void D3D11SecondaryCommandBuffer::UpdateBuffer(
     Buffer&         /*dstBuffer*/,
     std::uint64_t   /*dstOffset*/,
     const void*     /*data*/,
-    std::uint16_t   /*dataSize*/)
+    std::uint64_t   /*dataSize*/)
 {
     // dummy - command not allowed in secondary command buffer
 }
@@ -157,6 +157,20 @@ void D3D11SecondaryCommandBuffer::SetVertexBuffer(Buffer& buffer)
     auto cmd = AllocCommand<D3D11CmdSetVertexBuffer>(D3D11OpcodeSetVertexBuffer);
     {
         cmd->buffer = bufferD3D;
+        cmd->stride = bufferD3D->GetStride();
+    }
+}
+
+void D3D11SecondaryCommandBuffer::SetVertexBuffer(Buffer& buffer, std::uint32_t numVertexAttribs, const VertexAttribute* vertexAttribs)
+{
+    if (numVertexAttribs > 0 && vertexAttribs != nullptr)
+    {
+        auto* bufferD3D = LLGL_CAST(D3D11Buffer*, &buffer);
+        auto cmd = AllocCommand<D3D11CmdSetVertexBuffer>(D3D11OpcodeSetVertexBuffer);
+        {
+            cmd->buffer = bufferD3D;
+            cmd->stride = vertexAttribs[0].stride;
+        }
     }
 }
 

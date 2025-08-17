@@ -56,7 +56,7 @@ class DbgRenderSystem final : public RenderSystem
 
     private:
 
-        void ValidateBindFlags(long flags);
+        void ValidateBindFlags(long flags, Format format = Format::Undefined, ResourceType resourceType = ResourceType::Undefined);
         void ValidateCPUAccessFlags(long flags, long validFlags, const char* contextDesc = nullptr);
         void ValidateMiscFlags(long flags, long validFlags, const char* contextDesc = nullptr);
         void ValidateResourceCPUAccess(long cpuAccessFlags, const CPUAccess access, const char* resourceTypeName);
@@ -87,7 +87,7 @@ class DbgRenderSystem final : public RenderSystem
         void ValidateTextureRegion(const DbgTexture& textureDbg, const TextureRegion& textureRegion);
         void ValidateTextureView(const DbgTexture& sharedTextureDbg, const TextureViewDescriptor& textureViewDesc);
         void ValidateTextureViewType(const TextureType sharedTextureType, const TextureType textureViewType, const std::initializer_list<TextureType>& validTypes);
-        void ValidateImageDataSize(const DbgTexture& textureDbg, const TextureRegion& textureRegion, ImageFormat imageFormat, DataType dataType, std::size_t dataSize);
+        void ValidateImageView(const ImageView& imageView, const TextureDescriptor& textureDesc, const TextureRegion* textureRegion = nullptr);
 
         void ValidateAttachmentDesc(const AttachmentDescriptor& attachmentDesc, std::uint32_t colorTarget, bool isResolveAttachment, bool isDepthStencilAttachment);
 
@@ -106,9 +106,10 @@ class DbgRenderSystem final : public RenderSystem
         void ValidateBlendDescriptor(const BlendDescriptor& blendDesc, bool hasFragmentShader, bool hasDualSourceBlend);
         void ValidateGraphicsPipelineDesc(const GraphicsPipelineDescriptor& pipelineStateDesc);
         void ValidateComputePipelineDesc(const ComputePipelineDescriptor& pipelineStateDesc);
+        void ValidateMeshPipelineDesc(const MeshPipelineDescriptor& pipelineStateDesc);
         void ValidateFragmentShaderOutput(DbgShader& fragmentShaderDbg, const RenderPass* renderPass, bool hasDualSourceBlend);
         void ValidateFragmentShaderOutputWithRenderPass(DbgShader& fragmentShaderDbg, const FragmentShaderAttributes& fragmentAttribs, const DbgRenderPass& renderPass, bool hasDualSourceBlend);
-        void ValidateFragmentShaderOutputWithoutRenderPass(DbgShader& fragmentShaderDbg, const FragmentShaderAttributes& fragmentAttribs);
+        void ValidateFragmentShaderOutputWithoutRenderPass(DbgShader& fragmentShaderDbg, const FragmentShaderAttributes& fragmentAttribs, bool hasDualSourceBlend);
         void ValidatePipelineStateUniforms(const DbgPipelineLayout& pipelineLayout, const ArrayView<DbgShader*>& shaders, const char* psoDebugName);
 
         void Assert3DTextures();
