@@ -75,13 +75,14 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>LLGL_PLATFORM_WINDOWS;LLGL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;LLGL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
@@ -93,7 +94,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>LLGL_PLATFORM_WINDOWS;LLGL_RELEASE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;LLGL_RELEASE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -102,6 +103,7 @@
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
@@ -114,7 +116,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>LLGL_PLATFORM_WINDOWS;LLGL_DISTRIBUTION;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;LLGL_DISTRIBUTION;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>Full</Optimization>
@@ -124,6 +126,7 @@
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
@@ -166,8 +169,6 @@
     <ClInclude Include="include\LLGL-C\Window.h" />
     <ClInclude Include="include\LLGL\Backend\Direct3D11\NativeHandle.h" />
     <ClInclude Include="include\LLGL\Backend\Direct3D12\NativeHandle.h" />
-    <ClInclude Include="include\LLGL\Backend\Metal\NativeCommand.h" />
-    <ClInclude Include="include\LLGL\Backend\Metal\NativeHandle.h" />
     <ClInclude Include="include\LLGL\Backend\OpenGL\Android\AndroidNativeHandle.h" />
     <ClInclude Include="include\LLGL\Backend\OpenGL\IOS\IOSNativeHandle.h" />
     <ClInclude Include="include\LLGL\Backend\OpenGL\Linux\LinuxNativeHandle.h" />
@@ -218,14 +219,8 @@
     <ClInclude Include="include\LLGL\PipelineLayoutFlags.h" />
     <ClInclude Include="include\LLGL\PipelineState.h" />
     <ClInclude Include="include\LLGL\PipelineStateFlags.h" />
-    <ClInclude Include="include\LLGL\Platform\Android\AndroidNativeHandle.h" />
-    <ClInclude Include="include\LLGL\Platform\IOS\IOSNativeHandle.h" />
-    <ClInclude Include="include\LLGL\Platform\Linux\LinuxNativeHandle.h" />
-    <ClInclude Include="include\LLGL\Platform\MacOS\MacOSNativeHandle.h" />
     <ClInclude Include="include\LLGL\Platform\NativeHandle.h" />
     <ClInclude Include="include\LLGL\Platform\Platform.h" />
-    <ClInclude Include="include\LLGL\Platform\UWP\UWPNativeHandle.h" />
-    <ClInclude Include="include\LLGL\Platform\Wasm\WasmNativeHandle.h" />
     <ClInclude Include="include\LLGL\Platform\Win32\Win32NativeHandle.h" />
     <ClInclude Include="include\LLGL\QueryHeap.h" />
     <ClInclude Include="include\LLGL\QueryHeapFlags.h" />
@@ -297,6 +292,19 @@
     <ClInclude Include="sources\Core\Threading.h" />
     <ClInclude Include="sources\Core\Vendor.h" />
     <ClInclude Include="sources\Core\VersionMacros.h" />
+    <ClInclude Include="sources\Platform\ConsoleManip.h" />
+    <ClInclude Include="sources\Platform\Debug.h" />
+    <ClInclude Include="sources\Platform\Module.h" />
+    <ClInclude Include="sources\Platform\Path.h" />
+    <ClInclude Include="sources\Platform\Win32\MapKey.h" />
+    <ClInclude Include="sources\Platform\Win32\Win32ConsoleState.h" />
+    <ClInclude Include="sources\Platform\Win32\Win32Debug.h" />
+    <ClInclude Include="sources\Platform\Win32\Win32Display.h" />
+    <ClInclude Include="sources\Platform\Win32\Win32LeanAndMean.h" />
+    <ClInclude Include="sources\Platform\Win32\Win32Module.h" />
+    <ClInclude Include="sources\Platform\Win32\Win32Window.h" />
+    <ClInclude Include="sources\Platform\Win32\Win32WindowCallback.h" />
+    <ClInclude Include="sources\Platform\Win32\Win32WindowClass.h" />
     <ClInclude Include="sources\Renderer\BindingIterator.h" />
     <ClInclude Include="sources\Renderer\BufferUtils.h" />
     <ClInclude Include="sources\Renderer\BuildID.h" />
@@ -390,6 +398,24 @@
     <ClCompile Include="sources\Core\Utility.cpp" />
     <ClCompile Include="sources\Core\Vendor.cpp" />
     <ClCompile Include="sources\Core\Version.cpp" />
+    <ClCompile Include="sources\Platform\Canvas.cpp" />
+    <ClCompile Include="sources\Platform\ConsoleManip.cpp" />
+    <ClCompile Include="sources\Platform\Debug.cpp" />
+    <ClCompile Include="sources\Platform\Display.cpp" />
+    <ClCompile Include="sources\Platform\DisplayFlags.cpp" />
+    <ClCompile Include="sources\Platform\Path.cpp" />
+    <ClCompile Include="sources\Platform\Win32\MapKey.cpp" />
+    <ClCompile Include="sources\Platform\Win32\Win32ConsoleManip.cpp" />
+    <ClCompile Include="sources\Platform\Win32\Win32ConsoleState.cpp" />
+    <ClCompile Include="sources\Platform\Win32\Win32Debug.cpp" />
+    <ClCompile Include="sources\Platform\Win32\Win32Display.cpp" />
+    <ClCompile Include="sources\Platform\Win32\Win32Module.cpp" />
+    <ClCompile Include="sources\Platform\Win32\Win32Path.cpp" />
+    <ClCompile Include="sources\Platform\Win32\Win32Timer.cpp" />
+    <ClCompile Include="sources\Platform\Win32\Win32Window.cpp" />
+    <ClCompile Include="sources\Platform\Win32\Win32WindowCallback.cpp" />
+    <ClCompile Include="sources\Platform\Win32\Win32WindowClass.cpp" />
+    <ClCompile Include="sources\Platform\Window.cpp" />
     <ClCompile Include="sources\Renderer\BindingIterator.cpp" />
     <ClCompile Include="sources\Renderer\Buffer.cpp" />
     <ClCompile Include="sources\Renderer\BufferArray.cpp" />

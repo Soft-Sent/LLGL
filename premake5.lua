@@ -1,7 +1,7 @@
 project "LLGL"
     kind "StaticLib"
     language "C++"
-    cppdialect "C++11"
+    cppdialect "C++23" --C++11
     staticruntime "on"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
@@ -9,11 +9,25 @@ project "LLGL"
 
     files {
         "include/**.h",
+
         "sources/Core/**.h",
         "sources/Core/**.cpp",
 
+        "sources/Platform/Canvas.cpp",
+        "sources/Platform/ConsoleManip.cpp",
+        "sources/Platform/ConsoleManip.h",
+        "sources/Platform/Debug.cpp",
+        "sources/Platform/Debug.h",
+        "sources/Platform/Display.cpp",
+        "sources/Platform/DisplayFlags.cpp",
+        "sources/Platform/Module.h",
+        "sources/Platform/Path.cpp",
+        "sources/Platform/Path.h",
+        "sources/Platform/Window.cpp",
+
         "sources/Renderer/DebugLayer/**.h",
         "sources/Renderer/DebugLayer/**.cpp",
+
         "sources/Renderer/SPIRV/**.h",
         "sources/Renderer/SPIRV/**.hpp",
         "sources/Renderer/SPIRV/**.cpp",
@@ -69,6 +83,9 @@ project "LLGL"
         "sources/Renderer/VertexAttribute.cpp",
         "sources/Renderer/VideoAdapter.h",
         "sources/Renderer/VirtualCommandBuffer.h",
+
+        "sources/Renderer/DebugLayer/**.h",
+        "sources/Renderer/DebugLayer/**.cpp",
     }
 
     includedirs {
@@ -76,7 +93,27 @@ project "LLGL"
         "sources/Renderer/SPIRV",
     }
 
+    defines{
+        "LLGL_BUILD_STATIC_LIB"
+    }
+
     filter "system:windows"
+        files {
+            "sources/Platform/Win32/**.h",
+            "sources/Platform/Win32/**.cpp",
+        }
+        
+        removefiles {
+            "include/LLGL/Platform/Android/**.h",
+            "include/LLGL/Platform/IOS/**.h",
+            "include/LLGL/Platform/Linux/**.h",
+            "include/LLGL/Platform/MacOS/**.h",
+            "include/LLGL/Platform/UWP/**.h",
+            "include/LLGL/Platform/Wasm/**.h",
+
+            "include/LLGL/Backend/Metal/**.h",
+        }
+
         systemversion "latest"
         defines { "LLGL_PLATFORM_WINDOWS" }
 
@@ -107,14 +144,14 @@ project "LLGL"
         defines { "LLGL_DISTRIBUTION", "NDEBUG" }
     filter()
 
-    if os.istarget("windows") then
+    if os.target() == "windows" then
         include "sources/Renderer/Direct3D11/"
         include "sources/Renderer/Direct3D12/"
-        include "sources/Renderer/DXCommon/"
-        --include "sources/Renderer/Null/"
-        --include "sources/Renderer/OpenGL/"
-        --include "sources/Renderer/Vulkan/"
-    end
-    if os.istarget("macosx") then
-        include "sources/Renderer/Metal"
+        include "sources/Renderer/OpenGL/"
+        include "sources/Renderer/Vulkan/"
+    elseif os.target() == "macosx" then
+        include "sources/Renderer/Metal/"
+    elseif os.target() == "linux" then
+        include "sources/Renderer/OpenGL/"
+        include "sources/Renderer/Vulkan/"
     end

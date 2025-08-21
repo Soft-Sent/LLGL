@@ -1,489 +1,662 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLCore.cpp">
-      <Filter>OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLModuleInterface.cpp">
-      <Filter>OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLObjectUtils.cpp">
-      <Filter>OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLRenderSystem.cpp">
-      <Filter>OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLStaticAssertions.cpp">
-      <Filter>OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLSwapChain.cpp">
-      <Filter>OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLTypes.cpp">
-      <Filter>OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GL3PlusSharedContextVertexArray.cpp">
-      <Filter>OpenGL\Buffer</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBuffer.cpp">
-      <Filter>OpenGL\Buffer</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBufferArray.cpp">
-      <Filter>OpenGL\Buffer</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBufferArrayWithVAO.cpp">
-      <Filter>OpenGL\Buffer</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBufferWithVAO.cpp">
-      <Filter>OpenGL\Buffer</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBufferWithXFB.cpp">
-      <Filter>OpenGL\Buffer</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLVertexArrayObject.cpp">
-      <Filter>OpenGL\Buffer</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLVertexAttribute.cpp">
-      <Filter>OpenGL\Buffer</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommandBuffer.cpp">
-      <Filter>OpenGL\Command</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommandExecutor.cpp">
-      <Filter>OpenGL\Command</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommandQueue.cpp">
-      <Filter>OpenGL\Command</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLDeferredCommandBuffer.cpp">
-      <Filter>OpenGL\Command</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLImmediateCommandBuffer.cpp">
-      <Filter>OpenGL\Command</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Ext\GLExtensionRegistry.cpp">
-      <Filter>OpenGL\Ext</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\Win32\Win32GLContext.cpp">
-      <Filter>OpenGL\Platform</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\Win32\Win32GLSwapChainContext.cpp">
-      <Filter>OpenGL\Platform</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\GLContext.cpp">
-      <Filter>OpenGL\Platform</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\GLContextManager.cpp">
-      <Filter>OpenGL\Platform</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\GLSwapChainContext.cpp">
-      <Filter>OpenGL\Platform</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLBlendState.cpp">
-      <Filter>OpenGL\RenderState</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLComputePSO.cpp">
-      <Filter>OpenGL\RenderState</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLContextState.cpp">
-      <Filter>OpenGL\RenderState</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLDepthStencilState.cpp">
-      <Filter>OpenGL\RenderState</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLFence.cpp">
-      <Filter>OpenGL\RenderState</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLGraphicsPSO.cpp">
-      <Filter>OpenGL\RenderState</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLPipelineCache.cpp">
-      <Filter>OpenGL\RenderState</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLPipelineLayout.cpp">
-      <Filter>OpenGL\RenderState</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLPipelineState.cpp">
-      <Filter>OpenGL\RenderState</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLQueryHeap.cpp">
-      <Filter>OpenGL\RenderState</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLRasterizerState.cpp">
-      <Filter>OpenGL\RenderState</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLRenderPass.cpp">
-      <Filter>OpenGL\RenderState</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLResourceHeap.cpp">
-      <Filter>OpenGL\RenderState</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLStateManager.cpp">
-      <Filter>OpenGL\RenderState</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLStatePool.cpp">
-      <Filter>OpenGL\RenderState</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLLegacyShader.cpp">
-      <Filter>OpenGL\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLPipelineSignature.cpp">
-      <Filter>OpenGL\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLProgramPipeline.cpp">
-      <Filter>OpenGL\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLSeparableShader.cpp">
-      <Filter>OpenGL\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShader.cpp">
-      <Filter>OpenGL\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderBindingLayout.cpp">
-      <Filter>OpenGL\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderBufferInterfaceMap.cpp">
-      <Filter>OpenGL\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderPipeline.cpp">
-      <Filter>OpenGL\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderProgram.cpp">
-      <Filter>OpenGL\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderSourcePatcher.cpp">
-      <Filter>OpenGL\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderUniform.cpp">
-      <Filter>OpenGL\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLEmulatedSampler.cpp">
-      <Filter>OpenGL\Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLFramebuffer.cpp">
-      <Filter>OpenGL\Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLFramebufferCapture.cpp">
-      <Filter>OpenGL\Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLMipGenerator.cpp">
-      <Filter>OpenGL\Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLRenderTarget.cpp">
-      <Filter>OpenGL\Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLRenderbuffer.cpp">
-      <Filter>OpenGL\Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLSampler.cpp">
-      <Filter>OpenGL\Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTexImage.cpp">
-      <Filter>OpenGL\Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTexSubImage.cpp">
-      <Filter>OpenGL\Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTexture.cpp">
-      <Filter>OpenGL\Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTextureSubImage.cpp">
-      <Filter>OpenGL\Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTextureViewPool.cpp">
-      <Filter>OpenGL\Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLCore\GLCoreExtensionLoader.cpp">
-      <Filter>OpenGL\Profile</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLCore\GLCoreExtensions.cpp">
-      <Filter>OpenGL\Profile</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLCore\GLCoreProfile.cpp">
-      <Filter>OpenGL\Profile</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLCore\GLCoreProfileCaps.cpp">
-      <Filter>OpenGL\Profile</Filter>
-    </ClCompile>
+    <Filter Include="Buffer">
+      <UniqueIdentifier>{3F5F52AA-2B01-7D80-14BC-90D400FD03D1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Command">
+      <UniqueIdentifier>{24011C34-90E0-9ACF-99F8-25A605570131}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ext">
+      <UniqueIdentifier>{56E8870B-C2F1-877C-4B6D-9E7CB775937C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Android">
+      <UniqueIdentifier>{5A445388-463D-72DA-6F6F-575F5BC751E6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\IOS">
+      <UniqueIdentifier>{0453A7CC-F0B5-3671-993B-6F27857D02F4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Linux">
+      <UniqueIdentifier>{C9310D94-B5FF-009A-9E93-71C08A00DDFE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\MacOS">
+      <UniqueIdentifier>{6CB31A94-5881-0E9A-4115-7FC02D82EAFE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Wasm">
+      <UniqueIdentifier>{F1B19961-5D72-1598-26AD-5E15922C5A74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Win32">
+      <UniqueIdentifier>{8C36D494-7804-C89A-6198-38C14D05A4FF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Win32">
+      <UniqueIdentifier>{8C36D494-7804-C89A-6198-38C14D05A4FF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Profile">
+      <UniqueIdentifier>{F60CF123-62EC-6FBF-6B04-FB95D762D620}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Profile\GLCompat">
+      <UniqueIdentifier>{5CC5CAEB-48BE-E93D-71F0-CEC25D48C949}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Profile\GLCore">
+      <UniqueIdentifier>{41732315-2D41-171B-16D5-87410242F37F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Profile\GLES">
+      <UniqueIdentifier>{D051C881-BCB4-5726-653A-90DC517C23A9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Profile\WebGL">
+      <UniqueIdentifier>{764302BC-E203-7EF2-AB3E-C76F17BEC2CE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RenderState">
+      <UniqueIdentifier>{A6183C01-12CE-B4F6-9BC2-AECD0777ABFA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{FC0C0CD1-E8AE-36A7-D169-4AFBBDAABDF7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Texture">
+      <UniqueIdentifier>{76AD313A-E28C-B0D5-EBA4-3BAC57031737}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLCore.h">
-      <Filter>OpenGL</Filter>
+    <ClInclude Include="..\..\Platform\Win32\MapKey.h">
+      <Filter>Platform\Win32</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLObjectUtils.h">
-      <Filter>OpenGL</Filter>
+    <ClInclude Include="..\..\Platform\Win32\Win32ConsoleState.h">
+      <Filter>Platform\Win32</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLRenderSystem.h">
-      <Filter>OpenGL</Filter>
+    <ClInclude Include="..\..\Platform\Win32\Win32Debug.h">
+      <Filter>Platform\Win32</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLRenderingCaps.h">
-      <Filter>OpenGL</Filter>
+    <ClInclude Include="..\..\Platform\Win32\Win32Display.h">
+      <Filter>Platform\Win32</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLSwapChain.h">
-      <Filter>OpenGL</Filter>
+    <ClInclude Include="..\..\Platform\Win32\Win32LeanAndMean.h">
+      <Filter>Platform\Win32</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLTypes.h">
-      <Filter>OpenGL</Filter>
+    <ClInclude Include="..\..\Platform\Win32\Win32Module.h">
+      <Filter>Platform\Win32</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\OpenGL.h">
-      <Filter>OpenGL</Filter>
+    <ClInclude Include="..\..\Platform\Win32\Win32Window.h">
+      <Filter>Platform\Win32</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GL3PlusSharedContextVertexArray.h">
-      <Filter>OpenGL\Buffer</Filter>
+    <ClInclude Include="..\..\Platform\Win32\Win32WindowCallback.h">
+      <Filter>Platform\Win32</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBuffer.h">
-      <Filter>OpenGL\Buffer</Filter>
+    <ClInclude Include="..\..\Platform\Win32\Win32WindowClass.h">
+      <Filter>Platform\Win32</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBufferArray.h">
-      <Filter>OpenGL\Buffer</Filter>
+    <ClInclude Include="Buffer\GL2XSharedContextVertexArray.h">
+      <Filter>Buffer</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBufferArrayWithVAO.h">
-      <Filter>OpenGL\Buffer</Filter>
+    <ClInclude Include="Buffer\GL3PlusSharedContextVertexArray.h">
+      <Filter>Buffer</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBufferWithVAO.h">
-      <Filter>OpenGL\Buffer</Filter>
+    <ClInclude Include="Buffer\GLBuffer.h">
+      <Filter>Buffer</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLBufferWithXFB.h">
-      <Filter>OpenGL\Buffer</Filter>
+    <ClInclude Include="Buffer\GLBufferArray.h">
+      <Filter>Buffer</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLSharedContextVertexArray.h">
-      <Filter>OpenGL\Buffer</Filter>
+    <ClInclude Include="Buffer\GLBufferArrayWithVAO.h">
+      <Filter>Buffer</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLVertexArrayObject.h">
-      <Filter>OpenGL\Buffer</Filter>
+    <ClInclude Include="Buffer\GLBufferWithVAO.h">
+      <Filter>Buffer</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Buffer\GLVertexAttribute.h">
-      <Filter>OpenGL\Buffer</Filter>
+    <ClInclude Include="Buffer\GLBufferWithXFB.h">
+      <Filter>Buffer</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommand.h">
-      <Filter>OpenGL\Command</Filter>
+    <ClInclude Include="Buffer\GLSharedContextVertexArray.h">
+      <Filter>Buffer</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommandBuffer.h">
-      <Filter>OpenGL\Command</Filter>
+    <ClInclude Include="Buffer\GLVertexArrayObject.h">
+      <Filter>Buffer</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommandBuffer.inl">
-      <Filter>OpenGL\Command</Filter>
+    <ClInclude Include="Buffer\GLVertexAttribute.h">
+      <Filter>Buffer</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommandExecutor.h">
-      <Filter>OpenGL\Command</Filter>
+    <ClInclude Include="Command\GLCommand.h">
+      <Filter>Command</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommandOpcode.h">
-      <Filter>OpenGL\Command</Filter>
+    <ClInclude Include="Command\GLCommandBuffer.h">
+      <Filter>Command</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLCommandQueue.h">
-      <Filter>OpenGL\Command</Filter>
+    <ClInclude Include="Command\GLCommandExecutor.h">
+      <Filter>Command</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLDeferredCommandBuffer.h">
-      <Filter>OpenGL\Command</Filter>
+    <ClInclude Include="Command\GLCommandOpcode.h">
+      <Filter>Command</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Command\GLImmediateCommandBuffer.h">
-      <Filter>OpenGL\Command</Filter>
+    <ClInclude Include="Command\GLCommandQueue.h">
+      <Filter>Command</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Ext\GLExtensionLoader.h">
-      <Filter>OpenGL\Ext</Filter>
+    <ClInclude Include="Command\GLDeferredCommandBuffer.h">
+      <Filter>Command</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Ext\GLExtensionRegistry.h">
-      <Filter>OpenGL\Ext</Filter>
+    <ClInclude Include="Command\GLImmediateCommandBuffer.h">
+      <Filter>Command</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Ext\GLExtensions.h">
-      <Filter>OpenGL\Ext</Filter>
+    <ClInclude Include="Ext\GLExtensionLoader.h">
+      <Filter>Ext</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\Win32\Win32GLContext.h">
-      <Filter>OpenGL\Platform</Filter>
+    <ClInclude Include="Ext\GLExtensionRegistry.h">
+      <Filter>Ext</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\Win32\Win32GLSwapChainContext.h">
-      <Filter>OpenGL\Platform</Filter>
+    <ClInclude Include="Ext\GLExtensions.h">
+      <Filter>Ext</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\GLContext.h">
-      <Filter>OpenGL\Platform</Filter>
+    <ClInclude Include="GLCore.h" />
+    <ClInclude Include="GLObjectUtils.h" />
+    <ClInclude Include="GLRenderSystem.h" />
+    <ClInclude Include="GLRenderingCaps.h" />
+    <ClInclude Include="GLSwapChain.h" />
+    <ClInclude Include="GLTypes.h" />
+    <ClInclude Include="OpenGL.h" />
+    <ClInclude Include="Platform\Android\AndroidGLContext.h">
+      <Filter>Platform\Android</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\GLContextManager.h">
-      <Filter>OpenGL\Platform</Filter>
+    <ClInclude Include="Platform\Android\AndroidGLCore.h">
+      <Filter>Platform\Android</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Platform\GLSwapChainContext.h">
-      <Filter>OpenGL\Platform</Filter>
+    <ClInclude Include="Platform\Android\AndroidGLSwapChainContext.h">
+      <Filter>Platform\Android</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLBlendState.h">
-      <Filter>OpenGL\RenderState</Filter>
+    <ClInclude Include="Platform\Android\AndroidSharedEGLSurface.h">
+      <Filter>Platform\Android</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLComputePSO.h">
-      <Filter>OpenGL\RenderState</Filter>
+    <ClInclude Include="Platform\GLContext.h">
+      <Filter>Platform</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLContextState.h">
-      <Filter>OpenGL\RenderState</Filter>
+    <ClInclude Include="Platform\GLContextManager.h">
+      <Filter>Platform</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLDepthStencilState.h">
-      <Filter>OpenGL\RenderState</Filter>
+    <ClInclude Include="Platform\GLSwapChainContext.h">
+      <Filter>Platform</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLFence.h">
-      <Filter>OpenGL\RenderState</Filter>
+    <ClInclude Include="Platform\IOS\IOSGLContext.h">
+      <Filter>Platform\IOS</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLGraphicsPSO.h">
-      <Filter>OpenGL\RenderState</Filter>
+    <ClInclude Include="Platform\IOS\IOSGLSwapChainContext.h">
+      <Filter>Platform\IOS</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLPipelineCache.h">
-      <Filter>OpenGL\RenderState</Filter>
+    <ClInclude Include="Platform\Linux\LinuxGLContext.h">
+      <Filter>Platform\Linux</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLPipelineLayout.h">
-      <Filter>OpenGL\RenderState</Filter>
+    <ClInclude Include="Platform\Linux\LinuxGLSwapChainContext.h">
+      <Filter>Platform\Linux</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLPipelineState.h">
-      <Filter>OpenGL\RenderState</Filter>
+    <ClInclude Include="Platform\MacOS\MacOSGLContext.h">
+      <Filter>Platform\MacOS</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLQueryHeap.h">
-      <Filter>OpenGL\RenderState</Filter>
+    <ClInclude Include="Platform\MacOS\MacOSGLExt.h">
+      <Filter>Platform\MacOS</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLRasterizerState.h">
-      <Filter>OpenGL\RenderState</Filter>
+    <ClInclude Include="Platform\MacOS\MacOSGLSwapChainContext.h">
+      <Filter>Platform\MacOS</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLRenderPass.h">
-      <Filter>OpenGL\RenderState</Filter>
+    <ClInclude Include="Platform\Wasm\WasmGLContext.h">
+      <Filter>Platform\Wasm</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLResourceHeap.h">
-      <Filter>OpenGL\RenderState</Filter>
+    <ClInclude Include="Platform\Wasm\WasmGLSwapChainContext.h">
+      <Filter>Platform\Wasm</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLResourceType.h">
-      <Filter>OpenGL\RenderState</Filter>
+    <ClInclude Include="Platform\Win32\Win32GLContext.h">
+      <Filter>Platform\Win32</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLState.h">
-      <Filter>OpenGL\RenderState</Filter>
+    <ClInclude Include="Platform\Win32\Win32GLSwapChainContext.h">
+      <Filter>Platform\Win32</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLStateManager.h">
-      <Filter>OpenGL\RenderState</Filter>
+    <ClInclude Include="Profile\GLCompat\GLCompatExtensionMapping.h">
+      <Filter>Profile\GLCompat</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLStatePool.h">
-      <Filter>OpenGL\RenderState</Filter>
+    <ClInclude Include="Profile\GLCompat\GLCompatExtensions.h">
+      <Filter>Profile\GLCompat</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLLegacyShader.h">
-      <Filter>OpenGL\Shader</Filter>
+    <ClInclude Include="Profile\GLCompat\GLCompatProfileTypes.h">
+      <Filter>Profile\GLCompat</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLPipelineSignature.h">
-      <Filter>OpenGL\Shader</Filter>
+    <ClInclude Include="Profile\GLCompat\OpenGLCompat.h">
+      <Filter>Profile\GLCompat</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLProgramPipeline.h">
-      <Filter>OpenGL\Shader</Filter>
+    <ClInclude Include="Profile\GLCore\GLCoreExtensions.h">
+      <Filter>Profile\GLCore</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLSeparableShader.h">
-      <Filter>OpenGL\Shader</Filter>
+    <ClInclude Include="Profile\GLCore\GLCoreProfileTypes.h">
+      <Filter>Profile\GLCore</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShader.h">
-      <Filter>OpenGL\Shader</Filter>
+    <ClInclude Include="Profile\GLCore\OpenGLCore.h">
+      <Filter>Profile\GLCore</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderBindingLayout.h">
-      <Filter>OpenGL\Shader</Filter>
+    <ClInclude Include="Profile\GLES\GLESExtensions.h">
+      <Filter>Profile\GLES</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderBufferInterfaceMap.h">
-      <Filter>OpenGL\Shader</Filter>
+    <ClInclude Include="Profile\GLES\GLESProfileTypes.h">
+      <Filter>Profile\GLES</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderPipeline.h">
-      <Filter>OpenGL\Shader</Filter>
+    <ClInclude Include="Profile\GLES\OpenGLES.h">
+      <Filter>Profile\GLES</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderProgram.h">
-      <Filter>OpenGL\Shader</Filter>
+    <ClInclude Include="Profile\GLProfile.h">
+      <Filter>Profile</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderSourcePatcher.h">
-      <Filter>OpenGL\Shader</Filter>
+    <ClInclude Include="Profile\WebGL\WebGL.h">
+      <Filter>Profile\WebGL</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Shader\GLShaderUniform.h">
-      <Filter>OpenGL\Shader</Filter>
+    <ClInclude Include="Profile\WebGL\WebGLProfileTypes.h">
+      <Filter>Profile\WebGL</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLEmulatedSampler.h">
-      <Filter>OpenGL\Texture</Filter>
+    <ClInclude Include="RenderState\GLBlendState.h">
+      <Filter>RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLFramebuffer.h">
-      <Filter>OpenGL\Texture</Filter>
+    <ClInclude Include="RenderState\GLComputePSO.h">
+      <Filter>RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLFramebufferCapture.h">
-      <Filter>OpenGL\Texture</Filter>
+    <ClInclude Include="RenderState\GLContextState.h">
+      <Filter>RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLMipGenerator.h">
-      <Filter>OpenGL\Texture</Filter>
+    <ClInclude Include="RenderState\GLDepthStencilState.h">
+      <Filter>RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLRenderTarget.h">
-      <Filter>OpenGL\Texture</Filter>
+    <ClInclude Include="RenderState\GLFence.h">
+      <Filter>RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLRenderbuffer.h">
-      <Filter>OpenGL\Texture</Filter>
+    <ClInclude Include="RenderState\GLGraphicsPSO.h">
+      <Filter>RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLSampler.h">
-      <Filter>OpenGL\Texture</Filter>
+    <ClInclude Include="RenderState\GLPipelineCache.h">
+      <Filter>RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTexImage.h">
-      <Filter>OpenGL\Texture</Filter>
+    <ClInclude Include="RenderState\GLPipelineLayout.h">
+      <Filter>RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTexSubImage.h">
-      <Filter>OpenGL\Texture</Filter>
+    <ClInclude Include="RenderState\GLPipelineState.h">
+      <Filter>RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTexture.h">
-      <Filter>OpenGL\Texture</Filter>
+    <ClInclude Include="RenderState\GLQueryHeap.h">
+      <Filter>RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTextureSubImage.h">
-      <Filter>OpenGL\Texture</Filter>
+    <ClInclude Include="RenderState\GLRasterizerState.h">
+      <Filter>RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Texture\GLTextureViewPool.h">
-      <Filter>OpenGL\Texture</Filter>
+    <ClInclude Include="RenderState\GLRenderPass.h">
+      <Filter>RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLProfile.h">
-      <Filter>OpenGL\Profile</Filter>
+    <ClInclude Include="RenderState\GLResourceHeap.h">
+      <Filter>RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Backend\OpenGL\NativeCommand.h">
-      <Filter>Include\Platform</Filter>
+    <ClInclude Include="RenderState\GLResourceType.h">
+      <Filter>RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Backend\OpenGL\NativeHandle.h">
-      <Filter>Include\Platform</Filter>
+    <ClInclude Include="RenderState\GLState.h">
+      <Filter>RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\include\LLGL\Backend\OpenGL\Win32\Win32NativeHandle.h">
-      <Filter>Include\Platform</Filter>
+    <ClInclude Include="RenderState\GLStateManager.h">
+      <Filter>RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLCore\GLCoreExtensions.h">
-      <Filter>OpenGL\Profile</Filter>
+    <ClInclude Include="RenderState\GLStatePool.h">
+      <Filter>RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLCore\GLCoreExtensionsDecl.inl">
-      <Filter>OpenGL\Profile</Filter>
+    <ClInclude Include="Shader\GLLegacyShader.h">
+      <Filter>Shader</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLCore\GLCoreProfileTypes.h">
-      <Filter>OpenGL\Profile</Filter>
+    <ClInclude Include="Shader\GLPipelineSignature.h">
+      <Filter>Shader</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\Profile\GLCore\OpenGLCore.h">
-      <Filter>OpenGL\Profile</Filter>
+    <ClInclude Include="Shader\GLProgramPipeline.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\GLSeparableShader.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\GLShader.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\GLShaderBindingLayout.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\GLShaderBufferInterfaceMap.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\GLShaderPipeline.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\GLShaderProgram.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\GLShaderSourcePatcher.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\GLShaderUniform.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\GLEmulatedSampler.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\GLFramebuffer.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\GLFramebufferCapture.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\GLMipGenerator.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\GLRenderTarget.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\GLRenderbuffer.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\GLSampler.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\GLTexImage.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\GLTexSubImage.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\GLTexture.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\GLTextureSubImage.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\GLTextureViewPool.h">
+      <Filter>Texture</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\CMakeLists.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Include">
-      <UniqueIdentifier>{D8BBE4BA-7D78-3C84-8D40-475AF4BC7EF3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Include\Platform">
-      <UniqueIdentifier>{3EF9E11A-FB67-3F1E-991E-6EAE51CEF9F0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenGL">
-      <UniqueIdentifier>{966518FC-CFE4-3EEE-B0FA-982A6208A82E}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenGL\Buffer">
-      <UniqueIdentifier>{6B8328BA-BA38-3A8D-8563-09CF372CEC28}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenGL\Command">
-      <UniqueIdentifier>{02BB2736-862A-39E8-B2BB-841F7BB3003B}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenGL\Ext">
-      <UniqueIdentifier>{90583397-D0D4-3B07-A4C4-F6B051231463}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenGL\Platform">
-      <UniqueIdentifier>{0316D692-BDC8-3992-BC23-56A0825287D5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenGL\Profile">
-      <UniqueIdentifier>{4970A182-E48D-389C-8043-D45F043F1D3B}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenGL\RenderState">
-      <UniqueIdentifier>{46B5D6E2-6943-33FE-BAFB-A5419563EFE4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenGL\Shader">
-      <UniqueIdentifier>{133D4CA8-9F29-357D-824B-0EA3D303A42E}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenGL\Texture">
-      <UniqueIdentifier>{88FCB4B6-8859-3188-B4D4-5139DDF2C353}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="..\..\Platform\Win32\MapKey.cpp">
+      <Filter>Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Platform\Win32\Win32ConsoleManip.cpp">
+      <Filter>Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Platform\Win32\Win32ConsoleState.cpp">
+      <Filter>Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Platform\Win32\Win32Debug.cpp">
+      <Filter>Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Platform\Win32\Win32Display.cpp">
+      <Filter>Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Platform\Win32\Win32Module.cpp">
+      <Filter>Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Platform\Win32\Win32Path.cpp">
+      <Filter>Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Platform\Win32\Win32Timer.cpp">
+      <Filter>Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Platform\Win32\Win32Window.cpp">
+      <Filter>Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Platform\Win32\Win32WindowCallback.cpp">
+      <Filter>Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Platform\Win32\Win32WindowClass.cpp">
+      <Filter>Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer\GL2XSharedContextVertexArray.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer\GL3PlusSharedContextVertexArray.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer\GLBuffer.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer\GLBufferArray.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer\GLBufferArrayWithVAO.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer\GLBufferWithVAO.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer\GLBufferWithXFB.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer\GLVertexArrayObject.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer\GLVertexAttribute.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\GLCommandBuffer.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\GLCommandExecutor.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\GLCommandQueue.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\GLDeferredCommandBuffer.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\GLImmediateCommandBuffer.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Ext\GLExtensionRegistry.cpp">
+      <Filter>Ext</Filter>
+    </ClCompile>
+    <ClCompile Include="GLCore.cpp" />
+    <ClCompile Include="GLModuleInterface.cpp" />
+    <ClCompile Include="GLObjectUtils.cpp" />
+    <ClCompile Include="GLRenderSystem.cpp" />
+    <ClCompile Include="GLStaticAssertions.cpp" />
+    <ClCompile Include="GLSwapChain.cpp" />
+    <ClCompile Include="GLTypes.cpp" />
+    <ClCompile Include="Platform\Android\AndroidGLContext.cpp">
+      <Filter>Platform\Android</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\Android\AndroidGLCore.cpp">
+      <Filter>Platform\Android</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\Android\AndroidGLSwapChainContext.cpp">
+      <Filter>Platform\Android</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\Android\AndroidSharedEGLSurface.cpp">
+      <Filter>Platform\Android</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\GLContext.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\GLContextManager.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\GLSwapChainContext.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\Linux\LinuxGLContext.cpp">
+      <Filter>Platform\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\Linux\LinuxGLSwapChain.cpp">
+      <Filter>Platform\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\Linux\LinuxGLSwapChainContext.cpp">
+      <Filter>Platform\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\Wasm\WasmGLContext.cpp">
+      <Filter>Platform\Wasm</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\Wasm\WasmGLSwapChainContext.cpp">
+      <Filter>Platform\Wasm</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\Win32\Win32GLContext.cpp">
+      <Filter>Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\Win32\Win32GLSwapChainContext.cpp">
+      <Filter>Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile\GLCompat\GLCompatExtensionLoader.cpp">
+      <Filter>Profile\GLCompat</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile\GLCompat\GLCompatExtensions.cpp">
+      <Filter>Profile\GLCompat</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile\GLCompat\GLCompatProfile.cpp">
+      <Filter>Profile\GLCompat</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile\GLCompat\GLCompatProfileCaps.cpp">
+      <Filter>Profile\GLCompat</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile\GLCore\GLCoreExtensionLoader.cpp">
+      <Filter>Profile\GLCore</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile\GLCore\GLCoreExtensions.cpp">
+      <Filter>Profile\GLCore</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile\GLCore\GLCoreProfile.cpp">
+      <Filter>Profile\GLCore</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile\GLCore\GLCoreProfileCaps.cpp">
+      <Filter>Profile\GLCore</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile\GLES\GLESExtensionLoader.cpp">
+      <Filter>Profile\GLES</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile\GLES\GLESExtensions.cpp">
+      <Filter>Profile\GLES</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile\GLES\GLESProfile.cpp">
+      <Filter>Profile\GLES</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile\GLES\GLESProfileCaps.cpp">
+      <Filter>Profile\GLES</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile\WebGL\WebGLExtensionLoader.cpp">
+      <Filter>Profile\WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile\WebGL\WebGLProfile.cpp">
+      <Filter>Profile\WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile\WebGL\WebGLProfileCaps.cpp">
+      <Filter>Profile\WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\GLBlendState.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\GLComputePSO.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\GLContextState.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\GLDepthStencilState.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\GLFence.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\GLGraphicsPSO.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\GLPipelineCache.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\GLPipelineLayout.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\GLPipelineState.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\GLQueryHeap.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\GLRasterizerState.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\GLRenderPass.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\GLResourceHeap.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\GLStateManager.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\GLStatePool.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\GLLegacyShader.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\GLPipelineSignature.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\GLProgramPipeline.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\GLSeparableShader.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\GLShader.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\GLShaderBindingLayout.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\GLShaderBufferInterfaceMap.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\GLShaderPipeline.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\GLShaderProgram.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\GLShaderSourcePatcher.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\GLShaderUniform.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\GLEmulatedSampler.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\GLFramebuffer.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\GLFramebufferCapture.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\GLMipGenerator.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\GLRenderTarget.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\GLRenderbuffer.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\GLSampler.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\GLTexImage.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\GLTexSubImage.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\GLTexture.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\GLTextureSubImage.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\GLTextureViewPool.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -4,22 +4,25 @@
     <Filter Include="Metal">
       <UniqueIdentifier>{98BBA90D-04D0-D1BE-CD51-751E3925CEEF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Metal\Buffer">
+      <UniqueIdentifier>{81428417-6DA5-13BC-162B-4C72026DDF3E}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buffer\MTBuffer.h">
-      <Filter>Metal</Filter>
+      <Filter>Metal\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Buffer\MTBufferArray.h">
-      <Filter>Metal</Filter>
+      <Filter>Metal\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Buffer\MTIntermediateBuffer.h">
-      <Filter>Metal</Filter>
+      <Filter>Metal\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Buffer\MTStagingBuffer.h">
-      <Filter>Metal</Filter>
+      <Filter>Metal\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Buffer\MTStagingBufferPool.h">
-      <Filter>Metal</Filter>
+      <Filter>Metal\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Command\MTCommand.h">
       <Filter>Metal</Filter>
@@ -123,19 +126,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buffer\MTBuffer.mm">
-      <Filter>Metal</Filter>
+      <Filter>Metal\Buffer</Filter>
     </ClCompile>
     <ClCompile Include="Buffer\MTBufferArray.mm">
-      <Filter>Metal</Filter>
+      <Filter>Metal\Buffer</Filter>
     </ClCompile>
     <ClCompile Include="Buffer\MTIntermediateBuffer.mm">
-      <Filter>Metal</Filter>
+      <Filter>Metal\Buffer</Filter>
     </ClCompile>
     <ClCompile Include="Buffer\MTStagingBuffer.mm">
-      <Filter>Metal</Filter>
+      <Filter>Metal\Buffer</Filter>
     </ClCompile>
     <ClCompile Include="Buffer\MTStagingBufferPool.mm">
-      <Filter>Metal</Filter>
+      <Filter>Metal\Buffer</Filter>
     </ClCompile>
     <ClCompile Include="Command\MTCommandBuffer.mm">
       <Filter>Metal</Filter>

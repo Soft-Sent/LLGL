@@ -16,9 +16,6 @@
     <Filter Include="include\LLGL\Backend\Direct3D12">
       <UniqueIdentifier>{1E5D4B51-8A40-5A91-9343-88CDFFA520E2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\LLGL\Backend\Metal">
-      <UniqueIdentifier>{9C5CA370-886C-4F41-F125-B45FDD543EDA}</UniqueIdentifier>
-    </Filter>
     <Filter Include="include\LLGL\Backend\OpenGL">
       <UniqueIdentifier>{0E48788A-7A55-A670-033C-A25B6F487227}</UniqueIdentifier>
     </Filter>
@@ -49,24 +46,6 @@
     <Filter Include="include\LLGL\Platform">
       <UniqueIdentifier>{1762BF3E-83CE-7A39-4CC2-1297B8ED9CA1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\LLGL\Platform\Android">
-      <UniqueIdentifier>{477CB89B-B394-9FC5-7C41-2F5FE818345F}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\LLGL\Platform\IOS">
-      <UniqueIdentifier>{719C5B75-DD5E-8FFF-260F-1E8C921068DD}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\LLGL\Platform\Linux">
-      <UniqueIdentifier>{768AF93A-E297-2721-6B7E-230CD78AF3D7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\LLGL\Platform\MacOS">
-      <UniqueIdentifier>{190C073B-8519-3521-0E00-310C7A0C01D8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\LLGL\Platform\UWP">
-      <UniqueIdentifier>{82D05B75-EE92-8FFF-3743-1E8CA34468DD}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\LLGL\Platform\Wasm">
-      <UniqueIdentifier>{FE28D720-EA38-83F1-53F2-E70F3F21728A}</UniqueIdentifier>
-    </Filter>
     <Filter Include="include\LLGL\Platform\Win32">
       <UniqueIdentifier>{398FC03B-A59C-EE21-2E83-EA0C9A8FBAD8}</UniqueIdentifier>
     </Filter>
@@ -81,6 +60,12 @@
     </Filter>
     <Filter Include="sources\Core">
       <UniqueIdentifier>{A1A450AD-8D07-E051-368D-180822CFABD4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Platform">
+      <UniqueIdentifier>{1DB96E6A-09B2-8DBC-32E4-72411E3C6DC8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Platform\Win32">
+      <UniqueIdentifier>{BF923207-AB8C-5B59-94F9-F1698092C1C5}</UniqueIdentifier>
     </Filter>
     <Filter Include="sources\Renderer">
       <UniqueIdentifier>{6FC04B45-5BB9-6A97-84EB-4F1C70434AA3}</UniqueIdentifier>
@@ -215,12 +200,6 @@
     </ClInclude>
     <ClInclude Include="include\LLGL\Backend\Direct3D12\NativeHandle.h">
       <Filter>include\LLGL\Backend\Direct3D12</Filter>
-    </ClInclude>
-    <ClInclude Include="include\LLGL\Backend\Metal\NativeCommand.h">
-      <Filter>include\LLGL\Backend\Metal</Filter>
-    </ClInclude>
-    <ClInclude Include="include\LLGL\Backend\Metal\NativeHandle.h">
-      <Filter>include\LLGL\Backend\Metal</Filter>
     </ClInclude>
     <ClInclude Include="include\LLGL\Backend\OpenGL\Android\AndroidNativeHandle.h">
       <Filter>include\LLGL\Backend\OpenGL\Android</Filter>
@@ -372,29 +351,11 @@
     <ClInclude Include="include\LLGL\PipelineStateFlags.h">
       <Filter>include\LLGL</Filter>
     </ClInclude>
-    <ClInclude Include="include\LLGL\Platform\Android\AndroidNativeHandle.h">
-      <Filter>include\LLGL\Platform\Android</Filter>
-    </ClInclude>
-    <ClInclude Include="include\LLGL\Platform\IOS\IOSNativeHandle.h">
-      <Filter>include\LLGL\Platform\IOS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\LLGL\Platform\Linux\LinuxNativeHandle.h">
-      <Filter>include\LLGL\Platform\Linux</Filter>
-    </ClInclude>
-    <ClInclude Include="include\LLGL\Platform\MacOS\MacOSNativeHandle.h">
-      <Filter>include\LLGL\Platform\MacOS</Filter>
-    </ClInclude>
     <ClInclude Include="include\LLGL\Platform\NativeHandle.h">
       <Filter>include\LLGL\Platform</Filter>
     </ClInclude>
     <ClInclude Include="include\LLGL\Platform\Platform.h">
       <Filter>include\LLGL\Platform</Filter>
-    </ClInclude>
-    <ClInclude Include="include\LLGL\Platform\UWP\UWPNativeHandle.h">
-      <Filter>include\LLGL\Platform\UWP</Filter>
-    </ClInclude>
-    <ClInclude Include="include\LLGL\Platform\Wasm\WasmNativeHandle.h">
-      <Filter>include\LLGL\Platform\Wasm</Filter>
     </ClInclude>
     <ClInclude Include="include\LLGL\Platform\Win32\Win32NativeHandle.h">
       <Filter>include\LLGL\Platform\Win32</Filter>
@@ -608,6 +569,45 @@
     </ClInclude>
     <ClInclude Include="sources\Core\VersionMacros.h">
       <Filter>sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Platform\ConsoleManip.h">
+      <Filter>sources\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Platform\Debug.h">
+      <Filter>sources\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Platform\Module.h">
+      <Filter>sources\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Platform\Path.h">
+      <Filter>sources\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Platform\Win32\MapKey.h">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Platform\Win32\Win32ConsoleState.h">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Platform\Win32\Win32Debug.h">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Platform\Win32\Win32Display.h">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Platform\Win32\Win32LeanAndMean.h">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Platform\Win32\Win32Module.h">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Platform\Win32\Win32Window.h">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Platform\Win32\Win32WindowCallback.h">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Platform\Win32\Win32WindowClass.h">
+      <Filter>sources\Platform\Win32</Filter>
     </ClInclude>
     <ClInclude Include="sources\Renderer\BindingIterator.h">
       <Filter>sources\Renderer</Filter>
@@ -883,6 +883,60 @@
     </ClCompile>
     <ClCompile Include="sources\Core\Version.cpp">
       <Filter>sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Canvas.cpp">
+      <Filter>sources\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\ConsoleManip.cpp">
+      <Filter>sources\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Debug.cpp">
+      <Filter>sources\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Display.cpp">
+      <Filter>sources\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\DisplayFlags.cpp">
+      <Filter>sources\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Path.cpp">
+      <Filter>sources\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Win32\MapKey.cpp">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Win32\Win32ConsoleManip.cpp">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Win32\Win32ConsoleState.cpp">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Win32\Win32Debug.cpp">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Win32\Win32Display.cpp">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Win32\Win32Module.cpp">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Win32\Win32Path.cpp">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Win32\Win32Timer.cpp">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Win32\Win32Window.cpp">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Win32\Win32WindowCallback.cpp">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Win32\Win32WindowClass.cpp">
+      <Filter>sources\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Platform\Window.cpp">
+      <Filter>sources\Platform</Filter>
     </ClCompile>
     <ClCompile Include="sources\Renderer\BindingIterator.cpp">
       <Filter>sources\Renderer</Filter>

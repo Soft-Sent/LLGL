@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Buffer">
+      <UniqueIdentifier>{3F5F52AA-2B01-7D80-14BC-90D400FD03D1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Command">
+      <UniqueIdentifier>{24011C34-90E0-9ACF-99F8-25A605570131}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ext">
+      <UniqueIdentifier>{56E8870B-C2F1-877C-4B6D-9E7CB775937C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory">
+      <UniqueIdentifier>{BE94DDC2-AA36-0899-93F1-1BED7F328FE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RenderState">
+      <UniqueIdentifier>{A6183C01-12CE-B4F6-9BC2-AECD0777ABFA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{FC0C0CD1-E8AE-36A7-D169-4AFBBDAABDF7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Texture">
+      <UniqueIdentifier>{76AD313A-E28C-B0D5-EBA4-3BAC57031737}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Buffer\VKBuffer.h">
+      <Filter>Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer\VKBufferArray.h">
+      <Filter>Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer\VKDeviceBuffer.h">
+      <Filter>Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\VKCommandBuffer.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\VKCommandContext.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\VKCommandQueue.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Ext\VKExtensionLoader.h">
+      <Filter>Ext</Filter>
+    </ClInclude>
+    <ClInclude Include="Ext\VKExtensionRegistry.h">
+      <Filter>Ext</Filter>
+    </ClInclude>
+    <ClInclude Include="Ext\VKExtensions.h">
+      <Filter>Ext</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\VKDeviceMemory.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\VKDeviceMemoryManager.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\VKDeviceMemoryRegion.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKComputePSO.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKDescriptorCache.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKDescriptorSetWriter.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKFence.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKGraphicsPSO.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKPipelineBarrier.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKPipelineCache.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKPipelineLayout.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKPipelineState.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKPoolSizeAccumulator.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKPredicateQueryHeap.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKQueryHeap.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKRenderPass.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKResourceHeap.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKStagingDescriptorPool.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKStagingDescriptorSetPool.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\VKShader.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\VKShaderBindingLayout.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\VKShaderModulePool.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\VKColorBuffer.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\VKDepthStencilBuffer.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\VKDeviceImage.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\VKImageUtils.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\VKRenderBuffer.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\VKRenderTarget.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\VKSampler.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\VKTexture.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="VKCore.h" />
+    <ClInclude Include="VKDevice.h" />
+    <ClInclude Include="VKInitializers.h" />
+    <ClInclude Include="VKPhysicalDevice.h" />
+    <ClInclude Include="VKPtr.h" />
+    <ClInclude Include="VKRenderSystem.h" />
+    <ClInclude Include="VKStaticLimits.h" />
+    <ClInclude Include="VKSwapChain.h" />
+    <ClInclude Include="VKTypes.h" />
+    <ClInclude Include="Vulkan.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Buffer\VKBuffer.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer\VKBufferArray.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer\VKDeviceBuffer.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\VKCommandBuffer.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\VKCommandContext.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\VKCommandQueue.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Ext\VKExtensionLoader.cpp">
+      <Filter>Ext</Filter>
+    </ClCompile>
+    <ClCompile Include="Ext\VKExtensionRegistry.cpp">
+      <Filter>Ext</Filter>
+    </ClCompile>
+    <ClCompile Include="Ext\VKExtensions.cpp">
+      <Filter>Ext</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\VKDeviceMemory.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\VKDeviceMemoryManager.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\VKDeviceMemoryRegion.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKComputePSO.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKDescriptorCache.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKDescriptorSetWriter.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKFence.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKGraphicsPSO.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKPipelineBarrier.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKPipelineCache.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKPipelineLayout.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKPipelineState.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKPoolSizeAccumulator.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKPredicateQueryHeap.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKQueryHeap.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKRenderPass.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKResourceHeap.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKStagingDescriptorPool.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKStagingDescriptorSetPool.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\VKShader.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\VKShaderBindingLayout.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\VKShaderModulePool.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\VKColorBuffer.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\VKDepthStencilBuffer.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\VKDeviceImage.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\VKImageUtils.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\VKRenderBuffer.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\VKRenderTarget.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\VKSampler.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\VKTexture.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="VKCore.cpp" />
+    <ClCompile Include="VKDevice.cpp" />
+    <ClCompile Include="VKInitializers.cpp" />
+    <ClCompile Include="VKModuleInterface.cpp" />
+    <ClCompile Include="VKPhysicalDevice.cpp" />
+    <ClCompile Include="VKRenderSystem.cpp" />
+    <ClCompile Include="VKSwapChain.cpp" />
+    <ClCompile Include="VKTypes.cpp" />
+  </ItemGroup>
+</Project>
