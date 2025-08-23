@@ -81,6 +81,9 @@
     <ClInclude Include="..\..\Platform\Win32\Win32Module.h">
       <Filter>Platform\Win32</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Platform\Win32\Win32RawInputRegistry.h">
+      <Filter>Platform\Win32</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Platform\Win32\Win32Window.h">
       <Filter>Platform\Win32</Filter>
     </ClInclude>
@@ -114,10 +117,16 @@
     <ClInclude Include="Buffer\GLSharedContextVertexArray.h">
       <Filter>Buffer</Filter>
     </ClInclude>
+    <ClInclude Include="Buffer\GLVertexArrayHash.h">
+      <Filter>Buffer</Filter>
+    </ClInclude>
     <ClInclude Include="Buffer\GLVertexArrayObject.h">
       <Filter>Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Buffer\GLVertexAttribute.h">
+      <Filter>Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer\GLVertexInputLayout.h">
       <Filter>Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Command\GLCommand.h">
@@ -187,7 +196,25 @@
     <ClInclude Include="Platform\Linux\LinuxGLContext.h">
       <Filter>Platform\Linux</Filter>
     </ClInclude>
+    <ClInclude Include="Platform\Linux\LinuxGLContextWayland.h">
+      <Filter>Platform\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\Linux\LinuxGLContextX11.h">
+      <Filter>Platform\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\Linux\LinuxGLCore.h">
+      <Filter>Platform\Linux</Filter>
+    </ClInclude>
     <ClInclude Include="Platform\Linux\LinuxGLSwapChainContext.h">
+      <Filter>Platform\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\Linux\LinuxGLSwapChainContextWayland.h">
+      <Filter>Platform\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\Linux\LinuxGLSwapChainContextX11.h">
+      <Filter>Platform\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\Linux\LinuxSharedEGLSurface.h">
       <Filter>Platform\Linux</Filter>
     </ClInclude>
     <ClInclude Include="Platform\MacOS\MacOSGLContext.h">
@@ -393,6 +420,9 @@
     <ClCompile Include="..\..\Platform\Win32\Win32Path.cpp">
       <Filter>Platform\Win32</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Platform\Win32\Win32RawInputRegistry.cpp">
+      <Filter>Platform\Win32</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Platform\Win32\Win32Timer.cpp">
       <Filter>Platform\Win32</Filter>
     </ClCompile>
@@ -426,10 +456,16 @@
     <ClCompile Include="Buffer\GLBufferWithXFB.cpp">
       <Filter>Buffer</Filter>
     </ClCompile>
+    <ClCompile Include="Buffer\GLVertexArrayHash.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
     <ClCompile Include="Buffer\GLVertexArrayObject.cpp">
       <Filter>Buffer</Filter>
     </ClCompile>
     <ClCompile Include="Buffer\GLVertexAttribute.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer\GLVertexInputLayout.cpp">
       <Filter>Buffer</Filter>
     </ClCompile>
     <ClCompile Include="Command\GLCommandBuffer.cpp">
@@ -481,10 +517,28 @@
     <ClCompile Include="Platform\Linux\LinuxGLContext.cpp">
       <Filter>Platform\Linux</Filter>
     </ClCompile>
+    <ClCompile Include="Platform\Linux\LinuxGLContextWayland.cpp">
+      <Filter>Platform\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\Linux\LinuxGLContextX11.cpp">
+      <Filter>Platform\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\Linux\LinuxGLCore.cpp">
+      <Filter>Platform\Linux</Filter>
+    </ClCompile>
     <ClCompile Include="Platform\Linux\LinuxGLSwapChain.cpp">
       <Filter>Platform\Linux</Filter>
     </ClCompile>
     <ClCompile Include="Platform\Linux\LinuxGLSwapChainContext.cpp">
+      <Filter>Platform\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\Linux\LinuxGLSwapChainContextWayland.cpp">
+      <Filter>Platform\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\Linux\LinuxGLSwapChainContextX11.cpp">
+      <Filter>Platform\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\Linux\LinuxSharedEGLSurface.cpp">
       <Filter>Platform\Linux</Filter>
     </ClCompile>
     <ClCompile Include="Platform\Wasm\WasmGLContext.cpp">

@@ -80,7 +80,7 @@ void GLImmediateCommandBuffer::UpdateBuffer(
     Buffer&         dstBuffer,
     std::uint64_t   dstOffset,
     const void*     data,
-    std::uint16_t   dataSize)
+    std::uint64_t   dataSize)
 {
     auto& dstBufferGL = LLGL_CAST(GLBuffer&, dstBuffer);
     dstBufferGL.BufferSubData(static_cast<GLintptr>(dstOffset), static_cast<GLsizeiptr>(dataSize), data);
@@ -292,12 +292,22 @@ void GLImmediateCommandBuffer::SetVertexBuffer(Buffer& buffer)
         vertexBufferGL.GetVertexArray()->Bind(*stateMngr_);
 
         #if LLGL_GLEXT_TRNASFORM_FEEDBACK2
-        /* Store ID to transform feedback object */
-        if ((buffer.GetBindFlags() & BindFlags::StreamOutputBuffer) != 0)
-        {
-            auto& streamOutputBufferGL = LLGL_CAST(GLBufferWithXFB&, vertexBufferGL);
-            SetTransformFeedback(streamOutputBufferGL);
-        }
+        SetTransformFeedbackChecked(vertexBufferGL);
+        #endif // /LLGL_GLEXT_TRNASFORM_FEEDBACK2
+    }
+}
+
+void GLImmediateCommandBuffer::SetVertexBuffer(Buffer& buffer, std::uint32_t numVertexAttribs, const VertexAttribute* vertexAttribs)
+{
+    if ((buffer.GetBindFlags() & BindFlags::VertexBuffer) != 0)
+    {
+        /* Bind vertex buffer and update vertex array */
+        auto& vertexBufferGL = LLGL_CAST(GLBufferWithVAO&, buffer);
+        vertexBufferGL.BuildVertexArray(ArrayView<VertexAttribute>{ vertexAttribs, numVertexAttribs });
+        vertexBufferGL.GetVertexArray()->Bind(*stateMngr_);
+
+        #if LLGL_GLEXT_TRNASFORM_FEEDBACK2
+        SetTransformFeedbackChecked(vertexBufferGL);
         #endif // /LLGL_GLEXT_TRNASFORM_FEEDBACK2
     }
 }
@@ -606,7 +616,7 @@ void GLImmediateCommandBuffer::SetUniforms(std::uint32_t first, const void* data
         const auto& uniform = uniformMap[first];
         GLSetUniform(uniform.type, uniform.location, uniform.count, words);
 
-        words += uniform.wordSize;
+        words += uniform.count * uniform.wordSize;
     }
 }
 
@@ -1014,6 +1024,9 @@ bool GLImmediateCommandBuffer::IsImmediateCmdBuffer() const
 {
     return true;
 }
+
+
+#undef LLGL_FLUSH_MEMORY_BARRIERS
 
 
 } // /namespace LLGL

@@ -4,40 +4,37 @@
     <Filter Include="Direct3D12">
       <UniqueIdentifier>{9A79D092-8631-12E0-EF38-EB3BDB0FADD0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Direct3D12\Buffer">
-      <UniqueIdentifier>{43EA6C4A-AF00-6BE0-F877-F60164CD3B68}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Direct3D12\RenderState">
       <UniqueIdentifier>{2A26FA07-1620-235A-FF8C-B96AEB2589C6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Direct3D12\Shader">
       <UniqueIdentifier>{00982671-6CAE-2407-B525-B028217BF58E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Direct3D12\Shader\Builtin">
-      <UniqueIdentifier>{E6296D6B-52EC-A0F5-9B9C-2F82079E79D3}</UniqueIdentifier>
+    <Filter Include="Direct3D12\Texture">
+      <UniqueIdentifier>{FA989DDD-E67C-5E33-4FDD-58863BE048B5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buffer\D3D12Buffer.h">
-      <Filter>Direct3D12\Buffer</Filter>
+      <Filter>Direct3D12</Filter>
     </ClInclude>
     <ClInclude Include="Buffer\D3D12BufferArray.h">
-      <Filter>Direct3D12\Buffer</Filter>
+      <Filter>Direct3D12</Filter>
     </ClInclude>
     <ClInclude Include="Buffer\D3D12BufferConstantsPool.h">
-      <Filter>Direct3D12\Buffer</Filter>
+      <Filter>Direct3D12</Filter>
     </ClInclude>
     <ClInclude Include="Buffer\D3D12CPUAccessBuffer.h">
-      <Filter>Direct3D12\Buffer</Filter>
+      <Filter>Direct3D12</Filter>
     </ClInclude>
     <ClInclude Include="Buffer\D3D12IntermediateBufferPool.h">
-      <Filter>Direct3D12\Buffer</Filter>
+      <Filter>Direct3D12</Filter>
     </ClInclude>
     <ClInclude Include="Buffer\D3D12StagingBuffer.h">
-      <Filter>Direct3D12\Buffer</Filter>
+      <Filter>Direct3D12</Filter>
     </ClInclude>
     <ClInclude Include="Buffer\D3D12StagingBufferPool.h">
-      <Filter>Direct3D12\Buffer</Filter>
+      <Filter>Direct3D12</Filter>
     </ClInclude>
     <ClInclude Include="Command\D3D12CommandBuffer.h">
       <Filter>Direct3D12</Filter>
@@ -90,6 +87,9 @@
     <ClInclude Include="RenderState\D3D12GraphicsPSO.h">
       <Filter>Direct3D12\RenderState</Filter>
     </ClInclude>
+    <ClInclude Include="RenderState\D3D12MeshPSO.h">
+      <Filter>Direct3D12\RenderState</Filter>
+    </ClInclude>
     <ClInclude Include="RenderState\D3D12PipelineCache.h">
       <Filter>Direct3D12\RenderState</Filter>
     </ClInclude>
@@ -99,7 +99,13 @@
     <ClInclude Include="RenderState\D3D12PipelineState.h">
       <Filter>Direct3D12\RenderState</Filter>
     </ClInclude>
+    <ClInclude Include="RenderState\D3D12PipelineStateUtils.h">
+      <Filter>Direct3D12\RenderState</Filter>
+    </ClInclude>
     <ClInclude Include="RenderState\D3D12QueryHeap.h">
+      <Filter>Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\D3D12RenderPSOBase.h">
       <Filter>Direct3D12\RenderState</Filter>
     </ClInclude>
     <ClInclude Include="RenderState\D3D12RenderPass.h">
@@ -115,54 +121,54 @@
       <Filter>Direct3D12\RenderState</Filter>
     </ClInclude>
     <ClInclude Include="Shader\Builtin\D3D12Builtin.h">
-      <Filter>Direct3D12\Shader\Builtin</Filter>
+      <Filter>Direct3D12\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Shader\D3D12BuiltinShaderFactory.h">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Shader\D3D12RootParameter.h">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Shader\D3D12RootSignature.h">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Shader\D3D12Shader.h">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Texture\D3D12MipGenerator.h">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Texture</Filter>
     </ClInclude>
     <ClInclude Include="Texture\D3D12RenderTarget.h">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Texture</Filter>
     </ClInclude>
     <ClInclude Include="Texture\D3D12Sampler.h">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Texture</Filter>
     </ClInclude>
     <ClInclude Include="Texture\D3D12Texture.h">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Texture</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buffer\D3D12Buffer.cpp">
-      <Filter>Direct3D12\Buffer</Filter>
+      <Filter>Direct3D12</Filter>
     </ClCompile>
     <ClCompile Include="Buffer\D3D12BufferArray.cpp">
-      <Filter>Direct3D12\Buffer</Filter>
+      <Filter>Direct3D12</Filter>
     </ClCompile>
     <ClCompile Include="Buffer\D3D12BufferConstantsPool.cpp">
-      <Filter>Direct3D12\Buffer</Filter>
+      <Filter>Direct3D12</Filter>
     </ClCompile>
     <ClCompile Include="Buffer\D3D12CPUAccessBuffer.cpp">
-      <Filter>Direct3D12\Buffer</Filter>
+      <Filter>Direct3D12</Filter>
     </ClCompile>
     <ClCompile Include="Buffer\D3D12IntermediateBufferPool.cpp">
-      <Filter>Direct3D12\Buffer</Filter>
+      <Filter>Direct3D12</Filter>
     </ClCompile>
     <ClCompile Include="Buffer\D3D12StagingBuffer.cpp">
-      <Filter>Direct3D12\Buffer</Filter>
+      <Filter>Direct3D12</Filter>
     </ClCompile>
     <ClCompile Include="Buffer\D3D12StagingBufferPool.cpp">
-      <Filter>Direct3D12\Buffer</Filter>
+      <Filter>Direct3D12</Filter>
     </ClCompile>
     <ClCompile Include="Command\D3D12CommandBuffer.cpp">
       <Filter>Direct3D12</Filter>
@@ -212,6 +218,9 @@
     <ClCompile Include="RenderState\D3D12GraphicsPSO.cpp">
       <Filter>Direct3D12\RenderState</Filter>
     </ClCompile>
+    <ClCompile Include="RenderState\D3D12MeshPSO.cpp">
+      <Filter>Direct3D12\RenderState</Filter>
+    </ClCompile>
     <ClCompile Include="RenderState\D3D12PipelineCache.cpp">
       <Filter>Direct3D12\RenderState</Filter>
     </ClCompile>
@@ -221,7 +230,13 @@
     <ClCompile Include="RenderState\D3D12PipelineState.cpp">
       <Filter>Direct3D12\RenderState</Filter>
     </ClCompile>
+    <ClCompile Include="RenderState\D3D12PipelineStateUtils.cpp">
+      <Filter>Direct3D12\RenderState</Filter>
+    </ClCompile>
     <ClCompile Include="RenderState\D3D12QueryHeap.cpp">
+      <Filter>Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\D3D12RenderPSOBase.cpp">
       <Filter>Direct3D12\RenderState</Filter>
     </ClCompile>
     <ClCompile Include="RenderState\D3D12RenderPass.cpp">
@@ -237,28 +252,28 @@
       <Filter>Direct3D12\RenderState</Filter>
     </ClCompile>
     <ClCompile Include="Shader\D3D12BuiltinShaderFactory.cpp">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Shader\D3D12RootParameter.cpp">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Shader\D3D12RootSignature.cpp">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Shader\D3D12Shader.cpp">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Texture\D3D12MipGenerator.cpp">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Texture</Filter>
     </ClCompile>
     <ClCompile Include="Texture\D3D12RenderTarget.cpp">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Texture</Filter>
     </ClCompile>
     <ClCompile Include="Texture\D3D12Sampler.cpp">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Texture</Filter>
     </ClCompile>
     <ClCompile Include="Texture\D3D12Texture.cpp">
-      <Filter>Direct3D12</Filter>
+      <Filter>Direct3D12\Texture</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

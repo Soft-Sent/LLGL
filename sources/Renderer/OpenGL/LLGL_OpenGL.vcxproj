@@ -75,6 +75,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LLGL_PLATFORM_WIN32;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -96,6 +97,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LLGL_PLATFORM_WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -120,6 +122,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LLGL_PLATFORM_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -141,6 +144,7 @@
     <ClInclude Include="..\..\Platform\Win32\Win32Display.h" />
     <ClInclude Include="..\..\Platform\Win32\Win32LeanAndMean.h" />
     <ClInclude Include="..\..\Platform\Win32\Win32Module.h" />
+    <ClInclude Include="..\..\Platform\Win32\Win32RawInputRegistry.h" />
     <ClInclude Include="..\..\Platform\Win32\Win32Window.h" />
     <ClInclude Include="..\..\Platform\Win32\Win32WindowCallback.h" />
     <ClInclude Include="..\..\Platform\Win32\Win32WindowClass.h" />
@@ -152,8 +156,10 @@
     <ClInclude Include="Buffer\GLBufferWithVAO.h" />
     <ClInclude Include="Buffer\GLBufferWithXFB.h" />
     <ClInclude Include="Buffer\GLSharedContextVertexArray.h" />
+    <ClInclude Include="Buffer\GLVertexArrayHash.h" />
     <ClInclude Include="Buffer\GLVertexArrayObject.h" />
     <ClInclude Include="Buffer\GLVertexAttribute.h" />
+    <ClInclude Include="Buffer\GLVertexInputLayout.h" />
     <ClInclude Include="Command\GLCommand.h" />
     <ClInclude Include="Command\GLCommandBuffer.h" />
     <ClInclude Include="Command\GLCommandExecutor.h" />
@@ -181,7 +187,13 @@
     <ClInclude Include="Platform\IOS\IOSGLContext.h" />
     <ClInclude Include="Platform\IOS\IOSGLSwapChainContext.h" />
     <ClInclude Include="Platform\Linux\LinuxGLContext.h" />
+    <ClInclude Include="Platform\Linux\LinuxGLContextWayland.h" />
+    <ClInclude Include="Platform\Linux\LinuxGLContextX11.h" />
+    <ClInclude Include="Platform\Linux\LinuxGLCore.h" />
     <ClInclude Include="Platform\Linux\LinuxGLSwapChainContext.h" />
+    <ClInclude Include="Platform\Linux\LinuxGLSwapChainContextWayland.h" />
+    <ClInclude Include="Platform\Linux\LinuxGLSwapChainContextX11.h" />
+    <ClInclude Include="Platform\Linux\LinuxSharedEGLSurface.h" />
     <ClInclude Include="Platform\MacOS\MacOSGLContext.h" />
     <ClInclude Include="Platform\MacOS\MacOSGLExt.h" />
     <ClInclude Include="Platform\MacOS\MacOSGLSwapChainContext.h" />
@@ -251,6 +263,7 @@
     <ClCompile Include="..\..\Platform\Win32\Win32Display.cpp" />
     <ClCompile Include="..\..\Platform\Win32\Win32Module.cpp" />
     <ClCompile Include="..\..\Platform\Win32\Win32Path.cpp" />
+    <ClCompile Include="..\..\Platform\Win32\Win32RawInputRegistry.cpp" />
     <ClCompile Include="..\..\Platform\Win32\Win32Timer.cpp" />
     <ClCompile Include="..\..\Platform\Win32\Win32Window.cpp" />
     <ClCompile Include="..\..\Platform\Win32\Win32WindowCallback.cpp" />
@@ -262,8 +275,10 @@
     <ClCompile Include="Buffer\GLBufferArrayWithVAO.cpp" />
     <ClCompile Include="Buffer\GLBufferWithVAO.cpp" />
     <ClCompile Include="Buffer\GLBufferWithXFB.cpp" />
+    <ClCompile Include="Buffer\GLVertexArrayHash.cpp" />
     <ClCompile Include="Buffer\GLVertexArrayObject.cpp" />
     <ClCompile Include="Buffer\GLVertexAttribute.cpp" />
+    <ClCompile Include="Buffer\GLVertexInputLayout.cpp" />
     <ClCompile Include="Command\GLCommandBuffer.cpp" />
     <ClCompile Include="Command\GLCommandExecutor.cpp" />
     <ClCompile Include="Command\GLCommandQueue.cpp" />
@@ -285,8 +300,14 @@
     <ClCompile Include="Platform\GLContextManager.cpp" />
     <ClCompile Include="Platform\GLSwapChainContext.cpp" />
     <ClCompile Include="Platform\Linux\LinuxGLContext.cpp" />
+    <ClCompile Include="Platform\Linux\LinuxGLContextWayland.cpp" />
+    <ClCompile Include="Platform\Linux\LinuxGLContextX11.cpp" />
+    <ClCompile Include="Platform\Linux\LinuxGLCore.cpp" />
     <ClCompile Include="Platform\Linux\LinuxGLSwapChain.cpp" />
     <ClCompile Include="Platform\Linux\LinuxGLSwapChainContext.cpp" />
+    <ClCompile Include="Platform\Linux\LinuxGLSwapChainContextWayland.cpp" />
+    <ClCompile Include="Platform\Linux\LinuxGLSwapChainContextX11.cpp" />
+    <ClCompile Include="Platform\Linux\LinuxSharedEGLSurface.cpp" />
     <ClCompile Include="Platform\Wasm\WasmGLContext.cpp" />
     <ClCompile Include="Platform\Wasm\WasmGLSwapChainContext.cpp" />
     <ClCompile Include="Platform\Win32\Win32GLContext.cpp" />

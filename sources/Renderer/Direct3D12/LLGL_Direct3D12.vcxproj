@@ -166,10 +166,13 @@
     <ClInclude Include="RenderState\D3D12DescriptorHeap.h" />
     <ClInclude Include="RenderState\D3D12Fence.h" />
     <ClInclude Include="RenderState\D3D12GraphicsPSO.h" />
+    <ClInclude Include="RenderState\D3D12MeshPSO.h" />
     <ClInclude Include="RenderState\D3D12PipelineCache.h" />
     <ClInclude Include="RenderState\D3D12PipelineLayout.h" />
     <ClInclude Include="RenderState\D3D12PipelineState.h" />
+    <ClInclude Include="RenderState\D3D12PipelineStateUtils.h" />
     <ClInclude Include="RenderState\D3D12QueryHeap.h" />
+    <ClInclude Include="RenderState\D3D12RenderPSOBase.h" />
     <ClInclude Include="RenderState\D3D12RenderPass.h" />
     <ClInclude Include="RenderState\D3D12ResourceHeap.h" />
     <ClInclude Include="RenderState\D3D12StagingDescriptorHeap.h" />
@@ -208,10 +211,13 @@
     <ClCompile Include="RenderState\D3D12DescriptorHeap.cpp" />
     <ClCompile Include="RenderState\D3D12Fence.cpp" />
     <ClCompile Include="RenderState\D3D12GraphicsPSO.cpp" />
+    <ClCompile Include="RenderState\D3D12MeshPSO.cpp" />
     <ClCompile Include="RenderState\D3D12PipelineCache.cpp" />
     <ClCompile Include="RenderState\D3D12PipelineLayout.cpp" />
     <ClCompile Include="RenderState\D3D12PipelineState.cpp" />
+    <ClCompile Include="RenderState\D3D12PipelineStateUtils.cpp" />
     <ClCompile Include="RenderState\D3D12QueryHeap.cpp" />
+    <ClCompile Include="RenderState\D3D12RenderPSOBase.cpp" />
     <ClCompile Include="RenderState\D3D12RenderPass.cpp" />
     <ClCompile Include="RenderState\D3D12ResourceHeap.cpp" />
     <ClCompile Include="RenderState\D3D12StagingDescriptorHeap.cpp" />

@@ -13,6 +13,12 @@
     <Filter Include="Memory">
       <UniqueIdentifier>{BE94DDC2-AA36-0899-93F1-1BED7F328FE9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Apple">
+      <UniqueIdentifier>{2B024A93-17D0-3D99-0064-AEBFECD019FE}</UniqueIdentifier>
+    </Filter>
     <Filter Include="RenderState">
       <UniqueIdentifier>{A6183C01-12CE-B4F6-9BC2-AECD0777ABFA}</UniqueIdentifier>
     </Filter>
@@ -31,6 +37,12 @@
       <Filter>Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Buffer\VKDeviceBuffer.h">
+      <Filter>Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer\VKStagingBuffer.h">
+      <Filter>Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer\VKStagingBufferPool.h">
       <Filter>Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Command\VKCommandBuffer.h">
@@ -60,10 +72,16 @@
     <ClInclude Include="Memory\VKDeviceMemoryRegion.h">
       <Filter>Memory</Filter>
     </ClInclude>
+    <ClInclude Include="Platform\Apple\CAMetalLayerBridge.h">
+      <Filter>Platform\Apple</Filter>
+    </ClInclude>
     <ClInclude Include="RenderState\VKComputePSO.h">
       <Filter>RenderState</Filter>
     </ClInclude>
     <ClInclude Include="RenderState\VKDescriptorCache.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKDescriptorSetLayout.h">
       <Filter>RenderState</Filter>
     </ClInclude>
     <ClInclude Include="RenderState\VKDescriptorSetWriter.h">
@@ -82,6 +100,12 @@
       <Filter>RenderState</Filter>
     </ClInclude>
     <ClInclude Include="RenderState\VKPipelineLayout.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKPipelineLayoutPermutation.h">
+      <Filter>RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderState\VKPipelineLayoutPermutationPool.h">
       <Filter>RenderState</Filter>
     </ClInclude>
     <ClInclude Include="RenderState\VKPipelineState.h">
@@ -162,6 +186,12 @@
     <ClCompile Include="Buffer\VKDeviceBuffer.cpp">
       <Filter>Buffer</Filter>
     </ClCompile>
+    <ClCompile Include="Buffer\VKStagingBuffer.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer\VKStagingBufferPool.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
     <ClCompile Include="Command\VKCommandBuffer.cpp">
       <Filter>Command</Filter>
     </ClCompile>
@@ -195,6 +225,9 @@
     <ClCompile Include="RenderState\VKDescriptorCache.cpp">
       <Filter>RenderState</Filter>
     </ClCompile>
+    <ClCompile Include="RenderState\VKDescriptorSetLayout.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
     <ClCompile Include="RenderState\VKDescriptorSetWriter.cpp">
       <Filter>RenderState</Filter>
     </ClCompile>
@@ -211,6 +244,12 @@
       <Filter>RenderState</Filter>
     </ClCompile>
     <ClCompile Include="RenderState\VKPipelineLayout.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKPipelineLayoutPermutation.cpp">
+      <Filter>RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderState\VKPipelineLayoutPermutationPool.cpp">
       <Filter>RenderState</Filter>
     </ClCompile>
     <ClCompile Include="RenderState\VKPipelineState.cpp">

@@ -87,7 +87,7 @@ void MTMultiSubmitCommandBuffer::UpdateBuffer(
     Buffer&         dstBuffer,
     std::uint64_t   dstOffset,
     const void*     data,
-    std::uint16_t   dataSize)
+    std::uint64_t   dataSize)
 {
     auto& dstBufferMT = LLGL_CAST(MTBuffer&, dstBuffer);
 
@@ -383,12 +383,23 @@ void MTMultiSubmitCommandBuffer::SetNativeVertexBuffers(NSUInteger count, const 
     }
 }
 
-void MTMultiSubmitCommandBuffer::SetVertexBuffer(Buffer& buffer)
+//private
+void MTMultiSubmitCommandBuffer::SetVertexBufferInternal(Buffer& buffer)
 {
     auto& bufferMT = LLGL_CAST(MTBuffer&, buffer);
     id<MTLBuffer> bufferId = bufferMT.GetNative();
     const NSUInteger bufferOffset = 0;
     SetNativeVertexBuffers(1, &bufferId, &bufferOffset);
+}
+
+void MTMultiSubmitCommandBuffer::SetVertexBuffer(Buffer& buffer)
+{
+    SetVertexBufferInternal(buffer);
+}
+
+void MTMultiSubmitCommandBuffer::SetVertexBuffer(Buffer& buffer, std::uint32_t /*numVertexAttribs*/, const VertexAttribute* /*vertexAttribs*/)
+{
+    SetVertexBufferInternal(buffer);
 }
 
 void MTMultiSubmitCommandBuffer::SetVertexBufferArray(BufferArray& bufferArray)
@@ -920,7 +931,7 @@ void MTMultiSubmitCommandBuffer::DoNativeCommand(const void* nativeCommand, std:
 
 bool MTMultiSubmitCommandBuffer::GetNativeHandle(void* nativeHandle, std::size_t nativeHandleSize)
 {
-    return (nativeHandle == nullptr || nativeHandleSize == 0);
+    return false; // dummy - command is only allowed in immediate command buffer
 }
 
 

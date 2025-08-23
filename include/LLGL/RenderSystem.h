@@ -14,6 +14,7 @@
 #include <LLGL/BufferFlags.h>
 #include <LLGL/BufferArray.h>
 #include <LLGL/CommandBuffer.h>
+#include <LLGL/CommandBufferTier1.h>
 #include <LLGL/CommandQueue.h>
 #include <LLGL/Container/ArrayView.h>
 #include <LLGL/Fence.h>
@@ -31,7 +32,6 @@
 #include <LLGL/RenderTarget.h>
 #include <LLGL/RenderTargetFlags.h>
 #include <LLGL/RenderSystemFlags.h>
-#include <LLGL/RenderingProfiler.h>
 #include <LLGL/RenderingDebugger.h>
 #include <LLGL/ResourceHeap.h>
 #include <LLGL/ResourceHeapFlags.h>
@@ -191,15 +191,15 @@ class LLGL_EXPORT RenderSystem : public Interface
 
         /**
         \brief Returns basic renderer information.
-        \remarks This is not a constant member function because the first call will invoke the query,
-        while subsequent calls with return the cached information.
+        \remarks This is not a constant member function because the first call invokes the query,
+        while subsequent calls return the cached information.
         */
         const RendererInfo& GetRendererInfo();
 
         /**
         \brief Returns the rendering capabilities.
-        \remarks This is not a constant member function because the first call will invoke the query,
-        while subsequent calls with return the cached information.
+        \remarks This is not a constant member function because the first call invokes the query,
+        while subsequent calls return the cached information.
         */
         const RenderingCapabilities& GetRenderingCaps();
 
@@ -577,7 +577,7 @@ class LLGL_EXPORT RenderSystem : public Interface
         \param[out] pipelineCache Optional pointer to pipeline cache.
 
         \see GraphicsPipelineDescriptor
-        \see CreatePipelineState(const Blob&)
+        \see CreatePipelineCache
         */
         virtual PipelineState* CreatePipelineState(const GraphicsPipelineDescriptor& pipelineStateDesc, PipelineCache* pipelineCache = nullptr) = 0;
 
@@ -590,9 +590,25 @@ class LLGL_EXPORT RenderSystem : public Interface
         \param[out] pipelineCache Optional pointer to pipeline cache.
 
         \see ComputePipelineDescriptor
-        \see CreatePipelineState(const Blob&)
+        \see CreatePipelineCache
         */
         virtual PipelineState* CreatePipelineState(const ComputePipelineDescriptor& pipelineStateDesc, PipelineCache* pipelineCache = nullptr) = 0;
+
+        /**
+        \brief Creates a new mesh pipeline state object (PSO) if supported.
+
+        \return Pointer to the new mesh pipeline or null if mesh shaders are not supported.
+
+        \param[in] pipelineStateDesc Specifies the mesh PSO descriptor.
+        The \c meshShader member of the descriptor must never be null!
+
+        \param[out] pipelineCache Optional pointer to pipeline cache.
+
+        \see MeshPipelineDescriptor
+        \see CreatePipelineCache
+        \see RenderingFeatures::hasMeshShaders
+        */
+        virtual PipelineState* CreatePipelineState(const MeshPipelineDescriptor& pipelineStateDesc, PipelineCache* pipelineCache = nullptr) = 0;
 
         //! Releases the specified PipelineState object. After this call, the specified object must no longer be used.
         virtual void Release(PipelineState& pipelineState) = 0;
@@ -671,14 +687,6 @@ class LLGL_EXPORT RenderSystem : public Interface
         */
         void Errorf(const char* format, ...);
 
-        //! \deprecated Since 0.04b; Implement QueryRendererDetails() instead!
-        LLGL_DEPRECATED("RenderSystem::SetRendererInfo is deprecated since 0.04b; Implement QueryRendererDetails() instead!")
-        void SetRendererInfo(const RendererInfo& info);
-
-        //! \deprecated Since 0.04b; Implement QueryRendererDetails() instead!
-        LLGL_DEPRECATED("RenderSystem::SetRendererInfo is deprecated since 0.04b; Implement QueryRendererDetails() instead!")
-        void SetRenderingCaps(const RenderingCapabilities& caps);
-
     protected:
 
         /**
@@ -700,23 +708,6 @@ class LLGL_EXPORT RenderSystem : public Interface
 
         //! Validates the specified shader descriptor.
         static void AssertCreateShader(const ShaderDescriptor& shaderDesc);
-
-        //! Validates the specified image data size against the required size (in bytes).
-        static void AssertImageDataSize(std::size_t dataSize, std::size_t requiredDataSize, const char* useCase = nullptr);
-
-        /**
-        \brief Copies the specified source image to the destination image.
-        \remarks This function also performs image conversion if there is a mismatch between source and destination format.
-        \returns The number of bytes that have been written into the destination image buffer.
-        \see ConvertImageBuffer
-        */
-        static std::size_t CopyTextureImageData(
-            const MutableImageView& dstImageView,
-            const ImageView&        srcImageView,
-            std::uint32_t           numTexels,
-            std::uint32_t           numTexelsInRow,
-            std::uint32_t           rowStride       = 0
-        );
 
     private:
 

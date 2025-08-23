@@ -272,7 +272,7 @@ void DbgRenderSystem::WriteTexture(Texture& texture, const TextureRegion& textur
     if (LLGL_DBG_SOURCE())
     {
         ValidateTextureRegion(textureDbg, textureRegion);
-        ValidateImageDataSize(textureDbg, textureRegion, srcImageView.format, srcImageView.dataType, srcImageView.dataSize);
+        ValidateImageView(srcImageView, textureDbg.desc, &textureRegion);
     }
 
     instance_->WriteTexture(textureDbg.instance, textureRegion, srcImageView);
@@ -287,7 +287,7 @@ void DbgRenderSystem::ReadTexture(Texture& texture, const TextureRegion& texture
     if (LLGL_DBG_SOURCE())
     {
         ValidateTextureRegion(textureDbg, textureRegion);
-        ValidateImageDataSize(textureDbg, textureRegion, dstImageView.format, dstImageView.dataType, dstImageView.dataSize);
+        ValidateImageView(ImageView{ dstImageView }, textureDbg.desc, &textureRegion);
     }
 
     instance_->ReadTexture(textureDbg.instance, textureRegion, dstImageView);
@@ -529,6 +529,24 @@ PipelineState* DbgRenderSystem::CreatePipelineState(const ComputePipelineDescrip
     return pipelineStates_.emplace<DbgPipelineState>(*instance_->CreatePipelineState(instanceDesc, pipelineCache), pipelineStateDesc);
 }
 
+PipelineState* DbgRenderSystem::CreatePipelineState(const MeshPipelineDescriptor& pipelineStateDesc, PipelineCache* pipelineCache)
+{
+    if (LLGL_DBG_SOURCE())
+        ValidateMeshPipelineDesc(pipelineStateDesc);
+
+    MeshPipelineDescriptor instanceDesc = pipelineStateDesc;
+    {
+        if (pipelineStateDesc.pipelineLayout != nullptr)
+            instanceDesc.pipelineLayout = &(LLGL_CAST(const DbgPipelineLayout*, pipelineStateDesc.pipelineLayout)->instance);
+
+        instanceDesc.renderPass             = DbgGetInstance<DbgRenderPass>(pipelineStateDesc.renderPass);
+        instanceDesc.amplificationShader    = DbgGetInstance<DbgShader>(pipelineStateDesc.amplificationShader);
+        instanceDesc.meshShader             = DbgGetInstance<DbgShader>(pipelineStateDesc.meshShader);
+        instanceDesc.fragmentShader         = DbgGetInstance<DbgShader>(pipelineStateDesc.fragmentShader);
+    }
+    return pipelineStates_.emplace<DbgPipelineState>(*instance_->CreatePipelineState(instanceDesc, pipelineCache), pipelineStateDesc);
+}
+
 void DbgRenderSystem::Release(PipelineState& pipelineState)
 {
     ReleaseDbg(pipelineStates_, pipelineState);
@@ -579,7 +597,7 @@ bool DbgRenderSystem::QueryRendererDetails(RendererInfo* outInfo, RenderingCapab
     return true;
 }
 
-void DbgRenderSystem::ValidateBindFlags(long flags)
+void DbgRenderSystem::ValidateBindFlags(long flags, Format format, ResourceType resourceType)
 {
     constexpr long bufferOnlyFlags =
     (
@@ -621,13 +639,39 @@ void DbgRenderSystem::ValidateBindFlags(long flags)
         LLGL_DBG_WARN(WarningType::ImproperArgument, "unknown bind flags specified");
 
     /* Validate combination of flags */
-    if ((flags & bufferOnlyFlags) != 0 && (flags & textureOnlyFlags) != 0)
+    if (resourceType != ResourceType::Undefined)
+    {
+        if ((flags & bufferOnlyFlags) != 0)
+        {
+            if (resourceType != ResourceType::Buffer)
+            {
+                LLGL_DBG_ERROR(
+                    ErrorType::InvalidArgument,
+                    "cannot use buffer-only bind flags for %s source type",
+                    ToString(resourceType)
+                );
+            }
+        }
+        if ((flags & textureOnlyFlags) != 0)
+        {
+            if (resourceType != ResourceType::Texture)
+            {
+                LLGL_DBG_ERROR(
+                    ErrorType::InvalidArgument,
+                    "cannot use texture-only bind flags for %s source type",
+                    ToString(resourceType)
+                );
+            }
+        }
+    }
+    else if ((flags & bufferOnlyFlags) != 0 && (flags & textureOnlyFlags) != 0)
     {
         LLGL_DBG_ERROR(
             ErrorType::InvalidArgument,
             "cannot combine binding flags that are exclusive for buffers and textures"
         );
     }
+
     if ((flags & BindFlags::ColorAttachment) != 0 && (flags & BindFlags::DepthStencilAttachment) != 0)
     {
         LLGL_DBG_ERROR(
@@ -635,6 +679,32 @@ void DbgRenderSystem::ValidateBindFlags(long flags)
             "resources cannot have color attachment and depth-stencil attachment binding flags at the same time"
         );
     }
+    else if (format != Format::Undefined && resourceType == ResourceType::Texture)
+    {
+        if ((flags & BindFlags::ColorAttachment) != 0)
+        {
+            if (!IsColorFormat(format))
+            {
+                LLGL_DBG_ERROR(
+                    ErrorType::InvalidArgument,
+                    "cannot use bind flag LLGL::BindFlags::ColorAttachment for texture with non-color format (%s)",
+                    ToString(format)
+                );
+            }
+        }
+        else if ((flags & BindFlags::DepthStencilAttachment) != 0)
+        {
+            if (!IsDepthOrStencilFormat(format))
+            {
+                LLGL_DBG_ERROR(
+                    ErrorType::InvalidArgument,
+                    "cannot use bind flag LLGL::BindFlags::DepthStencilAttachment for texture with non-depth-stencil format (%s)",
+                    ToString(format)
+                );
+            }
+        }
+    }
+
     if ((flags & BindFlags::ConstantBuffer) != 0 && (flags & cbufferExcludedFlags) != 0)
     {
         LLGL_DBG_ERROR(
@@ -706,7 +776,7 @@ void DbgRenderSystem::ValidateCommandBufferDesc(const CommandBufferDescriptor& c
 void DbgRenderSystem::ValidateBufferDesc(const BufferDescriptor& bufferDesc, std::uint32_t* formatSizeOut)
 {
     /* Validate flags */
-    ValidateBindFlags(bufferDesc.bindFlags);
+    ValidateBindFlags(bufferDesc.bindFlags, bufferDesc.format, ResourceType::Buffer);
     ValidateCPUAccessFlags(bufferDesc.cpuAccessFlags, CPUAccessFlags::ReadWrite, "buffer");
     ValidateMiscFlags(bufferDesc.miscFlags, (MiscFlags::DynamicUsage | MiscFlags::NoInitialData), "buffer");
 
@@ -761,12 +831,24 @@ void DbgRenderSystem::ValidateBufferDesc(const BufferDescriptor& bufferDesc, std
         /* Validate pack alginemnt of 16 bytes */
         static const std::uint64_t packAlignment = 16;
         if (bufferDesc.size % packAlignment != 0)
-            LLGL_DBG_WARN(WarningType::ImproperArgument, "constant buffer size is out of pack alignment (alignment is 16 bytes)");
+        {
+            LLGL_DBG_WARN(
+                WarningType::ImproperArgument,
+                "constant buffer size (%" PRIu64 ") is out of pack alignment (%" PRIu64 ")",
+                bufferDesc.size, packAlignment
+            );
+        }
     }
 
     /* Validate buffer stride */
     if (bufferDesc.stride > 0 && bufferDesc.size % bufferDesc.stride != 0)
-        LLGL_DBG_ERROR(ErrorType::InvalidArgument, "buffer stride is greater than zero, but size is not a multiple of stride");
+    {
+        LLGL_DBG_ERROR(
+            ErrorType::InvalidArgument,
+            "buffer stride (%u) is non-zero, but buffer size (%" PRIu64 ") is not a multiple of stride",
+            bufferDesc.stride, bufferDesc.size
+        );
+    }
 
     if (formatSizeOut)
         *formatSizeOut = formatSize;
@@ -943,8 +1025,11 @@ void DbgRenderSystem::ValidateTextureDesc(const TextureDescriptor& textureDesc, 
     ValidateTextureFormatSupported(textureDesc.format);
     ValidateTextureDescMipLevels(textureDesc);
     ValidateArrayTextureLayers(textureDesc.type, textureDesc.arrayLayers);
-    ValidateBindFlags(textureDesc.bindFlags);
+    ValidateBindFlags(textureDesc.bindFlags, textureDesc.format, ResourceType::Texture);
     ValidateMiscFlags(textureDesc.miscFlags, (MiscFlags::DynamicUsage | MiscFlags::FixedSamples | MiscFlags::GenerateMips | MiscFlags::NoInitialData), "texture");
+
+    if (initialImage != nullptr)
+        ValidateImageView(*initialImage, textureDesc);
 
     /* Check if MIP-map generation is requested  */
     if ((textureDesc.miscFlags & MiscFlags::GenerateMips) != 0)
@@ -1137,34 +1222,67 @@ void DbgRenderSystem::ValidateMipLevelLimit(std::uint32_t baseMipLevel, std::uin
     }
 }
 
+static std::uint32_t GetTextureSubresourceNumTexels(const TextureDescriptor& textureDesc, const TextureRegion* textureRegion)
+{
+    if (textureRegion != nullptr)
+    {
+        const TextureSubresource&   subresource     = textureRegion->subresource;
+        const TextureSubresource    baseSubresource = TextureSubresource{ 0, subresource.numArrayLayers, 0, subresource.numMipLevels };
+        return NumMipTexels(textureDesc.type, textureRegion->extent, baseSubresource);
+    }
+    return NumMipTexels(textureDesc, 0);
+}
+
 //TODO: also support compressed formats in validation
-void DbgRenderSystem::ValidateImageDataSize(const DbgTexture& textureDbg, const TextureRegion& textureRegion, ImageFormat imageFormat, DataType dataType, std::size_t dataSize)
+void DbgRenderSystem::ValidateImageView(const ImageView& imageView, const TextureDescriptor& textureDesc, const TextureRegion* textureRegion)
 {
     /* Validate output data size */
-    const auto&         subresource         = textureRegion.subresource;
-    const auto          baseSubresource     = TextureSubresource{ 0, subresource.numArrayLayers, 0, subresource.numMipLevels };
-    const auto          numTexels           = NumMipTexels(textureDbg.desc.type, textureRegion.extent, baseSubresource);
-    const std::size_t   requiredDataSize    = GetMemoryFootprint(imageFormat, dataType, numTexels);
+    const std::uint32_t numTexels           = GetTextureSubresourceNumTexels(textureDesc, textureRegion);
+    const std::size_t   requiredDataSize    = GetMemoryFootprint(imageView.format, imageView.dataType, numTexels);
 
     /* Ignore compressed formats */
     if (requiredDataSize != 0)
     {
-        if (dataSize < requiredDataSize)
+        if (imageView.dataSize < requiredDataSize)
         {
             LLGL_DBG_ERROR(
                 ErrorType::InvalidArgument,
                 "image data size too small for texture: %zu %s specified but required is %zu %s",
-                dataSize, ToByteLabel(dataSize), requiredDataSize, ToByteLabel(requiredDataSize)
+                imageView.dataSize, ToByteLabel(imageView.dataSize), requiredDataSize, ToByteLabel(requiredDataSize)
             );
         }
-        else if (dataSize > requiredDataSize)
+        else if (imageView.dataSize > requiredDataSize)
         {
             LLGL_DBG_WARN(
                 WarningType::ImproperArgument,
                 "image data size larger than expected for texture: %zu %s specified but required is %zu %s",
-                dataSize, ToByteLabel(dataSize), requiredDataSize, ToByteLabel(requiredDataSize)
+                imageView.dataSize, ToByteLabel(imageView.dataSize), requiredDataSize, ToByteLabel(requiredDataSize)
             );
         }
+    }
+
+    /* Validate row and layer stride */
+    if (imageView.rowStride != 0)
+    {
+        if (imageView.layerStride != 0)
+        {
+            if (imageView.layerStride % imageView.rowStride != 0)
+            {
+                LLGL_DBG_ERROR(
+                    ErrorType::InvalidArgument,
+                    "image layer-stride (%u) is not a multiple of row-stride (%u)",
+                    imageView.layerStride, imageView.rowStride
+                );
+            }
+        }
+    }
+    else if (imageView.layerStride != 0)
+    {
+        LLGL_DBG_ERROR(
+            ErrorType::InvalidArgument,
+            "image layuer-stride (%u) is non-zero, but row-stride is zero",
+            imageView.layerStride
+        );
     }
 }
 
@@ -1522,7 +1640,7 @@ void DbgRenderSystem::ValidateShaderDesc(const ShaderDescriptor& shaderDesc)
         if (attrib.slot < LLGL_MAX_NUM_SO_BUFFERS)
         {
             BufferStrideRef& strideRef = bufferStridesRefs[attrib.slot];
-            if (strideRef.firstAttribIndex == -1)
+            if (strideRef.firstAttribIndex == std::size_t(-1))
             {
                 /* Initialize buffer stride with first attribute that defines it */
                 strideRef.firstAttribIndex = i;
@@ -1922,6 +2040,12 @@ static bool IsDualSourceBlendingEnabled(const BlendTargetDescriptor& blendTarget
     );
 }
 
+struct ShaderTypePair
+{
+    Shader*     shader;
+    ShaderType  expectedType;
+};
+
 void DbgRenderSystem::ValidateGraphicsPipelineDesc(const GraphicsPipelineDescriptor& pipelineStateDesc)
 {
     const RenderingFeatures& features = GetRenderingCaps().features;
@@ -1935,16 +2059,8 @@ void DbgRenderSystem::ValidateGraphicsPipelineDesc(const GraphicsPipelineDescrip
     else
         LLGL_DBG_ERROR(ErrorType::InvalidArgument, "cannot create graphics PSO without vertex shader");
 
-    const bool hasFragmentShader = (pipelineStateDesc.fragmentShader != nullptr);
-
     if ((pipelineStateDesc.tessControlShader != nullptr) != (pipelineStateDesc.tessEvaluationShader != nullptr))
         LLGL_DBG_ERROR(ErrorType::InvalidArgument, "cannot create graphics PSO with incomplete tessellation shader stages");
-
-    struct ShaderTypePair
-    {
-        Shader*     shader;
-        ShaderType  expectedType;
-    };
 
     SmallVector<DbgShader*, 5> shadersDbg;
 
@@ -1993,6 +2109,7 @@ void DbgRenderSystem::ValidateGraphicsPipelineDesc(const GraphicsPipelineDescrip
         }
     }
 
+    const bool hasFragmentShader = (pipelineStateDesc.fragmentShader != nullptr);
     const bool hasDualSourceBlend = IsDualSourceBlendingEnabled(pipelineStateDesc.blend.targets[0]);
 
     if (DbgShader* fragmentShaderDbg = DbgGetWrapper<DbgShader>(pipelineStateDesc.fragmentShader))
@@ -2042,6 +2159,101 @@ void DbgRenderSystem::ValidateComputePipelineDesc(const ComputePipelineDescripto
         LLGL_DBG_ERROR(ErrorType::InvalidArgument, "cannot create compute PSO without compute shader");
 }
 
+//TODO: generalize this from ValidateGraphicsPipelineDesc()
+void DbgRenderSystem::ValidateMeshPipelineDesc(const MeshPipelineDescriptor& pipelineStateDesc)
+{
+    const RenderingFeatures& features = GetRenderingCaps().features;
+    if (!features.hasMeshShaders)
+    {
+        LLGL_DBG_ERROR_NOT_SUPPORTED("mesh shaders");
+        return;
+    }
+    if (pipelineStateDesc.rasterizer.conservativeRasterization && !features.hasConservativeRasterization)
+        LLGL_DBG_ERROR_NOT_SUPPORTED("conservative rasterization");
+
+    /* Validate shader pipeline stages */
+    bool hasSeparableShaders = false;
+    if (DbgShader* meshShaderDbg = DbgGetWrapper<DbgShader>(pipelineStateDesc.meshShader))
+        hasSeparableShaders = ((meshShaderDbg->desc.flags & ShaderCompileFlags::SeparateShader) != 0);
+    else
+        LLGL_DBG_ERROR(ErrorType::InvalidArgument, "cannot create mesh PSO without mesh shader");
+
+    SmallVector<DbgShader*, 5> shadersDbg;
+
+    bool hasShadersWithFailedReflection = false;
+
+    for (ShaderTypePair pair : { ShaderTypePair{ pipelineStateDesc.amplificationShader, ShaderType::Amplification },
+                                 ShaderTypePair{ pipelineStateDesc.meshShader,          ShaderType::Mesh          },
+                                 ShaderTypePair{ pipelineStateDesc.fragmentShader,      ShaderType::Fragment      } })
+    {
+        if (Shader* shader = pair.shader)
+        {
+            auto* shaderDbg = LLGL_CAST(DbgShader*, shader);
+
+            if (shaderDbg->HasReflectionFailed())
+                hasShadersWithFailedReflection = true;
+
+            const bool isSeparableShaders = ((shaderDbg->desc.flags & ShaderCompileFlags::SeparateShader) != 0);
+            if (isSeparableShaders && !hasSeparableShaders)
+            {
+                LLGL_DBG_ERROR(
+                    ErrorType::InvalidArgument,
+                    "cannot mix and match separable %s shader with non-separable shaders in mesh PSO; see LLGL::ShaderCompileFlags::SeparateShader",
+                    ToString(shader->GetType())
+                );
+            }
+            else if (!isSeparableShaders && hasSeparableShaders)
+            {
+                LLGL_DBG_ERROR(
+                    ErrorType::InvalidArgument,
+                    "cannot mix and match non-separable %s shader with separable shaders in mesh PSO; see LLGL::ShaderCompileFlags::SeparateShader",
+                    ToString(shader->GetType())
+                );
+            }
+            if (shader != nullptr && shader->GetType() != pair.expectedType)
+            {
+                LLGL_DBG_ERROR(
+                    ErrorType::InvalidArgument,
+                    "cannot create mesh PSO with %s shader being assigned to %s stage",
+                    ToString(shader->GetType()), ToString(pair.expectedType)
+                );
+            }
+
+            shadersDbg.push_back(shaderDbg);
+        }
+    }
+
+    const bool hasFragmentShader = (pipelineStateDesc.fragmentShader != nullptr);
+    const bool hasDualSourceBlend = IsDualSourceBlendingEnabled(pipelineStateDesc.blend.targets[0]);
+
+    if (DbgShader* fragmentShaderDbg = DbgGetWrapper<DbgShader>(pipelineStateDesc.fragmentShader))
+        ValidateFragmentShaderOutput(*fragmentShaderDbg, pipelineStateDesc.renderPass, hasDualSourceBlend);
+
+    ValidateBlendDescriptor(pipelineStateDesc.blend, hasFragmentShader, hasDualSourceBlend);
+
+    if (const DbgPipelineLayout* pipelineLayoutDbg = DbgGetWrapper<DbgPipelineLayout>(pipelineStateDesc.pipelineLayout))
+    {
+        ValidatePipelineStateUniforms(*pipelineLayoutDbg, shadersDbg, pipelineStateDesc.debugName);
+
+        /* If shader reflection failed, report error if PSO layout requires it (Vulkan specific) */
+        if (hasShadersWithFailedReflection && IsVulkan())
+        {
+            if (!pipelineLayoutDbg->desc.bindings.empty() &&
+                !pipelineLayoutDbg->desc.heapBindings.empty())
+            {
+                const char* psoDebugName = pipelineStateDesc.debugName;
+                const std::string psoLabel = (psoDebugName != nullptr && *psoDebugName != '\0' ? " '" + std::string(psoDebugName) + '\'' : "");
+                LLGL_DBG_ERROR(
+                    ErrorType::UndefinedBehavior,
+                    "failed to reflect shader code in PSO%s with mix of heap- and individual bindings; "
+                    "perhaps LLGL was built without LLGL_VK_ENABLE_SPIRV_REFLECT",
+                    psoLabel.c_str()
+                );
+            }
+        }
+    }
+}
+
 void DbgRenderSystem::ValidateFragmentShaderOutput(DbgShader& fragmentShaderDbg, const RenderPass* renderPass, bool hasDualSourceBlend)
 {
     ShaderReflection reflection;
@@ -2050,7 +2262,7 @@ void DbgRenderSystem::ValidateFragmentShaderOutput(DbgShader& fragmentShaderDbg,
         if (auto renderPassDbg = DbgGetWrapper<DbgRenderPass>(renderPass))
             ValidateFragmentShaderOutputWithRenderPass(fragmentShaderDbg, reflection.fragment, *renderPassDbg, hasDualSourceBlend);
         else
-            ValidateFragmentShaderOutputWithoutRenderPass(fragmentShaderDbg, reflection.fragment);
+            ValidateFragmentShaderOutputWithoutRenderPass(fragmentShaderDbg, reflection.fragment, hasDualSourceBlend);
     }
 }
 
@@ -2164,9 +2376,10 @@ void DbgRenderSystem::ValidateFragmentShaderOutputWithRenderPass(DbgShader& frag
     }
 }
 
-void DbgRenderSystem::ValidateFragmentShaderOutputWithoutRenderPass(DbgShader& fragmentShaderDbg, const FragmentShaderAttributes& fragmentAttribs)
+void DbgRenderSystem::ValidateFragmentShaderOutputWithoutRenderPass(DbgShader& fragmentShaderDbg, const FragmentShaderAttributes& fragmentAttribs, bool hasDualSourceBlend)
 {
     std::uint32_t numColorOutputAttribs = 0u;
+    std::uint32_t colorOutputSlots[2] = {};
 
     for (const FragmentAttribute& attrib : fragmentAttribs.outputAttribs)
     {
@@ -2177,11 +2390,17 @@ void DbgRenderSystem::ValidateFragmentShaderOutputWithoutRenderPass(DbgShader& f
                 LLGL_DBG_ERROR(ErrorType::InvalidArgument, "too many color output attributes in fragment shader");
                 break;
             }
+
+            /* Keep track of first two color outputs to check for dual source blending compatibility */
+            if (numColorOutputAttribs < 2)
+                colorOutputSlots[numColorOutputAttribs] = attrib.location;
+
             ++numColorOutputAttribs;
         }
     }
 
-    if (numColorOutputAttribs > 1)
+    const bool hasDualSourceOutput = (numColorOutputAttribs == 2 && colorOutputSlots[0] == colorOutputSlots[1]);
+    if (numColorOutputAttribs > 1 && !(hasDualSourceBlend && hasDualSourceOutput))
     {
         LLGL_DBG_ERROR(
             ErrorType::InvalidArgument,

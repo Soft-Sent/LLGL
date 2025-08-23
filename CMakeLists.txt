@@ -9,7 +9,21 @@
 
 cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 
-project(LLGL)
+if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16")
+    # For CMake 3.16+ specify languages at top-level project to enable unity build option.
+    # This is required for unity builds only so that the correct compiler will be selected
+    # for the respective batches of mixed language source files.
+    if(APPLE)
+        project(LLGL LANGUAGES C CXX OBJC OBJCXX)
+    elseif(MSVC)
+        project(LLGL LANGUAGES C CXX CSharp)
+    else()
+        project(LLGL LANGUAGES C CXX)
+    endif()
+else()
+    project(LLGL)
+endif()
+
 
 # === Target platforms ===
 
@@ -76,9 +90,7 @@ endif()
 
 # === Build path ===
 
-set(OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/build)
-set(EXECUTABLE_OUTPUT_PATH ${OUTPUT_DIR} CACHE PATH "Build directory" FORCE)
-set(LIBRARY_OUTPUT_PATH ${OUTPUT_DIR} CACHE PATH "Build directory" FORCE)
+set(LLGL_OUTPUT_DIR "${CMAKE_CURRENT_BINARY_DIR}/build" CACHE PATH "Override binary output directory")
 
 set( EXTERNAL_MODULE_DIR            "${PROJECT_SOURCE_DIR}/cmake"                   )
 set( PROJECT_INCLUDE_DIR            "${PROJECT_SOURCE_DIR}/include"                 )
@@ -115,6 +127,73 @@ macro(ADD_DEBUG_DEFINE IDENT)
 endmacro()
 
 
+# === Options ===
+
+if(APPLE)
+    set(CMAKE_MACOSX_RPATH 1)
+endif()
+
+if(${CMAKE_SIZEOF_VOID_P} EQUAL 8)
+    set(LLGL_BUILD_64BIT 1)
+else()
+    set(LLGL_BUILD_64BIT 0)
+endif()
+
+option(LLGL_ENABLE_CHECKED_CAST "Enable dynamic checked cast (only in Debug mode)" ON)
+option(LLGL_ENABLE_DEBUG_LAYER "Enable renderer debug layer (for both Debug and Release mode)" ON)
+option(LLGL_ENABLE_EXCEPTIONS "Enable C++ exceptions" OFF)
+
+option(LLGL_PREFER_STL_CONTAINERS "Prefers C++ STL containers over custom containers, e.g. std::vector over SmallVector<T>" OFF)
+
+option(LLGL_BUILD_STATIC_LIB "Build LLGL as static library" OFF)
+option(LLGL_BUILD_TESTS "Include test projects" OFF)
+option(LLGL_BUILD_EXAMPLES "Include example projects" OFF)
+
+option(LLGL_BUILD_RENDERER_NULL "Include Null renderer project" ON)
+
+if(NOT LLGL_UWP_PLATFORM)
+    if(EMSCRIPTEN)
+        option(LLGL_BUILD_RENDERER_WEBGL "Include WebGL renderer project" ON)
+        option(LLGL_ENABLE_EMSCRIPTEN_PTHREADS "Build for Wasm platform with pthreads (USE_PTHREADS). This limits browser availability!" OFF)
+    elseif(LLGL_MOBILE_PLATFORM)
+        option(LLGL_BUILD_RENDERER_OPENGLES3 "Include OpenGLES 3 renderer project" ON)
+    else()
+        option(LLGL_BUILD_RENDERER_OPENGL "Include OpenGL renderer project" ON)
+    endif()
+endif()
+
+if(APPLE)
+    option(LLGL_MACOS_ENABLE_COREVIDEO "Enable CoreVideo framework (for refresh rate of built-in displays)" ON)
+    option(LLGL_BUILD_RENDERER_METAL "Include Metal renderer project" ON)
+endif()
+
+if(NOT LLGL_UWP_PLATFORM)
+    option(LLGL_BUILD_RENDERER_VULKAN "Include Vulkan renderer project (experimental)" OFF)
+endif()
+
+if(WIN32)
+    option(LLGL_BUILD_RENDERER_DIRECT3D11 "Include Direct3D11 renderer project" ON)
+    option(LLGL_BUILD_RENDERER_DIRECT3D12 "Include Direct3D12 renderer project" ON)
+endif()
+
+if(UNIX AND NOT APPLE)
+    option(LLGL_LINUX_ENABLE_WAYLAND "Enable support for Wayland protocol" OFF)
+endif()
+
+if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16")
+    option(LLGL_UNITY_BUILD "Build LLGL modules as unity builds in batches. This can speedup compilation time." OFF)
+endif()
+
+option(LLGL_BUILD_WRAPPER_C99 "Include wrapper for C99" OFF)
+option(LLGL_BUILD_WRAPPER_CSHARP "Include wrapper for C# (requires LLGL_BUILD_WRAPPER_C99)" OFF)
+
+if(NOT LLGL_BUILD_WRAPPER_C99)
+    if(LLGL_BUILD_WRAPPER_CSHARP)
+        message(SEND_ERROR "LLGL_BUILD_WRAPPER_CSHARP is enabled but not LLGL_BUILD_WRAPPER_C99; The C# wrapper depends on the C99 wrapper!")
+    endif()
+endif()
+
+
 # === Functions ===
 
 # Filters sources files with a variadic argument for all directores:
@@ -142,10 +221,10 @@ function(find_source_files OUTPUT_LIST FILTERS)
             list(APPEND FilteredProjectDirs "${ProjectSubdir}/${Filter}")
         endforeach()
     endforeach()
-    
+
     # Find all source files
     file(GLOB FilteredProjectFiles ${FilteredProjectDirs})
-    
+
     # Write filtered files to output variable
     set(${OUTPUT_LIST} ${${OUTPUT_LIST}} ${FilteredProjectFiles} PARENT_SCOPE)
 endfunction()
@@ -166,7 +245,7 @@ function(add_project_resource_files OUTPUT_LIST SRC_FOLDER)
             list(APPEND ResourceFiles "${SharedResourceFiles}" "${ProjectResourceFiles}")
         endif()
     endforeach()
-    
+
     # Write expanded resource filenames to output variable
     set(${OUTPUT_LIST} ${${OUTPUT_LIST}} ${ResourceFiles} PARENT_SCOPE)
 endfunction()
@@ -187,9 +266,9 @@ function(bundle_project_files OUTPUT_LIST SRC_FILES)
 endfunction()
 
 # Main function to find and bundle project source files.
-# @param SRC_FILES: can either be a directory or a list of specific source files if it sends with ".cpp", ".c", ".h", ".m", or ".mm".
+# @param SRC_FILES: can either be a directory or a list of specific source files if it ends with ".cpp", ".c", ".h", ".m", or ".mm".
 function(find_project_source_files OUTPUT_LIST SRC_FILES)
-    if("${SRC_FILES}" MATCHES ".+\\.(cpp|c|h|m|mm|cs)")
+    if("${SRC_FILES}" MATCHES ".+\\.(cpp|c|h|m|mm|cs)$")
         set(ProjectFiles "${SRC_FILES}")
     else()
         # Find all source files for project
@@ -199,7 +278,7 @@ function(find_project_source_files OUTPUT_LIST SRC_FILES)
             find_source_files(ProjectFiles CXX ${SRC_FILES})
         endif()
     endif()
-    
+
     # Bundle source files and write to output variable
     bundle_project_files(OutputProjectFiles "${ProjectFiles}")
 
@@ -222,13 +301,30 @@ function(find_project_source_files OUTPUT_LIST SRC_FILES)
     set(${OUTPUT_LIST} ${OutputProjectFiles} PARENT_SCOPE)
 endfunction()
 
+function(set_llgl_unity_build_mode MODULE_NAME)
+    if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16")
+        if(LLGL_UNITY_BUILD)
+            set_target_properties(
+                ${MODULE_NAME} PROPERTIES
+                    UNITY_BUILD             ON
+                    UNITY_BUILD_MODE        BATCH
+                    UNITY_BUILD_BATCH_SIZE  32
+            )
+        endif()
+    endif()
+endfunction()
+
 function(set_llgl_module_properties MODULE_NAME)
     set_target_properties(
         ${MODULE_NAME} PROPERTIES
-            LINKER_LANGUAGE CXX
-            DEBUG_POSTFIX   "D"
-            FOLDER          "LLGL"
+            LINKER_LANGUAGE             CXX
+            DEBUG_POSTFIX               "D"
+            FOLDER                      "LLGL"
+            ARCHIVE_OUTPUT_DIRECTORY    "${LLGL_OUTPUT_DIR}"
+            LIBRARY_OUTPUT_DIRECTORY    "${LLGL_OUTPUT_DIR}"
+            RUNTIME_OUTPUT_DIRECTORY    "${LLGL_OUTPUT_DIR}"
     )
+    set_llgl_unity_build_mode(${MODULE_NAME})
 endfunction()
 
 function(append_global_property PROP_NAME OUTPUT_LIST NEW_ITEM)
@@ -250,13 +346,13 @@ function(add_llgl_module MODULE_NAME DEFINE_NAME SRC_FILES)
     else()
         add_library(${MODULE_NAME} SHARED ${SRC_FILES})
     endif()
-    
+
     # Keep track of all active module names
     append_global_property(LLGL_GLOBAL_MODULE_LIST None ${MODULE_NAME})
-    
+
     # Add basic link libraries and properties
     set_llgl_module_properties(${MODULE_NAME})
-    
+
     ADD_PROJECT_DEFINE(LLGL ${DEFINE_NAME})
 endfunction()
 
@@ -348,16 +444,30 @@ function(add_llgl_example_project PROJECT_NAME LINKER_LANG SRC_FILES LIB_FILES)
         target_link_libraries(${PROJECT_NAME} ${LIB_FILES})
     endif()
 
+    # Configure base properties for example project
+    set_target_properties(
+        ${PROJECT_NAME} PROPERTIES
+            DEBUG_POSTFIX               "D"
+            RUNTIME_OUTPUT_DIRECTORY    "${LLGL_OUTPUT_DIR}"
+            BUILD_RPATH                 "\$ORIGIN"
+    )
+
+    # Enable unity build for examples that contain at least 4 source files
+    list(LENGTH SRC_FILES SourceFileCount)
+    if(${SourceFileCount} GREATER_EQUAL 4)
+        set_llgl_unity_build_mode(${PROJECT_NAME})
+    endif()
+
     # Configure linker settings
     if(LLGL_ANDROID_PLATFORM)
         # When linking the libExample*.so library for Android, we link with C++ semantics.
         # Otherwise, the libc++_shared.so library will be unintentionally included,
         # since the static dependencies like libLLGL.so must be build with C++, regardingless of the example project's language
-        set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX DEBUG_POSTFIX "D")
+        set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX)
     else()
-        set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE ${LINKER_LANG} DEBUG_POSTFIX "D")
+        set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE ${LINKER_LANG})
     endif()
-    
+
     # Configure working directory and project solution folder
     if(${PROJECT_NAME} MATCHES "Example_C99_+")
         string(SUBSTRING ${PROJECT_NAME} 12 -1 PROJECT_BASE_NAME)
@@ -409,61 +519,7 @@ set(SUMMARY_TARGET_ARCH "Unknown")
 set(SUMMARY_FLAGS "")
 
 
-# === Options ===
-
-if(APPLE)
-    set(CMAKE_MACOSX_RPATH 1)
-endif()
-
-if(${CMAKE_SIZEOF_VOID_P} EQUAL 8)
-    set(LLGL_BUILD_64BIT 1)
-else()
-    set(LLGL_BUILD_64BIT 0)
-endif()
-
-option(LLGL_ENABLE_CHECKED_CAST "Enable dynamic checked cast (only in Debug mode)" ON)
-option(LLGL_ENABLE_DEBUG_LAYER "Enable renderer debug layer (for both Debug and Release mode)" ON)
-option(LLGL_ENABLE_EXCEPTIONS "Enable C++ exceptions" OFF)
-
-option(LLGL_PREFER_STL_CONTAINERS "Prefers C++ STL containers over custom containers, e.g. std::vector over SmallVector<T>" OFF)
-
-option(LLGL_BUILD_STATIC_LIB "Build LLGL as static library" OFF)
-option(LLGL_BUILD_TESTS "Include test projects" OFF)
-option(LLGL_BUILD_EXAMPLES "Include example projects" OFF)
-
-option(LLGL_BUILD_RENDERER_NULL "Include Null renderer project" ON)
-
-if(NOT LLGL_UWP_PLATFORM)
-    if(EMSCRIPTEN)
-        option(LLGL_BUILD_RENDERER_WEBGL "Include WebGL renderer project" ON)
-        option(LLGL_ENABLE_EMSCRIPTEN_PTHREADS "Build for Wasm platform with pthreads (USE_PTHREADS). This limits browser availability!" OFF)
-    elseif(LLGL_MOBILE_PLATFORM)
-        option(LLGL_BUILD_RENDERER_OPENGLES3 "Include OpenGLES 3 renderer project" ON)
-    else()
-        option(LLGL_BUILD_RENDERER_OPENGL "Include OpenGL renderer project" ON)
-    endif()
-endif()
-
-if(APPLE)
-    option(LLGL_MACOS_ENABLE_COREVIDEO "Enable CoreVideo framework (for refresh rate of built-in displays)" ON)
-    option(LLGL_BUILD_RENDERER_METAL "Include Metal renderer project" ON)
-elseif(NOT LLGL_UWP_PLATFORM)
-    option(LLGL_BUILD_RENDERER_VULKAN "Include Vulkan renderer project (experimental)" OFF)
-endif()
-
-if(WIN32)
-    option(LLGL_BUILD_RENDERER_DIRECT3D11 "Include Direct3D11 renderer project" ON)
-    option(LLGL_BUILD_RENDERER_DIRECT3D12 "Include Direct3D12 renderer project" ON)
-endif()
-
-option(LLGL_BUILD_WRAPPER_C99 "Include wrapper for C99" OFF)
-option(LLGL_BUILD_WRAPPER_CSHARP "Include wrapper for C# (requires LLGL_BUILD_WRAPPER_C99)" OFF)
-
-if(NOT LLGL_BUILD_WRAPPER_C99)
-    if(LLGL_BUILD_WRAPPER_CSHARP)
-        message(SEND_ERROR "LLGL_BUILD_WRAPPER_CSHARP is enabled but not LLGL_BUILD_WRAPPER_C99; The C# wrapper depends on the C99 wrapper!")
-    endif()
-endif()
+# === Definitions ===
 
 if(LLGL_ENABLE_CHECKED_CAST)
     ADD_DEBUG_DEFINE(LLGL_ENABLE_CHECKED_CAST)
@@ -487,6 +543,15 @@ endif()
 
 if(LLGL_MACOS_ENABLE_COREVIDEO)
     ADD_DEFINE(LLGL_MACOS_ENABLE_COREVIDEO)
+endif()
+
+if(LLGL_UNITY_BUILD)
+    ADD_DEFINE(LLGL_UNITY_BUILD)
+endif()
+
+if (LLGL_LINUX_ENABLE_WAYLAND)
+    ADD_DEFINE(LLGL_LINUX_ENABLE_WAYLAND)
+    set(SUMMARY_FLAGS ${SUMMARY_FLAGS} "Wayland")
 endif()
 
 if(LLGL_WASM_PLATFORM)
@@ -619,7 +684,6 @@ if(LLGL_ANDROID_PLATFORM)
     source_group("native_app_glue" FILES ${FilesAndroidNativeAppGlue})
 endif()
 
-
 # === Include directories ===
 
 include_directories("${PROJECT_INCLUDE_DIR}")
@@ -678,6 +742,72 @@ if(LLGL_BUILD_STATIC_LIB)
 else()
     set(SUMMARY_LIBRARY_TYPE "Shared")
     add_library(LLGL SHARED ${FilesLLGL})
+    set_target_properties(LLGL PROPERTIES BUILD_RPATH "\$ORIGIN")
+endif()
+
+# Generate Wayland protocols
+if(LLGL_LINUX_ENABLE_WAYLAND)
+    find_program(WAYLAND_SCANNER_EXECUTABLE NAMES wayland-scanner)
+    if (NOT WAYLAND_SCANNER_EXECUTABLE)
+        message(FATAL_ERROR "Failed to find wayland-scanner")
+    endif()
+
+    file(MAKE_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols)
+
+    # xdg-shell.xml
+    add_custom_command(
+        COMMAND ${WAYLAND_SCANNER_EXECUTABLE} private-code < /usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml > xdg-shell-protocol.c
+        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/xdg-shell-protocol.c
+        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols
+        VERBATIM
+    )
+
+    add_custom_command(
+        COMMAND ${WAYLAND_SCANNER_EXECUTABLE} client-header < /usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml > xdg-shell-client-protocol.h
+        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/xdg-shell-client-protocol.h
+        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols
+        VERBATIM
+    )
+
+    # xdg-decoration-unstable-v1.xml
+    add_custom_command(
+        COMMAND ${WAYLAND_SCANNER_EXECUTABLE} client-header < /usr/share/wayland-protocols/unstable/xdg-decoration/xdg-decoration-unstable-v1.xml > xdg-decoration-client-protocol.h
+        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/xdg-decoration-client-protocol.h
+        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols
+        VERBATIM
+    )
+
+    add_custom_command(
+        COMMAND ${WAYLAND_SCANNER_EXECUTABLE} private-code < /usr/share/wayland-protocols/unstable/xdg-decoration/xdg-decoration-unstable-v1.xml > xdg-decoration-protocol.c
+        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/xdg-decoration-protocol.c
+        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols
+        VERBATIM
+    )
+
+    # viewporter.xml
+    add_custom_command(
+        COMMAND ${WAYLAND_SCANNER_EXECUTABLE} client-header < /usr/share/wayland-protocols/stable/viewporter/viewporter.xml > viewporter-client-protocol.h
+        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/viewporter-client-protocol.h
+        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols
+        VERBATIM
+    )
+
+    add_custom_command(
+        COMMAND ${WAYLAND_SCANNER_EXECUTABLE} private-code < /usr/share/wayland-protocols/stable/viewporter/viewporter.xml > viewporter-protocol.c
+        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/viewporter-protocol.c
+        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols
+        VERBATIM
+    )
+
+    target_sources(
+        LLGL
+        PRIVATE ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/xdg-shell-client-protocol.h
+                ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/xdg-shell-protocol.c
+                ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/xdg-decoration-client-protocol.h
+                ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/xdg-decoration-protocol.c
+                ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/viewporter-client-protocol.h
+                ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/viewporter-protocol.c
+    )
 endif()
 
 include(GNUInstallDirs)
@@ -701,6 +831,16 @@ elseif(EMSCRIPTEN)
     target_link_libraries(LLGL embind)
 elseif(UNIX)
     target_link_libraries(LLGL X11 pthread Xrandr)
+    if(LLGL_LINUX_ENABLE_WAYLAND)
+        find_library(LIBDECOR_LIBRARY NAMES libdecor-0.so)
+        find_path(LIBDECOR_INCLUDE_DIR NAMES libdecor-0)
+
+        if (NOT LIBDECOR_LIBRARY OR NOT LIBDECOR_INCLUDE_DIR)
+            message(FATAL_ERROR "libdecor not found. Please install it.")
+        endif()
+
+        target_link_libraries(LLGL wayland-client xkbcommon ${LIBDECOR_LIBRARY})
+    endif()
 #elseif(LLGL_UWP_PLATFORM)
 #    set_target_properties(LLGL PROPERTIES VS_WINRT_REFERENCES "Windows.Foundation.UniversalApiContract")
 endif()

@@ -22,6 +22,7 @@
   Canvas.cpp
   ConsoleManip.cpp
   Debug.cpp
+  DebugBreakOnError.cpp
   Display.cpp
   DisplayFlags.cpp
   Path.cpp
@@ -32,6 +33,7 @@
   Win32Display.cpp
   Win32Module.cpp
   Win32Path.cpp
+  Win32RawInputRegistry.cpp
   Win32Timer.cpp
   Win32Window.cpp
   Win32WindowCallback.cpp
@@ -58,6 +60,101 @@
   DbgRenderTarget.cpp
   DbgTexture.cpp
   Format.cpp
+  GL2XSharedContextVertexArray.cpp
+  GL3PlusSharedContextVertexArray.cpp
+  GLBuffer.cpp
+  GLBufferArray.cpp
+  GLBufferArrayWithVAO.cpp
+  GLBufferWithVAO.cpp
+  GLBufferWithXFB.cpp
+  GLVertexArrayHash.cpp
+  GLVertexArrayObject.cpp
+  GLVertexAttribute.cpp
+  GLVertexInputLayout.cpp
+  GLCommandBuffer.cpp
+  GLCommandExecutor.cpp
+  GLCommandQueue.cpp
+  GLDeferredCommandBuffer.cpp
+  GLImmediateCommandBuffer.cpp
+  GLExtensionRegistry.cpp
+  GLCore.cpp
+  GLModuleInterface.cpp
+  GLObjectUtils.cpp
+  GLRenderSystem.cpp
+  GLStaticAssertions.cpp
+  GLSwapChain.cpp
+  GLTypes.cpp
+  GLContext.cpp
+  GLContextManager.cpp
+  GLSwapChainContext.cpp
+  Win32GLContext.cpp
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLStaticAssertions.cpp(19,1): warning C4996: 'std::is_pod<LLGL::GLViewport>': warning STL4025: std::is_pod and std::is_pod_v are deprecated in C++20. The std::is_trivially_copyable and/or std::is_standard_layout traits likely suit your use case. You can define _SILENCE_CXX20_IS_POD_DEPRECATION_WARNING or _SILENCE_ALL_CXX20_DEPRECATION_WARNINGS to suppress this warning.
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\type_traits(618,32):
+      see declaration of 'std::is_pod'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLStaticAssertions.cpp(20,1): warning C4996: 'std::is_pod<LLGL::GLDepthRange>': warning STL4025: std::is_pod and std::is_pod_v are deprecated in C++20. The std::is_trivially_copyable and/or std::is_standard_layout traits likely suit your use case. You can define _SILENCE_CXX20_IS_POD_DEPRECATION_WARNING or _SILENCE_ALL_CXX20_DEPRECATION_WARNINGS to suppress this warning.
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\type_traits(618,32):
+      see declaration of 'std::is_pod'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLStaticAssertions.cpp(21,1): warning C4996: 'std::is_pod<LLGL::GLScissor>': warning STL4025: std::is_pod and std::is_pod_v are deprecated in C++20. The std::is_trivially_copyable and/or std::is_standard_layout traits likely suit your use case. You can define _SILENCE_CXX20_IS_POD_DEPRECATION_WARNING or _SILENCE_ALL_CXX20_DEPRECATION_WARNINGS to suppress this warning.
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\type_traits(618,32):
+      see declaration of 'std::is_pod'
+  
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\GLStaticAssertions.cpp(22,1): warning C4996: 'std::is_pod<LLGL::GLVertexAttribute>': warning STL4025: std::is_pod and std::is_pod_v are deprecated in C++20. The std::is_trivially_copyable and/or std::is_standard_layout traits likely suit your use case. You can define _SILENCE_CXX20_IS_POD_DEPRECATION_WARNING or _SILENCE_ALL_CXX20_DEPRECATION_WARNINGS to suppress this warning.
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\type_traits(618,32):
+      see declaration of 'std::is_pod'
+  
+  Win32GLSwapChainContext.cpp
+  GLCompatExtensionLoader.cpp
+  GLCompatExtensions.cpp
+  GLCompatProfile.cpp
+  GLCompatProfileCaps.cpp
+  GLCoreExtensionLoader.cpp
+  GLCoreExtensions.cpp
+  GLCoreProfile.cpp
+  GLCoreProfileCaps.cpp
+  GLBlendState.cpp
+  GLComputePSO.cpp
+  GLContextState.cpp
+  GLDepthStencilState.cpp
+  GLFence.cpp
+  GLGraphicsPSO.cpp
+  GLPipelineCache.cpp
+  GLPipelineLayout.cpp
+  GLPipelineState.cpp
+  GLQueryHeap.cpp
+  GLRasterizerState.cpp
+  GLRenderPass.cpp
+  GLResourceHeap.cpp
+  GLStateManager.cpp
+  GLStatePool.cpp
+  GLLegacyShader.cpp
+  GLPipelineSignature.cpp
+  GLProgramPipeline.cpp
+  GLSeparableShader.cpp
+  GLShader.cpp
+  GLShaderBindingLayout.cpp
+  GLShaderBufferInterfaceMap.cpp
+  GLShaderPipeline.cpp
+  GLShaderProgram.cpp
+C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\sources\Renderer\OpenGL\RenderState\GLResourceHeap.cpp(113,1): warning C4996: 'std::is_pod<LLGL::GLResourceHeapSegment>': warning STL4025: std::is_pod and std::is_pod_v are deprecated in C++20. The std::is_trivially_copyable and/or std::is_standard_layout traits likely suit your use case. You can define _SILENCE_CXX20_IS_POD_DEPRECATION_WARNING or _SILENCE_ALL_CXX20_DEPRECATION_WARNINGS to suppress this warning.
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\type_traits(618,32):
+      see declaration of 'std::is_pod'
+  
+  GLShaderSourcePatcher.cpp
+  GLShaderUniform.cpp
+  GLEmulatedSampler.cpp
+  GLFramebuffer.cpp
+  GLFramebufferCapture.cpp
+  GLMipGenerator.cpp
+  GLRenderTarget.cpp
+  GLRenderbuffer.cpp
+  GLSampler.cpp
+  GLTexImage.cpp
+  GLTexSubImage.cpp
+  GLTexture.cpp
+  GLTextureSubImage.cpp
+  GLTextureViewPool.cpp
   PipelineStateFlags.cpp
   PipelineStateUtils.cpp
   ProxyPipelineCache.cpp
@@ -71,10 +168,6 @@
   RenderTargetUtils.cpp
   RenderingDebugger.cpp
   ResourceUtils.cpp
-  SpirvInstruction.cpp
-  SpirvInstructionInfo.cpp
-  SpirvModule.cpp
-  SpirvReflect.cpp
   Sampler.cpp
   Shader.cpp
   ShaderFlags.cpp
@@ -85,4 +178,322 @@
   TextureFlags.cpp
   TextureUtils.cpp
   VertexAttribute.cpp
+gdi32.lib(GDI32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in user32.lib(USER32.dll); second definition ignored
+shell32.lib(SHELL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in user32.lib(USER32.dll); second definition ignored
+ole32.lib(ole32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in user32.lib(USER32.dll); second definition ignored
+oleaut32.lib(OLEAUT32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in user32.lib(USER32.dll); second definition ignored
+advapi32.lib(ADVAPI32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in user32.lib(USER32.dll); second definition ignored
+dxgi.lib(dxgi.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in user32.lib(USER32.dll); second definition ignored
+d3d11.lib(d3d11.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in user32.lib(USER32.dll); second definition ignored
+d3d12.lib(d3d12.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in user32.lib(USER32.dll); second definition ignored
+d3dcompiler.lib(D3DCOMPILER_47.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in user32.lib(USER32.dll); second definition ignored
+opengl32.lib(OPENGL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in user32.lib(USER32.dll); second definition ignored
+GLCompatProfileCaps.obj : warning LNK4006: "void __cdecl LLGL::GLQueryRenderingCaps(struct LLGL::RenderingCapabilities &)" (?GLQueryRenderingCaps@LLGL@@YAXAEAURenderingCapabilities@1@@Z) already defined in GLCoreProfileCaps.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "int __cdecl LLGL::GLProfile::GetRendererID(void)" (?GetRendererID@GLProfile@LLGL@@YAHXZ) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "char const * __cdecl LLGL::GLProfile::GetModuleName(void)" (?GetModuleName@GLProfile@LLGL@@YAPEBDXZ) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "char const * __cdecl LLGL::GLProfile::GetRendererName(void)" (?GetRendererName@GLProfile@LLGL@@YAPEBDXZ) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "char const * __cdecl LLGL::GLProfile::GetAPIName(void)" (?GetAPIName@GLProfile@LLGL@@YAPEBDXZ) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "char const * __cdecl LLGL::GLProfile::GetShadingLanguageName(void)" (?GetShadingLanguageName@GLProfile@LLGL@@YAPEBDXZ) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "enum LLGL::OpenGLContextProfile __cdecl LLGL::GLProfile::GetContextProfile(void)" (?GetContextProfile@GLProfile@LLGL@@YA?AW4OpenGLContextProfile@2@XZ) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "int __cdecl LLGL::GLProfile::GetMaxViewports(void)" (?GetMaxViewports@GLProfile@LLGL@@YAHXZ) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "void __cdecl LLGL::GLProfile::DepthRange(double,double)" (?DepthRange@GLProfile@LLGL@@YAXNN@Z) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "void __cdecl LLGL::GLProfile::ClearDepth(double)" (?ClearDepth@GLProfile@LLGL@@YAXN@Z) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "void __cdecl LLGL::GLProfile::GetBufferSubData(unsigned int,__int64,__int64,void *)" (?GetBufferSubData@GLProfile@LLGL@@YAXI_J0PEAX@Z) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "void * __cdecl LLGL::GLProfile::MapBuffer(unsigned int,unsigned int)" (?MapBuffer@GLProfile@LLGL@@YAPEAXII@Z) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "void * __cdecl LLGL::GLProfile::MapBufferRange(unsigned int,__int64,__int64,unsigned int)" (?MapBufferRange@GLProfile@LLGL@@YAPEAXI_J0I@Z) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "void __cdecl LLGL::GLProfile::UnmapBuffer(unsigned int)" (?UnmapBuffer@GLProfile@LLGL@@YAXI@Z) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "void __cdecl LLGL::GLProfile::DrawBuffer(unsigned int)" (?DrawBuffer@GLProfile@LLGL@@YAXI@Z) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "void __cdecl LLGL::GLProfile::FramebufferTexture1D(unsigned int,unsigned int,unsigned int,unsigned int,int)" (?FramebufferTexture1D@GLProfile@LLGL@@YAXIIIIH@Z) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "void __cdecl LLGL::GLProfile::FramebufferTexture2D(unsigned int,unsigned int,unsigned int,unsigned int,int)" (?FramebufferTexture2D@GLProfile@LLGL@@YAXIIIIH@Z) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "void __cdecl LLGL::GLProfile::FramebufferTexture3D(unsigned int,unsigned int,unsigned int,unsigned int,int,int)" (?FramebufferTexture3D@GLProfile@LLGL@@YAXIIIIHH@Z) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatProfile.obj : warning LNK4006: "void __cdecl LLGL::GLProfile::FramebufferTextureLayer(unsigned int,unsigned int,unsigned int,int,int)" (?FramebufferTextureLayer@GLProfile@LLGL@@YAXIIIHH@Z) already defined in GLCoreProfile.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "int (__cdecl* LLGL::wglSwapIntervalEXT)(int)" (?wglSwapIntervalEXT@LLGL@@3P6AHH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "int (__cdecl* LLGL::wglChoosePixelFormatARB)(struct HDC__ *,int const *,float const *,unsigned int,int *,unsigned int *)" (?wglChoosePixelFormatARB@LLGL@@3P6AHPEAUHDC__@@PEBHPEBMIPEAHPEAI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "struct HGLRC__ * (__cdecl* LLGL::wglCreateContextAttribsARB)(struct HDC__ *,struct HGLRC__ *,int const *)" (?wglCreateContextAttribsARB@LLGL@@3P6APEAUHGLRC__@@PEAUHDC__@@PEAU2@PEBH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "char const * (__cdecl* LLGL::wglGetExtensionsStringARB)(struct HDC__ *)" (?wglGetExtensionsStringARB@LLGL@@3P6APEBDPEAUHDC__@@@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glPrimitiveRestartIndex)(unsigned int)" (?glPrimitiveRestartIndex@LLGL@@3P6AXI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBlendFuncSeparate)(unsigned int,unsigned int,unsigned int,unsigned int)" (?glBlendFuncSeparate@LLGL@@3P6AXIIII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBlendEquation)(unsigned int)" (?glBlendEquation@LLGL@@3P6AXI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBlendColor)(float,float,float,float)" (?glBlendColor@LLGL@@3P6AXMMMM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBlendEquationSeparate)(unsigned int,unsigned int)" (?glBlendEquationSeparate@LLGL@@3P6AXII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glDrawBuffers)(int,unsigned int const *)" (?glDrawBuffers@LLGL@@3P6AXHPEBI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glColorMaski)(unsigned int,unsigned char,unsigned char,unsigned char,unsigned char)" (?glColorMaski@LLGL@@3P6AXIEEEE@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetBooleani_v)(unsigned int,unsigned int,unsigned char *)" (?glGetBooleani_v@LLGL@@3P6AXIIPEAE@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetIntegeri_v)(unsigned int,unsigned int,int *)" (?glGetIntegeri_v@LLGL@@3P6AXIIPEAH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glEnablei)(unsigned int,unsigned int)" (?glEnablei@LLGL@@3P6AXII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glDisablei)(unsigned int,unsigned int)" (?glDisablei@LLGL@@3P6AXII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "unsigned char (__cdecl* LLGL::glIsEnabledi)(unsigned int,unsigned int)" (?glIsEnabledi@LLGL@@3P6AEII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBlendEquationi)(unsigned int,unsigned int)" (?glBlendEquationi@LLGL@@3P6AXII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBlendEquationSeparatei)(unsigned int,unsigned int,unsigned int)" (?glBlendEquationSeparatei@LLGL@@3P6AXIII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBlendFunci)(unsigned int,unsigned int,unsigned int)" (?glBlendFunci@LLGL@@3P6AXIII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBlendFuncSeparatei)(unsigned int,unsigned int,unsigned int,unsigned int,unsigned int)" (?glBlendFuncSeparatei@LLGL@@3P6AXIIIII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glActiveTexture)(unsigned int)" (?glActiveTexture@LLGL@@3P6AXI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glTexImage3D)(unsigned int,int,int,int,int,int,int,unsigned int,unsigned int,void const *)" (?glTexImage3D@LLGL@@3P6AXIHHHHHHIIPEBX@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glTexSubImage3D)(unsigned int,int,int,int,int,int,int,int,unsigned int,unsigned int,void const *)" (?glTexSubImage3D@LLGL@@3P6AXIHHHHHHHIIPEBX@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glCopyTexSubImage3D)(unsigned int,int,int,int,int,int,int,int,int)" (?glCopyTexSubImage3D@LLGL@@3P6AXIHHHHHHHH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glCompressedTexImage1D)(unsigned int,int,unsigned int,int,int,int,void const *)" (?glCompressedTexImage1D@LLGL@@3P6AXIHIHHHPEBX@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glCompressedTexImage2D)(unsigned int,int,unsigned int,int,int,int,int,void const *)" (?glCompressedTexImage2D@LLGL@@3P6AXIHIHHHHPEBX@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glCompressedTexImage3D)(unsigned int,int,unsigned int,int,int,int,int,int,void const *)" (?glCompressedTexImage3D@LLGL@@3P6AXIHIHHHHHPEBX@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glCompressedTexSubImage1D)(unsigned int,int,int,int,unsigned int,int,void const *)" (?glCompressedTexSubImage1D@LLGL@@3P6AXIHHHIHPEBX@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glCompressedTexSubImage2D)(unsigned int,int,int,int,int,int,unsigned int,int,void const *)" (?glCompressedTexSubImage2D@LLGL@@3P6AXIHHHHHIHPEBX@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glCompressedTexSubImage3D)(unsigned int,int,int,int,int,int,int,int,unsigned int,int,void const *)" (?glCompressedTexSubImage3D@LLGL@@3P6AXIHHHHHHHIHPEBX@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetCompressedTexImage)(unsigned int,int,void *)" (?glGetCompressedTexImage@LLGL@@3P6AXIHPEAX@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGenBuffers)(int,unsigned int *)" (?glGenBuffers@LLGL@@3P6AXHPEAI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glDeleteBuffers)(int,unsigned int const *)" (?glDeleteBuffers@LLGL@@3P6AXHPEBI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBindBuffer)(unsigned int,unsigned int)" (?glBindBuffer@LLGL@@3P6AXII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "unsigned char (__cdecl* LLGL::glIsBuffer)(unsigned int)" (?glIsBuffer@LLGL@@3P6AEI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBufferData)(unsigned int,__int64,void const *,unsigned int)" (?glBufferData@LLGL@@3P6AXI_JPEBXI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBufferSubData)(unsigned int,__int64,__int64,void const *)" (?glBufferSubData@LLGL@@3P6AXI_J0PEBX@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetBufferSubData)(unsigned int,__int64,__int64,void *)" (?glGetBufferSubData@LLGL@@3P6AXI_J0PEAX@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void * (__cdecl* LLGL::glMapBuffer)(unsigned int,unsigned int)" (?glMapBuffer@LLGL@@3P6APEAXII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "unsigned char (__cdecl* LLGL::glUnmapBuffer)(unsigned int)" (?glUnmapBuffer@LLGL@@3P6AEI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetBufferParameteriv)(unsigned int,unsigned int,int *)" (?glGetBufferParameteriv@LLGL@@3P6AXIIPEAH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetBufferPointerv)(unsigned int,unsigned int,void * *)" (?glGetBufferPointerv@LLGL@@3P6AXIIPEAPEAX@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void * (__cdecl* LLGL::glMapBufferRange)(unsigned int,__int64,__int64,unsigned int)" (?glMapBufferRange@LLGL@@3P6APEAXI_J0I@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glFlushMappedBufferRange)(unsigned int,__int64,__int64)" (?glFlushMappedBufferRange@LLGL@@3P6AXI_J0@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glEnableVertexAttribArray)(unsigned int)" (?glEnableVertexAttribArray@LLGL@@3P6AXI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glDisableVertexAttribArray)(unsigned int)" (?glDisableVertexAttribArray@LLGL@@3P6AXI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glVertexAttribPointer)(unsigned int,int,unsigned int,unsigned char,int,void const *)" (?glVertexAttribPointer@LLGL@@3P6AXIHIEHPEBX@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBindAttribLocation)(unsigned int,unsigned int,char const *)" (?glBindAttribLocation@LLGL@@3P6AXIIPEBD@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "unsigned int (__cdecl* LLGL::glCreateShader)(unsigned int)" (?glCreateShader@LLGL@@3P6AII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glShaderSource)(unsigned int,int,char const * const *,int const *)" (?glShaderSource@LLGL@@3P6AXIHPEBQEBDPEBH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glCompileShader)(unsigned int)" (?glCompileShader@LLGL@@3P6AXI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetShaderiv)(unsigned int,unsigned int,int *)" (?glGetShaderiv@LLGL@@3P6AXIIPEAH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetShaderInfoLog)(unsigned int,int,int *,char *)" (?glGetShaderInfoLog@LLGL@@3P6AXIHPEAHPEAD@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetShaderSource)(unsigned int,int,int *,char *)" (?glGetShaderSource@LLGL@@3P6AXIHPEAHPEAD@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glDeleteShader)(unsigned int)" (?glDeleteShader@LLGL@@3P6AXI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "unsigned int (__cdecl* LLGL::glCreateProgram)(void)" (?glCreateProgram@LLGL@@3P6AIXZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glDeleteProgram)(unsigned int)" (?glDeleteProgram@LLGL@@3P6AXI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glAttachShader)(unsigned int,unsigned int)" (?glAttachShader@LLGL@@3P6AXII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glDetachShader)(unsigned int,unsigned int)" (?glDetachShader@LLGL@@3P6AXII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glLinkProgram)(unsigned int)" (?glLinkProgram@LLGL@@3P6AXI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glValidateProgram)(unsigned int)" (?glValidateProgram@LLGL@@3P6AXI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetProgramiv)(unsigned int,unsigned int,int *)" (?glGetProgramiv@LLGL@@3P6AXIIPEAH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetProgramInfoLog)(unsigned int,int,int *,char *)" (?glGetProgramInfoLog@LLGL@@3P6AXIHPEAHPEAD@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUseProgram)(unsigned int)" (?glUseProgram@LLGL@@3P6AXI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetActiveAttrib)(unsigned int,unsigned int,int,int *,int *,unsigned int *,char *)" (?glGetActiveAttrib@LLGL@@3P6AXIIHPEAH0PEAIPEAD@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "int (__cdecl* LLGL::glGetAttribLocation)(unsigned int,char const *)" (?glGetAttribLocation@LLGL@@3P6AHIPEBD@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetActiveUniform)(unsigned int,unsigned int,int,int *,int *,unsigned int *,char *)" (?glGetActiveUniform@LLGL@@3P6AXIIHPEAH0PEAIPEAD@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "int (__cdecl* LLGL::glGetUniformLocation)(unsigned int,char const *)" (?glGetUniformLocation@LLGL@@3P6AHIPEBD@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetAttachedShaders)(unsigned int,int,int *,unsigned int *)" (?glGetAttachedShaders@LLGL@@3P6AXIHPEAHPEAI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniform1f)(int,float)" (?glUniform1f@LLGL@@3P6AXHM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniform2f)(int,float,float)" (?glUniform2f@LLGL@@3P6AXHMM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniform3f)(int,float,float,float)" (?glUniform3f@LLGL@@3P6AXHMMM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniform4f)(int,float,float,float,float)" (?glUniform4f@LLGL@@3P6AXHMMMM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniform1i)(int,int)" (?glUniform1i@LLGL@@3P6AXHH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniform2i)(int,int,int)" (?glUniform2i@LLGL@@3P6AXHHH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniform3i)(int,int,int,int)" (?glUniform3i@LLGL@@3P6AXHHHH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniform4i)(int,int,int,int,int)" (?glUniform4i@LLGL@@3P6AXHHHHH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniform1fv)(int,int,float const *)" (?glUniform1fv@LLGL@@3P6AXHHPEBM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniform2fv)(int,int,float const *)" (?glUniform2fv@LLGL@@3P6AXHHPEBM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniform3fv)(int,int,float const *)" (?glUniform3fv@LLGL@@3P6AXHHPEBM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniform4fv)(int,int,float const *)" (?glUniform4fv@LLGL@@3P6AXHHPEBM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniform1iv)(int,int,int const *)" (?glUniform1iv@LLGL@@3P6AXHHPEBH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniform2iv)(int,int,int const *)" (?glUniform2iv@LLGL@@3P6AXHHPEBH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniform3iv)(int,int,int const *)" (?glUniform3iv@LLGL@@3P6AXHHPEBH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniform4iv)(int,int,int const *)" (?glUniform4iv@LLGL@@3P6AXHHPEBH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniformMatrix2fv)(int,int,unsigned char,float const *)" (?glUniformMatrix2fv@LLGL@@3P6AXHHEPEBM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniformMatrix3fv)(int,int,unsigned char,float const *)" (?glUniformMatrix3fv@LLGL@@3P6AXHHEPEBM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniformMatrix4fv)(int,int,unsigned char,float const *)" (?glUniformMatrix4fv@LLGL@@3P6AXHHEPEBM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetUniformiv)(unsigned int,int,int *)" (?glGetUniformiv@LLGL@@3P6AXIHPEAH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetUniformfv)(unsigned int,int,float *)" (?glGetUniformfv@LLGL@@3P6AXIHPEAM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniformMatrix2x3fv)(int,int,unsigned char,float const *)" (?glUniformMatrix2x3fv@LLGL@@3P6AXHHEPEBM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniformMatrix2x4fv)(int,int,unsigned char,float const *)" (?glUniformMatrix2x4fv@LLGL@@3P6AXHHEPEBM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniformMatrix3x2fv)(int,int,unsigned char,float const *)" (?glUniformMatrix3x2fv@LLGL@@3P6AXHHEPEBM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniformMatrix3x4fv)(int,int,unsigned char,float const *)" (?glUniformMatrix3x4fv@LLGL@@3P6AXHHEPEBM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniformMatrix4x2fv)(int,int,unsigned char,float const *)" (?glUniformMatrix4x2fv@LLGL@@3P6AXHHEPEBM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glUniformMatrix4x3fv)(int,int,unsigned char,float const *)" (?glUniformMatrix4x3fv@LLGL@@3P6AXHHEPEBM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGenQueries)(int,unsigned int *)" (?glGenQueries@LLGL@@3P6AXHPEAI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glDeleteQueries)(int,unsigned int const *)" (?glDeleteQueries@LLGL@@3P6AXHPEBI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBeginQuery)(unsigned int,unsigned int)" (?glBeginQuery@LLGL@@3P6AXII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glEndQuery)(unsigned int)" (?glEndQuery@LLGL@@3P6AXI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetQueryObjectiv)(unsigned int,unsigned int,int *)" (?glGetQueryObjectiv@LLGL@@3P6AXIIPEAH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetQueryObjectuiv)(unsigned int,unsigned int,unsigned int *)" (?glGetQueryObjectuiv@LLGL@@3P6AXIIPEAI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBeginConditionalRender)(unsigned int,unsigned int)" (?glBeginConditionalRender@LLGL@@3P6AXII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glEndConditionalRender)(void)" (?glEndConditionalRender@LLGL@@3P6AXXZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glQueryCounter)(unsigned int,unsigned int)" (?glQueryCounter@LLGL@@3P6AXII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetQueryObjecti64v)(unsigned int,unsigned int,__int64 *)" (?glGetQueryObjecti64v@LLGL@@3P6AXIIPEA_J@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetQueryObjectui64v)(unsigned int,unsigned int,unsigned __int64 *)" (?glGetQueryObjectui64v@LLGL@@3P6AXIIPEA_K@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glStencilFuncSeparate)(unsigned int,unsigned int,int,unsigned int)" (?glStencilFuncSeparate@LLGL@@3P6AXIIHI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glStencilMaskSeparate)(unsigned int,unsigned int)" (?glStencilMaskSeparate@LLGL@@3P6AXII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glStencilOpSeparate)(unsigned int,unsigned int,unsigned int,unsigned int)" (?glStencilOpSeparate@LLGL@@3P6AXIIII@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBindBufferRange)(unsigned int,unsigned int,unsigned int,__int64,__int64)" (?glBindBufferRange@LLGL@@3P6AXIII_J0@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBeginTransformFeedback)(unsigned int)" (?glBeginTransformFeedback@LLGL@@3P6AXI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glEndTransformFeedback)(void)" (?glEndTransformFeedback@LLGL@@3P6AXXZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glTransformFeedbackVaryings)(unsigned int,int,char const * const *,unsigned int)" (?glTransformFeedbackVaryings@LLGL@@3P6AXIHPEBQEBDI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetTransformFeedbackVarying)(unsigned int,unsigned int,int,int *,int *,unsigned int *,char *)" (?glGetTransformFeedbackVarying@LLGL@@3P6AXIIHPEAH0PEAIPEAD@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBindBufferRangeNV)(unsigned int,unsigned int,unsigned int,__int64,__int64)" (?glBindBufferRangeNV@LLGL@@3P6AXIII_J0@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBeginTransformFeedbackNV)(unsigned int)" (?glBeginTransformFeedbackNV@LLGL@@3P6AXI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glEndTransformFeedbackNV)(void)" (?glEndTransformFeedbackNV@LLGL@@3P6AXXZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glTransformFeedbackVaryingsNV)(unsigned int,int,int const *,unsigned int)" (?glTransformFeedbackVaryingsNV@LLGL@@3P6AXIHPEBHI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "int (__cdecl* LLGL::glGetVaryingLocationNV)(unsigned int,char const *)" (?glGetVaryingLocationNV@LLGL@@3P6AHIPEBD@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetActiveVaryingNV)(unsigned int,unsigned int,int,int *,int *,unsigned int *,char *)" (?glGetActiveVaryingNV@LLGL@@3P6AXIIHPEAH0PEAIPEAD@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "struct __GLsync * (__cdecl* LLGL::glFenceSync)(unsigned int,unsigned int)" (?glFenceSync@LLGL@@3P6APEAU__GLsync@@II@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "unsigned char (__cdecl* LLGL::glIsSync)(struct __GLsync *)" (?glIsSync@LLGL@@3P6AEPEAU__GLsync@@@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glDeleteSync)(struct __GLsync *)" (?glDeleteSync@LLGL@@3P6AXPEAU__GLsync@@@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "unsigned int (__cdecl* LLGL::glClientWaitSync)(struct __GLsync *,unsigned int,unsigned __int64)" (?glClientWaitSync@LLGL@@3P6AIPEAU__GLsync@@I_K@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glWaitSync)(struct __GLsync *,unsigned int,unsigned __int64)" (?glWaitSync@LLGL@@3P6AXPEAU__GLsync@@I_K@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetInteger64v)(unsigned int,__int64 *)" (?glGetInteger64v@LLGL@@3P6AXIPEA_J@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetSynciv)(struct __GLsync *,unsigned int,int,int *,int *)" (?glGetSynciv@LLGL@@3P6AXPEAU__GLsync@@IHPEAH1@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetInternalformativ)(unsigned int,unsigned int,unsigned int,int,int *)" (?glGetInternalformativ@LLGL@@3P6AXIIIHPEAH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetInternalformati64v)(unsigned int,unsigned int,unsigned int,int,__int64 *)" (?glGetInternalformati64v@LLGL@@3P6AXIIIHPEA_J@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glReleaseShaderCompiler)(void)" (?glReleaseShaderCompiler@LLGL@@3P6AXXZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glShaderBinary)(int,unsigned int const *,unsigned int,void const *,int)" (?glShaderBinary@LLGL@@3P6AXHPEBIIPEBXH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glGetShaderPrecisionFormat)(unsigned int,unsigned int,int *,int *)" (?glGetShaderPrecisionFormat@LLGL@@3P6AXIIPEAH0@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glDepthRangef)(float,float)" (?glDepthRangef@LLGL@@3P6AXMM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glClearDepthf)(float)" (?glClearDepthf@LLGL@@3P6AXM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glBufferStorage)(unsigned int,__int64,void const *,unsigned int)" (?glBufferStorage@LLGL@@3P6AXI_JPEBXI@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glCopyBufferSubData)(unsigned int,unsigned int,__int64,__int64,__int64)" (?glCopyBufferSubData@LLGL@@3P6AXII_J00@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glCopyImageSubData)(unsigned int,unsigned int,int,int,int,int,unsigned int,unsigned int,int,int,int,int,int,int,int)" (?glCopyImageSubData@LLGL@@3P6AXIIHHHHIIHHHHHHH@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glPolygonOffsetClamp)(float,float,float)" (?glPolygonOffsetClamp@LLGL@@3P6AXMMM@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glClearBufferData)(unsigned int,unsigned int,unsigned int,unsigned int,void const *)" (?glClearBufferData@LLGL@@3P6AXIIIIPEBX@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void (__cdecl* LLGL::glClearBufferSubData)(unsigned int,unsigned int,__int64,__int64,unsigned int,unsigned int,void const *)" (?glClearBufferSubData@LLGL@@3P6AXII_J0IIPEBX@ZEA) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "int __cdecl LLGL::Proxy_wglSwapIntervalEXT(int)" (?Proxy_wglSwapIntervalEXT@LLGL@@YAHH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "int __cdecl LLGL::Proxy_wglChoosePixelFormatARB(struct HDC__ *,int const *,float const *,unsigned int,int *,unsigned int *)" (?Proxy_wglChoosePixelFormatARB@LLGL@@YAHPEAUHDC__@@PEBHPEBMIPEAHPEAI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "struct HGLRC__ * __cdecl LLGL::Proxy_wglCreateContextAttribsARB(struct HDC__ *,struct HGLRC__ *,int const *)" (?Proxy_wglCreateContextAttribsARB@LLGL@@YAPEAUHGLRC__@@PEAUHDC__@@PEAU2@PEBH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "char const * __cdecl LLGL::Proxy_wglGetExtensionsStringARB(struct HDC__ *)" (?Proxy_wglGetExtensionsStringARB@LLGL@@YAPEBDPEAUHDC__@@@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glPrimitiveRestartIndex(unsigned int)" (?Proxy_glPrimitiveRestartIndex@LLGL@@YAXI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBlendFuncSeparate(unsigned int,unsigned int,unsigned int,unsigned int)" (?Proxy_glBlendFuncSeparate@LLGL@@YAXIIII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBlendEquation(unsigned int)" (?Proxy_glBlendEquation@LLGL@@YAXI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBlendColor(float,float,float,float)" (?Proxy_glBlendColor@LLGL@@YAXMMMM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBlendEquationSeparate(unsigned int,unsigned int)" (?Proxy_glBlendEquationSeparate@LLGL@@YAXII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glDrawBuffers(int,unsigned int const *)" (?Proxy_glDrawBuffers@LLGL@@YAXHPEBI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glColorMaski(unsigned int,unsigned char,unsigned char,unsigned char,unsigned char)" (?Proxy_glColorMaski@LLGL@@YAXIEEEE@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetBooleani_v(unsigned int,unsigned int,unsigned char *)" (?Proxy_glGetBooleani_v@LLGL@@YAXIIPEAE@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetIntegeri_v(unsigned int,unsigned int,int *)" (?Proxy_glGetIntegeri_v@LLGL@@YAXIIPEAH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glEnablei(unsigned int,unsigned int)" (?Proxy_glEnablei@LLGL@@YAXII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glDisablei(unsigned int,unsigned int)" (?Proxy_glDisablei@LLGL@@YAXII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "unsigned char __cdecl LLGL::Proxy_glIsEnabledi(unsigned int,unsigned int)" (?Proxy_glIsEnabledi@LLGL@@YAEII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBlendEquationi(unsigned int,unsigned int)" (?Proxy_glBlendEquationi@LLGL@@YAXII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBlendEquationSeparatei(unsigned int,unsigned int,unsigned int)" (?Proxy_glBlendEquationSeparatei@LLGL@@YAXIII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBlendFunci(unsigned int,unsigned int,unsigned int)" (?Proxy_glBlendFunci@LLGL@@YAXIII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBlendFuncSeparatei(unsigned int,unsigned int,unsigned int,unsigned int,unsigned int)" (?Proxy_glBlendFuncSeparatei@LLGL@@YAXIIIII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glActiveTexture(unsigned int)" (?Proxy_glActiveTexture@LLGL@@YAXI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glTexImage3D(unsigned int,int,int,int,int,int,int,unsigned int,unsigned int,void const *)" (?Proxy_glTexImage3D@LLGL@@YAXIHHHHHHIIPEBX@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glTexSubImage3D(unsigned int,int,int,int,int,int,int,int,unsigned int,unsigned int,void const *)" (?Proxy_glTexSubImage3D@LLGL@@YAXIHHHHHHHIIPEBX@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glCopyTexSubImage3D(unsigned int,int,int,int,int,int,int,int,int)" (?Proxy_glCopyTexSubImage3D@LLGL@@YAXIHHHHHHHH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glCompressedTexImage1D(unsigned int,int,unsigned int,int,int,int,void const *)" (?Proxy_glCompressedTexImage1D@LLGL@@YAXIHIHHHPEBX@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glCompressedTexImage2D(unsigned int,int,unsigned int,int,int,int,int,void const *)" (?Proxy_glCompressedTexImage2D@LLGL@@YAXIHIHHHHPEBX@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glCompressedTexImage3D(unsigned int,int,unsigned int,int,int,int,int,int,void const *)" (?Proxy_glCompressedTexImage3D@LLGL@@YAXIHIHHHHHPEBX@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glCompressedTexSubImage1D(unsigned int,int,int,int,unsigned int,int,void const *)" (?Proxy_glCompressedTexSubImage1D@LLGL@@YAXIHHHIHPEBX@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glCompressedTexSubImage2D(unsigned int,int,int,int,int,int,unsigned int,int,void const *)" (?Proxy_glCompressedTexSubImage2D@LLGL@@YAXIHHHHHIHPEBX@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glCompressedTexSubImage3D(unsigned int,int,int,int,int,int,int,int,unsigned int,int,void const *)" (?Proxy_glCompressedTexSubImage3D@LLGL@@YAXIHHHHHHHIHPEBX@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetCompressedTexImage(unsigned int,int,void *)" (?Proxy_glGetCompressedTexImage@LLGL@@YAXIHPEAX@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGenBuffers(int,unsigned int *)" (?Proxy_glGenBuffers@LLGL@@YAXHPEAI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glDeleteBuffers(int,unsigned int const *)" (?Proxy_glDeleteBuffers@LLGL@@YAXHPEBI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBindBuffer(unsigned int,unsigned int)" (?Proxy_glBindBuffer@LLGL@@YAXII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "unsigned char __cdecl LLGL::Proxy_glIsBuffer(unsigned int)" (?Proxy_glIsBuffer@LLGL@@YAEI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBufferData(unsigned int,__int64,void const *,unsigned int)" (?Proxy_glBufferData@LLGL@@YAXI_JPEBXI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBufferSubData(unsigned int,__int64,__int64,void const *)" (?Proxy_glBufferSubData@LLGL@@YAXI_J0PEBX@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetBufferSubData(unsigned int,__int64,__int64,void *)" (?Proxy_glGetBufferSubData@LLGL@@YAXI_J0PEAX@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void * __cdecl LLGL::Proxy_glMapBuffer(unsigned int,unsigned int)" (?Proxy_glMapBuffer@LLGL@@YAPEAXII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "unsigned char __cdecl LLGL::Proxy_glUnmapBuffer(unsigned int)" (?Proxy_glUnmapBuffer@LLGL@@YAEI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetBufferParameteriv(unsigned int,unsigned int,int *)" (?Proxy_glGetBufferParameteriv@LLGL@@YAXIIPEAH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetBufferPointerv(unsigned int,unsigned int,void * *)" (?Proxy_glGetBufferPointerv@LLGL@@YAXIIPEAPEAX@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void * __cdecl LLGL::Proxy_glMapBufferRange(unsigned int,__int64,__int64,unsigned int)" (?Proxy_glMapBufferRange@LLGL@@YAPEAXI_J0I@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glFlushMappedBufferRange(unsigned int,__int64,__int64)" (?Proxy_glFlushMappedBufferRange@LLGL@@YAXI_J0@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glEnableVertexAttribArray(unsigned int)" (?Proxy_glEnableVertexAttribArray@LLGL@@YAXI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glDisableVertexAttribArray(unsigned int)" (?Proxy_glDisableVertexAttribArray@LLGL@@YAXI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glVertexAttribPointer(unsigned int,int,unsigned int,unsigned char,int,void const *)" (?Proxy_glVertexAttribPointer@LLGL@@YAXIHIEHPEBX@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBindAttribLocation(unsigned int,unsigned int,char const *)" (?Proxy_glBindAttribLocation@LLGL@@YAXIIPEBD@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "unsigned int __cdecl LLGL::Proxy_glCreateShader(unsigned int)" (?Proxy_glCreateShader@LLGL@@YAII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glShaderSource(unsigned int,int,char const * const *,int const *)" (?Proxy_glShaderSource@LLGL@@YAXIHPEBQEBDPEBH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glCompileShader(unsigned int)" (?Proxy_glCompileShader@LLGL@@YAXI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetShaderiv(unsigned int,unsigned int,int *)" (?Proxy_glGetShaderiv@LLGL@@YAXIIPEAH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetShaderInfoLog(unsigned int,int,int *,char *)" (?Proxy_glGetShaderInfoLog@LLGL@@YAXIHPEAHPEAD@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetShaderSource(unsigned int,int,int *,char *)" (?Proxy_glGetShaderSource@LLGL@@YAXIHPEAHPEAD@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glDeleteShader(unsigned int)" (?Proxy_glDeleteShader@LLGL@@YAXI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "unsigned int __cdecl LLGL::Proxy_glCreateProgram(void)" (?Proxy_glCreateProgram@LLGL@@YAIXZ) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glDeleteProgram(unsigned int)" (?Proxy_glDeleteProgram@LLGL@@YAXI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glAttachShader(unsigned int,unsigned int)" (?Proxy_glAttachShader@LLGL@@YAXII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glDetachShader(unsigned int,unsigned int)" (?Proxy_glDetachShader@LLGL@@YAXII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glLinkProgram(unsigned int)" (?Proxy_glLinkProgram@LLGL@@YAXI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glValidateProgram(unsigned int)" (?Proxy_glValidateProgram@LLGL@@YAXI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetProgramiv(unsigned int,unsigned int,int *)" (?Proxy_glGetProgramiv@LLGL@@YAXIIPEAH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetProgramInfoLog(unsigned int,int,int *,char *)" (?Proxy_glGetProgramInfoLog@LLGL@@YAXIHPEAHPEAD@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUseProgram(unsigned int)" (?Proxy_glUseProgram@LLGL@@YAXI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetActiveAttrib(unsigned int,unsigned int,int,int *,int *,unsigned int *,char *)" (?Proxy_glGetActiveAttrib@LLGL@@YAXIIHPEAH0PEAIPEAD@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "int __cdecl LLGL::Proxy_glGetAttribLocation(unsigned int,char const *)" (?Proxy_glGetAttribLocation@LLGL@@YAHIPEBD@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetActiveUniform(unsigned int,unsigned int,int,int *,int *,unsigned int *,char *)" (?Proxy_glGetActiveUniform@LLGL@@YAXIIHPEAH0PEAIPEAD@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "int __cdecl LLGL::Proxy_glGetUniformLocation(unsigned int,char const *)" (?Proxy_glGetUniformLocation@LLGL@@YAHIPEBD@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetAttachedShaders(unsigned int,int,int *,unsigned int *)" (?Proxy_glGetAttachedShaders@LLGL@@YAXIHPEAHPEAI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniform1f(int,float)" (?Proxy_glUniform1f@LLGL@@YAXHM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniform2f(int,float,float)" (?Proxy_glUniform2f@LLGL@@YAXHMM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniform3f(int,float,float,float)" (?Proxy_glUniform3f@LLGL@@YAXHMMM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniform4f(int,float,float,float,float)" (?Proxy_glUniform4f@LLGL@@YAXHMMMM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniform1i(int,int)" (?Proxy_glUniform1i@LLGL@@YAXHH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniform2i(int,int,int)" (?Proxy_glUniform2i@LLGL@@YAXHHH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniform3i(int,int,int,int)" (?Proxy_glUniform3i@LLGL@@YAXHHHH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniform4i(int,int,int,int,int)" (?Proxy_glUniform4i@LLGL@@YAXHHHHH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniform1fv(int,int,float const *)" (?Proxy_glUniform1fv@LLGL@@YAXHHPEBM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniform2fv(int,int,float const *)" (?Proxy_glUniform2fv@LLGL@@YAXHHPEBM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniform3fv(int,int,float const *)" (?Proxy_glUniform3fv@LLGL@@YAXHHPEBM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniform4fv(int,int,float const *)" (?Proxy_glUniform4fv@LLGL@@YAXHHPEBM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniform1iv(int,int,int const *)" (?Proxy_glUniform1iv@LLGL@@YAXHHPEBH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniform2iv(int,int,int const *)" (?Proxy_glUniform2iv@LLGL@@YAXHHPEBH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniform3iv(int,int,int const *)" (?Proxy_glUniform3iv@LLGL@@YAXHHPEBH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniform4iv(int,int,int const *)" (?Proxy_glUniform4iv@LLGL@@YAXHHPEBH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniformMatrix2fv(int,int,unsigned char,float const *)" (?Proxy_glUniformMatrix2fv@LLGL@@YAXHHEPEBM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniformMatrix3fv(int,int,unsigned char,float const *)" (?Proxy_glUniformMatrix3fv@LLGL@@YAXHHEPEBM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniformMatrix4fv(int,int,unsigned char,float const *)" (?Proxy_glUniformMatrix4fv@LLGL@@YAXHHEPEBM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetUniformiv(unsigned int,int,int *)" (?Proxy_glGetUniformiv@LLGL@@YAXIHPEAH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetUniformfv(unsigned int,int,float *)" (?Proxy_glGetUniformfv@LLGL@@YAXIHPEAM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniformMatrix2x3fv(int,int,unsigned char,float const *)" (?Proxy_glUniformMatrix2x3fv@LLGL@@YAXHHEPEBM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniformMatrix2x4fv(int,int,unsigned char,float const *)" (?Proxy_glUniformMatrix2x4fv@LLGL@@YAXHHEPEBM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniformMatrix3x2fv(int,int,unsigned char,float const *)" (?Proxy_glUniformMatrix3x2fv@LLGL@@YAXHHEPEBM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniformMatrix3x4fv(int,int,unsigned char,float const *)" (?Proxy_glUniformMatrix3x4fv@LLGL@@YAXHHEPEBM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniformMatrix4x2fv(int,int,unsigned char,float const *)" (?Proxy_glUniformMatrix4x2fv@LLGL@@YAXHHEPEBM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glUniformMatrix4x3fv(int,int,unsigned char,float const *)" (?Proxy_glUniformMatrix4x3fv@LLGL@@YAXHHEPEBM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGenQueries(int,unsigned int *)" (?Proxy_glGenQueries@LLGL@@YAXHPEAI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glDeleteQueries(int,unsigned int const *)" (?Proxy_glDeleteQueries@LLGL@@YAXHPEBI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBeginQuery(unsigned int,unsigned int)" (?Proxy_glBeginQuery@LLGL@@YAXII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glEndQuery(unsigned int)" (?Proxy_glEndQuery@LLGL@@YAXI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetQueryObjectiv(unsigned int,unsigned int,int *)" (?Proxy_glGetQueryObjectiv@LLGL@@YAXIIPEAH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetQueryObjectuiv(unsigned int,unsigned int,unsigned int *)" (?Proxy_glGetQueryObjectuiv@LLGL@@YAXIIPEAI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBeginConditionalRender(unsigned int,unsigned int)" (?Proxy_glBeginConditionalRender@LLGL@@YAXII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glEndConditionalRender(void)" (?Proxy_glEndConditionalRender@LLGL@@YAXXZ) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glQueryCounter(unsigned int,unsigned int)" (?Proxy_glQueryCounter@LLGL@@YAXII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetQueryObjecti64v(unsigned int,unsigned int,__int64 *)" (?Proxy_glGetQueryObjecti64v@LLGL@@YAXIIPEA_J@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetQueryObjectui64v(unsigned int,unsigned int,unsigned __int64 *)" (?Proxy_glGetQueryObjectui64v@LLGL@@YAXIIPEA_K@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glStencilFuncSeparate(unsigned int,unsigned int,int,unsigned int)" (?Proxy_glStencilFuncSeparate@LLGL@@YAXIIHI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glStencilMaskSeparate(unsigned int,unsigned int)" (?Proxy_glStencilMaskSeparate@LLGL@@YAXII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glStencilOpSeparate(unsigned int,unsigned int,unsigned int,unsigned int)" (?Proxy_glStencilOpSeparate@LLGL@@YAXIIII@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBindBufferRange(unsigned int,unsigned int,unsigned int,__int64,__int64)" (?Proxy_glBindBufferRange@LLGL@@YAXIII_J0@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBeginTransformFeedback(unsigned int)" (?Proxy_glBeginTransformFeedback@LLGL@@YAXI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glEndTransformFeedback(void)" (?Proxy_glEndTransformFeedback@LLGL@@YAXXZ) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glTransformFeedbackVaryings(unsigned int,int,char const * const *,unsigned int)" (?Proxy_glTransformFeedbackVaryings@LLGL@@YAXIHPEBQEBDI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetTransformFeedbackVarying(unsigned int,unsigned int,int,int *,int *,unsigned int *,char *)" (?Proxy_glGetTransformFeedbackVarying@LLGL@@YAXIIHPEAH0PEAIPEAD@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBindBufferRangeNV(unsigned int,unsigned int,unsigned int,__int64,__int64)" (?Proxy_glBindBufferRangeNV@LLGL@@YAXIII_J0@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBeginTransformFeedbackNV(unsigned int)" (?Proxy_glBeginTransformFeedbackNV@LLGL@@YAXI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glEndTransformFeedbackNV(void)" (?Proxy_glEndTransformFeedbackNV@LLGL@@YAXXZ) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glTransformFeedbackVaryingsNV(unsigned int,int,int const *,unsigned int)" (?Proxy_glTransformFeedbackVaryingsNV@LLGL@@YAXIHPEBHI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "int __cdecl LLGL::Proxy_glGetVaryingLocationNV(unsigned int,char const *)" (?Proxy_glGetVaryingLocationNV@LLGL@@YAHIPEBD@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetActiveVaryingNV(unsigned int,unsigned int,int,int *,int *,unsigned int *,char *)" (?Proxy_glGetActiveVaryingNV@LLGL@@YAXIIHPEAH0PEAIPEAD@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "struct __GLsync * __cdecl LLGL::Proxy_glFenceSync(unsigned int,unsigned int)" (?Proxy_glFenceSync@LLGL@@YAPEAU__GLsync@@II@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "unsigned char __cdecl LLGL::Proxy_glIsSync(struct __GLsync *)" (?Proxy_glIsSync@LLGL@@YAEPEAU__GLsync@@@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glDeleteSync(struct __GLsync *)" (?Proxy_glDeleteSync@LLGL@@YAXPEAU__GLsync@@@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "unsigned int __cdecl LLGL::Proxy_glClientWaitSync(struct __GLsync *,unsigned int,unsigned __int64)" (?Proxy_glClientWaitSync@LLGL@@YAIPEAU__GLsync@@I_K@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glWaitSync(struct __GLsync *,unsigned int,unsigned __int64)" (?Proxy_glWaitSync@LLGL@@YAXPEAU__GLsync@@I_K@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetInteger64v(unsigned int,__int64 *)" (?Proxy_glGetInteger64v@LLGL@@YAXIPEA_J@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetSynciv(struct __GLsync *,unsigned int,int,int *,int *)" (?Proxy_glGetSynciv@LLGL@@YAXPEAU__GLsync@@IHPEAH1@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetInternalformativ(unsigned int,unsigned int,unsigned int,int,int *)" (?Proxy_glGetInternalformativ@LLGL@@YAXIIIHPEAH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetInternalformati64v(unsigned int,unsigned int,unsigned int,int,__int64 *)" (?Proxy_glGetInternalformati64v@LLGL@@YAXIIIHPEA_J@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glReleaseShaderCompiler(void)" (?Proxy_glReleaseShaderCompiler@LLGL@@YAXXZ) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glShaderBinary(int,unsigned int const *,unsigned int,void const *,int)" (?Proxy_glShaderBinary@LLGL@@YAXHPEBIIPEBXH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glGetShaderPrecisionFormat(unsigned int,unsigned int,int *,int *)" (?Proxy_glGetShaderPrecisionFormat@LLGL@@YAXIIPEAH0@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glDepthRangef(float,float)" (?Proxy_glDepthRangef@LLGL@@YAXMM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glClearDepthf(float)" (?Proxy_glClearDepthf@LLGL@@YAXM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glBufferStorage(unsigned int,__int64,void const *,unsigned int)" (?Proxy_glBufferStorage@LLGL@@YAXI_JPEBXI@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glCopyBufferSubData(unsigned int,unsigned int,__int64,__int64,__int64)" (?Proxy_glCopyBufferSubData@LLGL@@YAXII_J00@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glCopyImageSubData(unsigned int,unsigned int,int,int,int,int,unsigned int,unsigned int,int,int,int,int,int,int,int)" (?Proxy_glCopyImageSubData@LLGL@@YAXIIHHHHIIHHHHHHH@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glPolygonOffsetClamp(float,float,float)" (?Proxy_glPolygonOffsetClamp@LLGL@@YAXMMM@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glClearBufferData(unsigned int,unsigned int,unsigned int,unsigned int,void const *)" (?Proxy_glClearBufferData@LLGL@@YAXIIIIPEBX@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensions.obj : warning LNK4006: "void __cdecl LLGL::Proxy_glClearBufferSubData(unsigned int,unsigned int,__int64,__int64,unsigned int,unsigned int,void const *)" (?Proxy_glClearBufferSubData@LLGL@@YAXII_J0IIPEBX@Z) already defined in GLCoreExtensions.obj; second definition ignored
+GLCompatExtensionLoader.obj : warning LNK4006: "bool __cdecl LLGL::LoadSupportedOpenGLExtensions(bool,bool)" (?LoadSupportedOpenGLExtensions@LLGL@@YA_N_N0@Z) already defined in GLCoreExtensionLoader.obj; second definition ignored
+GLCompatExtensionLoader.obj : warning LNK4006: "bool __cdecl LLGL::AreOpenGLExtensionsLoaded(void)" (?AreOpenGLExtensionsLoaded@LLGL@@YA_NXZ) already defined in GLCoreExtensionLoader.obj; second definition ignored
+GLCompatExtensionLoader.obj : warning LNK4006: "class std::set<char const *,struct std::less<char const *>,class std::allocator<char const *> > const & __cdecl LLGL::GetSupportedOpenGLExtensions(void)" (?GetSupportedOpenGLExtensions@LLGL@@YAAEBV?$set@PEBDU?$less@PEBD@std@@V?$allocator@PEBD@2@@std@@XZ) already defined in GLCoreExtensionLoader.obj; second definition ignored
+GLCompatExtensionLoader.obj : warning LNK4006: "class std::set<char const *,struct std::less<char const *>,class std::allocator<char const *> > const & __cdecl LLGL::GetLoadedOpenGLExtensions(void)" (?GetLoadedOpenGLExtensions@LLGL@@YAAEBV?$set@PEBDU?$less@PEBD@std@@V?$allocator@PEBD@2@@std@@XZ) already defined in GLCoreExtensionLoader.obj; second definition ignored
+GLCompatExtensionLoader.obj : warning LNK4006: "bool __cdecl LLGL::LoadSwapIntervalProcs(void)" (?LoadSwapIntervalProcs@LLGL@@YA_NXZ) already defined in GLCoreExtensionLoader.obj; second definition ignored
+GLCompatExtensionLoader.obj : warning LNK4006: "bool __cdecl LLGL::LoadPixelFormatProcs(void)" (?LoadPixelFormatProcs@LLGL@@YA_NXZ) already defined in GLCoreExtensionLoader.obj; second definition ignored
+GLCompatExtensionLoader.obj : warning LNK4006: "bool __cdecl LLGL::LoadCreateContextProcs(void)" (?LoadCreateContextProcs@LLGL@@YA_NXZ) already defined in GLCoreExtensionLoader.obj; second definition ignored
   LLGL.vcxproj -> C:\Users\Michael\Development\CristalEngine\CristalEngine\vendor\LLGL\bin\Debug\LLGL\LLGL.lib

@@ -8,7 +8,7 @@
 #include <ExampleBase.h>
 #include <regex>
 
-//#include <LLGL/Platform/NativeHandle.h>
+#include <LLGL/Platform/NativeHandle.h>
 
 #define MIXED_BG_COLORS 0
 
@@ -85,14 +85,13 @@ MyRenderer::MyRenderer(
     const LLGL::Extent2D&   subWindowSize,
     const LLGL::ClearValue& background)
 :
+    renderer   { renderer   },
     samples    { 8u         },
-    background { background },
-    renderer   { renderer   }
+    background { background }
 {
     // Get native handle (HWND for Win32) from main window
-    //LLGL::NativeHandle mainWindowHandle;
-    std::uintptr_t mainWindowHandle[1];
-    mainWindow.GetNativeHandle(mainWindowHandle, sizeof(mainWindowHandle));
+    LLGL::NativeHandle mainWindowHandle;
+    mainWindow.GetNativeHandle(&mainWindowHandle, sizeof(mainWindowHandle));
 
     // Create sub window for swap-chain
     LLGL::WindowDescriptor windowDesc;
@@ -100,7 +99,7 @@ MyRenderer::MyRenderer(
         windowDesc.position             = subWindowOffset;
         windowDesc.size                 = subWindowSize;
         windowDesc.flags                = (LLGL::WindowFlags::Visible | LLGL::WindowFlags::Borderless);
-        windowDesc.windowContext        = mainWindowHandle;
+        windowDesc.windowContext        = &mainWindowHandle;
         windowDesc.windowContextSize    = sizeof(mainWindowHandle);
     }
     subWindow = LLGL::Window::Create(windowDesc);
@@ -193,7 +192,7 @@ void MyRenderer::CreateResources(const LLGL::ArrayView<TexturedVertex>& vertices
         fragShaderDesc = LLGL::ShaderDescFromFile(LLGL::ShaderType::Fragment, "Example.metal", "PS", "1.1");
     }
     else
-        throw std::runtime_error("shaders not supported for active renderer");
+        LLGL_THROW_RUNTIME_ERROR("shaders not supported for active renderer");
 
     vertShaderDesc.vertex.inputAttribs = vertexFormat.attributes;
 

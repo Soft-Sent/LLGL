@@ -92,14 +92,15 @@ void GLDeferredCommandBuffer::UpdateBuffer(
     Buffer&         dstBuffer,
     std::uint64_t   dstOffset,
     const void*     data,
-    std::uint16_t   dataSize)
+    std::uint64_t   dataSize)
 {
-    auto cmd = AllocCommand<GLCmdBufferSubData>(GLOpcodeBufferSubData, dataSize);
+    const std::size_t dataSizeSz = static_cast<std::size_t>(dataSize);
+    auto cmd = AllocCommand<GLCmdBufferSubData>(GLOpcodeBufferSubData, dataSizeSz);
     {
         cmd->buffer = LLGL_CAST(GLBuffer*, &dstBuffer);
         cmd->offset = static_cast<GLintptr>(dstOffset);
         cmd->size   = static_cast<GLsizeiptr>(dataSize);
-        ::memcpy(cmd + 1, data, dataSize);
+        ::memcpy(cmd + 1, data, dataSizeSz);
     }
 }
 
@@ -320,17 +321,38 @@ void GLDeferredCommandBuffer::SetVertexBuffer(Buffer& buffer)
 {
     if ((buffer.GetBindFlags() & BindFlags::VertexBuffer) != 0)
     {
-        auto& bufferWithVAO = LLGL_CAST(GLBufferWithVAO&, buffer);
+        auto& vertexBufferGL = LLGL_CAST(GLBufferWithVAO&, buffer);
         auto cmd = AllocCommand<GLCmdBindVertexArray>(GLOpcodeBindVertexArray);
-        cmd->vertexArray = bufferWithVAO.GetVertexArray();
+        cmd->vertexArray = vertexBufferGL.GetVertexArray();
         
         #if LLGL_GLEXT_TRNASFORM_FEEDBACK2
-        /* Store ID to transform feedback object */
-        if ((buffer.GetBindFlags() & BindFlags::StreamOutputBuffer) != 0)
+        SetTransformFeedbackChecked(vertexBufferGL);
+        #endif // /LLGL_GLEXT_TRNASFORM_FEEDBACK2
+    }
+}
+
+void GLDeferredCommandBuffer::SetVertexBuffer(Buffer& buffer, std::uint32_t numVertexAttribs, const VertexAttribute* vertexAttribs)
+{
+    if ((buffer.GetBindFlags() & BindFlags::VertexBuffer) != 0)
+    {
+        auto& vertexBufferGL = LLGL_CAST(GLBufferWithVAO&, buffer);
+
+        auto cmdBuildVertexArray = AllocCommand<GLCmdBuildVertexArray>(GLOpcodeBuildVertexArray, sizeof(GLVertexAttribute) * numVertexAttribs);
         {
-            auto& streamOutputBufferGL = LLGL_CAST(GLBufferWithXFB&, bufferWithVAO);
-            SetTransformFeedback(streamOutputBufferGL);
+            cmdBuildVertexArray->numVertexAttribs = numVertexAttribs;
+            auto* dstVertexAttribs = reinterpret_cast<GLVertexAttribute*>(cmdBuildVertexArray + 1);
+
+            for_range(i, numVertexAttribs)
+                GLConvertVertexAttrib(dstVertexAttribs[i], vertexAttribs[i], vertexBufferGL.GetID());
         }
+
+        auto cmdBindVertexArray = AllocCommand<GLCmdBindVertexArray>(GLOpcodeBindVertexArray);
+        {
+            cmdBindVertexArray->vertexArray = vertexBufferGL.GetVertexArray();
+        }
+        
+        #if LLGL_GLEXT_TRNASFORM_FEEDBACK2
+        SetTransformFeedbackChecked(vertexBufferGL);
         #endif // /LLGL_GLEXT_TRNASFORM_FEEDBACK2
     }
 }
@@ -676,7 +698,7 @@ void GLDeferredCommandBuffer::SetUniforms(std::uint32_t first, const void* data,
         return /*GL_INVALID_VALUE*/;
 
     auto* boundShaderPipeline = boundPipelineState->GetShaderPipeline();
-    if (boundPipelineState == nullptr)
+    if (boundShaderPipeline == nullptr)
         return /*GL_INVALID_VALUE*/;
 
     const std::uint32_t dataSizeInWords = dataSize / 4;
@@ -689,7 +711,7 @@ void GLDeferredCommandBuffer::SetUniforms(std::uint32_t first, const void* data,
 
         /* Allocate GL command and copy data buffer */
         const auto& uniform = uniformMap[first];
-        const std::uint32_t uniformSize = uniform.wordSize * 4;
+        const std::uint32_t uniformSize = uniform.count * uniform.wordSize * 4;
         auto cmd = AllocCommand<GLCmdSetUniform>(GLOpcodeSetUniform, uniformSize);
         {
             cmd->program    = boundShaderPipeline->GetID(); //TODO: must distinguish between GLShaderProgram and GLProgramPipeline
@@ -699,7 +721,7 @@ void GLDeferredCommandBuffer::SetUniforms(std::uint32_t first, const void* data,
             cmd->size       = static_cast<GLsizeiptr>(uniformSize);
             ::memcpy(cmd + 1, words, uniformSize);
         }
-        words += uniform.wordSize;
+        words += uniform.count * uniform.wordSize;
     }
 }
 
@@ -1231,6 +1253,9 @@ TCommand* GLDeferredCommandBuffer::AllocCommand(const GLOpcode opcode, std::size
 {
     return buffer_.AllocCommand<TCommand>(opcode, payloadSize);
 }
+
+
+#undef LLGL_FLUSH_MEMORY_BARRIERS
 
 
 } // /namespace LLGL

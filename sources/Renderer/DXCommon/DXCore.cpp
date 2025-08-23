@@ -5,6 +5,7 @@
  * Licensed under the terms of the BSD 3-Clause license (see LICENSE.txt).
  */
 
+#include <initguid.h> // Comes first to define GUIDs
 #include "DXCore.h"
 #include "ComPtr.h"
 #include "../../Core/Assertion.h"
@@ -287,7 +288,7 @@ static const Format g_D3DDefaultTextureFormats[] =
     Format::RGBA16UNorm,        Format::RGBA16SNorm,        Format::RGBA16UInt,         Format::RGBA16SInt,         Format::RGBA16Float,
     Format::RGBA32UInt,         Format::RGBA32SInt,         Format::RGBA32Float,
     Format::BGRA8UNorm,         Format::BGRA8UNorm_sRGB,
-    Format::RGB10A2UNorm,       Format::RGB10A2UInt,        Format::RG11B10Float,       Format::RGB9E5Float,
+    Format::RGB10A2UNorm,       Format::RGB10A2UInt,        Format::RG11B10Float,       Format::RGB9E5Float,        Format::BGR5A1UNorm,
     Format::D16UNorm,           Format::D32Float,           Format::D24UNormS8UInt,     Format::D32FloatS8X24UInt,
     Format::BC1UNorm,           Format::BC1UNorm_sRGB,
     Format::BC2UNorm,           Format::BC2UNorm_sRGB,
@@ -535,6 +536,11 @@ bool DXGetFullscreenState(IDXGISwapChain* swapChain)
     HRESULT hr = swapChain->GetFullscreenState(&fullscreenState, nullptr);
     DXThrowIfFailed(hr, "failed to get fullscreen state");
     return (fullscreenState != FALSE);
+}
+
+GUID DXGetD3DDebugObjectNameGUID()
+{
+    return WKPDID_D3DDebugObjectName;
 }
 
 

@@ -118,7 +118,7 @@ void MTDirectCommandBuffer::UpdateBuffer(
     Buffer&         dstBuffer,
     std::uint64_t   dstOffset,
     const void*     data,
-    std::uint16_t   dataSize)
+    std::uint64_t   dataSize)
 {
     auto& dstBufferMT = LLGL_CAST(MTBuffer&, dstBuffer);
 
@@ -426,10 +426,21 @@ void MTDirectCommandBuffer::SetScissors(std::uint32_t numScissors, const Scissor
 
 /* ----- Input Assembly ------ */
 
-void MTDirectCommandBuffer::SetVertexBuffer(Buffer& buffer)
+//private
+void MTDirectCommandBuffer::SetVertexBufferInternal(Buffer& buffer)
 {
     auto& bufferMT = LLGL_CAST(MTBuffer&, buffer);
     context_.SetVertexBuffer(bufferMT.GetNative(), 0);
+}
+
+void MTDirectCommandBuffer::SetVertexBuffer(Buffer& buffer)
+{
+    SetVertexBufferInternal(buffer);
+}
+
+void MTDirectCommandBuffer::SetVertexBuffer(Buffer& buffer, std::uint32_t /*numVertexAttribs*/, const VertexAttribute* /*vertexAttribs*/)
+{
+    SetVertexBufferInternal(buffer);
 }
 
 void MTDirectCommandBuffer::SetVertexBufferArray(BufferArray& bufferArray)
@@ -1057,8 +1068,29 @@ bool MTDirectCommandBuffer::GetNativeHandle(void* nativeHandle, std::size_t nati
     if (nativeHandle != nullptr && nativeHandleSize == sizeof(Metal::CommandBufferNativeHandle))
     {
         auto* nativeHandleMT = static_cast<Metal::CommandBufferNativeHandle*>(nativeHandle);
+
         nativeHandleMT->commandBuffer = cmdBuffer_;
         [nativeHandleMT->commandBuffer retain];
+
+        if (context_.IsInsideRenderPass())
+        {
+            nativeHandleMT->commandEncoder = context_.BindRenderEncoder();
+            [nativeHandleMT->commandEncoder retain];
+        }
+        else if (context_.GetComputeEncoder() != nil)
+        {
+            nativeHandleMT->commandEncoder = context_.GetComputeEncoder();
+            [nativeHandleMT->commandEncoder retain];
+        }
+        else if (context_.GetBlitEncoder() != nil)
+        {
+            nativeHandleMT->commandEncoder = context_.GetBlitEncoder();
+            [nativeHandleMT->commandEncoder retain];
+        }
+        else
+            nativeHandleMT->commandEncoder = nil;
+
+        nativeHandleMT->renderPassDesc = context_.RetainRenderPassDescOrNull();
         return true;
     }
     return false;

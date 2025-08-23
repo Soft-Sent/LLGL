@@ -148,7 +148,7 @@ Texture* MTRenderSystem::CreateTexture(const TextureDescriptor& textureDesc, con
 {
     auto* textureMT = textures_.emplace<MTTexture>(device_, textureDesc);
 
-    if (initialImage != nullptr)
+    if (initialImage != nullptr && !IsMultiSampleTexture(textureDesc.type))
     {
         textureMT->WriteRegion(
             //TextureRegion{ Offset3D{ 0, 0, 0 }, textureMT->GetMipExtent(0) },
@@ -297,6 +297,11 @@ PipelineState* MTRenderSystem::CreatePipelineState(const GraphicsPipelineDescrip
 PipelineState* MTRenderSystem::CreatePipelineState(const ComputePipelineDescriptor& pipelineStateDesc, PipelineCache* /*pipelineCache*/)
 {
     return pipelineStates_.emplace<MTComputePSO>(device_, pipelineStateDesc);
+}
+
+PipelineState* MTRenderSystem::CreatePipelineState(const MeshPipelineDescriptor& /*pipelineStateDesc*/, PipelineCache* /*pipelineCache*/)
+{
+    return nullptr; // not supported
 }
 
 void MTRenderSystem::Release(PipelineState& pipelineState)

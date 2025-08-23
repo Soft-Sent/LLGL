@@ -33,6 +33,8 @@ enum class TestResult
     FailedErrors,       // Test failed due to interface errors.
 };
 
+bool HasProgramArgument(int argc, char* argv[], const char* search, const char** outValue = nullptr);
+
 class TestbedContext
 {
 
@@ -44,6 +46,12 @@ class TestbedContext
 
         // Runs all tests and returns the number of failed ones. If all succeeded, the return value is 0.
         unsigned RunAllTests();
+
+        // Returns true if this context has a valid renderer.
+        inline bool IsValid() const
+        {
+            return (renderer.get() != nullptr);
+        }
 
     public:
 
@@ -87,11 +95,20 @@ class TestbedContext
             LLGL::PipelineState**                   output
         );
 
+        TestResult CreateMeshPSO(
+            const LLGL::MeshPipelineDescriptor& desc,
+            const char*                         name,
+            LLGL::PipelineState**               output
+        );
+
         // Returns true if the current renderer requires combined texture samplers (OpenGL only).
         bool HasCombinedSamplers() const;
 
         // Returns true if the current renderer requires unique bindings slots (Vulkan only).
         bool HasUniqueBindingSlots() const;
+
+        // Returns the aspect ratio of the main viewport.
+        float GetAspectRatio() const;
 
     protected:
 
@@ -110,6 +127,10 @@ class TestbedContext
             VertFmtColoredSO,
             VertFmtUnprojected,
             VertFmtEmpty,
+            VertFmtLayout0,
+            VertFmtLayout1,
+            VertFmtLayout2,
+            VertFmtLayout3,
 
             VertFmtCount,
         };
@@ -118,6 +139,7 @@ class TestbedContext
         {
             PipelineSolid,
             PipelineTextured,
+            PipelineMeshlet,
 
             PipelineCount,
         };
@@ -167,6 +189,15 @@ class TestbedContext
             CSSamplerBuffer,
 
             CSReadAfterWrite,
+
+            VSVertexFormat0,
+            VSVertexFormat1,
+            VSVertexFormat2,
+            VSVertexFormat3,
+            PSVertexFormat,
+
+            MSMeshlet,
+            PSMeshlet,
 
             ShaderCount,
         };
@@ -239,6 +270,18 @@ class TestbedContext
             std::uint8_t    color[4];
         };
 
+        struct Simple2DVertex
+        {
+            float position[2];
+        };
+
+        struct InterleavedVertex
+        {
+            float           posA[2];
+            float           posB[2];
+            std::uint8_t    color[4];
+        };
+
         struct IndexedTriangleMesh
         {
             std::uint64_t indexBufferOffset;
@@ -272,8 +315,6 @@ class TestbedContext
         struct DiffResult
         {
             DiffResult() = default;
-            DiffResult(const DiffResult&) = default;
-            DiffResult& operator = (const DiffResult&) = default;
 
             DiffResult(DiffErrors error);
             explicit DiffResult(int threshold, unsigned tolerance = 0);

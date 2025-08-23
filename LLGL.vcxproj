@@ -75,8 +75,8 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;LLGL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;LLGL_BUILD_RENDERER_OPENGL;LLGL_OPENGL;LLGL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -89,13 +89,16 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;dxgi.lib;d3d11.lib;d3d12.lib;dxguid.lib;d3dcompiler.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;LLGL_RELEASE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;LLGL_BUILD_RENDERER_OPENGL;LLGL_OPENGL;LLGL_RELEASE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -111,13 +114,16 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;dxgi.lib;d3d11.lib;d3d12.lib;dxguid.lib;d3dcompiler.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;LLGL_DISTRIBUTION;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;LLGL_BUILD_RENDERER_OPENGL;LLGL_OPENGL;LLGL_DISTRIBUTION;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -135,12 +141,16 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;dxgi.lib;d3d11.lib;d3d12.lib;dxguid.lib;d3dcompiler.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\LLGL-C\Buffer.h" />
     <ClInclude Include="include\LLGL-C\BufferArray.h" />
     <ClInclude Include="include\LLGL-C\Canvas.h" />
     <ClInclude Include="include\LLGL-C\CommandBuffer.h" />
+    <ClInclude Include="include\LLGL-C\CommandBufferTier1.h" />
     <ClInclude Include="include\LLGL-C\CommandQueue.h" />
     <ClInclude Include="include\LLGL-C\Display.h" />
     <ClInclude Include="include\LLGL-C\Export.h" />
@@ -186,6 +196,7 @@
     <ClInclude Include="include\LLGL\CanvasFlags.h" />
     <ClInclude Include="include\LLGL\CommandBuffer.h" />
     <ClInclude Include="include\LLGL\CommandBufferFlags.h" />
+    <ClInclude Include="include\LLGL\CommandBufferTier1.h" />
     <ClInclude Include="include\LLGL\CommandQueue.h" />
     <ClInclude Include="include\LLGL\Constants.h" />
     <ClInclude Include="include\LLGL\Container\AlignedArray.h" />
@@ -234,7 +245,6 @@
     <ClInclude Include="include\LLGL\RendererConfiguration.h" />
     <ClInclude Include="include\LLGL\RenderingDebugger.h" />
     <ClInclude Include="include\LLGL\RenderingDebuggerFlags.h" />
-    <ClInclude Include="include\LLGL\RenderingProfiler.h" />
     <ClInclude Include="include\LLGL\Report.h" />
     <ClInclude Include="include\LLGL\Resource.h" />
     <ClInclude Include="include\LLGL\ResourceFlags.h" />
@@ -269,7 +279,6 @@
     <ClInclude Include="include\LLGL\Utils\VertexFormat.h" />
     <ClInclude Include="include\LLGL\Version.h" />
     <ClInclude Include="include\LLGL\VertexAttribute.h" />
-    <ClInclude Include="include\LLGL\VideoAdapter.h" />
     <ClInclude Include="include\LLGL\Window.h" />
     <ClInclude Include="include\LLGL\WindowFlags.h" />
     <ClInclude Include="sources\Core\Assertion.h" />
@@ -302,6 +311,7 @@
     <ClInclude Include="sources\Platform\Win32\Win32Display.h" />
     <ClInclude Include="sources\Platform\Win32\Win32LeanAndMean.h" />
     <ClInclude Include="sources\Platform\Win32\Win32Module.h" />
+    <ClInclude Include="sources\Platform\Win32\Win32RawInputRegistry.h" />
     <ClInclude Include="sources\Platform\Win32\Win32Window.h" />
     <ClInclude Include="sources\Platform\Win32\Win32WindowCallback.h" />
     <ClInclude Include="sources\Platform\Win32\Win32WindowClass.h" />
@@ -329,6 +339,87 @@
     <ClInclude Include="sources\Renderer\DebugLayer\Texture\DbgTexture.h" />
     <ClInclude Include="sources\Renderer\DynamicModuleInterface.h" />
     <ClInclude Include="sources\Renderer\ModuleInterface.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GL2XSharedContextVertexArray.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GL3PlusSharedContextVertexArray.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLBuffer.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLBufferArray.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLBufferArrayWithVAO.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLBufferWithVAO.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLBufferWithXFB.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLSharedContextVertexArray.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLVertexArrayHash.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLVertexArrayObject.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLVertexAttribute.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Buffer\GLVertexInputLayout.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLCommand.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLCommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLCommandExecutor.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLCommandOpcode.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLCommandQueue.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLDeferredCommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Command\GLImmediateCommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Ext\GLExtensionLoader.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Ext\GLExtensionRegistry.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Ext\GLExtensions.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\GLCore.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\GLRenderSystem.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\GLRenderingCaps.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\GLSwapChain.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\GLTypes.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\OpenGL.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\GLContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\GLContextManager.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\GLSwapChainContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Win32\Win32GLContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Platform\Win32\Win32GLSwapChainContext.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatExtensionMapping.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatExtensions.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatProfileTypes.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCompat\OpenGLCompat.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreExtensions.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreProfileTypes.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLCore\OpenGLCore.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Profile\GLProfile.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLBlendState.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLComputePSO.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLContextState.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLDepthStencilState.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLFence.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLGraphicsPSO.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLPipelineCache.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLPipelineLayout.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLPipelineState.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLQueryHeap.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLRasterizerState.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLRenderPass.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLResourceHeap.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLResourceType.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLState.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLStateManager.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\RenderState\GLStatePool.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLLegacyShader.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLPipelineSignature.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLProgramPipeline.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLSeparableShader.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShader.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderBindingLayout.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderBufferInterfaceMap.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderPipeline.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderProgram.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderSourcePatcher.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Shader\GLShaderUniform.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLEmulatedSampler.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLFramebuffer.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLFramebufferCapture.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLMipGenerator.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLRenderTarget.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLRenderbuffer.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLSampler.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLTexImage.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLTexSubImage.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLTexture.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLTextureSubImage.h" />
+    <ClInclude Include="sources\Renderer\OpenGL\Texture\GLTextureViewPool.h" />
     <ClInclude Include="sources\Renderer\PipelineStateUtils.h" />
     <ClInclude Include="sources\Renderer\ProxyPipelineCache.h" />
     <ClInclude Include="sources\Renderer\RenderPassUtils.h" />
@@ -337,38 +428,6 @@
     <ClInclude Include="sources\Renderer\RenderSystemUtils.h" />
     <ClInclude Include="sources\Renderer\RenderTargetUtils.h" />
     <ClInclude Include="sources\Renderer\ResourceUtils.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\SpirvInstruction.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\SpirvInstructionInfo.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\SpirvIterator.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\SpirvModule.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\SpirvReflect.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.0\GLSL.std.450.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.0\OpenCL.std.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.0\spirv.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.0\spirv.hpp" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.1\GLSL.std.450.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.1\OpenCL.std.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.1\spirv.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.1\spirv.hpp" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.2\GLSL.std.450.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.2\OpenCL.std.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.2\spirv.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\1.2\spirv.hpp" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\AMD_gcn_shader.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\AMD_shader_ballot.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\AMD_shader_explicit_vertex_parameter.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\AMD_shader_trinary_minmax.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\DebugInfo.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\GLSL.std.450.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\NonSemanticClspvReflection.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\NonSemanticDebugBreak.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\NonSemanticDebugPrintf.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\NonSemanticShaderDebugInfo100.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\NonSemanticVkspReflection.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\OpenCL.std.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\OpenCLDebugInfo100.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\spirv.h" />
-    <ClInclude Include="sources\Renderer\SPIRV\spirv\unified1\spirv.hpp" />
     <ClInclude Include="sources\Renderer\SegmentedBuffer.h" />
     <ClInclude Include="sources\Renderer\StaticAssertions.h" />
     <ClInclude Include="sources\Renderer\StaticModuleInterface.h" />
@@ -401,6 +460,7 @@
     <ClCompile Include="sources\Platform\Canvas.cpp" />
     <ClCompile Include="sources\Platform\ConsoleManip.cpp" />
     <ClCompile Include="sources\Platform\Debug.cpp" />
+    <ClCompile Include="sources\Platform\DebugBreakOnError.cpp" />
     <ClCompile Include="sources\Platform\Display.cpp" />
     <ClCompile Include="sources\Platform\DisplayFlags.cpp" />
     <ClCompile Include="sources\Platform\Path.cpp" />
@@ -411,6 +471,7 @@
     <ClCompile Include="sources\Platform\Win32\Win32Display.cpp" />
     <ClCompile Include="sources\Platform\Win32\Win32Module.cpp" />
     <ClCompile Include="sources\Platform\Win32\Win32Path.cpp" />
+    <ClCompile Include="sources\Platform\Win32\Win32RawInputRegistry.cpp" />
     <ClCompile Include="sources\Platform\Win32\Win32Timer.cpp" />
     <ClCompile Include="sources\Platform\Win32\Win32Window.cpp" />
     <ClCompile Include="sources\Platform\Win32\Win32WindowCallback.cpp" />
@@ -437,6 +498,81 @@
     <ClCompile Include="sources\Renderer\DebugLayer\Texture\DbgRenderTarget.cpp" />
     <ClCompile Include="sources\Renderer\DebugLayer\Texture\DbgTexture.cpp" />
     <ClCompile Include="sources\Renderer\Format.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GL2XSharedContextVertexArray.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GL3PlusSharedContextVertexArray.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLBufferArray.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLBufferArrayWithVAO.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLBufferWithVAO.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLBufferWithXFB.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLVertexArrayHash.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLVertexArrayObject.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLVertexAttribute.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Buffer\GLVertexInputLayout.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Command\GLCommandBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Command\GLCommandExecutor.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Command\GLCommandQueue.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Command\GLDeferredCommandBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Command\GLImmediateCommandBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Ext\GLExtensionRegistry.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\GLCore.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\GLModuleInterface.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\GLObjectUtils.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\GLRenderSystem.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\GLStaticAssertions.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\GLSwapChain.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\GLTypes.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\GLContext.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\GLContextManager.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\GLSwapChainContext.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Win32\Win32GLContext.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Platform\Win32\Win32GLSwapChainContext.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatExtensionLoader.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatExtensions.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatProfile.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCompat\GLCompatProfileCaps.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreExtensionLoader.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreExtensions.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreProfile.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Profile\GLCore\GLCoreProfileCaps.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLBlendState.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLComputePSO.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLContextState.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLDepthStencilState.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLFence.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLGraphicsPSO.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLPipelineCache.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLPipelineLayout.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLPipelineState.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLQueryHeap.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLRasterizerState.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLRenderPass.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLResourceHeap.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLStateManager.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\RenderState\GLStatePool.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLLegacyShader.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLPipelineSignature.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLProgramPipeline.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLSeparableShader.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShader.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderBindingLayout.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderBufferInterfaceMap.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderPipeline.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderProgram.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderSourcePatcher.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Shader\GLShaderUniform.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLEmulatedSampler.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLFramebuffer.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLFramebufferCapture.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLMipGenerator.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLRenderTarget.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLRenderbuffer.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLSampler.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLTexImage.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLTexSubImage.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLTexture.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLTextureSubImage.cpp" />
+    <ClCompile Include="sources\Renderer\OpenGL\Texture\GLTextureViewPool.cpp" />
     <ClCompile Include="sources\Renderer\PipelineStateFlags.cpp" />
     <ClCompile Include="sources\Renderer\PipelineStateUtils.cpp" />
     <ClCompile Include="sources\Renderer\ProxyPipelineCache.cpp" />
@@ -450,10 +586,6 @@
     <ClCompile Include="sources\Renderer\RenderTargetUtils.cpp" />
     <ClCompile Include="sources\Renderer\RenderingDebugger.cpp" />
     <ClCompile Include="sources\Renderer\ResourceUtils.cpp" />
-    <ClCompile Include="sources\Renderer\SPIRV\SpirvInstruction.cpp" />
-    <ClCompile Include="sources\Renderer\SPIRV\SpirvInstructionInfo.cpp" />
-    <ClCompile Include="sources\Renderer\SPIRV\SpirvModule.cpp" />
-    <ClCompile Include="sources\Renderer\SPIRV\SpirvReflect.cpp" />
     <ClCompile Include="sources\Renderer\Sampler.cpp" />
     <ClCompile Include="sources\Renderer\Shader.cpp" />
     <ClCompile Include="sources\Renderer\ShaderFlags.cpp" />

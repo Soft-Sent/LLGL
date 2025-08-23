@@ -14,8 +14,11 @@
 #include "../VKPtr.h"
 #include "../VKCore.h"
 #include "VKCommandContext.h"
+#include "../Memory/VKDeviceMemoryManager.h"
+#include "../Buffer/VKStagingBufferPool.h"
 #include "../RenderState/VKStagingDescriptorSetPool.h"
 #include "../RenderState/VKDescriptorCache.h"
+#include "../RenderState/VKPipelineLayout.h"
 #include <vector>
 
 
@@ -29,6 +32,7 @@ class VKRenderPass;
 class VKQueryHeap;
 class VKSwapChain;
 class VKPipelineState;
+class VKPipelineBarrier;
 
 class VKCommandBuffer final : public CommandBuffer
 {
@@ -43,6 +47,7 @@ class VKCommandBuffer final : public CommandBuffer
             const VKPhysicalDevice&         physicalDevice,
             VkDevice                        device,
             VkQueue                         commandQueue,
+            VKDeviceMemoryManager&          deviceMemoryMngr,
             const VKQueueFamilyIndices&     queueFamilyIndices,
             const CommandBufferDescriptor&  desc
         );
@@ -88,6 +93,7 @@ class VKCommandBuffer final : public CommandBuffer
         void CreateVkCommandPool(std::uint32_t queueFamilyIndex);
         void CreateVkCommandBuffers();
         void CreateVkRecordingFences();
+        void CreateStagingBufferPools(VKDeviceMemoryManager& deviceMemoryMngr, VkDeviceSize minStagingPoolSize);
 
         void ClearFramebufferAttachments(std::uint32_t numAttachments, const VkClearAttachment* attachments);
 
@@ -115,6 +121,7 @@ class VKCommandBuffer final : public CommandBuffer
         );
 
         void FlushDescriptorCache();
+        void SubmitAutoPipelineBarrier();
 
         // Acquires the next native VkCommandBuffer object.
         void AcquireNextBuffer();
@@ -125,6 +132,8 @@ class VKCommandBuffer final : public CommandBuffer
         void ResetQueryPoolsInFlight();
         void AppendQueryPoolInFlight(VKQueryHeap* queryHeap);
         #endif
+
+        void BindVertexBuffer(VKBuffer& bufferVK);
 
     private:
 
@@ -168,6 +177,8 @@ class VKCommandBuffer final : public CommandBuffer
 
         VKCommandContext                context_;
 
+        VKStagingBufferPool             stagingBufferPools_[maxNumCommandBuffers];
+
         RecordState                     recordState_                                    = RecordState::Undefined;
 
         VkCommandBufferLevel            bufferLevel_                                    = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
@@ -190,8 +201,9 @@ class VKCommandBuffer final : public CommandBuffer
         bool                            scissorEnabled_                                 = false;
         bool                            hasDynamicScissorRect_                          = false;
         VkPipelineBindPoint             pipelineBindPoint_                              = VK_PIPELINE_BIND_POINT_MAX_ENUM;
-        const VKPipelineLayout*         boundPipelineLayout_                            = nullptr;
+        const VKLayoutBindingTable*     boundBindingTable_                              = nullptr;
         VKPipelineState*                boundPipelineState_                             = nullptr;
+        VKPipelineBarrier*              boundPipelineBarrier_                           = nullptr;
 
         std::uint32_t                   maxDrawIndirectCount_                           = 0;
 

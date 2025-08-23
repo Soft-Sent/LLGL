@@ -4,6 +4,8 @@
 # Intermediate build system files
 Makefile
 CMakeFiles
+bin/
+bin-int/
 build*/
 *.aps
 *.cache
@@ -29,3 +31,5 @@ tests/Output
 
 # VS Code folder
 .vscode
+
+sources/Platform/Linux/protocols/

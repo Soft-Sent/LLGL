@@ -14,10 +14,15 @@
 #include "../TextureUtils.h"
 #include "../../Core/CoreUtils.h"
 #include "../../Core/Exception.h"
+#include "Platform/Apple/CAMetalLayerBridge.h"
 #include <LLGL/Platform/NativeHandle.h>
 #include <LLGL/Utils/ForRange.h>
 #include <limits.h>
 #include <set>
+
+#if LLGL_LINUX_ENABLE_WAYLAND
+    #include <vulkan/vulkan_wayland.h>
+#endif
 
 
 namespace LLGL
@@ -78,7 +83,7 @@ VKSwapChain::VKSwapChain(
                                NullVkFence(device_),
                                NullVkFence(device_)            }
 {
-    SetOrCreateSurface(surface, SwapChain::BuildDefaultSurfaceTitle(rendererInfo), desc.resolution, desc.fullscreen);
+    SetOrCreateSurface(surface, SwapChain::BuildDefaultSurfaceTitle(rendererInfo), desc);
 
     CreatePresentSemaphoresAndFences();
     CreateGpuSurface();
@@ -369,16 +374,38 @@ void VKSwapChain::CreateGpuSurface()
 
     #elif defined LLGL_OS_LINUX
 
-    VkXlibSurfaceCreateInfoKHR createInfo;
+    // Create Xlib surface
+    if (nativeHandle.type == NativeType::X11)
     {
+        VkXlibSurfaceCreateInfoKHR createInfo;
         createInfo.sType    = VK_STRUCTURE_TYPE_XLIB_SURFACE_CREATE_INFO_KHR;
         createInfo.pNext    = nullptr;
         createInfo.flags    = 0;
-        createInfo.dpy      = nativeHandle.display;
-        createInfo.window   = nativeHandle.window;
+        createInfo.dpy      = nativeHandle.x11.display;
+        createInfo.window   = nativeHandle.x11.window;
+
+        VkResult result = vkCreateXlibSurfaceKHR(instance_, &createInfo, nullptr, surface_.ReleaseAndGetAddressOf());
+        VKThrowIfFailed(result, "failed to create Xlib surface for Vulkan swap-chain");
     }
-    VkResult result = vkCreateXlibSurfaceKHR(instance_, &createInfo, nullptr, surface_.ReleaseAndGetAddressOf());
-    VKThrowIfFailed(result, "failed to create Xlib surface for Vulkan swap-chain");
+    #if LLGL_LINUX_ENABLE_WAYLAND
+    // Create Wayland surface
+    else if (nativeHandle.type == NativeType::Wayland)
+    {
+        VkWaylandSurfaceCreateInfoKHR createInfo;
+        createInfo.sType    = VK_STRUCTURE_TYPE_WAYLAND_SURFACE_CREATE_INFO_KHR;
+        createInfo.pNext    = nullptr;
+        createInfo.flags    = 0;
+        createInfo.display  = nativeHandle.wayland.display;
+        createInfo.surface  = nativeHandle.wayland.window;
+
+        VkResult result = vkCreateWaylandSurfaceKHR(instance_, &createInfo, nullptr, surface_.ReleaseAndGetAddressOf());
+        VKThrowIfFailed(result, "failed to create Wayland surface for Vulkan swap-chain");
+    }
+    else
+    {
+        LLGL_TRAP("Invalid native handle type");
+    }
+    #endif
 
     #elif defined LLGL_OS_ANDROID
 
@@ -392,6 +419,18 @@ void VKSwapChain::CreateGpuSurface()
     }
     VkResult result = vkCreateAndroidSurfaceKHR(instance_, &createInfo, nullptr, surface_.ReleaseAndGetAddressOf());
     VKThrowIfFailed(result, "failed to create Android surface for Vulkan swap-chain");
+
+    #elif defined LLGL_OS_MACOS || defined LLGL_OS_IOS
+
+    VkMetalSurfaceCreateInfoEXT createInfo;
+    {
+        createInfo.sType    = VK_STRUCTURE_TYPE_METAL_SURFACE_CREATE_INFO_EXT;
+        createInfo.pNext    = nullptr;
+        createInfo.flags    = 0;
+        createInfo.pLayer   = CreateCAMetalLayerForSurfaceHandle(&nativeHandle, sizeof(nativeHandle));
+    }
+    VkResult result = vkCreateMetalSurfaceEXT(instance_, &createInfo, nullptr, surface_.ReleaseAndGetAddressOf());
+    VKThrowIfFailed(result, "failed to create Macos surface for Vulkan swap-chain");
 
     #else
 
@@ -595,15 +634,17 @@ void VKSwapChain::CreateSwapChainFramebuffers()
     }
 }
 
-void VKSwapChain::CreateDepthStencilBuffer(const Extent2D& resolution)
+void VKSwapChain::CreateDepthStencilBuffer()
 {
+    const Extent2D resolution{ swapChainExtent_.width, swapChainExtent_.height };
     const VkSampleCountFlagBits sampleCountBits = VKTypes::ToVkSampleCountBits(swapChainSamples_);
     depthStencilBuffer_.Create(deviceMemoryMngr_, resolution, depthStencilFormat_, sampleCountBits);
 }
 
-void VKSwapChain::CreateColorBuffers(const Extent2D& resolution)
+void VKSwapChain::CreateColorBuffers()
 {
     /* Create VkImage objects for each swap-chain buffer */
+    const Extent2D& resolution{ swapChainExtent_.width, swapChainExtent_.height };
     const VkSampleCountFlagBits sampleCountBits = VKTypes::ToVkSampleCountBits(swapChainSamples_);
     colorBuffers_.resize(numColorBuffers_);
     for_range(i, numColorBuffers_)
@@ -629,10 +670,10 @@ void VKSwapChain::CreateResolutionDependentResources(const Extent2D& resolution)
     CreateSwapChain(resolution, vsyncInterval_);
 
     if (HasMultiSampling())
-        CreateColorBuffers(resolution);
+        CreateColorBuffers();
 
     if (depthStencilFormat_ != VK_FORMAT_UNDEFINED)
-        CreateDepthStencilBuffer(resolution);
+        CreateDepthStencilBuffer();
 
     CreateSwapChainFramebuffers();
 }

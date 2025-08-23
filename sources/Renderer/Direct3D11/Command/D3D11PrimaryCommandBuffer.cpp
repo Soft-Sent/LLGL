@@ -95,7 +95,7 @@ void D3D11PrimaryCommandBuffer::UpdateBuffer(
     Buffer&         dstBuffer,
     std::uint64_t   dstOffset,
     const void*     data,
-    std::uint16_t   dataSize)
+    std::uint64_t   dataSize)
 {
     auto& dstBufferD3D = LLGL_CAST(D3D11Buffer&, dstBuffer);
     const bool needsCommandListEmulation = context_.GetStateManager().NeedsCommandListEmulation();
@@ -765,7 +765,16 @@ void D3D11PrimaryCommandBuffer::SetScissors(std::uint32_t numScissors, const Sci
 void D3D11PrimaryCommandBuffer::SetVertexBuffer(Buffer& buffer)
 {
     auto& bufferD3D = LLGL_CAST(D3D11Buffer&, buffer);
-    context_.SetVertexBuffer(bufferD3D);
+    context_.SetVertexBuffer(bufferD3D, bufferD3D.GetStride());
+}
+
+void D3D11PrimaryCommandBuffer::SetVertexBuffer(Buffer& buffer, std::uint32_t numVertexAttribs, const VertexAttribute* vertexAttribs)
+{
+    if (numVertexAttribs > 0 && vertexAttribs != nullptr)
+    {
+        auto& bufferD3D = LLGL_CAST(D3D11Buffer&, buffer);
+        context_.SetVertexBuffer(bufferD3D, vertexAttribs[0].stride);
+    }
 }
 
 void D3D11PrimaryCommandBuffer::SetVertexBufferArray(BufferArray& bufferArray)
