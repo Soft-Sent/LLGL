@@ -9,8 +9,7 @@
 
 package llgl
 
-// #cgo LDFLAGS: libLLGL.dll.a
-// #cgo CFLAGS: -I ../../include
+// #cgo pkg-config: LLGL
 // #include <LLGL-C/LLGL.h>
 import "C"
 
@@ -193,11 +192,6 @@ const (
     ImageFormatDepthStencil
     ImageFormatStencil
     ImageFormatCompressed
-    ImageFormatBC1
-    ImageFormatBC2
-    ImageFormatBC3
-    ImageFormatBC4
-    ImageFormatBC5
 )
 
 type DataType int
@@ -712,8 +706,9 @@ const (
     ShaderTypeGeometry
     ShaderTypeFragment
     ShaderTypeCompute
-    ShaderTypeAmplification
+    ShaderTypeTask
     ShaderTypeMesh
+    ShaderTypeAmplification
 )
 
 type ShaderSourceType int
@@ -940,11 +935,12 @@ const (
     StageGeometryStage       = (1 << 3)
     StageFragmentStage       = (1 << 4)
     StageComputeStage        = (1 << 5)
-    StageAmplificationStage  = (1 << 6)
+    StageTaskStage           = (1 << 6)
     StageMeshStage           = (1 << 7)
     StageAllTessStages       = (StageTessControlStage | StageTessEvaluationStage)
     StageAllGraphicsStages   = (StageVertexStage | StageAllTessStages | StageGeometryStage | StageFragmentStage)
     StageAllStages           = (StageAllGraphicsStages | StageComputeStage)
+    StageAmplificationStage  = StageTaskStage
 )
 
 type ResizeBuffersFlags int
@@ -1594,7 +1590,8 @@ type MeshPipelineDescriptor struct {
     DebugName           string               /* = "" */
     PipelineLayout      *PipelineLayout      /* = nil */
     RenderPass          *RenderPass          /* = nil */
-    AmplificationShader *Shader              /* = nil */
+    TaskShader          *Shader              /* = nil */
+    AmplificationShader *Shader              /* Identifier `amplificationShader` is deprecated since 0.05b; Use `taskShader` instead! */
     MeshShader          *Shader              /* = nil */
     FragmentShader      *Shader              /* = nil */
     Viewports           []Viewport           /* = nil */

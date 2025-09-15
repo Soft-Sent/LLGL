@@ -186,10 +186,14 @@ endif()
 
 option(LLGL_BUILD_WRAPPER_C99 "Include wrapper for C99" OFF)
 option(LLGL_BUILD_WRAPPER_CSHARP "Include wrapper for C# (requires LLGL_BUILD_WRAPPER_C99)" OFF)
+option(LLGL_BUILD_WRAPPER_GO "Include wrapper for Go (requires LLGL_BUILD_WRAPPER_C99)" OFF)
 
 if(NOT LLGL_BUILD_WRAPPER_C99)
     if(LLGL_BUILD_WRAPPER_CSHARP)
         message(SEND_ERROR "LLGL_BUILD_WRAPPER_CSHARP is enabled but not LLGL_BUILD_WRAPPER_C99; The C# wrapper depends on the C99 wrapper!")
+    endif()
+    if(LLGL_BUILD_WRAPPER_GO)
+        message(SEND_ERROR "LLGL_BUILD_WRAPPER_GO is enabled but not LLGL_BUILD_WRAPPER_C99; The Go wrapper depends on the C99 wrapper!")
     endif()
 endif()
 
@@ -549,7 +553,7 @@ if(LLGL_UNITY_BUILD)
     ADD_DEFINE(LLGL_UNITY_BUILD)
 endif()
 
-if (LLGL_LINUX_ENABLE_WAYLAND)
+if(LLGL_LINUX_ENABLE_WAYLAND)
     ADD_DEFINE(LLGL_LINUX_ENABLE_WAYLAND)
     set(SUMMARY_FLAGS ${SUMMARY_FLAGS} "Wayland")
 endif()
@@ -642,7 +646,11 @@ else()
             find_source_files(FilesPlatform         CXX     "${PROJECT_SOURCE_DIR}/sources/Platform/Android")
             find_source_files(FilesIncludePlatform  CXX     "${PROJECT_INCLUDE_DIR}/LLGL/Platform/Android")
         else()
-            find_source_files(FilesPlatform         CXX     "${PROJECT_SOURCE_DIR}/sources/Platform/Linux" "${PlatformPosixDir}")
+            if(LLGL_LINUX_ENABLE_WAYLAND)
+                find_source_files(FilesPlatform     CXX     "${PROJECT_SOURCE_DIR}/sources/Platform/Linux" "${PROJECT_SOURCE_DIR}/sources/Platform/Linux/X11" "${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland" "${PlatformPosixDir}")
+            else()
+                find_source_files(FilesPlatform     CXX     "${PROJECT_SOURCE_DIR}/sources/Platform/Linux" "${PROJECT_SOURCE_DIR}/sources/Platform/Linux/X11" "${PlatformPosixDir}")
+            endif()
             find_source_files(FilesIncludePlatform  CXX     "${PROJECT_INCLUDE_DIR}/LLGL/Platform/Linux")
         endif()
     endif()
@@ -752,61 +760,61 @@ if(LLGL_LINUX_ENABLE_WAYLAND)
         message(FATAL_ERROR "Failed to find wayland-scanner")
     endif()
 
-    file(MAKE_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols)
+    file(MAKE_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols)
 
     # xdg-shell.xml
     add_custom_command(
         COMMAND ${WAYLAND_SCANNER_EXECUTABLE} private-code < /usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml > xdg-shell-protocol.c
-        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/xdg-shell-protocol.c
-        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols
+        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols/xdg-shell-protocol.c
+        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols
         VERBATIM
     )
 
     add_custom_command(
         COMMAND ${WAYLAND_SCANNER_EXECUTABLE} client-header < /usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml > xdg-shell-client-protocol.h
-        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/xdg-shell-client-protocol.h
-        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols
+        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols/xdg-shell-client-protocol.h
+        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols
         VERBATIM
     )
 
     # xdg-decoration-unstable-v1.xml
     add_custom_command(
         COMMAND ${WAYLAND_SCANNER_EXECUTABLE} client-header < /usr/share/wayland-protocols/unstable/xdg-decoration/xdg-decoration-unstable-v1.xml > xdg-decoration-client-protocol.h
-        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/xdg-decoration-client-protocol.h
-        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols
+        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols/xdg-decoration-client-protocol.h
+        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols
         VERBATIM
     )
 
     add_custom_command(
         COMMAND ${WAYLAND_SCANNER_EXECUTABLE} private-code < /usr/share/wayland-protocols/unstable/xdg-decoration/xdg-decoration-unstable-v1.xml > xdg-decoration-protocol.c
-        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/xdg-decoration-protocol.c
-        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols
+        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols/xdg-decoration-protocol.c
+        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols
         VERBATIM
     )
 
     # viewporter.xml
     add_custom_command(
         COMMAND ${WAYLAND_SCANNER_EXECUTABLE} client-header < /usr/share/wayland-protocols/stable/viewporter/viewporter.xml > viewporter-client-protocol.h
-        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/viewporter-client-protocol.h
-        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols
+        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols/viewporter-client-protocol.h
+        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols
         VERBATIM
     )
 
     add_custom_command(
         COMMAND ${WAYLAND_SCANNER_EXECUTABLE} private-code < /usr/share/wayland-protocols/stable/viewporter/viewporter.xml > viewporter-protocol.c
-        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/viewporter-protocol.c
-        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols
+        OUTPUT ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols/viewporter-protocol.c
+        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols
         VERBATIM
     )
 
     target_sources(
         LLGL
-        PRIVATE ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/xdg-shell-client-protocol.h
-                ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/xdg-shell-protocol.c
-                ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/xdg-decoration-client-protocol.h
-                ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/xdg-decoration-protocol.c
-                ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/viewporter-client-protocol.h
-                ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/protocols/viewporter-protocol.c
+        PRIVATE ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols/xdg-shell-client-protocol.h
+                ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols/xdg-shell-protocol.c
+                ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols/xdg-decoration-client-protocol.h
+                ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols/xdg-decoration-protocol.c
+                ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols/viewporter-client-protocol.h
+                ${PROJECT_SOURCE_DIR}/sources/Platform/Linux/Wayland/protocols/viewporter-protocol.c
     )
 endif()
 
@@ -911,6 +919,11 @@ if(LLGL_BUILD_WRAPPER_CSHARP)
     add_subdirectory(wrapper/CSharp)
 endif()
 
+# Wrapper: Go
+if(LLGL_BUILD_WRAPPER_GO)
+    configure_file("wrapper/Go/LLGL.pc.in" "${LLGL_OUTPUT_DIR}/LLGL.pc" @ONLY)
+endif()
+
 # Install targets, headers, and CMake config files
 get_property(LLGL_ALL_TARGETS GLOBAL PROPERTY LLGL_GLOBAL_MODULE_LIST)
 if(LLGL_BUILD_RENDERER_DIRECT3D11 OR LLGL_BUILD_RENDERER_DIRECT3D12)
@@ -973,6 +986,10 @@ endif()
 
 if(LLGL_BUILD_WRAPPER_CSHARP)
     message(STATUS "Build Wrapper: C#")
+endif()
+
+if(LLGL_BUILD_WRAPPER_GO)
+    message(STATUS "Bulid Wrapper: Go")
 endif()
 
 if(LLGL_BUILD_EXAMPLES)
