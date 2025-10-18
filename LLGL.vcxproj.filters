@@ -1,6 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="external">
+      <UniqueIdentifier>{2839F3DC-1406-4EE8-3D1F-3C90294B8376}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\OpenGL">
+      <UniqueIdentifier>{5C059FE2-C890-0CA7-D1A1-8F9B3DAC68A7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\OpenGL\include">
+      <UniqueIdentifier>{CFC81957-3B00-62EE-440A-C611B0C088E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\OpenGL\include\GL">
+      <UniqueIdentifier>{D11B971A-BD2B-43EB-26E5-A70912143284}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\SPIRV-Headers">
+      <UniqueIdentifier>{347EB4F2-2078-DD44-09E5-7355F57D43B1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\SPIRV-Headers\include">
+      <UniqueIdentifier>{A799264A-93BF-F0B0-7C05-767C68CA157D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\SPIRV-Headers\include\spirv">
+      <UniqueIdentifier>{AAAA350A-9691-F701-3FE2-5D1F2BA87068}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\SPIRV-Headers\include\spirv\1.0">
+      <UniqueIdentifier>{088C192D-F408-0D70-1D86-0D840962A903}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\SPIRV-Headers\include\spirv\1.1">
+      <UniqueIdentifier>{098C192D-F508-0D70-1E86-0D840A62A903}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\SPIRV-Headers\include\spirv\1.2">
+      <UniqueIdentifier>{0A8C192D-F608-0D70-1F86-0D840B62A903}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\SPIRV-Headers\include\spirv\unified1">
+      <UniqueIdentifier>{CE2A0D76-3A9B-0FEF-03BA-89776FE947F0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\stb">
+      <UniqueIdentifier>{804BD728-6CAE-66CD-1534-9F8301763250}</UniqueIdentifier>
+    </Filter>
     <Filter Include="include">
       <UniqueIdentifier>{89AF369E-F58E-B539-FEA6-40106A051C9B}</UniqueIdentifier>
     </Filter>
@@ -121,8 +157,92 @@
     <Filter Include="sources\Renderer\OpenGL\Texture">
       <UniqueIdentifier>{23EF23CA-8FD2-320A-98D5-60460438F95A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sources\Renderer\SPIRV">
+      <UniqueIdentifier>{D29E4953-BE98-72A5-A705-09B6939ED811}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="external\OpenGL\include\GL\glext.h">
+      <Filter>external\OpenGL\include\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="external\OpenGL\include\GL\wglext.h">
+      <Filter>external\OpenGL\include\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.0\GLSL.std.450.h">
+      <Filter>external\SPIRV-Headers\include\spirv\1.0</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.0\OpenCL.std.h">
+      <Filter>external\SPIRV-Headers\include\spirv\1.0</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.0\spirv.h">
+      <Filter>external\SPIRV-Headers\include\spirv\1.0</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.1\GLSL.std.450.h">
+      <Filter>external\SPIRV-Headers\include\spirv\1.1</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.1\OpenCL.std.h">
+      <Filter>external\SPIRV-Headers\include\spirv\1.1</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.1\spirv.h">
+      <Filter>external\SPIRV-Headers\include\spirv\1.1</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.2\GLSL.std.450.h">
+      <Filter>external\SPIRV-Headers\include\spirv\1.2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.2\OpenCL.std.h">
+      <Filter>external\SPIRV-Headers\include\spirv\1.2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.2\spirv.h">
+      <Filter>external\SPIRV-Headers\include\spirv\1.2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\AMD_gcn_shader.h">
+      <Filter>external\SPIRV-Headers\include\spirv\unified1</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\AMD_shader_ballot.h">
+      <Filter>external\SPIRV-Headers\include\spirv\unified1</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\AMD_shader_explicit_vertex_parameter.h">
+      <Filter>external\SPIRV-Headers\include\spirv\unified1</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\AMD_shader_trinary_minmax.h">
+      <Filter>external\SPIRV-Headers\include\spirv\unified1</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\DebugInfo.h">
+      <Filter>external\SPIRV-Headers\include\spirv\unified1</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\GLSL.std.450.h">
+      <Filter>external\SPIRV-Headers\include\spirv\unified1</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\NonSemanticClspvReflection.h">
+      <Filter>external\SPIRV-Headers\include\spirv\unified1</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\NonSemanticDebugBreak.h">
+      <Filter>external\SPIRV-Headers\include\spirv\unified1</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\NonSemanticDebugPrintf.h">
+      <Filter>external\SPIRV-Headers\include\spirv\unified1</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\NonSemanticShaderDebugInfo100.h">
+      <Filter>external\SPIRV-Headers\include\spirv\unified1</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\NonSemanticVkspReflection.h">
+      <Filter>external\SPIRV-Headers\include\spirv\unified1</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\OpenCL.std.h">
+      <Filter>external\SPIRV-Headers\include\spirv\unified1</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\OpenCLDebugInfo100.h">
+      <Filter>external\SPIRV-Headers\include\spirv\unified1</Filter>
+    </ClInclude>
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\spirv.h">
+      <Filter>external\SPIRV-Headers\include\spirv\unified1</Filter>
+    </ClInclude>
+    <ClInclude Include="external\stb\stb_image.h">
+      <Filter>external\stb</Filter>
+    </ClInclude>
+    <ClInclude Include="external\stb\stb_image_write.h">
+      <Filter>external\stb</Filter>
+    </ClInclude>
     <ClInclude Include="include\LLGL-C\Buffer.h">
       <Filter>include\LLGL-C</Filter>
     </ClInclude>
@@ -1438,6 +1558,18 @@
     </ClCompile>
     <ClCompile Include="sources\Renderer\ResourceUtils.cpp">
       <Filter>sources\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\SPIRV\SpirvInstruction.cpp">
+      <Filter>sources\Renderer\SPIRV</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\SPIRV\SpirvInstructionInfo.cpp">
+      <Filter>sources\Renderer\SPIRV</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\SPIRV\SpirvModule.cpp">
+      <Filter>sources\Renderer\SPIRV</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\SPIRV\SpirvReflect.cpp">
+      <Filter>sources\Renderer\SPIRV</Filter>
     </ClCompile>
     <ClCompile Include="sources\Renderer\Sampler.cpp">
       <Filter>sources\Renderer</Filter>

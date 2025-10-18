@@ -76,7 +76,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;LLGL_BUILD_RENDERER_OPENGL;LLGL_OPENGL;LLGL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include;external\OpenGL\include;external\SPIRV-Headers\include;external\GaussianLib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -98,7 +98,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;LLGL_BUILD_RENDERER_OPENGL;LLGL_OPENGL;LLGL_RELEASE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include;external\OpenGL\include;external\SPIRV-Headers\include;external\GaussianLib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -123,7 +123,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;LLGL_BUILD_RENDERER_OPENGL;LLGL_OPENGL;LLGL_DISTRIBUTION;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;sources\Renderer\SPIRV;external\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include;external\OpenGL\include;external\SPIRV-Headers\include;external\GaussianLib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -146,6 +146,33 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="external\OpenGL\include\GL\glext.h" />
+    <ClInclude Include="external\OpenGL\include\GL\wglext.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.0\GLSL.std.450.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.0\OpenCL.std.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.0\spirv.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.1\GLSL.std.450.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.1\OpenCL.std.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.1\spirv.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.2\GLSL.std.450.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.2\OpenCL.std.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\1.2\spirv.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\AMD_gcn_shader.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\AMD_shader_ballot.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\AMD_shader_explicit_vertex_parameter.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\AMD_shader_trinary_minmax.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\DebugInfo.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\GLSL.std.450.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\NonSemanticClspvReflection.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\NonSemanticDebugBreak.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\NonSemanticDebugPrintf.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\NonSemanticShaderDebugInfo100.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\NonSemanticVkspReflection.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\OpenCL.std.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\OpenCLDebugInfo100.h" />
+    <ClInclude Include="external\SPIRV-Headers\include\spirv\unified1\spirv.h" />
+    <ClInclude Include="external\stb\stb_image.h" />
+    <ClInclude Include="external\stb\stb_image_write.h" />
     <ClInclude Include="include\LLGL-C\Buffer.h" />
     <ClInclude Include="include\LLGL-C\BufferArray.h" />
     <ClInclude Include="include\LLGL-C\Canvas.h" />
@@ -586,6 +613,10 @@
     <ClCompile Include="sources\Renderer\RenderTargetUtils.cpp" />
     <ClCompile Include="sources\Renderer\RenderingDebugger.cpp" />
     <ClCompile Include="sources\Renderer\ResourceUtils.cpp" />
+    <ClCompile Include="sources\Renderer\SPIRV\SpirvInstruction.cpp" />
+    <ClCompile Include="sources\Renderer\SPIRV\SpirvInstructionInfo.cpp" />
+    <ClCompile Include="sources\Renderer\SPIRV\SpirvModule.cpp" />
+    <ClCompile Include="sources\Renderer\SPIRV\SpirvReflect.cpp" />
     <ClCompile Include="sources\Renderer\Sampler.cpp" />
     <ClCompile Include="sources\Renderer\Shader.cpp" />
     <ClCompile Include="sources\Renderer\ShaderFlags.cpp" />

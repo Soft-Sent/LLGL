@@ -79,12 +79,20 @@ project "LLGL"
 
         "sources/Renderer/DebugLayer/**.h",
         "sources/Renderer/DebugLayer/**.cpp",
+        "sources/Renderer/SPIRV/**.cpp",
+
+        "external/SPIRV-Headers/include/**.h",
+
+        "external/stb/**.h",
+        "external/OpenGL/include/**.h",
+
     }
 
     includedirs {
         "include",
-        "sources/Renderer/SPIRV",
         "external/OpenGL/include",
+        "external/SPIRV-Headers/include",
+        "external/GaussianLib/include",
     }
 
     defines { 
