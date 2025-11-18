@@ -6,6 +6,9 @@ project "LLGL"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir    ("bin-int/" .. outputdir .. "/%{prj.name}")
+    
+    -- Get Vulkan SDK path (used throughout the file)
+    VULKAN_SDK = os.getenv("VULKAN_SDK")
 
     files {
         "include/**.h", 
@@ -94,6 +97,13 @@ project "LLGL"
         "external/SPIRV-Headers/include",
         "external/GaussianLib/include",
     }
+    
+    -- Add Vulkan SDK include directory if available
+    if VULKAN_SDK then
+        includedirs {
+            VULKAN_SDK .. "/Include",
+        }
+    end
 
     defines { 
         "LLGL_BUILD_STATIC_LIB", 
@@ -148,12 +158,14 @@ project "LLGL"
             "sources/Renderer/OpenGL/Texture/**.cpp", 
 
 
-            --"sources/Renderer/Vulkan/**.h", 
-            --"sources/Renderer/Vulkan/**.cpp", 
-
+            "sources/Renderer/Vulkan/**.h", 
+            "sources/Renderer/Vulkan/**.cpp", 
+            
+            -- Direct3D11 and Direct3D12 are disabled (defines commented out above)
+            -- Uncomment these lines and the defines above if you want to enable them:
             --"sources/Renderer/Direct3D11/**.h", 
             --"sources/Renderer/Direct3D11/**.cpp",
-
+            --
             --"sources/Renderer/Direct3D12/**.h", 
             --"sources/Renderer/Direct3D12/**.cpp",
         }
@@ -173,19 +185,30 @@ project "LLGL"
 
         defines {
             "LLGL_PLATFORM_WINDOWS",
+            "NOMINMAX",  -- Prevent Windows.h from defining min/max macros that break std::min/std::max
+            "WIN32_LEAN_AND_MEAN",  -- Exclude rarely-used stuff from Windows headers
             --"LLGL_BUILD_RENDERER_DIRECT3D11",
             --"LLGL_BUILD_RENDERER_DIRECT3D12",
             "LLGL_BUILD_RENDERER_OPENGL",
-            --"LLGL_BUILD_RENDERER_VULKAN"
+            "LLGL_BUILD_RENDERER_VULKAN",
             "LLGL_OPENGL",
         }
 
         links {
             "user32", "gdi32", "shell32", "ole32", "oleaut32", "advapi32",
-            "dxgi", "d3d11", "d3d12", "dxguid", "d3dcompiler",
+            -- Direct3D libraries are disabled (renderers are not enabled)
+            -- Uncomment if enabling Direct3D11/Direct3D12:
+            --"dxgi", "d3d11", "d3d12", "dxguid", "d3dcompiler",
             "opengl32",
-            --"vulkan-1"
+            "vulkan-1"
         }
+        
+        -- Add Vulkan SDK library directory if available
+        if VULKAN_SDK then
+            libdirs {
+                VULKAN_SDK .. "/Lib",
+            }
+        end
 
     elseif os.target() == "macosx" then
         pic "On"

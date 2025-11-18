@@ -75,8 +75,8 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;LLGL_BUILD_RENDERER_OPENGL;LLGL_OPENGL;LLGL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;external\OpenGL\include;external\SPIRV-Headers\include;external\GaussianLib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;NOMINMAX;WIN32_LEAN_AND_MEAN;LLGL_BUILD_RENDERER_OPENGL;LLGL_BUILD_RENDERER_VULKAN;LLGL_OPENGL;LLGL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;external\OpenGL\include;external\SPIRV-Headers\include;external\GaussianLib\include;D:\VulkanSDK\1.4.309.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -90,15 +90,16 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;dxgi.lib;d3d11.lib;d3d12.lib;dxguid.lib;d3dcompiler.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;opengl32.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;LLGL_BUILD_RENDERER_OPENGL;LLGL_OPENGL;LLGL_RELEASE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;external\OpenGL\include;external\SPIRV-Headers\include;external\GaussianLib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;NOMINMAX;WIN32_LEAN_AND_MEAN;LLGL_BUILD_RENDERER_OPENGL;LLGL_BUILD_RENDERER_VULKAN;LLGL_OPENGL;LLGL_RELEASE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;external\OpenGL\include;external\SPIRV-Headers\include;external\GaussianLib\include;D:\VulkanSDK\1.4.309.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -115,15 +116,16 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;dxgi.lib;d3d11.lib;d3d12.lib;dxguid.lib;d3dcompiler.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;opengl32.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;LLGL_BUILD_RENDERER_OPENGL;LLGL_OPENGL;LLGL_DISTRIBUTION;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;external\OpenGL\include;external\SPIRV-Headers\include;external\GaussianLib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;NOMINMAX;WIN32_LEAN_AND_MEAN;LLGL_BUILD_RENDERER_OPENGL;LLGL_BUILD_RENDERER_VULKAN;LLGL_OPENGL;LLGL_DISTRIBUTION;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;external\OpenGL\include;external\SPIRV-Headers\include;external\GaussianLib\include;D:\VulkanSDK\1.4.309.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -142,7 +144,8 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;dxgi.lib;d3d11.lib;d3d12.lib;dxguid.lib;d3dcompiler.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;opengl32.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -461,6 +464,61 @@
     <ClInclude Include="sources\Renderer\TextureUtils.h" />
     <ClInclude Include="sources\Renderer\VideoAdapter.h" />
     <ClInclude Include="sources\Renderer\VirtualCommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Buffer\VKBuffer.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Buffer\VKBufferArray.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Buffer\VKDeviceBuffer.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Buffer\VKStagingBuffer.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Buffer\VKStagingBufferPool.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Command\VKCommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Command\VKCommandContext.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Command\VKCommandQueue.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Ext\VKExtensionLoader.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Ext\VKExtensionRegistry.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Ext\VKExtensions.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Memory\VKDeviceMemory.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Memory\VKDeviceMemoryManager.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Memory\VKDeviceMemoryRegion.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Platform\Apple\CAMetalLayerBridge.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKComputePSO.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKDescriptorCache.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKDescriptorSetLayout.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKDescriptorSetWriter.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKFence.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKGraphicsPSO.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineBarrier.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineCache.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineLayout.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineLayoutPermutation.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineLayoutPermutationPool.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineState.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPoolSizeAccumulator.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPredicateQueryHeap.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKQueryHeap.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKRenderPass.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKResourceHeap.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKStagingDescriptorPool.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKStagingDescriptorSetPool.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Shader\VKShader.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Shader\VKShaderBindingLayout.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Shader\VKShaderModulePool.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKColorBuffer.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKDepthStencilBuffer.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKDeviceImage.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKImageUtils.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKRenderBuffer.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKRenderTarget.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKSampler.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKTexture.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKCore.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKDevice.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKInitializers.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKPhysicalDevice.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKPtr.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKRenderSystem.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKStaticLimits.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKSwapChain.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\VKTypes.h" />
+    <ClInclude Include="sources\Renderer\Vulkan\Vulkan.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sources\Core\BCDecompressor.cpp" />
@@ -627,6 +685,58 @@
     <ClCompile Include="sources\Renderer\TextureFlags.cpp" />
     <ClCompile Include="sources\Renderer\TextureUtils.cpp" />
     <ClCompile Include="sources\Renderer\VertexAttribute.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Buffer\VKBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Buffer\VKBufferArray.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Buffer\VKDeviceBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Buffer\VKStagingBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Buffer\VKStagingBufferPool.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Command\VKCommandBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Command\VKCommandContext.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Command\VKCommandQueue.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Ext\VKExtensionLoader.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Ext\VKExtensionRegistry.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Ext\VKExtensions.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Memory\VKDeviceMemory.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Memory\VKDeviceMemoryManager.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Memory\VKDeviceMemoryRegion.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKComputePSO.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKDescriptorCache.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKDescriptorSetLayout.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKDescriptorSetWriter.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKFence.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKGraphicsPSO.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineBarrier.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineCache.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineLayout.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineLayoutPermutation.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineLayoutPermutationPool.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineState.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPoolSizeAccumulator.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPredicateQueryHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKQueryHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKRenderPass.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKResourceHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKStagingDescriptorPool.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKStagingDescriptorSetPool.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Shader\VKShader.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Shader\VKShaderBindingLayout.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Shader\VKShaderModulePool.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKColorBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKDepthStencilBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKDeviceImage.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKImageUtils.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKRenderBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKRenderTarget.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKSampler.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKTexture.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\VKCore.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\VKDevice.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\VKInitializers.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\VKModuleInterface.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\VKPhysicalDevice.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\VKRenderSystem.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\VKSwapChain.cpp" />
+    <ClCompile Include="sources\Renderer\Vulkan\VKTypes.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

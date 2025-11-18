@@ -11,6 +11,7 @@
 #include "../../Core/Assertion.h"
 #include <LLGL/Platform/NativeHandle.h>
 #include <LLGL/Platform/Platform.h>
+#include <shellapi.h>  // For DragAcceptFiles
 
 
 namespace LLGL

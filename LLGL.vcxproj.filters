@@ -160,6 +160,36 @@
     <Filter Include="sources\Renderer\SPIRV">
       <UniqueIdentifier>{D29E4953-BE98-72A5-A705-09B6939ED811}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sources\Renderer\Vulkan">
+      <UniqueIdentifier>{0F1B2EC6-7B52-765D-845C-DA80F0129D56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Vulkan\Buffer">
+      <UniqueIdentifier>{18B621D4-04DC-EB3A-ED21-7106D9E61007}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Vulkan\Command">
+      <UniqueIdentifier>{1D33D697-8916-E5D7-9219-1314FE7BAB28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Vulkan\Ext">
+      <UniqueIdentifier>{CF05EE16-3B13-1CFD-C4F9-17E83006E8B3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Vulkan\Memory">
+      <UniqueIdentifier>{97EBACEC-8311-7753-6C57-FC1E581C9C1F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Vulkan\Platform">
+      <UniqueIdentifier>{4338898F-2F89-74D1-58ED-6293449D073B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Vulkan\Platform\Apple">
+      <UniqueIdentifier>{04228BA7-F073-6297-D992-9FA7C5837B80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Vulkan\RenderState">
+      <UniqueIdentifier>{1F9F403A-8B58-ABE4-14B8-C5BE80706154}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Vulkan\Shader">
+      <UniqueIdentifier>{D563DBFA-C189-A561-AACF-2A2D9694CA2D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Vulkan\Texture">
+      <UniqueIdentifier>{6FDFEB9D-DBC2-FADD-E4C5-281A5028C12E}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="external\OpenGL\include\GL\glext.h">
@@ -1107,6 +1137,171 @@
     <ClInclude Include="sources\Renderer\VirtualCommandBuffer.h">
       <Filter>sources\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Buffer\VKBuffer.h">
+      <Filter>sources\Renderer\Vulkan\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Buffer\VKBufferArray.h">
+      <Filter>sources\Renderer\Vulkan\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Buffer\VKDeviceBuffer.h">
+      <Filter>sources\Renderer\Vulkan\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Buffer\VKStagingBuffer.h">
+      <Filter>sources\Renderer\Vulkan\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Buffer\VKStagingBufferPool.h">
+      <Filter>sources\Renderer\Vulkan\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Command\VKCommandBuffer.h">
+      <Filter>sources\Renderer\Vulkan\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Command\VKCommandContext.h">
+      <Filter>sources\Renderer\Vulkan\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Command\VKCommandQueue.h">
+      <Filter>sources\Renderer\Vulkan\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Ext\VKExtensionLoader.h">
+      <Filter>sources\Renderer\Vulkan\Ext</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Ext\VKExtensionRegistry.h">
+      <Filter>sources\Renderer\Vulkan\Ext</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Ext\VKExtensions.h">
+      <Filter>sources\Renderer\Vulkan\Ext</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Memory\VKDeviceMemory.h">
+      <Filter>sources\Renderer\Vulkan\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Memory\VKDeviceMemoryManager.h">
+      <Filter>sources\Renderer\Vulkan\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Memory\VKDeviceMemoryRegion.h">
+      <Filter>sources\Renderer\Vulkan\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Platform\Apple\CAMetalLayerBridge.h">
+      <Filter>sources\Renderer\Vulkan\Platform\Apple</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKComputePSO.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKDescriptorCache.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKDescriptorSetLayout.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKDescriptorSetWriter.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKFence.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKGraphicsPSO.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineBarrier.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineCache.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineLayout.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineLayoutPermutation.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineLayoutPermutationPool.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPipelineState.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPoolSizeAccumulator.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKPredicateQueryHeap.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKQueryHeap.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKRenderPass.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKResourceHeap.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKStagingDescriptorPool.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\RenderState\VKStagingDescriptorSetPool.h">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Shader\VKShader.h">
+      <Filter>sources\Renderer\Vulkan\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Shader\VKShaderBindingLayout.h">
+      <Filter>sources\Renderer\Vulkan\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Shader\VKShaderModulePool.h">
+      <Filter>sources\Renderer\Vulkan\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKColorBuffer.h">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKDepthStencilBuffer.h">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKDeviceImage.h">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKImageUtils.h">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKRenderBuffer.h">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKRenderTarget.h">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKSampler.h">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Texture\VKTexture.h">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKCore.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKDevice.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKInitializers.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKPhysicalDevice.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKPtr.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKRenderSystem.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKStaticLimits.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKSwapChain.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\VKTypes.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Vulkan\Vulkan.h">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sources\Core\BCDecompressor.cpp">
@@ -1600,6 +1795,162 @@
     </ClCompile>
     <ClCompile Include="sources\Renderer\VertexAttribute.cpp">
       <Filter>sources\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Buffer\VKBuffer.cpp">
+      <Filter>sources\Renderer\Vulkan\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Buffer\VKBufferArray.cpp">
+      <Filter>sources\Renderer\Vulkan\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Buffer\VKDeviceBuffer.cpp">
+      <Filter>sources\Renderer\Vulkan\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Buffer\VKStagingBuffer.cpp">
+      <Filter>sources\Renderer\Vulkan\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Buffer\VKStagingBufferPool.cpp">
+      <Filter>sources\Renderer\Vulkan\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Command\VKCommandBuffer.cpp">
+      <Filter>sources\Renderer\Vulkan\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Command\VKCommandContext.cpp">
+      <Filter>sources\Renderer\Vulkan\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Command\VKCommandQueue.cpp">
+      <Filter>sources\Renderer\Vulkan\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Ext\VKExtensionLoader.cpp">
+      <Filter>sources\Renderer\Vulkan\Ext</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Ext\VKExtensionRegistry.cpp">
+      <Filter>sources\Renderer\Vulkan\Ext</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Ext\VKExtensions.cpp">
+      <Filter>sources\Renderer\Vulkan\Ext</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Memory\VKDeviceMemory.cpp">
+      <Filter>sources\Renderer\Vulkan\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Memory\VKDeviceMemoryManager.cpp">
+      <Filter>sources\Renderer\Vulkan\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Memory\VKDeviceMemoryRegion.cpp">
+      <Filter>sources\Renderer\Vulkan\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKComputePSO.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKDescriptorCache.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKDescriptorSetLayout.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKDescriptorSetWriter.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKFence.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKGraphicsPSO.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineBarrier.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineCache.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineLayout.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineLayoutPermutation.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineLayoutPermutationPool.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPipelineState.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPoolSizeAccumulator.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKPredicateQueryHeap.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKQueryHeap.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKRenderPass.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKResourceHeap.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKStagingDescriptorPool.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\RenderState\VKStagingDescriptorSetPool.cpp">
+      <Filter>sources\Renderer\Vulkan\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Shader\VKShader.cpp">
+      <Filter>sources\Renderer\Vulkan\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Shader\VKShaderBindingLayout.cpp">
+      <Filter>sources\Renderer\Vulkan\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Shader\VKShaderModulePool.cpp">
+      <Filter>sources\Renderer\Vulkan\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKColorBuffer.cpp">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKDepthStencilBuffer.cpp">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKDeviceImage.cpp">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKImageUtils.cpp">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKRenderBuffer.cpp">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKRenderTarget.cpp">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKSampler.cpp">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\Texture\VKTexture.cpp">
+      <Filter>sources\Renderer\Vulkan\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\VKCore.cpp">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\VKDevice.cpp">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\VKInitializers.cpp">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\VKModuleInterface.cpp">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\VKPhysicalDevice.cpp">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\VKRenderSystem.cpp">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\VKSwapChain.cpp">
+      <Filter>sources\Renderer\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Vulkan\VKTypes.cpp">
+      <Filter>sources\Renderer\Vulkan</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
