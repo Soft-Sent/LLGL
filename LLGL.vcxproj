@@ -75,7 +75,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;NOMINMAX;WIN32_LEAN_AND_MEAN;LLGL_BUILD_RENDERER_OPENGL;LLGL_BUILD_RENDERER_VULKAN;LLGL_OPENGL;LLGL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;NOMINMAX;WIN32_LEAN_AND_MEAN;LLGL_BUILD_RENDERER_DIRECT3D12;LLGL_BUILD_RENDERER_OPENGL;LLGL_BUILD_RENDERER_VULKAN;LLGL_OPENGL;LLGL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>include;external\OpenGL\include;external\SPIRV-Headers\include;external\GaussianLib\include;D:\VulkanSDK\1.4.309.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
@@ -90,7 +90,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;opengl32.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;dxgi.lib;d3d12.lib;dxguid.lib;d3dcompiler.lib;opengl32.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>D:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
@@ -98,7 +98,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;NOMINMAX;WIN32_LEAN_AND_MEAN;LLGL_BUILD_RENDERER_OPENGL;LLGL_BUILD_RENDERER_VULKAN;LLGL_OPENGL;LLGL_RELEASE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;NOMINMAX;WIN32_LEAN_AND_MEAN;LLGL_BUILD_RENDERER_DIRECT3D12;LLGL_BUILD_RENDERER_OPENGL;LLGL_BUILD_RENDERER_VULKAN;LLGL_OPENGL;LLGL_RELEASE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>include;external\OpenGL\include;external\SPIRV-Headers\include;external\GaussianLib\include;D:\VulkanSDK\1.4.309.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -116,7 +116,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;opengl32.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;dxgi.lib;d3d12.lib;dxguid.lib;d3dcompiler.lib;opengl32.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>D:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
@@ -124,7 +124,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;NOMINMAX;WIN32_LEAN_AND_MEAN;LLGL_BUILD_RENDERER_OPENGL;LLGL_BUILD_RENDERER_VULKAN;LLGL_OPENGL;LLGL_DISTRIBUTION;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LLGL_BUILD_STATIC_LIB;LLGL_PLATFORM_WINDOWS;NOMINMAX;WIN32_LEAN_AND_MEAN;LLGL_BUILD_RENDERER_DIRECT3D12;LLGL_BUILD_RENDERER_OPENGL;LLGL_BUILD_RENDERER_VULKAN;LLGL_OPENGL;LLGL_DISTRIBUTION;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>include;external\OpenGL\include;external\SPIRV-Headers\include;external\GaussianLib\include;D:\VulkanSDK\1.4.309.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>Full</Optimization>
@@ -144,7 +144,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;opengl32.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;shell32.lib;ole32.lib;oleaut32.lib;advapi32.lib;dxgi.lib;d3d12.lib;dxguid.lib;d3dcompiler.lib;opengl32.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>D:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
@@ -350,6 +350,12 @@
     <ClInclude Include="sources\Renderer\BuildID.h" />
     <ClInclude Include="sources\Renderer\CheckedCast.h" />
     <ClInclude Include="sources\Renderer\ContainerTypes.h" />
+    <ClInclude Include="sources\Renderer\DXCommon\ComPtr.h" />
+    <ClInclude Include="sources\Renderer\DXCommon\DXC\DXCInstance.h" />
+    <ClInclude Include="sources\Renderer\DXCommon\DXCore.h" />
+    <ClInclude Include="sources\Renderer\DXCommon\DXManagedComPtrArray.h" />
+    <ClInclude Include="sources\Renderer\DXCommon\DXShaderReflection.h" />
+    <ClInclude Include="sources\Renderer\DXCommon\DXTypes.h" />
     <ClInclude Include="sources\Renderer\DebugLayer\Buffer\DbgBuffer.h" />
     <ClInclude Include="sources\Renderer\DebugLayer\Buffer\DbgBufferArray.h" />
     <ClInclude Include="sources\Renderer\DebugLayer\DbgCommandBuffer.h" />
@@ -367,6 +373,50 @@
     <ClInclude Include="sources\Renderer\DebugLayer\Shader\DbgShader.h" />
     <ClInclude Include="sources\Renderer\DebugLayer\Texture\DbgRenderTarget.h" />
     <ClInclude Include="sources\Renderer\DebugLayer\Texture\DbgTexture.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12Buffer.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12BufferArray.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12BufferConstantsPool.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12CPUAccessBuffer.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12IntermediateBufferPool.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12StagingBuffer.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12StagingBufferPool.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Command\D3D12CommandContext.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Command\D3D12CommandQueue.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Command\D3D12SignatureFactory.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12Device.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12ObjectUtils.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12RenderSystem.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12Resource.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12SubresourceContext.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12SwapChain.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12Types.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\D3DX12\d3dx12.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12ComputePSO.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12DescriptorCache.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12DescriptorHeap.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12Fence.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12GraphicsPSO.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12MeshPSO.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineCache.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineLayout.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineState.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineStateUtils.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12QueryHeap.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12RenderPSOBase.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12RenderPass.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12ResourceHeap.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeap.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeapPool.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\Builtin\D3D12Builtin.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\D3D12BuiltinShaderFactory.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\D3D12RootParameter.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\D3D12RootSignature.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\D3D12Shader.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Texture\D3D12RenderTarget.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Texture\D3D12Sampler.h" />
+    <ClInclude Include="sources\Renderer\Direct3D12\Texture\D3D12Texture.h" />
     <ClInclude Include="sources\Renderer\DynamicModuleInterface.h" />
     <ClInclude Include="sources\Renderer\ModuleInterface.h" />
     <ClInclude Include="sources\Renderer\OpenGL\Buffer\GL2XSharedContextVertexArray.h" />
@@ -567,6 +617,10 @@
     <ClCompile Include="sources\Renderer\BufferArray.cpp" />
     <ClCompile Include="sources\Renderer\BufferFlags.cpp" />
     <ClCompile Include="sources\Renderer\BufferUtils.cpp" />
+    <ClCompile Include="sources\Renderer\DXCommon\DXC\DXCInstance.cpp" />
+    <ClCompile Include="sources\Renderer\DXCommon\DXCore.cpp" />
+    <ClCompile Include="sources\Renderer\DXCommon\DXShaderReflection.cpp" />
+    <ClCompile Include="sources\Renderer\DXCommon\DXTypes.cpp" />
     <ClCompile Include="sources\Renderer\DebugLayer\Buffer\DbgBuffer.cpp" />
     <ClCompile Include="sources\Renderer\DebugLayer\Buffer\DbgBufferArray.cpp" />
     <ClCompile Include="sources\Renderer\DebugLayer\DbgCommandBuffer.cpp" />
@@ -582,6 +636,48 @@
     <ClCompile Include="sources\Renderer\DebugLayer\Shader\DbgShader.cpp" />
     <ClCompile Include="sources\Renderer\DebugLayer\Texture\DbgRenderTarget.cpp" />
     <ClCompile Include="sources\Renderer\DebugLayer\Texture\DbgTexture.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12Buffer.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12BufferArray.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12BufferConstantsPool.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12CPUAccessBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12IntermediateBufferPool.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12StagingBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12StagingBufferPool.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Command\D3D12CommandContext.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Command\D3D12CommandQueue.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Command\D3D12SignatureFactory.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12Device.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12ModuleInterface.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12ObjectUtils.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12RenderSystem.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12SubresourceContext.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12SwapChain.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12Types.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12ComputePSO.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12DescriptorCache.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12DescriptorHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12Fence.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12GraphicsPSO.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12MeshPSO.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineCache.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineLayout.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineState.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineStateUtils.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12QueryHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12RenderPSOBase.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12RenderPass.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12ResourceHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeap.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeapPool.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Shader\D3D12BuiltinShaderFactory.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Shader\D3D12RootParameter.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Shader\D3D12RootSignature.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Shader\D3D12Shader.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Texture\D3D12RenderTarget.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Texture\D3D12Sampler.cpp" />
+    <ClCompile Include="sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp" />
     <ClCompile Include="sources\Renderer\Format.cpp" />
     <ClCompile Include="sources\Renderer\OpenGL\Buffer\GL2XSharedContextVertexArray.cpp" />
     <ClCompile Include="sources\Renderer\OpenGL\Buffer\GL3PlusSharedContextVertexArray.cpp" />

@@ -106,6 +106,12 @@
     <Filter Include="sources\Renderer">
       <UniqueIdentifier>{6FC04B45-5BB9-6A97-84EB-4F1C70434AA3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sources\Renderer\DXCommon">
+      <UniqueIdentifier>{63C0D255-CF82-06E0-1833-956C8434DFBD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\DXCommon\DXC">
+      <UniqueIdentifier>{912C4D88-FD44-34B2-C6F1-C34B32C9C84B}</UniqueIdentifier>
+    </Filter>
     <Filter Include="sources\Renderer\DebugLayer">
       <UniqueIdentifier>{82C85059-EED5-7E3F-77BC-7A2AE3C84AF6}</UniqueIdentifier>
     </Filter>
@@ -120,6 +126,30 @@
     </Filter>
     <Filter Include="sources\Renderer\DebugLayer\Texture">
       <UniqueIdentifier>{E24F529F-4E09-BD49-D768-D723432173B9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D12">
+      <UniqueIdentifier>{531E2119-BF2B-4FFF-4812-4BEAB41E1BB6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D12\Buffer">
+      <UniqueIdentifier>{DCE4AF7E-C820-B3E8-3133-CBDF1D8E5B03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D12\Command">
+      <UniqueIdentifier>{613A2A94-CDF3-943E-5653-AF18C20B4BAE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D12\D3DX12">
+      <UniqueIdentifier>{78FD9C7E-6439-A0E8-CD4B-B8DFB9A64803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D12\RenderState">
+      <UniqueIdentifier>{63A80EC4-CF37-D0AE-D833-B1C644420BBB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D12\Shader">
+      <UniqueIdentifier>{999269A5-85CE-6C0F-EEE0-8406DA3B152A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D12\Shader\Builtin">
+      <UniqueIdentifier>{7FAD69E6-6B15-30B4-D480-44CAC00747A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\Renderer\Direct3D12\Texture">
+      <UniqueIdentifier>{B3E63F9A-1FA0-AA44-A8FF-C41E14B860B4}</UniqueIdentifier>
     </Filter>
     <Filter Include="sources\Renderer\OpenGL">
       <UniqueIdentifier>{C3B67BB5-2FEE-C34C-38F8-2770A4AEEA45}</UniqueIdentifier>
@@ -795,6 +825,24 @@
     <ClInclude Include="sources\Renderer\ContainerTypes.h">
       <Filter>sources\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="sources\Renderer\DXCommon\ComPtr.h">
+      <Filter>sources\Renderer\DXCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\DXCommon\DXC\DXCInstance.h">
+      <Filter>sources\Renderer\DXCommon\DXC</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\DXCommon\DXCore.h">
+      <Filter>sources\Renderer\DXCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\DXCommon\DXManagedComPtrArray.h">
+      <Filter>sources\Renderer\DXCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\DXCommon\DXShaderReflection.h">
+      <Filter>sources\Renderer\DXCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\DXCommon\DXTypes.h">
+      <Filter>sources\Renderer\DXCommon</Filter>
+    </ClInclude>
     <ClInclude Include="sources\Renderer\DebugLayer\Buffer\DbgBuffer.h">
       <Filter>sources\Renderer\DebugLayer\Buffer</Filter>
     </ClInclude>
@@ -845,6 +893,138 @@
     </ClInclude>
     <ClInclude Include="sources\Renderer\DebugLayer\Texture\DbgTexture.h">
       <Filter>sources\Renderer\DebugLayer\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12Buffer.h">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12BufferArray.h">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12BufferConstantsPool.h">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12CPUAccessBuffer.h">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12IntermediateBufferPool.h">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12StagingBuffer.h">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Buffer\D3D12StagingBufferPool.h">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.h">
+      <Filter>sources\Renderer\Direct3D12\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Command\D3D12CommandContext.h">
+      <Filter>sources\Renderer\Direct3D12\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Command\D3D12CommandQueue.h">
+      <Filter>sources\Renderer\Direct3D12\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Command\D3D12SignatureFactory.h">
+      <Filter>sources\Renderer\Direct3D12\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12Device.h">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12ObjectUtils.h">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12RenderSystem.h">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12Resource.h">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12SubresourceContext.h">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12SwapChain.h">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\D3D12Types.h">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\D3DX12\d3dx12.h">
+      <Filter>sources\Renderer\Direct3D12\D3DX12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12ComputePSO.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12DescriptorCache.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12DescriptorHeap.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12Fence.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12GraphicsPSO.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12MeshPSO.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineCache.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineLayout.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineState.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineStateUtils.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12QueryHeap.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12RenderPSOBase.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12RenderPass.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12ResourceHeap.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeap.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeapPool.h">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\Builtin\D3D12Builtin.h">
+      <Filter>sources\Renderer\Direct3D12\Shader\Builtin</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\D3D12BuiltinShaderFactory.h">
+      <Filter>sources\Renderer\Direct3D12\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\D3D12RootParameter.h">
+      <Filter>sources\Renderer\Direct3D12\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\D3D12RootSignature.h">
+      <Filter>sources\Renderer\Direct3D12\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Shader\D3D12Shader.h">
+      <Filter>sources\Renderer\Direct3D12\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.h">
+      <Filter>sources\Renderer\Direct3D12\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Texture\D3D12RenderTarget.h">
+      <Filter>sources\Renderer\Direct3D12\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Texture\D3D12Sampler.h">
+      <Filter>sources\Renderer\Direct3D12\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Renderer\Direct3D12\Texture\D3D12Texture.h">
+      <Filter>sources\Renderer\Direct3D12\Texture</Filter>
     </ClInclude>
     <ClInclude Include="sources\Renderer\DynamicModuleInterface.h">
       <Filter>sources\Renderer</Filter>
@@ -1442,6 +1622,18 @@
     <ClCompile Include="sources\Renderer\BufferUtils.cpp">
       <Filter>sources\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="sources\Renderer\DXCommon\DXC\DXCInstance.cpp">
+      <Filter>sources\Renderer\DXCommon\DXC</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\DXCommon\DXCore.cpp">
+      <Filter>sources\Renderer\DXCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\DXCommon\DXShaderReflection.cpp">
+      <Filter>sources\Renderer\DXCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\DXCommon\DXTypes.cpp">
+      <Filter>sources\Renderer\DXCommon</Filter>
+    </ClCompile>
     <ClCompile Include="sources\Renderer\DebugLayer\Buffer\DbgBuffer.cpp">
       <Filter>sources\Renderer\DebugLayer\Buffer</Filter>
     </ClCompile>
@@ -1486,6 +1678,132 @@
     </ClCompile>
     <ClCompile Include="sources\Renderer\DebugLayer\Texture\DbgTexture.cpp">
       <Filter>sources\Renderer\DebugLayer\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12Buffer.cpp">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12BufferArray.cpp">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12BufferConstantsPool.cpp">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12CPUAccessBuffer.cpp">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12IntermediateBufferPool.cpp">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12StagingBuffer.cpp">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Buffer\D3D12StagingBufferPool.cpp">
+      <Filter>sources\Renderer\Direct3D12\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Command\D3D12CommandBuffer.cpp">
+      <Filter>sources\Renderer\Direct3D12\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Command\D3D12CommandContext.cpp">
+      <Filter>sources\Renderer\Direct3D12\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Command\D3D12CommandQueue.cpp">
+      <Filter>sources\Renderer\Direct3D12\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Command\D3D12SignatureFactory.cpp">
+      <Filter>sources\Renderer\Direct3D12\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12Device.cpp">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12ModuleInterface.cpp">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12ObjectUtils.cpp">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12RenderSystem.cpp">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12SubresourceContext.cpp">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12SwapChain.cpp">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\D3D12Types.cpp">
+      <Filter>sources\Renderer\Direct3D12</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12ComputePSO.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12DescriptorCache.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12DescriptorHeap.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12Fence.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12GraphicsPSO.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12MeshPSO.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineCache.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineLayout.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineState.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12PipelineStateUtils.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12QueryHeap.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12RenderPSOBase.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12RenderPass.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12ResourceHeap.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeap.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\RenderState\D3D12StagingDescriptorHeapPool.cpp">
+      <Filter>sources\Renderer\Direct3D12\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Shader\D3D12BuiltinShaderFactory.cpp">
+      <Filter>sources\Renderer\Direct3D12\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Shader\D3D12RootParameter.cpp">
+      <Filter>sources\Renderer\Direct3D12\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Shader\D3D12RootSignature.cpp">
+      <Filter>sources\Renderer\Direct3D12\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Shader\D3D12Shader.cpp">
+      <Filter>sources\Renderer\Direct3D12\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Texture\D3D12MipGenerator.cpp">
+      <Filter>sources\Renderer\Direct3D12\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Texture\D3D12RenderTarget.cpp">
+      <Filter>sources\Renderer\Direct3D12\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Texture\D3D12Sampler.cpp">
+      <Filter>sources\Renderer\Direct3D12\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Renderer\Direct3D12\Texture\D3D12Texture.cpp">
+      <Filter>sources\Renderer\Direct3D12\Texture</Filter>
     </ClCompile>
     <ClCompile Include="sources\Renderer\Format.cpp">
       <Filter>sources\Renderer</Filter>
