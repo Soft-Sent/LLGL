@@ -540,6 +540,7 @@ bool LoadSupportedOpenGLExtensions(bool /*isCoreProfile*/, bool abortOnFailure)
 
     /* Enable hardware buffer extensions */
     ENABLE_GLEXT( ARB_vertex_buffer_object         );
+    ENABLE_GLEXT( ARB_vertex_array_object          );
     ENABLE_GLEXT( ARB_vertex_shader                );
     ENABLE_GLEXT( EXT_framebuffer_object           );
     ENABLE_GLEXT( ARB_map_buffer_range             );

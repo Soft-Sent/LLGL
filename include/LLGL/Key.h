@@ -192,6 +192,15 @@ enum class Key
     PA1,
     OEMClear,
 
+    /* Punctuation / OEM keys (needed for macOS keycode map & text input) */
+    Quote,              //!< '\'' / '"'
+    Semicolon,          //!< ';' / ':'
+    Slash,              //!< '/' / '?'
+    Backslash,          //!< '\\' / '|'
+    LeftBracket,        //!< '[' / '{'
+    RightBracket,       //!< ']' / '}'
+    Grave,              //!< '`' / '~'
+
     Any,                //!< Refers to any key
 };
 

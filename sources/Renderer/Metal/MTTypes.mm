@@ -590,6 +590,7 @@ Format ToFormat(const MTLPixelFormat pixelFormat)
 
         /* --- RGBA color formats --- */
         case MTLPixelFormatRGBA8Unorm:        		return Format::RGBA8UNorm;
+        case MTLPixelFormatRGBA8Unorm_sRGB:   		return Format::RGBA8UNorm_sRGB;
         case MTLPixelFormatRGBA8Snorm:        		return Format::RGBA8SNorm;
         case MTLPixelFormatRGBA8Uint:         		return Format::RGBA8UInt;
         case MTLPixelFormatRGBA8Sint:         		return Format::RGBA8SInt;

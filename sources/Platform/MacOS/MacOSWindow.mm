@@ -73,6 +73,20 @@ bool Surface::ProcessEvents()
     /* Process NSWindow events with latest event types */
     while (NSEvent* event = [NSApp nextEventMatchingMask:g_EventMaskAny untilDate:nil inMode:NSDefaultRunLoopMode dequeue:YES])
     {
+        const NSEventType eventType = [event type];
+
+        /*
+        KeyDown/KeyUp are filtered from sendEvent: to avoid the system beep when the
+        first responder does not handle the key. That also prevents NSMenu from ever
+        seeing key equivalents (Cmd+Q, Cmd+H, Cmd+S, …). Dispatch menu shortcuts first.
+        */
+        if (eventType == g_EventTypeKeyDown)
+        {
+            NSMenu* mainMenu = [NSApp mainMenu];
+            if (mainMenu != nil && [mainMenu performKeyEquivalent:event])
+                continue;
+        }
+
         if (NSWindow* wnd = [event window])
         {
             /* Process this event for the respective MacOSWindow if its delegate is of type MacOSWindowDelegate */
@@ -85,7 +99,7 @@ bool Surface::ProcessEvents()
         }
         
         /* Filter events we handle ourselves to avoid 'failure sounds' when keys are pressed */
-        if (IsFilteredNSEventType([event type]))
+        if (IsFilteredNSEventType(eventType))
             continue;
 
         [NSApp sendEvent:event];
@@ -477,21 +491,52 @@ void MacOSWindow::ProcessKeyEvent(NSEvent* event, bool down)
     // Post character event
     if (down)
     {
+        unsigned int chr = 0;
         NSString* str = [event characters];
-
         if (str != nil && [str length] > 0)
+            chr = [str characterAtIndex:0];
+
+        // Dead-key / IME layouts often yield empty or control `characters` for Quote etc.
+        // Fall back to charactersIgnoringModifiers and apply Shift for known keycodes.
+        const bool isPrintable = (chr >= 0x20 && chr != 0x7F && chr < 0xF700);
+        if (!isPrintable)
         {
-            unsigned int chr = [str characterAtIndex:0];
-            PostChar(static_cast<wchar_t>(chr));
+            NSString* raw = [event charactersIgnoringModifiers];
+            unsigned int rawChr = 0;
+            if (raw != nil && [raw length] > 0)
+                rawChr = [raw characterAtIndex:0];
+
+            const unsigned short keyCode = [event keyCode];
+            const bool shift = ([event modifierFlags] & NSEventModifierFlagShift) != 0;
+
+            if (keyCode == 0x27)      // Quote
+                chr = shift ? (unsigned)'"' : (unsigned)'\'';
+            else if (keyCode == 0x29) // Semicolon
+                chr = shift ? (unsigned)':' : (unsigned)';';
+            else if (keyCode == 0x2c) // Slash
+                chr = shift ? (unsigned)'?' : (unsigned)'/';
+            else if (keyCode == 0x2a) // Backslash
+                chr = shift ? (unsigned)'|' : (unsigned)'\\';
+            else if (keyCode == 0x21) // Left bracket
+                chr = shift ? (unsigned)'{' : (unsigned)'[';
+            else if (keyCode == 0x1e) // Right bracket
+                chr = shift ? (unsigned)'}' : (unsigned)']';
+            else if (keyCode == 0x32) // Grave
+                chr = shift ? (unsigned)'~' : (unsigned)'`';
+            else if (rawChr >= 0x20 && rawChr != 0x7F && rawChr < 0xF700)
+                chr = rawChr;
         }
 
-        //TODO: don't release? if released, app crashes on MacOS when functions keys are pressed (i.e. F1 - F12)
-        //[str release];
+        if (chr >= 0x20 && chr != 0x7F && chr < 0xF700)
+            PostChar(static_cast<wchar_t>(chr));
     }
 
-    // Post key up/down event
+    // Post key up/down event (skip Any = unmapped)
     unsigned short keyCode = [event keyCode];
     Key key = MapKey(keyCode);
+
+    if (key == Key::Any)
+        return;
 
     if (down)
         PostKeyDown(key);

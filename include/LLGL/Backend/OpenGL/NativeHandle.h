@@ -15,11 +15,17 @@
 #   include <GL/GL.h>
 #   include <LLGL/Backend/OpenGL/Win32/Win32NativeHandle.h>
 #elif defined(LLGL_OS_MACOS)
-#   include <AvailabilityMacros.h>
-#   if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_7
-#       include <OpenGL/gl3.h>
+// System <OpenGL/gl3.h> conflicts with Glad in the same translation unit (duplicate GL types / macros).
+// CristalEngine sets LLGL_OPENGL_USE_GLAD_HEADER on macOS when using Glad as the sole GL loader.
+#   if defined(LLGL_OPENGL_USE_GLAD_HEADER)
+#       include <glad/glad.h>
 #   else
-#       include <OpenGL/gl.h>
+#       include <AvailabilityMacros.h>
+#       if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_7
+#           include <OpenGL/gl3.h>
+#       else
+#           include <OpenGL/gl.h>
+#       endif
 #   endif
 #   include <LLGL/Backend/OpenGL/MacOS/MacOSNativeHandle.h>
 #elif defined(LLGL_OS_LINUX)

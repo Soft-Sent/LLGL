@@ -180,7 +180,22 @@ static void GLGetSupportedTextureFormats(std::vector<Format>& textureFormats)
 static void GLGetSupportedFeatures(RenderingFeatures& features)
 {
     /* Query all boolean capabilies by their respective OpenGL extension */
-    features.hasRenderTargets               = HasExtension(GLExt::ARB_framebuffer_object);
+    GLint glMajor = 0, glMinor = 0;
+    glGetIntegerv(GL_MAJOR_VERSION, &glMajor);
+    glGetIntegerv(GL_MINOR_VERSION, &glMinor);
+    /* GL_MAJOR_VERSION is invalid on GL 2.x legacy contexts; fall back to GL_VERSION string. */
+    if (glMajor == 0 && glMinor == 0)
+    {
+        if (const GLubyte* ver = glGetString(GL_VERSION))
+            ParseGLVersionString(ver, glMajor, glMinor);
+    }
+    /* FBOs are core in OpenGL 3.0+; GL 2.x typically exposes GL_EXT_framebuffer_object. */
+    (void)glMinor;
+    const bool framebufferObjectsCore = (glMajor >= 3);
+    features.hasRenderTargets               =
+        HasExtension(GLExt::ARB_framebuffer_object) ||
+        HasExtension(GLExt::EXT_framebuffer_object) ||
+        framebufferObjectsCore;
     features.has3DTextures                  = HasExtension(GLExt::EXT_texture3D);
     features.hasCubeTextures                = HasExtension(GLExt::ARB_texture_cube_map);
     features.hasArrayTextures               = false;

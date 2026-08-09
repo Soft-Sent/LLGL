@@ -16,6 +16,7 @@
 #include <LLGL/Platform/NativeHandle.h>
 #include <LLGL/Backend/OpenGL/NativeHandle.h>
 #include <LLGL/Log.h>
+#include <LLGL/RendererConfiguration.h>
 
 
 namespace LLGL
@@ -103,8 +104,6 @@ bool MacOSGLContext::SetSwapInterval(int interval)
     return true;
 }
 
-#if !LLGL_GL_ENABLE_OPENGL2X
-
 static NSOpenGLPixelFormatAttribute TranslateNSOpenGLProfile(const RendererConfigurationOpenGL& profile)
 {
     if (profile.contextProfile == OpenGLContextProfile::CompatibilityProfile)
@@ -126,17 +125,26 @@ static NSOpenGLPixelFormatAttribute TranslateNSOpenGLProfile(const RendererConfi
             return NSOpenGLProfileVersion3_2Core;
         }
     }
-    
+
     LLGL_TRAP("failed to choose OpenGL profile (only compatibility profile, 3.2 core profile, and 4.1 core profile are supported)");
 }
 
-#endif // /!LLGL_GL_ENABLE_OPENGL2X
+/* Always pass NSOpenGLPFAOpenGLProfile. Omitting it (old LLGL_GL_ENABLE_OPENGL2X path) lets the OS pick a
+   legacy 2.1 context where GLSL #version 330+ is rejected — even though the app uses "core" shaders. */
+static NSOpenGLPixelFormatAttribute SelectMacOpenGLProfile(const RendererConfigurationOpenGL& profile)
+{
+    #if LLGL_GL_ENABLE_OPENGL2X
+    /* GLCompat build: fixed-function / GL2.x API — explicit legacy profile (GLSL 1.20-style). */
+    (void)profile;
+    return NSOpenGLProfileVersionLegacy;
+    #else
+    return TranslateNSOpenGLProfile(profile);
+    #endif
+}
 
 bool MacOSGLContext::CreatePixelFormat(const GLPixelFormat& pixelFormat, const RendererConfigurationOpenGL& profile)
 {
-    #if !LLGL_GL_ENABLE_OPENGL2X
-    const NSOpenGLPixelFormatAttribute profileAttrib = TranslateNSOpenGLProfile(profile);
-    #endif
+    const NSOpenGLPixelFormatAttribute profileAttrib = SelectMacOpenGLProfile(profile);
 
     /* Find suitable pixel format (for samples > 0) */
     for (samples_ = std::max<int>(1, pixelFormat.samples); samples_ > 0; --samples_)
@@ -145,9 +153,7 @@ bool MacOSGLContext::CreatePixelFormat(const GLPixelFormat& pixelFormat, const R
         {
             NSOpenGLPFAAccelerated,
             NSOpenGLPFADoubleBuffer,
-            #if !LLGL_GL_ENABLE_OPENGL2X
             NSOpenGLPFAOpenGLProfile,   profileAttrib,
-            #endif
             NSOpenGLPFADepthSize,       static_cast<NSOpenGLPixelFormatAttribute>(pixelFormat.depthBits),
             NSOpenGLPFAStencilSize,     static_cast<NSOpenGLPixelFormatAttribute>(pixelFormat.stencilBits),
             NSOpenGLPFAColorSize,       24,

@@ -13,7 +13,7 @@ namespace LLGL
 
 
 #define KEY(c) Key::c
-#define DUMMY KEY(Pause) // <-- any key, a dummy will never be used
+#define DUMMY KEY(Any) // <-- unmapped; ProcessKeyEvent skips Any
 
 static Key g_macOSKeyCodeMap[256] =
 {
@@ -41,33 +41,33 @@ static Key g_macOSKeyCodeMap[256] =
     KEY(D4                  ), // 0x15
     KEY(D6                  ), // 0x16
     KEY(D5                  ), // 0x17
-    DUMMY,//KEY(Equal               ), // 0x18
+    KEY(Plus                ), // 0x18  '=' / '+' (LLGL has no Equal; Plus is this key)
     KEY(D9                  ), // 0x19
     KEY(D7                  ), // 0x1a
     KEY(Minus               ), // 0x1b
     KEY(D8                  ), // 0x1c
     KEY(D0                  ), // 0x1d
-    DUMMY,//KEY(RightBracket        ), // 0x1e
+    KEY(RightBracket        ), // 0x1e
     KEY(O                   ), // 0x1f
     KEY(U                   ), // 0x20
-    DUMMY,//KEY(LeftBracket         ), // 0x21
+    KEY(LeftBracket         ), // 0x21
     KEY(I                   ), // 0x22
     KEY(P                   ), // 0x23
     KEY(Return              ), // 0x24
     KEY(L                   ), // 0x25
     KEY(J                   ), // 0x26
-    DUMMY,//KEY(Quote               ), // 0x27
+    KEY(Quote               ), // 0x27
     KEY(K                   ), // 0x28
-    DUMMY,//KEY(Semicolon           ), // 0x29
-    DUMMY,//KEY(Backslash           ), // 0x2a
+    KEY(Semicolon           ), // 0x29
+    KEY(Backslash           ), // 0x2a
     KEY(Comma               ), // 0x2b
-    DUMMY,//KEY(Slash               ), // 0x2c
+    KEY(Slash               ), // 0x2c
     KEY(N                   ), // 0x2d
     KEY(M                   ), // 0x2e
     KEY(Period              ), // 0x2f
     KEY(Tab                 ), // 0x30
     KEY(Space               ), // 0x31
-    DUMMY,//KEY(Grave               ), // 0x32
+    KEY(Grave               ), // 0x32
     KEY(Back                ), // 0x33
     DUMMY                    , // 0x34
     KEY(Escape              ), // 0x35

@@ -47,6 +47,40 @@ static float GLGetFloat(GLenum param)
     return attr;
 }
 
+/* GL_MAJOR_VERSION / GL_MINOR_VERSION are undefined on GL 2.x (legacy profile); queries may leave values at 0. */
+static void GLResolveContextVersion(GLint& outMajor, GLint& outMinor)
+{
+    outMajor = 0;
+    outMinor = 0;
+    glGetIntegerv(GL_MAJOR_VERSION, &outMajor);
+    glGetIntegerv(GL_MINOR_VERSION, &outMinor);
+    if (outMajor == 0 && outMinor == 0)
+    {
+        if (const GLubyte* s = glGetString(GL_VERSION))
+        {
+            GLint major = 0, minor = 0;
+            while (*s != '\0' && (*s < '0' || *s > '9'))
+                ++s;
+            while (*s >= '0' && *s <= '9')
+            {
+                major = major * 10 + (*s - '0');
+                ++s;
+            }
+            if (*s == '.')
+            {
+                ++s;
+                while (*s >= '0' && *s <= '9')
+                {
+                    minor = minor * 10 + (*s - '0');
+                    ++s;
+                }
+            }
+            outMajor = major;
+            outMinor = minor;
+        }
+    }
+}
+
 static std::vector<ShadingLanguage> GLQueryShadingLanguages()
 {
     std::vector<ShadingLanguage> languages;
@@ -184,7 +218,15 @@ static void GLGetSupportedTextureFormats(std::vector<Format>& textureFormats)
 static void GLGetSupportedFeatures(RenderingFeatures& features)
 {
     /* Query all boolean capabilies by their respective OpenGL extension */
-    features.hasRenderTargets               = HasExtension(GLExt::ARB_framebuffer_object);
+    GLint glMajor = 0, glMinor = 0;
+    GLResolveContextVersion(glMajor, glMinor);
+    /* FBOs are core in OpenGL 3.0+; legacy GL 2.x exposes GL_EXT_framebuffer_object (often without ARB in the string). */
+    (void)glMinor;
+    const bool framebufferObjectsCore = (glMajor >= 3);
+    features.hasRenderTargets               =
+        HasExtension(GLExt::ARB_framebuffer_object) ||
+        HasExtension(GLExt::EXT_framebuffer_object) ||
+        framebufferObjectsCore;
     features.has3DTextures                  = HasExtension(GLExt::EXT_texture3D);
     features.hasCubeTextures                = HasExtension(GLExt::ARB_texture_cube_map);
     features.hasArrayTextures               = HasExtension(GLExt::EXT_texture_array);

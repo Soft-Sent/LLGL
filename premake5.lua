@@ -109,7 +109,10 @@ project "LLGL"
         "LLGL_BUILD_STATIC_LIB", 
     }
 
-    if os.target() == "windows" then
+    -- Platform sources/defines must use `filter "system:..."`, not `os.target()` (host running Premake).
+    -- Otherwise Xcode/macOS builds can still list or pick up Win32 headers when projects are generated from Windows/Linux.
+
+    filter "system:windows"
         files {
             "sources/Platform/Win32/**.h",
             "sources/Platform/Win32/**.cpp",
@@ -169,7 +172,7 @@ project "LLGL"
             --"sources/Renderer/Direct3D11/**.h", 
             --"sources/Renderer/Direct3D11/**.cpp",
         }
-        
+
         removefiles {
             "include/LLGL/Platform/Android/**.h",
             "include/LLGL/Platform/IOS/**.h",
@@ -202,7 +205,7 @@ project "LLGL"
             "opengl32",
             "vulkan-1"
         }
-        
+
         -- Add Vulkan SDK library directory if available
         if VULKAN_SDK then
             libdirs {
@@ -210,26 +213,79 @@ project "LLGL"
             }
         end
 
-    elseif os.target() == "macosx" then
+    filter "system:macosx"
+        -- Apple Silicon + Xcode: Metal-first + Cocoa. (OpenGL kept for optional fallback/debug.)
         pic "On"
-        systemversion "latest"
-        defines { 
-            "LLGL_PLATFORM_MACOS", 
-            "LLGL_BUILD_RENDERER_METAL", 
-            "LLGL_BUILD_RENDERER_OPENGL" 
+        
+        externalincludedirs {
+            "sources/Renderer/SPIRV",
         }
 
-        files { 
+        -- `latest` produces `-mmacosx-version-min=latest`, which Apple clang rejects.
+        systemversion "15.0"
+
+        defines {
+            "LLGL_PLATFORM_MACOS",
+            "LLGL_BUILD_RENDERER_OPENGL",
+            "LLGL_BUILD_RENDERER_METAL",
+            "LLGL_OPENGL",
+        }
+
+        files {
             "sources/Platform/MacOS/**.h",
             "sources/Platform/MacOS/**.mm",
+            "sources/Platform/MacOS/**.cpp",
 
-            "sources/Renderer/OpenGL/**.h", 
-            "sources/Renderer/OpenGL/**.cpp", 
+            -- Core/Exception.cpp calls DebugStackTrace; POSIX implementation is shared with Linux.
+            "sources/Platform/POSIX/POSIXDebug.cpp",
+            -- ConsoleManip::Get/SetConsoleColors implementation for macOS terminals
+            "sources/Platform/POSIX/POSIXConsoleManip.cpp",
 
-            "sources/Renderer/Vulkan/**.h", 
-            "sources/Renderer/Vulkan/**.cpp", 
+            "sources/Renderer/OpenGL/GLCore.h",
+            "sources/Renderer/OpenGL/GLCore.cpp",
+            "sources/Renderer/OpenGL/GLModuleInterface.cpp",
+            "sources/Renderer/OpenGL/GLObjectUtils.cpp",
+            "sources/Renderer/OpenGL/GLRenderingCaps.h",
+            "sources/Renderer/OpenGL/GLRenderSystem.cpp",
+            "sources/Renderer/OpenGL/GLRenderSystem.h",
+            "sources/Renderer/OpenGL/GLStaticAssertions.cpp",
+            "sources/Renderer/OpenGL/GLSwapChain.cpp",
+            "sources/Renderer/OpenGL/GLSwapChain.h",
+            "sources/Renderer/OpenGL/GLTypes.cpp",
+            "sources/Renderer/OpenGL/GLTypes.h",
+            "sources/Renderer/OpenGL/OpenGL.h",
 
-            "sources/Renderer/Metal/**.h", 
+            "sources/Renderer/OpenGL/Buffer/**.h",
+            "sources/Renderer/OpenGL/Buffer/**.cpp",
+            "sources/Renderer/OpenGL/Command/**.h",
+            "sources/Renderer/OpenGL/Command/**.cpp",
+            "sources/Renderer/OpenGL/Ext/**.h",
+            "sources/Renderer/OpenGL/Ext/**.cpp",
+            "sources/Renderer/OpenGL/Platform/MacOS/**.h",
+            "sources/Renderer/OpenGL/Platform/MacOS/**.mm",
+            "sources/Renderer/OpenGL/Platform/GLContext.h",
+            "sources/Renderer/OpenGL/Platform/GLContext.cpp",
+            "sources/Renderer/OpenGL/Platform/GLContextManager.h",
+            "sources/Renderer/OpenGL/Platform/GLContextManager.cpp",
+            "sources/Renderer/OpenGL/Platform/GLSwapChainContext.h",
+            "sources/Renderer/OpenGL/Platform/GLSwapChainContext.cpp",
+
+            "sources/Renderer/OpenGL/Profile/GLProfile.h",
+            "sources/Renderer/OpenGL/Profile/GLCompat/**.h",
+            "sources/Renderer/OpenGL/Profile/GLCompat/**.cpp",
+            "sources/Renderer/OpenGL/Profile/GLCore/**.h",
+            "sources/Renderer/OpenGL/Profile/GLCore/**.cpp",
+
+            "sources/Renderer/OpenGL/RenderState/**.h",
+            "sources/Renderer/OpenGL/RenderState/**.cpp",
+            "sources/Renderer/OpenGL/Shader/**.h",
+            "sources/Renderer/OpenGL/Shader/**.cpp",
+            "sources/Renderer/OpenGL/Texture/**.h",
+            "sources/Renderer/OpenGL/Texture/**.cpp",
+
+            -- Metal renderer
+            "sources/Renderer/Metal/**.h",
+            "sources/Renderer/Metal/**.mm",
             "sources/Renderer/Metal/**.cpp",
         }
 
@@ -245,14 +301,19 @@ project "LLGL"
             "include/LLGL/Backend/Direct3D12/**.h",
         }
 
-        links { 
-            "Cocoa.framework", 
-            "QuartzCore.framework", 
-            "Metal.framework", 
-            "OpenGL.framework" 
+        links {
+            "Cocoa.framework",
+            "QuartzCore.framework",
+            "Metal.framework",
+            "MetalKit.framework",
+            "OpenGL.framework",
+            "IOKit.framework",
         }
 
-    elseif os.target() == "linux" then
+    filter { "system:macosx", "files:**.mm" }
+        compileas "Objective-C++"
+
+    filter "system:linux"
         pic "On"
         systemversion "latest"
         
@@ -265,6 +326,8 @@ project "LLGL"
         files { 
             "sources/Platform/Linux/**.h",
             "sources/Platform/Linux/**.cpp",
+
+            "sources/Platform/POSIX/POSIXDebug.cpp",
 
             "sources/Renderer/OpenGL/**.h", 
             "sources/Renderer/OpenGL/**.cpp", 
@@ -290,7 +353,8 @@ project "LLGL"
             "X11", "Xrandr", "dl", "pthread", 
             "GL", "vulkan" 
         }
-    end
+
+    filter {}
 
     filter "configurations:Debug"
         runtime "Debug"

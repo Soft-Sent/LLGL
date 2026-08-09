@@ -28,6 +28,7 @@
 #include "../../Core/Assertion.h"
 #include "../../Platform/Debug.h"
 #include "GLRenderingCaps.h"
+#include "Platform/GLContext.h"
 #include "Ext/GLExtensionLoader.h"
 #include "Command/GLImmediateCommandBuffer.h"
 #include "Command/GLDeferredCommandBuffer.h"
@@ -602,7 +603,10 @@ bool GLRenderSystem::GetNativeHandle(void* nativeHandle, std::size_t nativeHandl
 
 void GLRenderSystem::CreateGLContextOnce()
 {
-    (void)contextMngr_.AllocContext();
+    /* Ensure a context is current before any GL queries (e.g. GetRenderingCaps / GL_MAJOR_VERSION).
+       AllocContext may return an existing swap-chain context without re-binding it. */
+    if (auto ctx = contextMngr_.AllocContext())
+        GLContext::SetCurrent(ctx.get());
 }
 
 void GLRenderSystem::RegisterNewGLContext(GLContext& /*context*/, const GLPixelFormat& pixelFormat)
